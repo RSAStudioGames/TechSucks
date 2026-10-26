@@ -109,10 +109,20 @@
     var ds = wrapper.dataset;
     var rawWords = ds.words.split(',');
     
-    // Default art.json URL fallback if not mapped otherwise
-    fetch('/data/art.json')
-      .then(function(r) { return r.json(); })
-      .then(function(artData) {
+    // Load the actual artwork glyphs before measuring or drawing any canvas.
+    // Otherwise a first visit can retain measurements from a fallback font.
+    Promise.all([
+      fetch('/data/art.json').then(function(r) {
+        if (!r.ok) throw new Error('Artwork request failed: ' + r.status);
+        return r.json();
+      }),
+      document.fonts.load('700 16px "Fira Code"', ' █═║╔╗╚╝')
+        .then(function(fonts) {
+          if (!fonts.length) throw new Error('Fira Code font is unavailable.');
+        })
+    ])
+      .then(function(results) {
+        var artData = results[0];
         if (!window.CliTypewriter) {
            console.error("CliTypewriter class not found. Ensure cli-typewriter.js is loaded.");
            return;
@@ -132,6 +142,9 @@
           center: ds.center === "true",
           fadeIn: ds.fadein === "true"
         });
+      })
+      .catch(function(error) {
+        console.error('CliTypewriter initialization failed:', error);
       });
   });
 </script>
