@@ -34,3 +34,11 @@ I’ve heard others talk about graphite powder lubricant, but since graphite is 
 
 
 If you want to get one for yourself, you can find it on online retailers or direct through [Elecom](https://elecomusa.com/products/huge-plus).
+
+---
+
+6-Month Update
+
+I've been using the Huge Plus for 6 months now and I've enjoyed using it so much that I even bought a second for my other workstation.
+After getting used to it, I'm able to play just about any game I normally play, including first-person shooters, without much of a difference from using a traditional style mouse.
+I do not regret the purchase in the least.
