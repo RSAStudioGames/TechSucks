@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.c4581949edab7810737609fc5568852bcd908945f14561e366dcd2300a370545.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a2cc694a9b481f15d41722bffc2cc54eea4c4f74fd9072b0b33253604c22606e.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
@@ -99,6 +99,7 @@
 
 
 
+<script src="/js/cli-typewriter.js" defer></script>
 </head>
 <body>
 
@@ -241,152 +242,187 @@
 You can find the all the benchmarks I&rsquo;ve run myself and collected in the <a href="https://techsucks.org/posts/llm-benchmarks/">LLM Inference Benchmarks</a> page.</p>
 <p>Quick Comparison (pricing estimates prior to OpenAI destroying the memory market)</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Build</th>
-          <th style="text-align: left">Pricing</th>
-          <th style="text-align: left">VRAM</th>
-          <th style="text-align: left">RAM</th>
-          <th style="text-align: left">Speed</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><a href="/posts/servermaxxing/#v100maxxing">V100MAXXING</a></td>
-          <td style="text-align: left">~$2000</td>
-          <td style="text-align: left">64GB</td>
-          <td style="text-align: left">96GB</td>
-          <td style="text-align: left"><span style="color: green;">Fast</span></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a href="/posts/servermaxxing/#toaster-oven">Toaster Oven</a></td>
-          <td style="text-align: left">~$6000</td>
-          <td style="text-align: left">96GB</td>
-          <td style="text-align: left">64GB</td>
-          <td style="text-align: left"><span style="color: yellow;">Fair</span></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a href="/posts/servermaxxing/#miqumaxx-box">Miqumaxx Box</a></td>
-          <td style="text-align: left">~$6500</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">768GB</td>
-          <td style="text-align: left"><span style="color: red;">Slow</span></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a href="/posts/servermaxxing/#mikubox">Mikubox</a></td>
-          <td style="text-align: left">~$1000</td>
-          <td style="text-align: left">72GB</td>
-          <td style="text-align: left">128GB</td>
-          <td style="text-align: left"><span style="color: red;">Slow</span></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a href="/posts/servermaxxing/#debtmaxxing">DEBTMAXXING</a></td>
-          <td style="text-align: left">~$9500</td>
-          <td style="text-align: left">N/A</td>
-          <td style="text-align: left">512GB</td>
-          <td style="text-align: left"><span style="color: red;">Slow</span></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><a href="/posts/servermaxxing/#tetobox">Tetobox</a></td>
-          <td style="text-align: left">x</td>
-          <td style="text-align: left">48GB</td>
-          <td style="text-align: left">128GB</td>
-          <td style="text-align: left"><span style="color: yellow;">Fair</span></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Build</th>
+					<th style="text-align: left">Pricing</th>
+					<th style="text-align: left">VRAM</th>
+					<th style="text-align: left">RAM</th>
+					<th style="text-align: left">Speed</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><a href="/posts/servermaxxing/#v100maxxing">V100MAXXING</a></td>
+					<td style="text-align: left">~$2000</td>
+					<td style="text-align: left">64GB</td>
+					<td style="text-align: left">96GB</td>
+					<td style="text-align: left"><span style="color: green;">Fast</span></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a href="/posts/servermaxxing/#toaster-oven">Toaster Oven</a></td>
+					<td style="text-align: left">~$6000</td>
+					<td style="text-align: left">96GB</td>
+					<td style="text-align: left">64GB</td>
+					<td style="text-align: left"><span style="color: yellow;">Fair</span></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a href="/posts/servermaxxing/#miqumaxx-box">Miqumaxx Box</a></td>
+					<td style="text-align: left">~$6500</td>
+					<td style="text-align: left">N/A</td>
+					<td style="text-align: left">768GB</td>
+					<td style="text-align: left"><span style="color: red;">Slow</span></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a href="/posts/servermaxxing/#mikubox">Mikubox</a></td>
+					<td style="text-align: left">~$1000</td>
+					<td style="text-align: left">72GB</td>
+					<td style="text-align: left">128GB</td>
+					<td style="text-align: left"><span style="color: red;">Slow</span></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a href="/posts/servermaxxing/#debtmaxxing">DEBTMAXXING</a></td>
+					<td style="text-align: left">~$9500</td>
+					<td style="text-align: left">N/A</td>
+					<td style="text-align: left">512GB</td>
+					<td style="text-align: left"><span style="color: red;">Slow</span></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><a href="/posts/servermaxxing/#tetobox">Tetobox</a></td>
+					<td style="text-align: left">x</td>
+					<td style="text-align: left">48GB</td>
+					<td style="text-align: left">128GB</td>
+					<td style="text-align: left"><span style="color: yellow;">Fair</span></td>
+			</tr>
+	</tbody>
 </table>
 </br>
 <h2 id="getting-started">Getting Started<a href="#getting-started" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>So you&rsquo;ve got three main ways to run AI models. NVIDIA GPUs, AMD GPUs, or CPUs. Nvidia will give you the least headaches (usually), especially on windows. AMD will give you more headaches and somewhat lower performance than Nvidia GPUs, but you can get really good deals on them while having more VRAM than most Nvidia cards at the same, and sometimes higher price points. Finally, CPUs are simple to run LLMs on with llama.cpp-based inference tools (Text Gen Web UI, Ollama, etc), but they&rsquo;re realllllllllllly slow compared to GPUs.</p>
 <p>If you want to run an AI model on your own hardware, decommissioned data center GPUs or CPUs are the way to go if you don&rsquo;t want to spend hella cash on some fancy new tech that is bound to be overpriced. That being said, GPUs and CPUs are already stupidly expensive. Crypto-mining, Nvidia and AMD being greedy (mainly Nvidia), the massive AI spike pushing demand toward datacenter GPUs over the tiny consumer market, and scalping due to low availability (again, thank Nvidia and AMD and their blatant marketing lies and low consumer card availability) have caused the GPU market to skyrocket in price for not only new, but used GPUs. Overall availability is at an all-time low while prices are insanely high.</p>
 <p>There isn&rsquo;t much support yet for NPUs/TPUs/APUs yet as both the software and hardware ecosystem in the consumer market isn&rsquo;t that mature yet. I recently found an inference engine — <a href="https://lemonade-server.ai/">Lemonade Server</a> — which as of now, has support for the Ryzen AI 300 Series of NPUs. When it comes to TPUs, you can find hardware such as Google Coral for smaller-scale ML projects, but you won&rsquo;t be running Stable Diffusion on it without a fair bit of tweaking.</p>
-<p>Nvidia has <a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">CUDA</a>, AMD has <a href="https://rocm.docs.amd.com/en/latest/">ROCm</a>, and Intel has <a href="https://www.intel.com/content/www/us/en/developer/articles/guide/installation-guide-for-oneapi-toolkits.html">OneAPI</a>. CUDA is the most mature with the most well-developed features and support. ROCm is lagging behind a bit but is quickly catching up to CUDA and Nvidia&rsquo;s overall performance in the AI arena. OneAPI&hellip; Well, Intel has a long way to go, but in all fairness, they only joined the GPU market fairly recently in 2019 with <a href="https://www.intel.com/content/www/us/en/products/details/processors/ai-accelerators/gaudi1.html">Gaudi</a> compared to Nvidia and AMD&rsquo;s 25+ years headstart.
+<p>Nvidia has <a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">CUDA</a>, AMD has <a href="https://rocm.docs.amd.com/en/latest/">ROCm</a>, and Intel has <a href="https://www.intel.com/content/www/us/en/developer/articles/guide/installation-guide-for-oneapi-toolkits.html">OneAPI</a>.<br>
+CUDA is the most mature with the most well-developed features and support.<br>
+ROCm is lagging behind a bit but is quickly catching up to CUDA and Nvidia&rsquo;s overall performance in the AI arena.<br>
+OneAPI&hellip; well, Intel has a long way to go, but in all fairness, they only joined the GPU market fairly recently in 2019 with <a href="https://www.intel.com/content/www/us/en/products/details/processors/ai-accelerators/gaudi1.html">Gaudi</a> compared to Nvidia and AMD&rsquo;s 25+ years headstart.
 </br></p>
 <table>
-  <thead>
-      <tr>
-          <th>Manufacturer</th>
-          <th>Data Center Model</th>
-          <th>Architecture</th>
-          <th>Consumer Model</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>NVIDIA</td>
-          <td>Tesla <strong>K</strong>80</td>
-          <td>Kepler</td>
-          <td>GTX 780</td>
-      </tr>
-      <tr>
-          <td>NVIDIA</td>
-          <td>Tesla <strong>M</strong>40</td>
-          <td>Maxwell</td>
-          <td>GTX 980</td>
-      </tr>
-      <tr>
-          <td>NVIDIA</td>
-          <td>Tesla <strong>P</strong>100</td>
-          <td>Pascal</td>
-          <td>GTX 1080</td>
-      </tr>
-      <tr>
-          <td>NVIDIA</td>
-          <td>Tesla <strong>V</strong>100</td>
-          <td>Volta</td>
-          <td>GTX Titan V</td>
-      </tr>
-      <tr>
-          <td>NVIDIA</td>
-          <td>Tesla <strong>T</strong>4</td>
-          <td>Turing</td>
-          <td>RTX 2080</td>
-      </tr>
-      <tr>
-          <td>NVIDIA</td>
-          <td>Tesla <strong>A</strong>100</td>
-          <td>Ampere</td>
-          <td>RTX 3090</td>
-      </tr>
-      <tr>
-          <td>NVIDIA</td>
-          <td>Tesla <strong>L</strong>40</td>
-          <td>Ada Lovelace</td>
-          <td>RTX 4090</td>
-      </tr>
-      <tr>
-          <td>AMD</td>
-          <td>Instinct Mi100</td>
-          <td>CDNA 1.0</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>AMD</td>
-          <td>Instinct Mi200</td>
-          <td>CDNA 2.0</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>AMD</td>
-          <td></td>
-          <td>RDNA 3.0</td>
-          <td>RX 7900 XTX</td>
-      </tr>
-      <tr>
-          <td>AMD</td>
-          <td></td>
-          <td>RDNA 4.0</td>
-          <td>RX 9070 XT</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Manufacturer</th>
+					<th>Data Center Model</th>
+					<th>Architecture</th>
+					<th>Consumer Model</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>NVIDIA</td>
+					<td>Tesla <strong>K</strong>80</td>
+					<td>Kepler</td>
+					<td>GTX 780</td>
+			</tr>
+			<tr>
+					<td>NVIDIA</td>
+					<td>Tesla <strong>M</strong>40</td>
+					<td>Maxwell</td>
+					<td>GTX 980</td>
+			</tr>
+			<tr>
+					<td>NVIDIA</td>
+					<td>Tesla <strong>P</strong>100</td>
+					<td>Pascal</td>
+					<td>GTX 1080</td>
+			</tr>
+			<tr>
+					<td>NVIDIA</td>
+					<td>Tesla <strong>V</strong>100</td>
+					<td>Volta</td>
+					<td>GTX Titan V</td>
+			</tr>
+			<tr>
+					<td>NVIDIA</td>
+					<td>Tesla <strong>T</strong>4</td>
+					<td>Turing</td>
+					<td>RTX 2080</td>
+			</tr>
+			<tr>
+					<td>NVIDIA</td>
+					<td>Tesla <strong>A</strong>100</td>
+					<td>Ampere</td>
+					<td>RTX 3090</td>
+			</tr>
+			<tr>
+					<td>NVIDIA</td>
+					<td>Tesla <strong>L</strong>40</td>
+					<td>Ada Lovelace</td>
+					<td>RTX 4090</td>
+			</tr>
+			<tr>
+					<td>AMD</td>
+					<td>Instinct Mi100</td>
+					<td>CDNA 1.0</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>AMD</td>
+					<td>Instinct Mi200</td>
+					<td>CDNA 2.0</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>AMD</td>
+					<td></td>
+					<td>RDNA 3.0</td>
+					<td>RX 7900 XTX</td>
+			</tr>
+			<tr>
+					<td>AMD</td>
+					<td></td>
+					<td>RDNA 4.0</td>
+					<td>RX 9070 XT</td>
+			</tr>
+	</tbody>
 </table>
 </br>
 
 
-<img src="/images/ebay-tesla-results_hu_e3b0dc0eb0276ba9.webp" width="600" alt="ebay-tesla-results">
 
 
-<img src="/images/mi50amd-ebay_hu_7086bed731c41dd5.webp" width="600" alt="mi50amd-ebay">
+
+  
+    <img 
+      src="/images/ebay-tesla-results.webp" 
+      alt="ebay-tesla-results"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
+
+
+
+
+
+  
+    <img 
+      src="/images/mi50amd-ebay.webp" 
+      alt="mi50amd-ebay"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 <p><a href="https://en.wikipedia.org/wiki/Nvidia_Tesla">Tesla</a> is Nvidia&rsquo;s line of datacenter GPUs. These are fairly easy to find on the second-hand market, mainly on ebay. When you&rsquo;re searching for these GPUs, you&rsquo;re bound to find many with what seems like massive amounts of VRAM. This may seem great, but you need to be careful with your selection.</p>
 <p>The Tesla K80 has 24GB of VRAM (it&rsquo;s technically two GK210 GPUs on one card with 12GB VRAM each), and its Maxwell counterpart, the M40, also has 24GB. These two cards can work for AI, but I&rsquo;d strongly recommend going for nothing less than a P40 if you&rsquo;re looking to bulk up on VRAM for a low price.</p>
 <p>The reason is because Maxwell (Ex: M40) and Kepler (Ex: K80) architectures don&rsquo;t have native <a href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format">FP16</a> hardware acceleration, meaning running most LLMs, or the average AI tool in general, will be quite slow. Still faster than CPU processing, but slow nonetheless. In the subsequent Pascal architecture (also found in the <a href="https://en.wikipedia.org/wiki/GeForce_GTX_10_series">GTX 10 series</a>), Nvidia introduced limited support for half-precision (FP16), it is slow at FP16 processing, but the P40 will still outperform its predecessors enough to be worth the increased price, if you can get them for under $200.</p>
@@ -404,17 +440,65 @@ You can find the all the benchmarks I&rsquo;ve run myself and collected in the <
 </br></p>
 <p>
 
-<img src="/images/hc34-nvidia-nvswitch-nvlink-generations_hu_f66d0fac7ed83e5d.jpg" width="600" alt="hc34-nvidia-nvswitch-nvlink-generations">
+
+
+
+  
+    <img 
+      src="/images/hc34-nvidia-nvswitch-nvlink-generations.jpg" 
+      alt="hc34-nvidia-nvswitch-nvlink-generations"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 With the introduction of the Tesla P100, came the first generation of <a href="https://www.nvidia.com/en-us/data-center/nvlink/">NVLink</a>. This was created to address the bandwidth bottleneck of <a href="https://en.wikipedia.org/wiki/PCI_Express">PCIe</a> in <a href="https://en.wikipedia.org/wiki/High-performance_computing">HPC</a> and AI/ML workloads. NVLink is a high-speed GPU-to-GPU link that provides significantly faster communication with lower latency compared to traditional PCIe connections. Each NVLink acts similarly to PCI lanes, so as later generations added more links, the overall bandwidth increased with it.</p>
 <p>With PCIe, if one GPU needed to access the memory of another, the data would have to travel from the first GPU, through the PCIe bus to the CPU and RAM, then back through the PCIe bus to the second GPU. NVLink bypasses this bottleneck with a dedicated link allowing direct GPU-to-GPU communication. While PCIe 3.0 x16 offers only 16GB/s (and PCIe 5.0 x16 maxes out at 64GB/s), NVLink provides significantly higher bandwidth, starting at 160GB/s for first-gen and reaching up to 1.8TB/s aggregate bidirectional with 5th-gen. Real-world performance differs slightly and primarily depends on the GPU you&rsquo;re using, the amount of GPUs, and a few other factors that I don&rsquo;t feel like expanding on yet&hellip;</p>
 <p>
 
-<img src="/images/nvidia_nvlink_a1006066_hu_70e72da913bf5830.webp" width="600" alt="nvidia_nvlink_a1006066">
+
+
+
+  
+    <img 
+      src="/images/nvidia_nvlink_a1006066.webp" 
+      alt="nvidia_nvlink_a1006066"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 Above Image: NVLink 2-way bridge on 2x A100s</p>
 <p><a href="https://www.nvidia.com/en-us/data-center/nvlink/#nvswitch">NVSwitch</a> extends NVLink capabilities even further, effectively allowing for GPUs to be networked together across multiple nodes. NVLink allows for all-to-all GPU communication at full NVLink speeds, allowing for any GPU to communicate with any other GPU in the cluster. You will see this used a lot in large-scale AI training where memory bandwidth is vital for processing huge amounts of data at a time.</p>
 <p>
 
-<img src="/images/hgx-h200-4-nvswitch-1024x447_hu_b26dcd7557954931.webp" width="600" alt="hgx-h200-4-nvswitch-1024x447">
+
+
+
+  
+    <img 
+      src="/images/hgx-h200-4-nvswitch-1024x447.webp" 
+      alt="hgx-h200-4-nvswitch-1024x447"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 Above Image: NVSwitch chips for managing the switching fabric for 8x H200s</p>
 <p><strong>TO DO</strong>: cover more AMD GPUs
 <a href="https://arxiv.org/abs/1903.04611">https://arxiv.org/abs/1903.04611</a> - evaluating gpu interconnects</p>
@@ -422,10 +506,12 @@ Above Image: NVSwitch chips for managing the switching fabric for 8x H200s</p>
 <li>Models that fit on a single GPU show no throughput benefit from multi-GPU splitting.</li>
 <li>I do not recommend using 8BPW/Q8 model quantizations unless it is under 10B parameters as you will not notice much of a quality drop from 6BPW/Q6. Using a lower quant will also be somewhat faster and use less VRAM.</li>
 </ul>
+<hr>
 <h1 id="v100maxxing">V100MAXXING<a href="#v100maxxing" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <p>Alright so this is my spin on the V100Maxxing method. The high memory bandwidth is what makes this build viable. At the end of the day, you could either buy one 4090 for about $2500 and get 24GB of VRAM, not including the cost of the rest of the system components. Or, you could run this setup for about $1800 (if you&rsquo;re patient and know where to look) and get 64GB of VRAM with slightly faster inference than a 4090 in <em>most</em> general inference use-cases, but not all. Keep in mind Flash Attention 2 does not support Volta GPUs due to their <a href="https://github.com/Dao-AILab/flash-attention/issues/148#issuecomment-1574090582">tensor shape</a>, so you&rsquo;ll have to build it yourself or use an alternative. If you&rsquo;re interested in reading up on the V100/Titan V/Volta Architecture, here&rsquo;s the <a href="https://images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf">whitepaper</a>. <br />
 
-This can run most models up to around 100B parameters when quantized. I cover quantization more on <a href="https://techsucks.org/en/machine-learning">/Machine Learning</a></p>
+This server build can run most models up to around 100B parameters when quantized.<br>
+I cover quantization more on <a href="https://techsucks.org/posts/machine-learning">/Machine Learning</a></p>
 <h2 id="hardware">Hardware<a href="#hardware" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This setup will give you 4x V100s with 16GB of VRAM each on the SXM socket. You do not want PCIe for this because NVLink with 4x V100 PCIes are more expensive while also being slower than the SXM setup. You can also get the 32GB version of the V100 to further increase your VRAM capacity to 128GB. Additionally, you can also use <a href="https://en.wikipedia.org/wiki/InfiniBand">InfiniBand</a> <a href="https://en.wikipedia.org/wiki/Network_interface_controller">NIC</a>s, using <a href="https://docs.nvidia.com/cuda/gpudirect-rdma/">GPUDirect RDMA</a>, to scale with multiple servers. The reason for building a system like this is to take advantage of tensor parallelism which will greatly increase your inference and training speeds on supported back-ends.</p>
 <p>It&rsquo;s tough to custom build an SXM NVLink GPU server because NVLink boards are not something you can just plug and play into <em>any</em> system. It&rsquo;s possible to do so, but very difficult, and usually more expensive, to obtain the right parts, and you definitely won&rsquo;t receive any official support. Sure, you can also go to ebay and get some custom-built NVLink PCBs for SXM sockets, but you will not get the same performance as just going for an existing platform. These systems use custom NVLink fabrics to link the GPUs together so your speeds will vary depending on what the board is using.</p>
@@ -436,81 +522,81 @@ The Dell C4140/C4130 systems both require C19 plugs and 20 AMP power. Do not try
 <p>I highly recommend getting a cheap torque driver to make sure you aren&rsquo;t over-tightening the heatsinks over the GPUs as too pressure can damage the boards, it has a tolerance of less than 5%. You could get away without using one, but I wouldn&rsquo;t recommend taking the risk. I&rsquo;ve heard many complains from datacenter techs about SXM GPUs being ridiculously brittle. A lot of the time, the manufacturer putting the system together has a custom jig to mount the GPUs to the NVLink board to avoid the pins getting accidentally bent as well. When I had to replace the NVLink board on one of my C4140s, it rattled me a bit hearing all the problems people had, but it wasn&rsquo;t <em>that</em> bad. Just be slow, patient, and don&rsquo;t rush the process. Taking out the GPUs from the old NVLink board, replacing the board in the chassis, then putting the GPUs and heatsinks back took about 45 minutes, but it was also my first time doing it. If you can avoid it, do so as it is a bit of a headache.</p>
 <p>Recommended Options:</p>
 <table>
-  <thead>
-      <tr>
-          <th>Model</th>
-          <th>Architecture</th>
-          <th>Power Type</th>
-          <th>Sockets</th>
-          <th>Manual</th>
-          <th>Rating</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>Dell C4140</strong></td>
-          <td>Skylake</td>
-          <td>C19 (20 AMP)</td>
-          <td>4x SXM2</td>
-          <td><a href="https://i.dell.com/sites/csdocuments/Product_Docs/en/dell-emc-poweredge-c4140-technical-guide.pdf">PDF</a></td>
-          <td>🟢 Recommended</td>
-      </tr>
-      <tr>
-          <td>Dell C4130</td>
-          <td>Broadwell</td>
-          <td>C19 (20 AMP)</td>
-          <td>4x SXM2</td>
-          <td><a href="https://dl.dell.com/topicspdf/poweredge-c4130_owners-manual_en-us.pdf">PDF</a></td>
-          <td>🟡 Viable</td>
-      </tr>
-      <tr>
-          <td>Gigabyte T181-G20</td>
-          <td>Skylake</td>
-          <td>OCP Supply</td>
-          <td>4x SXM2</td>
-          <td><a href="https://download.gigabyte.com/FileList/QVL/server_system_qvl_T181-G20_v1.1.pdf">PDF</a></td>
-          <td>🟡 Viable</td>
-      </tr>
-      <tr>
-          <td>Gigabyte T180-G20</td>
-          <td>Broadwell</td>
-          <td>OCP Supply</td>
-          <td>4x SXM2</td>
-          <td><a href="https://www.gigabyte.com/FileUpload/Global/MicroSite/354/dl/T180-G20_QVL_Test_Report.pdf">PDF</a></td>
-          <td>🔴 Not Recommended</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Model</th>
+					<th>Architecture</th>
+					<th>Power Type</th>
+					<th>Sockets</th>
+					<th>Manual</th>
+					<th>Rating</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Dell C4140</strong></td>
+					<td>Skylake</td>
+					<td>C19 (20 AMP)</td>
+					<td>4x SXM2</td>
+					<td><a href="https://i.dell.com/sites/csdocuments/Product_Docs/en/dell-emc-poweredge-c4140-technical-guide.pdf">PDF</a></td>
+					<td>🟢 Recommended</td>
+			</tr>
+			<tr>
+					<td>Dell C4130</td>
+					<td>Broadwell</td>
+					<td>C19 (20 AMP)</td>
+					<td>4x SXM2</td>
+					<td><a href="https://dl.dell.com/topicspdf/poweredge-c4130_owners-manual_en-us.pdf">PDF</a></td>
+					<td>🟡 Viable</td>
+			</tr>
+			<tr>
+					<td>Gigabyte T181-G20</td>
+					<td>Skylake</td>
+					<td>OCP Supply</td>
+					<td>4x SXM2</td>
+					<td><a href="https://download.gigabyte.com/FileList/QVL/server_system_qvl_T181-G20_v1.1.pdf">PDF</a></td>
+					<td>🟡 Viable</td>
+			</tr>
+			<tr>
+					<td>Gigabyte T180-G20</td>
+					<td>Broadwell</td>
+					<td>OCP Supply</td>
+					<td>4x SXM2</td>
+					<td><a href="https://www.gigabyte.com/FileUpload/Global/MicroSite/354/dl/T180-G20_QVL_Test_Report.pdf">PDF</a></td>
+					<td>🔴 Not Recommended</td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="components">Components:<a href="#components" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Item</th>
-          <th style="text-align: left">Spec</th>
-          <th style="text-align: left">Price</th>
-          <th style="text-align: left">Where To Buy</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>GPU</strong></td>
-          <td style="text-align: left">V100 SXM2 16GB</td>
-          <td style="text-align: left">~$100</td>
-          <td style="text-align: left"><a href="https://www.ebay.com/itm/177288235589">Ebay</a> <a href="https://www.ebay.com/itm/156423769909">Ebay</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>GPU</strong></td>
-          <td style="text-align: left">V100 SXM2 32GB</td>
-          <td style="text-align: left">~$500</td>
-          <td style="text-align: left"><a href="https://www.ebay.com/itm/177092661452">Ebay</a> <a href="https://www.ebay.com/itm/127053246969">Ebay</a></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>CPU</strong></td>
-          <td style="text-align: left">Xeon Gold 6132</td>
-          <td style="text-align: left">~$12</td>
-          <td style="text-align: left"><a href="https://www.ebay.com/itm/205863176097">Ebay</a> <a href="https://www.ebay.com/itm/167596966105">Ebay</a></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Item</th>
+					<th style="text-align: left">Spec</th>
+					<th style="text-align: left">Price</th>
+					<th style="text-align: left">Where To Buy</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>GPU</strong></td>
+					<td style="text-align: left">V100 SXM2 16GB</td>
+					<td style="text-align: left">~$100</td>
+					<td style="text-align: left"><a href="https://www.ebay.com/itm/177288235589">Ebay</a> <a href="https://www.ebay.com/itm/156423769909">Ebay</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>GPU</strong></td>
+					<td style="text-align: left">V100 SXM2 32GB</td>
+					<td style="text-align: left">~$500</td>
+					<td style="text-align: left"><a href="https://www.ebay.com/itm/177092661452">Ebay</a> <a href="https://www.ebay.com/itm/127053246969">Ebay</a></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>CPU</strong></td>
+					<td style="text-align: left">Xeon Gold 6132</td>
+					<td style="text-align: left">~$12</td>
+					<td style="text-align: left"><a href="https://www.ebay.com/itm/205863176097">Ebay</a> <a href="https://www.ebay.com/itm/167596966105">Ebay</a></td>
+			</tr>
+	</tbody>
 </table>
 <ul>
 <li>12x8GB DDR4-2133 RDIMMs - ~$120 <br />
@@ -691,7 +777,23 @@ Be aware, if you're on a 15 amp breaker, which you most likely are if you live i
 </div>
 <p>
 
-<img src="/images/psubreakoutboard1_hu_c4a68167351628a1.webp" width="600" alt="psubreakoutboard1">
+
+
+
+  
+    <img 
+      src="/images/psubreakoutboard1.webp" 
+      alt="psubreakoutboard1"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 I have not done the breakout board method myself as I went with Dell C4140s and the expensive nightmare (likely will be easier for you) of getting 240v 20 amp L6-20R outlets installed. I went with L6-20R outlets over 5-20Rs as they have a unique design so normal appliances wouldn&rsquo;t be accidentally plugged into them as they are 240 volt. I also thought they looked cooler. I then got these <a href="https://www.amazon.com/dp/B0CLPHG543">L6-20P to C19</a> adapter cables from StarTech, because they have a good reputation and quality products, to plug into my servers. The cable is rated for 250V and 20 amps so you won&rsquo;t have to worry about any fire hazards if you&rsquo;re using them correctly. <br />
 
 A quick rule of thumb is that if your PSU takes more than 1200W, you&rsquo;re probably going to need a 240V 20 amp breaker to properly power it so you don&rsquo;t risk tripping the breaker or potentially damaging your hardware.</p>
@@ -709,7 +811,23 @@ For either the Dell or Gigabyte systems, you&rsquo;re going to have plenty of le
 Use the Nvidia driver <a href="https://docs.nvidia.com/datacenter/tesla/driver-installation-guide/index.html">documentation</a> to install the V100 drivers onto your chosen Linux distro or refer to my <a href="/server-gpu-driver-installation">/Server GPU Driver Installation</a> page.</p>
 <p>
 
-<img src="/images/nvidiasmi-hugin_hu_21d5bcac86c2b8d1.png" width="600" alt="nvidiasmi-hugin">
+
+
+
+  
+    <img 
+      src="/images/nvidiasmi-hugin.png" 
+      alt="nvidiasmi-hugin"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 Once installed, I recommend dropping the power limit to each GPU to 200W. You&rsquo;ll lose close to ~10% of your max performance, but its worth saving 400W if you&rsquo;re going to be running this 24/7. In my case, I only turn on the system when I need it so I left mine at 300W. Be aware that the V100s each idle at around 50W so you&rsquo;ll be using around 250W at any given moment just by having the server on. <br />
 
 Check the topology of the GPUs using <code>nvidia-smi topo -m</code> to make sure NVLink is correctly working. <br />
@@ -718,7 +836,23 @@ Yours should look something like this (ignore the NIC): <br />
 
 
 
-<img src="/images/nvidia-topo_hu_45ce91194db85d73.png" width="600" alt="nvidia-topo"></p>
+
+
+
+  
+    <img 
+      src="/images/nvidia-topo.png" 
+      alt="nvidia-topo"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+</p>
 <p>It&rsquo;s recommended to configure your NUMA nodes to squeeze out any extra performance you can out of your system. I don&rsquo;t know how to do that so have fun figuring it out&hellip;</p>
 <h2 id="software">Software<a href="#software" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
@@ -743,7 +877,23 @@ Enable: <code>sudo nvidia-smi drain -p 0000:##:00.0 -m 1</code> (use <code>-m 0<
 <p>You have SXM2 versions of the A100 available with 40GB of VRAM. These are for automotive use so they are technically not supported, nor have I tried using one before. I have heard people having issues with these in their systems and SXM sockets being bricked. Personally, I would not recommend these, not only because of the risk of bricking your board, but the performance will not be much better than a V100 as these are cut-down versions of the A100, and it is also more than double the cost of a single node for only 8GB of VRAM more. Use at your own risk.
 
 
-<img src="/images/a100drive-ebay_hu_52c948739f4979eb.webp" width="600" alt="a100drive-ebay">
+
+
+
+  
+    <img 
+      src="/images/a100drive-ebay.webp" 
+      alt="a100drive-ebay"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 </br></p>
 <h2 id="benchmarks">Benchmarks<a href="#benchmarks" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
@@ -781,6 +931,18 @@ Enable: <code>sudo nvidia-smi drain -p 0000:##:00.0 -m 1</code> (use <code>-m 0<
 <li>~26.5GB VRAM free</li>
 <li>This is an MoE model with only 3B active parameters which is why it is significantly faster than Qwen 3 32B.
 </br></li>
+</ul>
+</li>
+<li>
+<p><a href="https://huggingface.co/bartowski/Qwen_Qwen3.6-35B-A3B-GGUF">Qwen 3.6 35B-A3B</a></p>
+<ul>
+<li>GGUF - Q6 K L</li>
+<li>Text Generation Web UI (llama.cpp)</li>
+<li>Context Length: 65,565</li>
+<li>~32 token/s to generate ~1500 tokens (empty context)</li>
+<li>~18 token/s to generate ~1500 tokens (15K context)</li>
+<li>~30GB VRAM free</li>
+<li>MoE model with only 3B active parameters.</li>
 </ul>
 </li>
 <li>
@@ -879,7 +1041,23 @@ Water-cooled tower case <br />
 
 
 
-<img src="/images/nvidia-dgx-a100-ampere-gpu-powered-system_hu_61e07b73e8556add.webp" width="600" alt="nvidia-dgx-a100-ampere-gpu-powered-system"></li>
+
+
+
+  
+    <img 
+      src="/images/nvidia-dgx-a100-ampere-gpu-powered-system.webp" 
+      alt="nvidia-dgx-a100-ampere-gpu-powered-system"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+</li>
 <li>Nvidia DGX-2 (on ebay for ~$20K) <br />
 
 2x Platinum 8168 (Skylake) <br />
@@ -894,7 +1072,23 @@ C19 plug - 20 amp power <br />
 
 
 
-<img src="/images/dgx-2-1_hu_683f361fe50cb58a.webp" width="600" alt="dgx-2"></li>
+
+
+
+  
+    <img 
+      src="/images/dgx-2-1.webp" 
+      alt="dgx-2"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+</li>
 </ul>
 <p>Next up: Custom SXM socket builds (not pre-built systems) to take advantage of cheap SXM GPUs. <br />
 
@@ -977,8 +1171,28 @@ Dual SXM2 NVLink board with PCIe cards that connect to it using MCIO x4 cables</
   }
 </style>
 </br>
+<hr>
 <h1 id="toaster-oven">Toaster Oven<a href="#toaster-oven" class="hanchor" ariaLabel="Anchor">#</a> </h1>
-<p>This is a triple Mi100 build that gets you 96GB of VRAM with the potential to upgrade that further when using a tower case if you have extra expansion slots available. Pair that with an xGMI bridge and you&rsquo;re golden.</p>
+<p>This is a triple Mi100 build that gets you 96GB of VRAM with the potential to upgrade that further when using a tower case if you have extra expansion slots available. Pair that with an xGMI bridge and you&rsquo;re golden.
+
+
+
+
+
+  
+    <img 
+      src="/images/rocm-toaster.webp" 
+      alt="My Server"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+</p>
 <h2 id="systems">Systems<a href="#systems" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Dell R7425/R7525 <br />
 
@@ -990,7 +1204,23 @@ For a similar price, the Dell R7425 or R7525 can be an alternative to this build
 Originally was looking for X supermicro case on ebay, found one for about 2.2K barebones. Then I found an AI server with the exact same case, 4x 1080tis, 256gb ddr4, and a broadwell 24(?) core Xeon for about $1700 (thats what you get for pricing things so ridiculously, newegg) and snapped that thing up instantly. Repurposed the existing hardware and put in my stuff. Few janky fixes because the GPUs take up all the space to put in the USB 2.0 header (mobo doesnt have 2.0 header, only 3.0 so I had to get an adapter which doesnt even fit&hellip;)</p>
 
 
-<img src="/images/mi100_hu_eec50ebc5b6433ae.webp" width="600" alt="mi100">
+
+
+
+  
+    <img 
+      src="/images/mi100.webp" 
+      alt="mi100"
+      
+        width="600" 
+        data-width="600" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 <p>Components:</p>
 <ul>
 <li>AMD EPYC 9334 (~$500)</li>
@@ -1247,6 +1477,7 @@ It looks to be optimized version of vLLM for the MI100. I have not used vLLM, bu
 </li>
 </ul>
 <p>As you can see from the average speed of 4 tokens/sec, the memory bandwidth is the primary limitation here. My motherboard is not able to add a 4th card (easily) so I can&rsquo;t use the infinity fabric bridge (which requires 4 cards) to boost the bandwidth. I did not think to test MoE models at the time, but those would be ideal in situations where your inter-GPU communication is limited by PCIe. If it was a small model that could fit on a single card the speeds would be significantly higher, but take that same model and split it over multiple cards (without the GPU bridge) and your speeds would drop. The more context used, the further those speeds would drop. With empty context, I would get 6-8 tokens per second and it quickly drops from there.</p>
+<p>&ndash;</p>
 <h1 id="miqumaxx-box">Miqumaxx Box<a href="#miqumaxx-box" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <p>So you don&rsquo;t want to deal with the volatile GPU market, running out of power on a PSU, needing multiple PSUs, getting 20 amp power installed, need a ton of loud jet-engine fans, raising your house&rsquo;s average temperature, or running out of PCI lanes, then this is for you. <br />
 
@@ -1278,6 +1509,7 @@ Disable <a href="https://bbs.archlinux.org/viewtopic.php?pid=2110357#p2110357">T
 
 Make sure the xGMI is set to full speed (x4) in the bios. (xGMI is AMD&rsquo;s Infinity Fabric)</p>
 <p>Since you&rsquo;ll have multiple CPUs, be sure to configure your NUMA nodes, this will give you a bit of a performance boost in most inference cases.</p>
+<hr>
 <h1 id="mikubox">Mikubox<a href="#mikubox" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <p>~$1K for 72GB VRAM. Slow, but it works. You&rsquo;ll get low inference speeds at high token counts or with larger (70B+) models. <br />
 
@@ -1299,11 +1531,13 @@ Barebones with heatsinks.</li>
 <p>I would highly recommend MoE models for this build since they are not as heavy on memory bandwidth and would net you higher inference speeds than a dense model.</p>
 <p>You can support ~70B MoE model just on the VRAM alone at around 4 bits per weight and get decent speeds. If you have enough RAM, you can push that to around ~200B before it gets both, way too slow for my preference (1-2 tokens per second for a ~150B MoE model), and the quantization has lowered precision too much for mostly coherent responses.</p>
 <p>With dense models, you can hit around 8-10 tokens per second on llama 3 70B at Q5KM with 4K context. The more context you use, the slower it will get as memory bandwidth usage increases quickly. Since the P40 doesn&rsquo;t support NVLink, much less even SLI, there is no way to improve this besides using NVLinked P100s which also wouldn&rsquo;t be possible in this form factor and it would also cut your VRAM in at most, half. (P100s are 12GB/16GB VRAM cards)</p>
+<hr>
 <h1 id="tetobox">Tetobox<a href="#tetobox" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <p>Intel has a ton of new GPUs coming out soon relatively good pricing. This will definitely destabilize Ngreedia &amp; AMD from their space in the AI GPU market if the launch goes well.</p>
 <p>Next up: Intel GPU build. Multi A/B series GPU setup. The Pro B50/B60 GPUs look incredible for their price to performance ratio right now, especially when compared to their much more expensive counterparts. <br />
 
 AI inference on intel GPUs may not have the most mature tech stack currently, but it&rsquo;s still a good contender due to its price-to-performance and generous VRAM.</p>
+<hr>
 <h1 id="debtmaxxing">DEBTMAXXING<a href="#debtmaxxing" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <p>Nothing special. It works, fairly stable, but still probably wouldnt recommend just due to the pricing. <br />
 

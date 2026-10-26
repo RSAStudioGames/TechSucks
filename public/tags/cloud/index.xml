@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Cloud on TechSucks</title>
-    <link>https://techsucks.org/tags/cloud/</link>
-    <description>Recent content in Cloud on TechSucks</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
-    <atom:link href="https://techsucks.org/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Personal Sovereign Cloud</title>
-      <link>https://techsucks.org/posts/personal-sovereign-cloud/</link>
-      <pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-      <guid>https://techsucks.org/posts/personal-sovereign-cloud/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;guide-running-your-own-sovereign-cloud&#34;&gt;Guide: Running Your Own Sovereign Cloud&lt;/h1&gt;&#xA;&lt;p&gt;Want to be free of Google Drive/OneDrive/Mega/iCloud/Dropbox/etc? Hate the big corpos invading your privacy and looking at all of your photos, files, whatever? Well you deserve to have privacy and security for your files, this is your way to take back your data and stop letting big corporations drain your wallet so you can store your important documents/family photos/Linux ISOs safely.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Cloud on TechSucks</title>
+		<link>https://techsucks.org/tags/cloud/</link>
+		<description>Recent content in Cloud on TechSucks</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
+		
+			<atom:link href="https://techsucks.org/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Personal Sovereign Cloud</title>
+				<link>https://techsucks.org/posts/personal-sovereign-cloud/</link>
+				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
+				<guid>https://techsucks.org/posts/personal-sovereign-cloud/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;guide-running-your-own-sovereign-cloud&#34;&gt;Guide: Running Your Own Sovereign Cloud&lt;/h1&gt;&#xA;&lt;p&gt;Want to be free of Google Drive/OneDrive/Mega/iCloud/Dropbox/etc? Hate the big corpos invading your privacy and looking at all of your photos, files, whatever? Well you deserve to have privacy and security for your files, this is your way to take back your data and stop letting big corporations drain your wallet so you can store your important documents/family photos/Linux ISOs safely.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

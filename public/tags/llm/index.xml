@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>LLM on TechSucks</title>
-    <link>https://techsucks.org/tags/llm/</link>
-    <description>Recent content in LLM on TechSucks</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 19 Jan 2026 14:24:34 +0000</lastBuildDate>
-    <atom:link href="https://techsucks.org/tags/llm/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>LLM Inference Benchmarks</title>
-      <link>https://techsucks.org/posts/llm-benchmarks/</link>
-      <pubDate>Mon, 19 Jan 2026 14:24:34 +0000</pubDate>
-      <guid>https://techsucks.org/posts/llm-benchmarks/</guid>
-      <description>&lt;p&gt;Work in progress page&amp;hellip; &lt;br /&gt;&#xA;&#xA;LLM inference benchmarks I&amp;rsquo;ve done myself or collected from the community and other online resources.&#xA;&lt;br /&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;A quick way to calculate your max theoritical output speed for a dense model is with &lt;code&gt;bandwidth / size_of_llm_in_gb = max_tok_per_sec&lt;/code&gt; &lt;br /&gt;&#xA;&#xA;For example, Llama 3.3 iQ5KM is 50 GB in size. A V100 16GB (SXM2) has 900GB/s of memory bandwidth. 900 / 50 = 18. Now of course, there is always going to be some overhead which is why my results are ~14 tokens per second which is about 80% of the theoritical max. As low as 70% will be commonplace. If you are getting less than 70% performance, try different quantization methods, inference backends, or operating systems. Typically, headless Linux (I prefer Ubuntu server) will get you better results than using Windows OS.&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>LLM on TechSucks</title>
+		<link>https://techsucks.org/tags/llm/</link>
+		<description>Recent content in LLM on TechSucks</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 19 Jan 2026 14:24:34 +0000</lastBuildDate>
+		
+			<atom:link href="https://techsucks.org/tags/llm/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>LLM Inference Benchmarks</title>
+				<link>https://techsucks.org/posts/llm-benchmarks/</link>
+				<pubDate>Mon, 19 Jan 2026 14:24:34 +0000</pubDate>
+				<guid>https://techsucks.org/posts/llm-benchmarks/</guid>
+				<description>&lt;p&gt;Work in progress page&amp;hellip; &lt;br /&gt;&#xA;&#xA;LLM inference benchmarks I&amp;rsquo;ve done myself or collected from the community and other online resources.&#xA;&lt;br /&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;A quick way to calculate your max theoritical output speed for a dense model is with &lt;code&gt;bandwidth / size_of_llm_in_gb = max_tok_per_sec&lt;/code&gt; &lt;br /&gt;&#xA;&#xA;For example, Llama 3.3 iQ5KM is 50 GB in size. A V100 16GB (SXM2) has 900GB/s of memory bandwidth. 900 / 50 = 18. Now of course, there is always going to be some overhead which is why my results are ~14 tokens per second which is about 80% of the theoritical max. As low as 70% will be commonplace. If you are getting less than 70% performance, try different quantization methods, inference backends, or operating systems. Typically, headless Linux (I prefer Ubuntu server) will get you better results than using Windows OS.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

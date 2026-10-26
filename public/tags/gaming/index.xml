@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Gaming on TechSucks</title>
-    <link>https://techsucks.org/tags/gaming/</link>
-    <description>Recent content in Gaming on TechSucks</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
-    <atom:link href="https://techsucks.org/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Adventure Gaming With LLMs</title>
-      <link>https://techsucks.org/posts/adventure-gaming-with-llms/</link>
-      <pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-      <guid>https://techsucks.org/posts/adventure-gaming-with-llms/</guid>
-      <description>&lt;p&gt;Ripped from: &lt;a href=&#34;https://rentry.co/llmadventurersguide&#34;&gt;https://rentry.co/llmadventurersguide&lt;/a&gt;&#xA;Just keeping here as a mirror because I liked the guide. I didn&amp;rsquo;t write this. Props to whoever did.&lt;/p&gt;&#xA;&lt;h1 id=&#34;proper-adventure-gaming-with-llms&#34;&gt;Proper Adventure Gaming With LLMs&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align:center&#34;&gt;&#xA;A huge, brief guide on how I made exactly what I want, and you can, too.&#xA;By that, I mean you can reproduce exactly what I want.&#xA;You&#39;re on your own if you want to make exactly what you want. Sorry.&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: This guide is exclusively for people who have a lot of memory available. Whether you run on a CPU with lots of RAM, a 4090 (or better), or a hosted service/api - the key to doing this the right way is context, context, context. This guide thrives on running any model you can run with an &lt;strong&gt;absolute bare minimum of 30k context&lt;/strong&gt;. More is &lt;em&gt;always&lt;/em&gt; better.&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Gaming</title>
-      <link>https://techsucks.org/posts/gaming/</link>
-      <pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-      <guid>https://techsucks.org/posts/gaming/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://fractalsoftworks.com/&#34;&gt;Starsector&lt;/a&gt; - review the game (Spoiler: it&amp;rsquo;s really fun. Movement has a bit of a learning curve), tips and tricks, where to find and how to install mods, fun modpacks&lt;br&gt;&#xA;Brawlhalla - combos and tips, etc&lt;br&gt;&#xA;Minecraft - modpacks, server hosting basic, docker servers, VPSs, esp32 server, favorite version, etc&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Gaming on TechSucks</title>
+		<link>https://techsucks.org/tags/gaming/</link>
+		<description>Recent content in Gaming on TechSucks</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
+		
+			<atom:link href="https://techsucks.org/tags/gaming/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Adventure Gaming With LLMs</title>
+				<link>https://techsucks.org/posts/adventure-gaming-with-llms/</link>
+				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
+				<guid>https://techsucks.org/posts/adventure-gaming-with-llms/</guid>
+				<description>&lt;p&gt;Ripped from: &lt;a href=&#34;https://rentry.co/llmadventurersguide&#34;&gt;https://rentry.co/llmadventurersguide&lt;/a&gt;&#xA;Just keeping here as a mirror because I liked the guide. I didn&amp;rsquo;t write this. Props to whoever did.&lt;/p&gt;&#xA;&lt;h1 id=&#34;proper-adventure-gaming-with-llms&#34;&gt;Proper Adventure Gaming With LLMs&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align:center&#34;&gt;&#xA;A huge, brief guide on how I made exactly what I want, and you can, too.&#xA;By that, I mean you can reproduce exactly what I want.&#xA;You&#39;re on your own if you want to make exactly what you want. Sorry.&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: This guide is exclusively for people who have a lot of memory available. Whether you run on a CPU with lots of RAM, a 4090 (or better), or a hosted service/api - the key to doing this the right way is context, context, context. This guide thrives on running any model you can run with an &lt;strong&gt;absolute bare minimum of 30k context&lt;/strong&gt;. More is &lt;em&gt;always&lt;/em&gt; better.&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Gaming</title>
+				<link>https://techsucks.org/posts/gaming/</link>
+				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
+				<guid>https://techsucks.org/posts/gaming/</guid>
+				<description>&lt;p&gt;&lt;a href=&#34;https://fractalsoftworks.com/&#34;&gt;Starsector&lt;/a&gt; - review the game (Spoiler: it&amp;rsquo;s really fun. Movement has a bit of a learning curve), tips and tricks, where to find and how to install mods, fun modpacks&lt;br&gt;&#xA;Brawlhalla - combos and tips, etc&lt;br&gt;&#xA;Minecraft - modpacks, server hosting basic, docker servers, VPSs, esp32 server, favorite version, etc&lt;/p&gt;&#xA;&lt;p&gt;Favorite Games:&lt;br&gt;&#xA;Minecraft&lt;br&gt;&#xA;Brawlhalla&lt;br&gt;&#xA;Starsector&lt;br&gt;&#xA;Sid Meier&amp;rsquo;s Pirates!&lt;br&gt;&#xA;Sid Meier&amp;rsquo;s Civilization 4&lt;br&gt;&#xA;Arma 3&lt;br&gt;&#xA;Factorio&lt;br&gt;&#xA;Insaniquarium&lt;br&gt;&#xA;Plants vs. Zombies&lt;br&gt;&#xA;Baldur&amp;rsquo;s Gate 3&lt;br&gt;&#xA;Cyberpunk 2077&lt;br&gt;&#xA;Divinity Original Sin&lt;br&gt;&#xA;Divinity Original Sin 2&lt;br&gt;&#xA;The Witcher 3&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

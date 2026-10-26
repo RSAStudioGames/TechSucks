@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.c4581949edab7810737609fc5568852bcd908945f14561e366dcd2300a370545.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a2cc694a9b481f15d41722bffc2cc54eea4c4f74fd9072b0b33253604c22606e.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
@@ -99,6 +99,7 @@
 
 
 
+<script src="/js/cli-typewriter.js" defer></script>
 </head>
 <body>
 
@@ -264,30 +265,30 @@ For performance reasons, it isn&rsquo;t recommended to run a normal x16 lanes GP
 <p>To do: Go over float-point calc and relation to GPUs
 <img src="/images/hpcasia2022-8-fig1.jpg" alt="hpcasia2022-8-fig1.jpg"></p>
 <table>
-  <thead>
-      <tr>
-          <th>Use-Case</th>
-          <th>Performance Focus</th>
-          <th>GPUs</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>HPC / Medical &amp; Scientific Visualization</td>
-          <td>FP64, VRAM, Memory Bandwidth</td>
-          <td>P100, V100, MI100</td>
-      </tr>
-      <tr>
-          <td>AI / ML</td>
-          <td>VRAM, Tensor/Matrix/XMX Cores, Memory Bandwidth, Floating-Point Performance</td>
-          <td>P40, V100, T40, MI50, MI100</td>
-      </tr>
-      <tr>
-          <td>Professional Graphics / Real-Time Rendering &amp; Animation</td>
-          <td>Clock speeds, Ray Tracing Cores, VRAM</td>
-          <td>RTX 8000, RTX 5090</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Use-Case</th>
+					<th>Performance Focus</th>
+					<th>GPUs</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>HPC / Medical &amp; Scientific Visualization</td>
+					<td>FP64, VRAM, Memory Bandwidth</td>
+					<td>P100, V100, MI100</td>
+			</tr>
+			<tr>
+					<td>AI / ML</td>
+					<td>VRAM, Tensor/Matrix/XMX Cores, Memory Bandwidth, Floating-Point Performance</td>
+					<td>P40, V100, T40, MI50, MI100</td>
+			</tr>
+			<tr>
+					<td>Professional Graphics / Real-Time Rendering &amp; Animation</td>
+					<td>Clock speeds, Ray Tracing Cores, VRAM</td>
+					<td>RTX 8000, RTX 5090</td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="hpc--medical--scientific-visualization">HPC / Medical &amp; Scientific Visualization<a href="#hpc--medical--scientific-visualization" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <p>Generally HPC &amp; Visualization tools need high amounts of VRAM to fit large amounts of data/datasets in the GPU to quickly simulate or process specific types of data. You&rsquo;ll generally need GPUs with high FP64 performance because they need to be as accurate as possible to contribute relevant data.
@@ -349,100 +350,100 @@ If you&rsquo;re needing a good GPU for video processing or professional graphics
 <li>Riser cards and slot extenders</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Generation</th>
-          <th>Year</th>
-          <th>Transfer Rate<br>(Per Lane)</th>
-          <th>x1 GB/s</th>
-          <th>x2 GB/s</th>
-          <th>x4 GB/s</th>
-          <th>x8 GB/s</th>
-          <th>x16 GB/s</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1.0</td>
-          <td>2003</td>
-          <td>2.5 GT/s</td>
-          <td>0.25</td>
-          <td>0.5</td>
-          <td>1</td>
-          <td>2</td>
-          <td>4</td>
-      </tr>
-      <tr>
-          <td>2.0</td>
-          <td>2007</td>
-          <td>5.0 GT/s</td>
-          <td>0.5</td>
-          <td>1</td>
-          <td>2</td>
-          <td>4</td>
-          <td>8</td>
-      </tr>
-      <tr>
-          <td>3.0</td>
-          <td>2010</td>
-          <td>8.0 GT/s</td>
-          <td>0.985</td>
-          <td>1.97</td>
-          <td>3.94</td>
-          <td>7.88</td>
-          <td>15.75</td>
-      </tr>
-      <tr>
-          <td>4.0</td>
-          <td>2017</td>
-          <td>16.0 GT/s</td>
-          <td>1.97</td>
-          <td>3.94</td>
-          <td>7.88</td>
-          <td>15.75</td>
-          <td>31.5</td>
-      </tr>
-      <tr>
-          <td>5.0</td>
-          <td>2019</td>
-          <td>32.0 GT/s</td>
-          <td>3.94</td>
-          <td>7.88</td>
-          <td>15.75</td>
-          <td>31.5</td>
-          <td>63</td>
-      </tr>
-      <tr>
-          <td>6.0</td>
-          <td>2022</td>
-          <td>64.0 GT/s</td>
-          <td>7.56</td>
-          <td>15.13</td>
-          <td>30.25</td>
-          <td>60.5</td>
-          <td>121</td>
-      </tr>
-      <tr>
-          <td>7.0</td>
-          <td>2025</td>
-          <td>128.0 GT/s</td>
-          <td>15.13</td>
-          <td>30.25</td>
-          <td>60.5</td>
-          <td>121</td>
-          <td>242</td>
-      </tr>
-      <tr>
-          <td>8.0</td>
-          <td>2028</td>
-          <td>256.0 GT/s</td>
-          <td>30.25</td>
-          <td>60.5</td>
-          <td>121</td>
-          <td>242</td>
-          <td>484</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Generation</th>
+					<th>Year</th>
+					<th>Transfer Rate<br>(Per Lane)</th>
+					<th>x1 GB/s</th>
+					<th>x2 GB/s</th>
+					<th>x4 GB/s</th>
+					<th>x8 GB/s</th>
+					<th>x16 GB/s</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1.0</td>
+					<td>2003</td>
+					<td>2.5 GT/s</td>
+					<td>0.25</td>
+					<td>0.5</td>
+					<td>1</td>
+					<td>2</td>
+					<td>4</td>
+			</tr>
+			<tr>
+					<td>2.0</td>
+					<td>2007</td>
+					<td>5.0 GT/s</td>
+					<td>0.5</td>
+					<td>1</td>
+					<td>2</td>
+					<td>4</td>
+					<td>8</td>
+			</tr>
+			<tr>
+					<td>3.0</td>
+					<td>2010</td>
+					<td>8.0 GT/s</td>
+					<td>0.985</td>
+					<td>1.97</td>
+					<td>3.94</td>
+					<td>7.88</td>
+					<td>15.75</td>
+			</tr>
+			<tr>
+					<td>4.0</td>
+					<td>2017</td>
+					<td>16.0 GT/s</td>
+					<td>1.97</td>
+					<td>3.94</td>
+					<td>7.88</td>
+					<td>15.75</td>
+					<td>31.5</td>
+			</tr>
+			<tr>
+					<td>5.0</td>
+					<td>2019</td>
+					<td>32.0 GT/s</td>
+					<td>3.94</td>
+					<td>7.88</td>
+					<td>15.75</td>
+					<td>31.5</td>
+					<td>63</td>
+			</tr>
+			<tr>
+					<td>6.0</td>
+					<td>2022</td>
+					<td>64.0 GT/s</td>
+					<td>7.56</td>
+					<td>15.13</td>
+					<td>30.25</td>
+					<td>60.5</td>
+					<td>121</td>
+			</tr>
+			<tr>
+					<td>7.0</td>
+					<td>2025</td>
+					<td>128.0 GT/s</td>
+					<td>15.13</td>
+					<td>30.25</td>
+					<td>60.5</td>
+					<td>121</td>
+					<td>242</td>
+			</tr>
+			<tr>
+					<td>8.0</td>
+					<td>2028</td>
+					<td>256.0 GT/s</td>
+					<td>30.25</td>
+					<td>60.5</td>
+					<td>121</td>
+					<td>242</td>
+					<td>484</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Extra Stuff</strong></p>
 <ul>
@@ -642,45 +643,45 @@ If you&rsquo;re needing a good GPU for video processing or professional graphics
 <span style="color: green;">Green</span> = Recommended</p>
 <p>*14th-gen servers are going to start being decommisioned en-masse soon so expect their prices to start dropping significantly around Q4 2026.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Generation</th>
-          <th style="text-align: left">Model Suffix</th>
-          <th style="text-align: left">Models</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">11th Gen</td>
-          <td style="text-align: left"><span style="color: red;">Rx10</span></td>
-          <td style="text-align: left"><code>R410</code>, <code>R610</code>, <code>R710</code>, <code>R910</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">12th Gen</td>
-          <td style="text-align: left"><span style="color: red;">Rx20</span></td>
-          <td style="text-align: left"><code>R320</code>, <code>R620</code>, <code>R720</code>, <code>R820</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">13th Gen</td>
-          <td style="text-align: left"><span style="color: yellow;">Rx30</span></td>
-          <td style="text-align: left"><code>R230</code>, <code>R630</code>, <code>R730</code>, <code>R930</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">14th Gen</td>
-          <td style="text-align: left"><span style="color: green;">Rx40</span></td>
-          <td style="text-align: left"><code>R340</code>, <code>R640</code>, <code>R740</code>, <code>R740xd</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">15th Gen</td>
-          <td style="text-align: left"><span style="color: green;">Rx50</span></td>
-          <td style="text-align: left"><code>R650</code>, <code>R750</code>, <code>R6515</code>, <code>R7525</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">16th Gen</td>
-          <td style="text-align: left"><span style="color: green;">Rx60</span></td>
-          <td style="text-align: left"><code>R660</code>, <code>R760</code>, <code>R6625</code>, <code>R7615</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Generation</th>
+					<th style="text-align: left">Model Suffix</th>
+					<th style="text-align: left">Models</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">11th Gen</td>
+					<td style="text-align: left"><span style="color: red;">Rx10</span></td>
+					<td style="text-align: left"><code>R410</code>, <code>R610</code>, <code>R710</code>, <code>R910</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">12th Gen</td>
+					<td style="text-align: left"><span style="color: red;">Rx20</span></td>
+					<td style="text-align: left"><code>R320</code>, <code>R620</code>, <code>R720</code>, <code>R820</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">13th Gen</td>
+					<td style="text-align: left"><span style="color: yellow;">Rx30</span></td>
+					<td style="text-align: left"><code>R230</code>, <code>R630</code>, <code>R730</code>, <code>R930</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">14th Gen</td>
+					<td style="text-align: left"><span style="color: green;">Rx40</span></td>
+					<td style="text-align: left"><code>R340</code>, <code>R640</code>, <code>R740</code>, <code>R740xd</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">15th Gen</td>
+					<td style="text-align: left"><span style="color: green;">Rx50</span></td>
+					<td style="text-align: left"><code>R650</code>, <code>R750</code>, <code>R6515</code>, <code>R7525</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">16th Gen</td>
+					<td style="text-align: left"><span style="color: green;">Rx60</span></td>
+					<td style="text-align: left"><code>R660</code>, <code>R760</code>, <code>R6625</code>, <code>R7615</code></td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="dell-r700-series">Dell R700 Series<a href="#dell-r700-series" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <p>The R700 series is a 2U system that you can tune the fans to be fairly quiet (for a server). If you put one or two GPUs in it, then yes, it will get close to jet engine loud, but otherwise, I&rsquo;d even be comfortable with the noise if it were my own workstation.
@@ -692,45 +693,45 @@ Server Generations:
 <span style="color: yellow;">Yellow</span> = Acceptable
 <span style="color: green;">Green</span> = Recommended</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Generation</th>
-          <th style="text-align: left">Model Suffix</th>
-          <th style="text-align: left">Models</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">11th Gen</td>
-          <td style="text-align: left"><span style="color: red;">Tx10</span></td>
-          <td style="text-align: left"><code>T110</code>, <code>T310</code>, <code>T410</code>, <code>T610</code>, <code>T710</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">12th Gen</td>
-          <td style="text-align: left"><span style="color: yellow;">Tx20</span></td>
-          <td style="text-align: left"><code>T120</code>, <code>T320</code>, <code>T420</code>, <code>T620</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">13th Gen</td>
-          <td style="text-align: left"><span style="color: yellow;">Tx30</span></td>
-          <td style="text-align: left"><code>T130</code>, <code>T330</code>, <code>T430</code>, <code>T630</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">14th Gen</td>
-          <td style="text-align: left"><span style="color: green;">Tx40</span></td>
-          <td style="text-align: left"><code>T40</code>, <code>T140</code>, <code>T340</code>, <code>T440</code>, <code>T640</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">15th Gen</td>
-          <td style="text-align: left"><span style="color: green;">Tx50</span></td>
-          <td style="text-align: left"><code>T150</code>, <code>T350</code>, <code>T550</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">16th Gen</td>
-          <td style="text-align: left"><span style="color: green;">Tx60</span></td>
-          <td style="text-align: left"><code>T160</code>, <code>T360</code>, <code>T560</code></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Generation</th>
+					<th style="text-align: left">Model Suffix</th>
+					<th style="text-align: left">Models</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">11th Gen</td>
+					<td style="text-align: left"><span style="color: red;">Tx10</span></td>
+					<td style="text-align: left"><code>T110</code>, <code>T310</code>, <code>T410</code>, <code>T610</code>, <code>T710</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">12th Gen</td>
+					<td style="text-align: left"><span style="color: yellow;">Tx20</span></td>
+					<td style="text-align: left"><code>T120</code>, <code>T320</code>, <code>T420</code>, <code>T620</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">13th Gen</td>
+					<td style="text-align: left"><span style="color: yellow;">Tx30</span></td>
+					<td style="text-align: left"><code>T130</code>, <code>T330</code>, <code>T430</code>, <code>T630</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">14th Gen</td>
+					<td style="text-align: left"><span style="color: green;">Tx40</span></td>
+					<td style="text-align: left"><code>T40</code>, <code>T140</code>, <code>T340</code>, <code>T440</code>, <code>T640</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">15th Gen</td>
+					<td style="text-align: left"><span style="color: green;">Tx50</span></td>
+					<td style="text-align: left"><code>T150</code>, <code>T350</code>, <code>T550</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">16th Gen</td>
+					<td style="text-align: left"><span style="color: green;">Tx60</span></td>
+					<td style="text-align: left"><code>T160</code>, <code>T360</code>, <code>T560</code></td>
+			</tr>
+	</tbody>
 </table>
 <h1 id="homelabbing-systems">Homelabbing Systems<a href="#homelabbing-systems" class="hanchor" ariaLabel="Anchor">#</a> </h1>
 <p>Priorities when building a server, software to use, remoting in, security,</p>

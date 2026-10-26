@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.c4581949edab7810737609fc5568852bcd908945f14561e366dcd2300a370545.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a2cc694a9b481f15d41722bffc2cc54eea4c4f74fd9072b0b33253604c22606e.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
@@ -99,6 +99,7 @@
 
 
 
+<script src="/js/cli-typewriter.js" defer></script>
 </head>
 <body>
 
@@ -164,9 +165,11 @@
         <div class="sidebar-list">
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#guide-to-debloating-windows">Guide To Debloating Windows:</a>
+    <li><a href="#a-simple-guide-to-debloating-windows">A Simple Guide to Debloating Windows</a>
       <ul>
-        <li><a href="#the-easier-way">The Easier Way</a></li>
+        <li><a href="#step-1---opening-winutil">Step 1 - Opening WinUtil</a></li>
+        <li><a href="#step-2---applying-tweaks">Step 2 - Applying Tweaks</a></li>
+        <li><a href="#advanced-configuration">Advanced Configuration</a></li>
         <li><a href="#why-windows-gets-bloated">Why Windows gets bloated</a>
           <ul>
             <li><a href="#specific-examples-of-bloatwaretelemetry">Specific examples of bloatware/telemetry</a></li>
@@ -208,23 +211,30 @@
 
 
   <div class="post-content"><div>
-        <p>Work in progress (just like the rest of the site) ¯\_(ツ)_/¯</p>
-<h1 id="guide-to-debloating-windows">Guide To Debloating Windows:<a href="#guide-to-debloating-windows" class="hanchor" ariaLabel="Anchor">#</a> </h1>
-<p>The process of debloating Windows 10/11 is best done on a fresh installation of Windows. I hope you&rsquo;re using W10, and not W11. Use <a href="https://0patch.com/">0Patch</a> to stay up to date with security updates even after Microsoft kills off W10 on <a href="https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281">October 14th, 2025.</a></p>
-<h2 id="the-easier-way">The Easier Way<a href="#the-easier-way" class="hanchor" ariaLabel="Anchor">#</a> </h2>
-<p>To start debloating Windows 10 or 11, I usually start with <a href="https://github.com/ChrisTitusTech/winutil">WinUtil</a> by <a href="https://github.com/ChrisTitusTech/">ChrisTitusTech</a>. <a href="https://winutil.christitus.com/dev/">Documentation</a>.</p>
-<p>1. Run WinUtil</p>
-<p><strong><em>PowerShell</em></strong>: Run <code>irm &quot;https://christitus.com/win&quot; | iex</code> <br />
-
-<strong><em>Command Prompt</em></strong>: <code>powershell -command &quot;irm &quot;https://christitus.com/win&quot; | iex&quot;</code> </p>
+        <h1 id="a-simple-guide-to-debloating-windows">A Simple Guide to Debloating Windows<a href="#a-simple-guide-to-debloating-windows" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Windows comes with with a bunch of extra apps, background tracking that is effectively <a href="https://www.youtube.com/watch?v=j2TyrLZT0r0">spyware</a>, and features nobody wants or asked for (like copilot). I&rsquo;ll show you how to remove a majority of the junk Windows comes with to reduce data collection, remove clutter, and very likely speed up your computer.
+I always run this on any new installation of Windows 10/11, but that isn&rsquo;t required for this process to work. If you want to stay on Windows 10, you can use <a href="https://0patch.com/">0Patch</a> to stay up to date with security updates even after Microsoft kills off W10 on <a href="https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281">October 14th, 2025.</a></p>
+<h2 id="step-1---opening-winutil">Step 1 - Opening WinUtil<a href="#step-1---opening-winutil" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>We&rsquo;ll start by using a free, trusted tool called <a href="https://github.com/ChrisTitusTech/winutil">WinUtil</a> by Chris Titus Tech. This safely automates most of the cleanup.
+Here&rsquo;s the <a href="https://winutil.christitus.com/dev/">documentation</a> if you want to read further.</p>
+<ol>
+<li>Press the <strong>Windows</strong> key, type <code>powershell</code>.</li>
+<li>Right-click <strong>Windows PowerShell</strong> and select <strong>Run as administrator</strong>.</li>
+<li>Copy and paste the command below<br>
+<code>irm &quot;https://christitus.com/win&quot; | iex</code></li>
+</ol>
 <p><img src="/images/launchpowershell.png" alt=""></p>
-<p>Any of those three options (should you have them) will launch PowerShell</p>
+<p>Any of these three options (should you have them) will launch PowerShell.</p>
 <p><img src="/images/powershellchrisutildebloatcommand.png" alt=""></p>
-<p>My terminal may look different than yours, but the command is still the same. Make sure you&rsquo;re using PowerShell and NOT Command Prompt.</p>
-<p>2. Navigate to the “Tweaks” tab</p>
+<p>It may take a moment to load the application.</p>
+<h2 id="step-2---applying-tweaks">Step 2 - Applying Tweaks<a href="#step-2---applying-tweaks" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Once WinUtil opens, select the &lsquo;Tweaks&rsquo; tab at the top.</p>
 <p><img src="/images/tweaks-tab-dark_hu_75e31561a8cfb84.webp" alt=""></p>
-<p>If you&rsquo;re new to using this tool and don&rsquo;t know what most of the options mean, I&rsquo;d just select “Standard” from the recommended selections at the top and then click “Run Tweaks&quot;<br>
-Here are the tweaks in WinUtil and what I&rsquo;d recommend for the average user to choose:</p>
+<p>If you&rsquo;re new to this tool and don&rsquo;t know what most of the options mean, select &lsquo;Standard&rsquo; from the recommended selections at the top and then click &lsquo;Run Tweaks&rsquo;<br>
+Once it&rsquo;s done processing, restart your computer for the changes to take effect.</p>
+<hr>
+<h2 id="advanced-configuration">Advanced Configuration<a href="#advanced-configuration" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>If you want to be more detailed, here are the options I&rsquo;d recommend for the average user:</p>
 <ul>
 <li>
 <p>Select: <strong>Create Restore Point</strong> <br />

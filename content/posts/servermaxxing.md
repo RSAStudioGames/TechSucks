@@ -36,7 +36,10 @@ If you want to run an AI model on your own hardware, decommissioned data center 
 
 There isn't much support yet for NPUs/TPUs/APUs yet as both the software and hardware ecosystem in the consumer market isn't that mature yet. I recently found an inference engine — [Lemonade Server](https://lemonade-server.ai/) — which as of now, has support for the Ryzen AI 300 Series of NPUs. When it comes to TPUs, you can find hardware such as Google Coral for smaller-scale ML projects, but you won't be running Stable Diffusion on it without a fair bit of tweaking.
 
-Nvidia has [CUDA](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html), AMD has [ROCm](https://rocm.docs.amd.com/en/latest/), and Intel has [OneAPI](https://www.intel.com/content/www/us/en/developer/articles/guide/installation-guide-for-oneapi-toolkits.html). CUDA is the most mature with the most well-developed features and support. ROCm is lagging behind a bit but is quickly catching up to CUDA and Nvidia's overall performance in the AI arena. OneAPI... Well, Intel has a long way to go, but in all fairness, they only joined the GPU market fairly recently in 2019 with [Gaudi](https://www.intel.com/content/www/us/en/products/details/processors/ai-accelerators/gaudi1.html) compared to Nvidia and AMD's 25+ years headstart.
+Nvidia has [CUDA](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html), AMD has [ROCm](https://rocm.docs.amd.com/en/latest/), and Intel has [OneAPI](https://www.intel.com/content/www/us/en/developer/articles/guide/installation-guide-for-oneapi-toolkits.html).  
+CUDA is the most mature with the most well-developed features and support.  
+ROCm is lagging behind a bit but is quickly catching up to CUDA and Nvidia's overall performance in the AI arena.  
+OneAPI... well, Intel has a long way to go, but in all fairness, they only joined the GPU market fairly recently in 2019 with [Gaudi](https://www.intel.com/content/www/us/en/products/details/processors/ai-accelerators/gaudi1.html) compared to Nvidia and AMD's 25+ years headstart.
 </br>
 
 | Manufacturer | Data Center Model | Architecture | Consumer Model |
@@ -100,10 +103,13 @@ Above Image: NVSwitch chips for managing the switching fabric for 8x H200s
 - Models that fit on a single GPU show no throughput benefit from multi-GPU splitting.
 - I do not recommend using 8BPW/Q8 model quantizations unless it is under 10B parameters as you will not notice much of a quality drop from 6BPW/Q6. Using a lower quant will also be somewhat faster and use less VRAM.
 
+---
+
 # V100MAXXING
 
 Alright so this is my spin on the V100Maxxing method. The high memory bandwidth is what makes this build viable. At the end of the day, you could either buy one 4090 for about $2500 and get 24GB of VRAM, not including the cost of the rest of the system components. Or, you could run this setup for about $1800 (if you're patient and know where to look) and get 64GB of VRAM with slightly faster inference than a 4090 in *most* general inference use-cases, but not all. Keep in mind Flash Attention 2 does not support Volta GPUs due to their [tensor shape](https://github.com/Dao-AILab/flash-attention/issues/148#issuecomment-1574090582), so you'll have to build it yourself or use an alternative. If you're interested in reading up on the V100/Titan V/Volta Architecture, here's the [whitepaper](https://images.nvidia.com/content/volta-architecture/pdf/volta-architecture-whitepaper.pdf). {{< linebreak >}}
-This can run most models up to around 100B parameters when quantized. I cover quantization more on [/Machine Learning](https://techsucks.org/en/machine-learning)
+This server build can run most models up to around 100B parameters when quantized.  
+I cover quantization more on [/Machine Learning](https://techsucks.org/posts/machine-learning)
 
 ## Hardware
 
@@ -238,6 +244,15 @@ You have SXM2 versions of the A100 available with 40GB of VRAM. These are for au
 	- This is an MoE model with only 3B active parameters which is why it is significantly faster than Qwen 3 32B.
 </br>
 
+- [Qwen 3.6 35B-A3B](https://huggingface.co/bartowski/Qwen_Qwen3.6-35B-A3B-GGUF)
+	- GGUF - Q6 K L
+	- Text Generation Web UI (llama.cpp)
+	- Context Length: 65,565
+	- ~32 token/s to generate ~1500 tokens (empty context)
+	- ~18 token/s to generate ~1500 tokens (15K context)
+	- ~30GB VRAM free
+	- MoE model with only 3B active parameters.
+  
 - [DeepSeek R1 Distil Qwen 32B](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF/blob/main/DeepSeek-R1-Distill-Qwen-32B-Q5_K_M.gguf)
 	- GGUF - Q5 K M
 	- Text Generation Web UI (llama.cpp)
@@ -329,8 +344,11 @@ Dual SXM2 NVLink board with PCIe cards that connect to it using MCIO x4 cables
 
 </br>
 
+---
+
 # Toaster Oven
 This is a triple Mi100 build that gets you 96GB of VRAM with the potential to upgrade that further when using a tower case if you have extra expansion slots available. Pair that with an xGMI bridge and you're golden.
+{{< img src="/images/rocm-toaster.webp" width="600" alt="My Server" >}}
 
 ## Systems
 Dell R7425/R7525 {{< linebreak >}}
@@ -416,6 +434,8 @@ It looks to be optimized version of vLLM for the MI100. I have not used vLLM, bu
 
 As you can see from the average speed of 4 tokens/sec, the memory bandwidth is the primary limitation here. My motherboard is not able to add a 4th card (easily) so I can't use the infinity fabric bridge (which requires 4 cards) to boost the bandwidth. I did not think to test MoE models at the time, but those would be ideal in situations where your inter-GPU communication is limited by PCIe. If it was a small model that could fit on a single card the speeds would be significantly higher, but take that same model and split it over multiple cards (without the GPU bridge) and your speeds would drop. The more context used, the further those speeds would drop. With empty context, I would get 6-8 tokens per second and it quickly drops from there.
 
+--
+
 # Miqumaxx Box
 
 So you don't want to deal with the volatile GPU market, running out of power on a PSU, needing multiple PSUs, getting 20 amp power installed, need a ton of loud jet-engine fans, raising your house's average temperature, or running out of PCI lanes, then this is for you. {{< linebreak >}}
@@ -445,7 +465,7 @@ Make sure the xGMI is set to full speed (x4) in the bios. (xGMI is AMD's Infinit
 
 Since you'll have multiple CPUs, be sure to configure your NUMA nodes, this will give you a bit of a performance boost in most inference cases.
 
-
+---
 
 # Mikubox
 
@@ -475,12 +495,16 @@ You can support ~70B MoE model just on the VRAM alone at around 4 bits per weigh
 
 With dense models, you can hit around 8-10 tokens per second on llama 3 70B at Q5KM with 4K context. The more context you use, the slower it will get as memory bandwidth usage increases quickly. Since the P40 doesn't support NVLink, much less even SLI, there is no way to improve this besides using NVLinked P100s which also wouldn't be possible in this form factor and it would also cut your VRAM in at most, half. (P100s are 12GB/16GB VRAM cards)
 
+---
 
 # Tetobox
 Intel has a ton of new GPUs coming out soon relatively good pricing. This will definitely destabilize Ngreedia & AMD from their space in the AI GPU market if the launch goes well. 
 
 Next up: Intel GPU build. Multi A/B series GPU setup. The Pro B50/B60 GPUs look incredible for their price to performance ratio right now, especially when compared to their much more expensive counterparts. {{< linebreak >}}
 AI inference on intel GPUs may not have the most mature tech stack currently, but it's still a good contender due to its price-to-performance and generous VRAM.
+
+---
+
 # DEBTMAXXING
 Nothing special. It works, fairly stable, but still probably wouldnt recommend just due to the pricing. {{< linebreak >}}
 Next up: Mac workstation.

@@ -4,7 +4,7 @@ date = "2025-12-23T15:07:24Z"
 author = "RSA"
 tags = ["Privacy"]
 keywords = ["Privacy"]
-description = "A guide for the layman who cares about their digital privacy."
+description = "Owning your digital life."
 showFullContent = false
 readingTime = false
 hideComments = false
@@ -13,8 +13,7 @@ hideComments = false
 > Work in progress ¯\\\_(ツ)\_/¯
 {.is-info}
 
-
-The “I have nothing to hide" argument annoys me so much because it shows that tech companies and the government have done such a good at convincing people that you only need privacy if you're doing something malicious.
+The “I have nothing to hide" argument annoys me because it shows that tech companies and the government have done such a good at convincing people that you only need privacy if you're doing something malicious.
 
 This is a HIGHLY recommended read: [https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/](https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/)
 

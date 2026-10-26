@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.c4581949edab7810737609fc5568852bcd908945f14561e366dcd2300a370545.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a2cc694a9b481f15d41722bffc2cc54eea4c4f74fd9072b0b33253604c22606e.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
@@ -99,6 +99,7 @@
 
 
 
+<script src="/js/cli-typewriter.js" defer></script>
 </head>
 <body>
 
@@ -243,181 +244,163 @@
 <p>Model quantization is a method of reducing the size of an existing AI model (LLM, diffusion, video gen, etc) while maintaining accuracy. It works by reducing the precision of the weights and activations with a loss in quality proportional to the quantization level and method. Quantizing a model allows for larger models to be used with less of a computing requirment. For example, Llama 3.3 70B FP16 is about 140GB in size and would require a similar amount of memory to run. Quantizing it to 4 bit precision would only require about 40GB of memory to run. The preicision size is directly proportional to the memory required to run a model.
 To measure the change in quality from a quantized model compared to its unquantized form, you can measure its perplexity (PPL). <br />
 </p>
-<p>Here is a table comparing the different Llama.cpp quantization levels of Llama 3 70B to its unquantized F16 form. <a href="https://github.com/ggml-org/llama.cpp/pull/6745#issuecomment-2093892514">Source</a>
-<style>
-  details.terminal-collapse summary {
-    cursor: pointer;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: bold;
-    outline: none;
-  }
-
-</style>
-
-<details class="terminal-collapse">
-    <summary>View Table</summary>
-    <div class="terminal-content">
-        <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Quantization</th>
-          <th style="text-align: left">Size (GiB)</th>
-          <th style="text-align: left">Perplexity (wiki.test)</th>
-          <th style="text-align: left">Delta (FP16)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">IQ1_S</td>
-          <td style="text-align: left">14.29</td>
-          <td style="text-align: left">9.8655 +/- 0.0625</td>
-          <td style="text-align: left">248.51%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ1_M</td>
-          <td style="text-align: left">15.60</td>
-          <td style="text-align: left">8.5193 +/- 0.0530</td>
-          <td style="text-align: left">200.95%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ2_XXS</td>
-          <td style="text-align: left">17.79</td>
-          <td style="text-align: left">6.6705 +/- 0.0405</td>
-          <td style="text-align: left">135.64%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ2_XS</td>
-          <td style="text-align: left">19.69</td>
-          <td style="text-align: left">5.7486 +/- 0.0334</td>
-          <td style="text-align: left">103.07%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ2_S</td>
-          <td style="text-align: left">20.71</td>
-          <td style="text-align: left">5.5215 +/- 0.0318</td>
-          <td style="text-align: left">95.05%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q2_K_S</td>
-          <td style="text-align: left">22.79</td>
-          <td style="text-align: left">5.4334 +/- 0.0325</td>
-          <td style="text-align: left">91.94%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ2_M</td>
-          <td style="text-align: left">22.46</td>
-          <td style="text-align: left">4.8959 +/- 0.0276</td>
-          <td style="text-align: left">72.95%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q2_K</td>
-          <td style="text-align: left">24.56</td>
-          <td style="text-align: left">4.7763 +/- 0.0274</td>
-          <td style="text-align: left">68.73%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ3_XXS</td>
-          <td style="text-align: left">25.58</td>
-          <td style="text-align: left">3.9671 +/- 0.0211</td>
-          <td style="text-align: left">40.14%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ3_XS</td>
-          <td style="text-align: left">27.29</td>
-          <td style="text-align: left">3.7210 +/- 0.0191</td>
-          <td style="text-align: left">31.45%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q3_K_S</td>
-          <td style="text-align: left">28.79</td>
-          <td style="text-align: left">3.6502 +/- 0.0192</td>
-          <td style="text-align: left">28.95%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ3_S</td>
-          <td style="text-align: left">28.79</td>
-          <td style="text-align: left">3.4698 +/- 0.0174</td>
-          <td style="text-align: left">22.57%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ3_M</td>
-          <td style="text-align: left">29.74</td>
-          <td style="text-align: left">3.4402 +/- 0.0171</td>
-          <td style="text-align: left">21.53%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q3_K_M</td>
-          <td style="text-align: left">31.91</td>
-          <td style="text-align: left">3.3617 +/- 0.0172</td>
-          <td style="text-align: left">18.75%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q3_K_L</td>
-          <td style="text-align: left">34.59</td>
-          <td style="text-align: left">3.3016 +/- 0.0168</td>
-          <td style="text-align: left">16.63%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ4_XS</td>
-          <td style="text-align: left">35.30</td>
-          <td style="text-align: left">3.0310 +/- 0.0149</td>
-          <td style="text-align: left">7.07%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">IQ4_NL</td>
-          <td style="text-align: left">37.30</td>
-          <td style="text-align: left">3.0261 +/- 0.0149</td>
-          <td style="text-align: left">6.90%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q4_K_S</td>
-          <td style="text-align: left">37.58</td>
-          <td style="text-align: left">3.0050 +/- 0.0148</td>
-          <td style="text-align: left">6.15%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q4_K_M</td>
-          <td style="text-align: left">39.60</td>
-          <td style="text-align: left">2.9674 +/- 0.0146</td>
-          <td style="text-align: left">4.83%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q5_K_S</td>
-          <td style="text-align: left">45.32</td>
-          <td style="text-align: left">2.8843 +/- 0.0141</td>
-          <td style="text-align: left">1.89%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q5_K_M</td>
-          <td style="text-align: left">46.52</td>
-          <td style="text-align: left">2.8656 +/- 0.0139</td>
-          <td style="text-align: left">1.23%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q6_K</td>
-          <td style="text-align: left">53.91</td>
-          <td style="text-align: left">2.8441 +/- 0.0138</td>
-          <td style="text-align: left">0.47%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Q8_0</td>
-          <td style="text-align: left">69.83</td>
-          <td style="text-align: left">2.8316 +/- 0.0138</td>
-          <td style="text-align: left">0.03%</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">F16</td>
-          <td style="text-align: left">131.43</td>
-          <td style="text-align: left">2.8308 +/- 0.0138</td>
-          <td style="text-align: left">0.00%</td>
-      </tr>
-  </tbody>
+<p>Below is a table comparing the different Llama.cpp quantization levels of Llama 3 70B to its unquantized F16 form. <a href="https://github.com/ggml-org/llama.cpp/pull/6745#issuecomment-2093892514">Source</a></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Quantization</th>
+					<th style="text-align: left">Size (GiB)</th>
+					<th style="text-align: left">Perplexity (wiki.test)</th>
+					<th style="text-align: left">Delta (FP16)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">IQ1_S</td>
+					<td style="text-align: left">14.29</td>
+					<td style="text-align: left">9.8655 +/- 0.0625</td>
+					<td style="text-align: left">248.51%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ1_M</td>
+					<td style="text-align: left">15.60</td>
+					<td style="text-align: left">8.5193 +/- 0.0530</td>
+					<td style="text-align: left">200.95%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ2_XXS</td>
+					<td style="text-align: left">17.79</td>
+					<td style="text-align: left">6.6705 +/- 0.0405</td>
+					<td style="text-align: left">135.64%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ2_XS</td>
+					<td style="text-align: left">19.69</td>
+					<td style="text-align: left">5.7486 +/- 0.0334</td>
+					<td style="text-align: left">103.07%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ2_S</td>
+					<td style="text-align: left">20.71</td>
+					<td style="text-align: left">5.5215 +/- 0.0318</td>
+					<td style="text-align: left">95.05%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q2_K_S</td>
+					<td style="text-align: left">22.79</td>
+					<td style="text-align: left">5.4334 +/- 0.0325</td>
+					<td style="text-align: left">91.94%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ2_M</td>
+					<td style="text-align: left">22.46</td>
+					<td style="text-align: left">4.8959 +/- 0.0276</td>
+					<td style="text-align: left">72.95%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q2_K</td>
+					<td style="text-align: left">24.56</td>
+					<td style="text-align: left">4.7763 +/- 0.0274</td>
+					<td style="text-align: left">68.73%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ3_XXS</td>
+					<td style="text-align: left">25.58</td>
+					<td style="text-align: left">3.9671 +/- 0.0211</td>
+					<td style="text-align: left">40.14%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ3_XS</td>
+					<td style="text-align: left">27.29</td>
+					<td style="text-align: left">3.7210 +/- 0.0191</td>
+					<td style="text-align: left">31.45%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q3_K_S</td>
+					<td style="text-align: left">28.79</td>
+					<td style="text-align: left">3.6502 +/- 0.0192</td>
+					<td style="text-align: left">28.95%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ3_S</td>
+					<td style="text-align: left">28.79</td>
+					<td style="text-align: left">3.4698 +/- 0.0174</td>
+					<td style="text-align: left">22.57%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ3_M</td>
+					<td style="text-align: left">29.74</td>
+					<td style="text-align: left">3.4402 +/- 0.0171</td>
+					<td style="text-align: left">21.53%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q3_K_M</td>
+					<td style="text-align: left">31.91</td>
+					<td style="text-align: left">3.3617 +/- 0.0172</td>
+					<td style="text-align: left">18.75%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q3_K_L</td>
+					<td style="text-align: left">34.59</td>
+					<td style="text-align: left">3.3016 +/- 0.0168</td>
+					<td style="text-align: left">16.63%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ4_XS</td>
+					<td style="text-align: left">35.30</td>
+					<td style="text-align: left">3.0310 +/- 0.0149</td>
+					<td style="text-align: left">7.07%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">IQ4_NL</td>
+					<td style="text-align: left">37.30</td>
+					<td style="text-align: left">3.0261 +/- 0.0149</td>
+					<td style="text-align: left">6.90%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q4_K_S</td>
+					<td style="text-align: left">37.58</td>
+					<td style="text-align: left">3.0050 +/- 0.0148</td>
+					<td style="text-align: left">6.15%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q4_K_M</td>
+					<td style="text-align: left">39.60</td>
+					<td style="text-align: left">2.9674 +/- 0.0146</td>
+					<td style="text-align: left">4.83%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q5_K_S</td>
+					<td style="text-align: left">45.32</td>
+					<td style="text-align: left">2.8843 +/- 0.0141</td>
+					<td style="text-align: left">1.89%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q5_K_M</td>
+					<td style="text-align: left">46.52</td>
+					<td style="text-align: left">2.8656 +/- 0.0139</td>
+					<td style="text-align: left">1.23%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q6_K</td>
+					<td style="text-align: left">53.91</td>
+					<td style="text-align: left">2.8441 +/- 0.0138</td>
+					<td style="text-align: left">0.47%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Q8_0</td>
+					<td style="text-align: left">69.83</td>
+					<td style="text-align: left">2.8316 +/- 0.0138</td>
+					<td style="text-align: left">0.03%</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">F16</td>
+					<td style="text-align: left">131.43</td>
+					<td style="text-align: left">2.8308 +/- 0.0138</td>
+					<td style="text-align: left">0.00%</td>
+			</tr>
+	</tbody>
 </table>
-
-    </div>
-</details>
-</p>
 <p>In the table, the lower the precision is, the higher the perplexity. Perplexity values can be different depending on the model, its architecture, quantization method used, etc. I personally would not go lower than 4 bits per weight (about Q4 or Q4_K_M within Llama.cpp quantization).
 I prefer using ExLlama quantization as it tends to be more performant and accurate than Llama.cpp. The trade-off is that llama.cpp allows you to use both your VRAM and RAM together whereas ExLlama is fixed to the VRAM. EXL3 is the latest version of the Exllama quantization method and has fairly good quality even at low precision.</p>
 <h1 id="tools">Tools<a href="#tools" class="hanchor" ariaLabel="Anchor">#</a> </h1>

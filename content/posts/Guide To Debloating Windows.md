@@ -10,36 +10,41 @@ readingTime = false
 hideComments = false
 +++
 
+# A Simple Guide to Debloating Windows
 
-Work in progress (just like the rest of the site) ¯\\\_(ツ)\_/¯
+Windows comes with with a bunch of extra apps, background tracking that is effectively [spyware](https://www.youtube.com/watch?v=j2TyrLZT0r0), and features nobody wants or asked for (like copilot). I'll show you how to remove a majority of the junk Windows comes with to reduce data collection, remove clutter, and very likely speed up your computer.
+I always run this on any new installation of Windows 10/11, but that isn't required for this process to work. If you want to stay on Windows 10, you can use [0Patch](https://0patch.com/) to stay up to date with security updates even after Microsoft kills off W10 on [October 14th, 2025.](https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281)
 
-# Guide To Debloating Windows:
+## Step 1 - Opening WinUtil
+We'll start by using a free, trusted tool called [WinUtil](https://github.com/ChrisTitusTech/winutil) by Chris Titus Tech. This safely automates most of the cleanup.
+Here's the [documentation](https://winutil.christitus.com/dev/) if you want to read further.
 
-The process of debloating Windows 10/11 is best done on a fresh installation of Windows. I hope you're using W10, and not W11. Use [0Patch](https://0patch.com/) to stay up to date with security updates even after Microsoft kills off W10 on [October 14th, 2025.](https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281)
-
-## The Easier Way
-
-To start debloating Windows 10 or 11, I usually start with [WinUtil](https://github.com/ChrisTitusTech/winutil) by [ChrisTitusTech](https://github.com/ChrisTitusTech/). [Documentation](https://winutil.christitus.com/dev/).
-
-1\. Run WinUtil
-
-**_PowerShell_**: Run `irm "https://christitus.com/win" | iex` {{< linebreak >}}
-**_Command Prompt_**: `powershell -command "irm "https://christitus.com/win" | iex"` 
+1. Press the **Windows** key, type `powershell`.
+2. Right-click **Windows PowerShell** and select **Run as administrator**.
+3. Copy and paste the command below  
+`irm "https://christitus.com/win" | iex`
 
 ![](images/launchpowershell.png)
 
-Any of those three options (should you have them) will launch PowerShell
+Any of these three options (should you have them) will launch PowerShell.
 
 ![](images/powershellchrisutildebloatcommand.png)
 
-My terminal may look different than yours, but the command is still the same. Make sure you're using PowerShell and NOT Command Prompt.
+It may take a moment to load the application.
 
-2\. Navigate to the “Tweaks” tab
+## Step 2 - Applying Tweaks
+Once WinUtil opens, select the 'Tweaks' tab at the top.
 
 ![](images/tweaks-tab-dark_hu_75e31561a8cfb84.webp)
 
-If you're new to using this tool and don't know what most of the options mean, I'd just select “Standard” from the recommended selections at the top and then click “Run Tweaks"  
-Here are the tweaks in WinUtil and what I'd recommend for the average user to choose:
+If you're new to this tool and don't know what most of the options mean, select 'Standard' from the recommended selections at the top and then click 'Run Tweaks'  
+Once it's done processing, restart your computer for the changes to take effect.
+
+---
+
+## Advanced Configuration
+
+If you want to be more detailed, here are the options I'd recommend for the average user:
 
 -   Select: **Create Restore Point** {{< linebreak >}}
     Note: This creates a restore point in case something ever goes wrong on your PC, you have a good point to restore.

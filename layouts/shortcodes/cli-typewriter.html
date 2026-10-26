@@ -1,0 +1,137 @@
+{{- $dataFile := .Get "dataFile" | default "words" -}}
+{{- $artData := .Site.Data.art -}}
+
+{{- $words := slice "Tech" -}}
+{{- if $artData -}}
+  {{- $data := index .Site.Data $dataFile -}}
+  {{- if and $data (isset $data "prefixes") -}}
+    {{- range $data.prefixes -}}
+      {{- if ne . "Tech" -}}
+        {{- $words = $words | append (printf "%s" .) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $suffix := .Get "suffix" -}}
+{{- if not $suffix -}}
+  {{- if and $artData (isset $artData "suffix") -}}
+    {{- $suffix = $artData.suffix -}}
+  {{- else -}}
+    {{- $suffix = "Sucks" -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $fontSize := .Get "fontSize" | default "" -}}
+{{- $parsedFontSize := "16px" -}}
+{{- if ne $fontSize "" -}}
+  {{- if or (hasSuffix $fontSize "px") (hasSuffix $fontSize "rem") (hasSuffix $fontSize "em") (hasSuffix $fontSize "vw") -}}
+    {{- $parsedFontSize = $fontSize -}}
+  {{- else -}}
+    {{- $parsedFontSize = printf "%spx" $fontSize -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $lineHeight := .Get "lineHeight" | default "1.1" -}}
+{{- $typeSpeed := .Get "typeSpeed" | default "100" -}}
+{{- $deleteSpeed := .Get "deleteSpeed" | default "60" -}}
+{{- $pauseBeforeDelete := .Get "pauseBeforeDelete" | default "2000" -}}
+{{- $pauseAfterType := .Get "pauseAfterType" | default "1500" -}}
+{{- $gradientStart := .Get "gradientStart" | default "#00d2ff" -}}
+{{- $gradientEnd := .Get "gradientEnd" | default "#3a7bd5" -}}
+{{- $center := .Get "center" | default "false" -}}
+{{- $fadein := .Get "fadein" | default "false" -}}
+
+{{- $uniqueId := printf "cli-tw-%s" (substr (sha1 .Page.RelPermalink) 0 8) -}}
+
+{{- $initialWord := index $words 0 -}}
+{{- $prefixLines := slice "" -}}
+{{- $cursorLines := slice "█" -}}
+{{- $suffixLines := slice "" -}}
+
+{{- if $artData -}}
+  {{- $pa := index $artData "prefixarts" | default (index $artData "prefixArts") -}}
+  {{- if $pa -}}
+    {{- $art := index $pa $initialWord | default (index $pa (lower $initialWord)) -}}
+    {{- if $art -}}
+      {{- $prefixLines = $art -}}
+    {{- end -}}
+  {{- end -}}
+  
+  {{- $cl := index $artData "cursorlines" | default (index $artData "cursorLines") -}}
+  {{- if $cl -}}
+    {{- $cursorLines = $cl -}}
+  {{- end -}}
+  
+  {{- $sl := index $artData "suffixlines" | default (index $artData "suffixLines") -}}
+  {{- if $sl -}}
+    {{- $suffixLines = $sl -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $justifyTarget := "flex-start" -}}
+{{- if eq $center "true" -}}
+  {{- $justifyTarget = "center" -}}
+{{- end -}}
+
+<div id="{{ $uniqueId }}" class="cli-typewriter-wrapper"
+     style="display: flex; width: 100%; justify-content: {{ $justifyTarget }}; --line-height: {{ $lineHeight }}; --parsed-font-size: {{ $parsedFontSize }}; --gradient-start: {{ $gradientStart }}; --gradient-end: {{ $gradientEnd }}; font-size: min(var(--parsed-font-size), 2.5vw);"
+     data-words="{{ delimit $words "," }}"
+     data-suffix="{{ $suffix }}"
+     data-font-size="{{ $fontSize }}"
+     data-line-height="{{ $lineHeight }}"
+     data-type-speed="{{ $typeSpeed }}"
+     data-delete-speed="{{ $deleteSpeed }}"
+     data-pause-before-delete="{{ $pauseBeforeDelete }}"
+     data-pause-after-type="{{ $pauseAfterType }}"
+     data-gradient-start="{{ $gradientStart }}"
+     data-gradient-end="{{ $gradientEnd }}"
+     data-center="{{ $center }}"
+     data-fadein="{{ $fadein }}">
+  
+  <div class="cli-tw-container" aria-hidden="true" style="display: flex; flex-direction: row; align-items: flex-start; font-family: 'ANSI Shadow', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace; line-height: var(--line-height); gap: 1ch; max-width: 100%; overflow: hidden;">
+    <!-- If data fails to load, conditionally rendering ensures no empty gradient box is mapped -->
+    {{ if gt (len (index $prefixLines 0)) 0 }}
+      <pre class="cli-typewriter-prefix cli-tw-pre" style="margin: 0; padding: 0; white-space: pre; color: var(--gradient-start); background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">{{ delimit $prefixLines "\n" }}</pre>
+      <pre class="cli-typewriter-cursor cli-tw-pre" style="margin: 0; padding: 0; white-space: pre; color: var(--gradient-start); background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">{{ delimit $cursorLines "\n" }}</pre>
+      <pre class="cli-typewriter-suffix cli-tw-pre" style="margin: 0; padding: 0; white-space: pre; color: var(--gradient-start); background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">{{ delimit $suffixLines "\n" }}</pre>
+    {{ end }}
+  </div>
+  
+  <span class="cli-typewriter-sr" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;" aria-live="polite">{{ $initialWord }} {{ $suffix }}</span>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var wrapper = document.getElementById('{{ $uniqueId }}');
+    if (!wrapper) return;
+
+    var ds = wrapper.dataset;
+    var rawWords = ds.words.split(',');
+    
+    // Default art.json URL fallback if not mapped otherwise
+    fetch('/data/art.json')
+      .then(function(r) { return r.json(); })
+      .then(function(artData) {
+        if (!window.CliTypewriter) {
+           console.error("CliTypewriter class not found. Ensure cli-typewriter.js is loaded.");
+           return;
+        }
+        new CliTypewriter(wrapper, {
+          artData: artData,
+          words: rawWords,
+          suffix: ds.suffix,
+          fontSize: ds.fontSize || null,
+          lineHeight: parseFloat(ds.lineHeight),
+          typeSpeed: parseInt(ds.typeSpeed, 10),
+          deleteSpeed: parseInt(ds.deleteSpeed, 10),
+          pauseBeforeDelete: parseInt(ds.pauseBeforeDelete, 10),
+          pauseAfterType: parseInt(ds.pauseAfterType, 10),
+          gradientStart: ds.gradientStart,
+          gradientEnd: ds.gradientEnd,
+          center: ds.center === "true",
+          fadeIn: ds.fadein === "true"
+        });
+      });
+  });
+</script>

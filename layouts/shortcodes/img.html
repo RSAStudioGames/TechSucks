@@ -1,3 +1,18 @@
-{{ $image := resources.Get (.Get "src") }}
-{{ $scaled := $image.Resize (printf "%sx" (.Get "width")) }}
-<img src="{{ $scaled.RelPermalink }}" width="{{ .Get "width" }}" alt="{{ .Get "alt" }}">
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" }}
+{{ $alt := .Get "alt" }}
+
+{{ if $src }}
+  {{ if fileExists (path.Join "static" $src) }}
+    <img 
+      src="{{ $src | relURL }}" 
+      {{ with $alt }}alt="{{ . }}"{{ end }}
+      {{ if $width }}
+        width="{{ $width }}" 
+        data-width="{{ $width }}" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      {{ end }}
+    >
+  {{ end }}
+{{ end }}

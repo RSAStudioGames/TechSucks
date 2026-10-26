@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.155.3">
   
     <title>TechSucks</title>
   
@@ -25,7 +24,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.c4581949edab7810737609fc5568852bcd908945f14561e366dcd2300a370545.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
@@ -52,7 +51,7 @@
   <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
 
   
-  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a2cc694a9b481f15d41722bffc2cc54eea4c4f74fd9072b0b33253604c22606e.css">
 
   
   <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
@@ -100,6 +99,8 @@
 
 
 
+<script src="/js/cli-typewriter.js" defer></script>
+	<meta name="generator" content="Hugo 0.168.0">
 </head>
 <body>
 
@@ -173,62 +174,81 @@
         
   
     <div class="index-content ">
-      
+      <div id="cli-tw-42099b4a" class="cli-typewriter-wrapper"
+     style="display: flex; width: 100%; justify-content: flex-start; --line-height: 1.1; --parsed-font-size: 16px; --gradient-start: #00d2ff; --gradient-end: #3a7bd5; font-size: min(var(--parsed-font-size), 2.5vw);"
+     data-words="Tech,Google,Microsoft,Apple,OpenAI,Meta,Anthropic,Epic Games,Twitter,YouTube,Facebook,TikTok,Amazon,Ubisoft,NVIDIA,AMD,Windows,MacOS,Netflix,Llama 4,Claude,Grok,ChatGPT,Gemini"
+     data-suffix="Sucks"
+     data-font-size=""
+     data-line-height="1.1"
+     data-type-speed="100"
+     data-delete-speed="60"
+     data-pause-before-delete="2000"
+     data-pause-after-type="1500"
+     data-gradient-start="#00d2ff"
+     data-gradient-end="#3a7bd5"
+     data-center="true"
+     data-fadein="false">
+  <div class="cli-tw-container" aria-hidden="true" style="display: flex; flex-direction: row; align-items: flex-start; font-family: 'ANSI Shadow', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace; line-height: var(--line-height); gap: 1ch; max-width: 100%; overflow: hidden;">
+  </div>
+<p><span class="cli-typewriter-sr" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;" aria-live="polite">Tech Sucks</span></p>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var wrapper = document.getElementById('cli-tw-42099b4a');
+    if (!wrapper) return;
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-
-
-
-
-<img src="/images/techsucks1.svg" style="border: none !important; box-shadow: none !important; background: transparent !important;display: block; margin-left: auto; margin-right: auto;width: 900px;" alt="SVG Image">
-
+    var ds = wrapper.dataset;
+    var rawWords = ds.words.split(',');
+    
+    
+    fetch('/data/art.json')
+      .then(function(r) { return r.json(); })
+      .then(function(artData) {
+        if (!window.CliTypewriter) {
+           console.error("CliTypewriter class not found. Ensure cli-typewriter.js is loaded.");
+           return;
+        }
+        new CliTypewriter(wrapper, {
+          artData: artData,
+          words: rawWords,
+          suffix: ds.suffix,
+          fontSize: ds.fontSize || null,
+          lineHeight: parseFloat(ds.lineHeight),
+          typeSpeed: parseInt(ds.typeSpeed, 10),
+          deleteSpeed: parseInt(ds.deleteSpeed, 10),
+          pauseBeforeDelete: parseInt(ds.pauseBeforeDelete, 10),
+          pauseAfterType: parseInt(ds.pauseAfterType, 10),
+          gradientStart: ds.gradientStart,
+          gradientEnd: ds.gradientEnd,
+          center: ds.center === "true",
+          fadeIn: ds.fadein === "true"
+        });
+      });
+  });
+</script>
 <hr>
 <p><em><div style="text-align: center;">
    "How selfish soever man may be supposed, there are evidently some principles in his nature, which interest him in the fortune of others, and render their happiness necessary to him, though he derives nothing from it, except the pleasure of seeing it." - Adam Smith (The Theory of Moral Sentiments, 1759) 
 </div>
 </em></p>
 <hr>
-<p>I&rsquo;m RSA, and I&rsquo;ve got ~20 years of self-taught tech experience at this point; everything from server administration and development to consulting and game design. I&rsquo;m really passionate about computers and technology, and even more passionate when I&rsquo;m complaining about it all.</p>
+<p>I&rsquo;m RSA, and I&rsquo;ve got ~20 years of self-taught tech experience at this point; everything from server administration and development to consulting and game design. I&rsquo;m really passionate about computers and technology, and even more passionate when complaining about it all.</p>
 <p>This is info repo for all my tech/IT knowledge and whatever other projects I feel like sharing. I made this site because I really feel like the internet is going downhill fast, especially since LLMs like Ch*tGPT became a thing. It genuinely saddens me to see so little content diversity online as people&rsquo;s unique creative outlets get killed off and and corporations take their places. Online freedom of speech keeps diminishing and companies restrict what you can say so they can be advertiser-friendly, all under the guise of protecting people&rsquo;s feelings…</p>
 <p>Most people only visit a handful of select websites anymore. The days of expressive and creative personal blogs are basically dead. Sure, there&rsquo;s still some cool sites out there, hard to find as they may be, but they&rsquo;re completely eclipsed by the corpo pages, you know the ones<a href="https://news.ycombinator.com/item?id=35228566">--</a> youtube, tiktok, twitter, and facebook&rsquo;s AI-plagued corpse. Even as early as 2010, <a href="https://www.wired.com/2010/08/ff-webrip/">Wired was calling out the issue</a>.</p>
 <p>I&rsquo;ve got two main goals for this page, share my knowledge and passion for technology to help people learn about computers and tech in a world where those skills are becoming increasingly <a href="https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes">important</a>, while also getting back at those who profit from gatekeeping this kind of knowledge.</p>
-<p>Throughout my tech journey, I&rsquo;ve discovered many interesting creators with some great insight, namely people like Louis Rossmann, Leadius USA, Linus Tech Tips, and Level1Techs. You&rsquo;re bound to see some of their influence and inspiration on here.
-<br> </br></p>
-<p>I&rsquo;m putting most of my effort into <a href="/posts/servermaxxing/">SERVERMAXXING</a> right now which covers a lot about AI-related hardware currently, but will be expanded to cover most general server stuff, including hardware guides and basics of what to look for depending on your use case. Once I&rsquo;m finished with that page, I&rsquo;ll start focusing on the other pages and expanding more.
-<br> </br></p>
-<p>Here are some links I recommend checking out:</p>
-<p><a href="https://benhoyt.com/writings/the-small-web-is-beautiful/">The Small Web Is Beautiful</a> (Article) <br />
-
-<a href="https://housefresh.com/beware-of-the-google-ai-salesman/">Beware of the Google AI Salesman</a> (Article) <br />
-
-<a href="https://wiki.futo.org/index.php/Introduction_to_a_Self_Managed_Life:_a_13_hour_%26_28_minute_presentation_by_FUTO_software">Great bunch of guides from Louis Rossmann</a>
-<a href="https://consumerrights.wiki/Main_Page">Consumer Rights Wiki</a> <br />
-
-<a href="https://linustechtips.com/">Linus Tech Tips Forums</a> <br />
-
-<a href="https://forums.servethehome.com/index.php">Serve The Home Forums</a> <br />
-
-<a href="https://forum.level1techs.com/">Level1Techs Forums</a> <br />
-
-<a href="https://digdeeper.neocities.org/index.xhtml">https://digdeeper.neocities.org/index.xhtml</a> <br />
-
-<a href="https://lobste.rs/">https://lobste.rs/</a> <br />
-
-<a href="https://www.greaterwrong.com/">https://www.greaterwrong.com/</a> <br />
-
+<p>Throughout my tech journey, I&rsquo;ve discovered many interesting creators with some great insight, namely people like Louis Rossmann, Leadius USA, Linus Tech Tips, and Level1Techs. You&rsquo;re bound to see some of their influence and inspiration on here.</p>
+<p>I&rsquo;m putting most of my effort into <a href="/posts/servermaxxing/">SERVERMAXXING</a> right now which covers a lot about AI-related hardware currently, but will be expanded to cover most general server stuff, including hardware guides and basics of what to look for depending on your use case. Once I&rsquo;m finished with that page, I&rsquo;ll start focusing on the other pages and expanding more.</p>
+<p>Here are some links I recommend checking out:<br>
+<a href="https://benhoyt.com/writings/the-small-web-is-beautiful/">The Small Web Is Beautiful</a> (Article)<br>
+<a href="https://housefresh.com/beware-of-the-google-ai-salesman/">Beware of the Google AI Salesman</a> (Article)<br>
+<a href="https://wiki.futo.org/index.php/Introduction_to_a_Self_Managed_Life:_a_13_hour_%26_28_minute_presentation_by_FUTO_software">Great bunch of guides from Louis Rossmann</a><br>
+<a href="https://consumerrights.wiki/Main_Page">Consumer Rights Wiki</a><br>
+<a href="https://linustechtips.com/">Linus Tech Tips Forums</a><br>
+<a href="https://forums.servethehome.com/index.php">Serve The Home Forums</a><br>
+<a href="https://forum.level1techs.com/">Level1Techs Forums</a><br>
+<a href="https://digdeeper.neocities.org/index.xhtml">https://digdeeper.neocities.org/index.xhtml</a><br>
+<a href="https://lobste.rs/">https://lobste.rs/</a><br>
+<a href="https://www.greaterwrong.com/">https://www.greaterwrong.com/</a><br>
 <a href="https://www.techpowerup.com/gpu-specs/">TechPowerUp - GPU Specs</a></p>
 <p>Search engine I highly recommend. Paid subscription, but no ads or tracking and doesn&rsquo;t advertise malware unlike google… - <a href="https://kagi.com/">https://kagi.com/</a></p>
 <p>Proton Suite (Mail/Cloud/Docs/Password Manager/VPN/and more) - <a href="https://proton.me/">https://proton.me/</a></p>
@@ -254,6 +274,68 @@
     
       <article class="post on-list">
         <h2 class="post-title">
+          <a href="https://techsucks.org/posts/programming/"></a>
+        </h2>
+
+        <div class="post-meta"></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p><img src="/images/programmingmemebook.jpg" alt=""></p>
+<h2 id="python">Python</h2>
+<p>“Let me read you from the Zen of Python: There should be one and preferably only one obvious way to do it, which is why we have three different versions, 12 different ways to install them, and 80 different frameworks for the same thing: Easy Install, Anaconda, conda, pip, homebrew.” - Programmers Are Also Human</p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/programming/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
+          <a href="https://techsucks.org/posts/random-stuff/"></a>
+        </h2>
+
+        <div class="post-meta"></div>
+
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>Uhhhh idk, this is for a bunch of stuff I&rsquo;ve found so far that I haven&rsquo;t found a place to categorize them into yet. Probably gonna be a place for all this stuff in the future as I add more to the site, but for now here it is</p>
+<h2 id="minor-annoyances-and-crap">Minor annoyances and crap</h2>
+<p><img src="/images/dtnsl7oicbaefxpxqbu88yvmeu1g29iwu8ck.png" alt=""></p>
+<p>I hate that little thing showing up on youtube thumbnails on my home page. It&rsquo;s so easy to click on by accident if you&rsquo;re opening a few pages in new tabs to queue up your watch list when you wanna waste time.<br>
+Here&rsquo;s how I got rid of it:<br>
+Step 1: Get <a href="https://ublockorigin.com/">https://ublockorigin.com/</a> to block ads (<a href="https://adnauseam.io/">https://adnauseam.io/</a> is a better option IMO because it poisons advertiser data collection on you)
+Step 2: Go to the settings and into the &ldquo;My Filters&rdquo; tab and add the following:
+<code>www.youtube.com##div[class^='ytInlinePlayerControlsTopLeftControls']</code>
+<code>www.youtube.com##.ytm-paid-content-overlay-renderer</code>
+<code>www.youtube.com##a[href*=&quot;https://support.google.com/youtube?p=ppp&quot;]</code>
+<code>www.youtube.com##.ytp-paid-content-overlay</code></p>
+          
+        </div>
+
+        
+          <div>
+            <a class="read-more button inline" href="/posts/random-stuff/">[Read more]</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
           <a href="https://techsucks.org/posts/sailing-the-high-seas/"></a>
         </h2>
 
@@ -273,7 +355,23 @@
 <h1 id="sailing-the-high-seas---piracy-and-you">Sailing The High Seas - Piracy and You</h1>
 
 
-<img src="/images/remember-its-always-moral-to-pirate-adobe-products-v0-93mneank0obd1_hu_7d3f375d996b79ea.jpeg" width="500" alt="Adobe is trash">
+
+
+
+  
+    <img 
+      src="/images/remember-its-always-moral-to-pirate-adobe-products-v0-93mneank0obd1.jpeg" 
+      alt="Adobe is trash"
+      
+        width="500" 
+        data-width="500" 
+        style="cursor: zoom-in;" 
+        onclick="if(this.hasAttribute('width')) { this.removeAttribute('width'); this.style.cursor='zoom-out'; } else { this.setAttribute('width', this.getAttribute('data-width')); this.style.cursor='zoom-in'; }"
+      
+    >
+  
+
+
 <p>Yarrr! So it&rsquo;s the pirate&rsquo;s life for you, eh? Here&rsquo;s information I&rsquo;ve gleaned over the years… <br />
 
 Biggest thing is… If you like the software and you plan on using it a lot, purchase it to support the developers. (Unless it&rsquo;s Adobe or Microsoft products) <br />
@@ -352,64 +450,6 @@ This guide is purely for educational purposes. I will not provide tutorials on h
         
       </article>
     
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="https://techsucks.org/posts/useful-windows-tools/"></a>
-        </h2>
-
-        <div class="post-meta"></div>
-
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>Work in progress (just like the rest of the site) ¯\_(ツ)_/¯</p>
-<p>Here are some tools I&rsquo;ve found to be quite useful for me when working with Windows.</p>
-<p>Directory Opus - <a href="https://www.gpsoft.com.au/">https://www.gpsoft.com.au/</a>
-An incredibly good replacement for Windows Explorer. I absolutely love this thing. Huuuuuuuuuuuge range of customization, including its own scripting language. Amazing tool for power users who are frustrated with the limitations imposed by microsoft.</p>
-<p>WinUtil - <a href="https://github.com/ChrisTitusTech/winutil">https://github.com/ChrisTitusTech/winutil</a><br>
-Has tons of options for installing programs via Chocolatey, tweaking your PC, or debloating windows overall.</p>
-          
-        </div>
-
-        
-          <div>
-            <a class="read-more button inline" href="/posts/useful-windows-tools/">[Read more]</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="https://techsucks.org/posts/vmware-esxi-installation/"></a>
-        </h2>
-
-        <div class="post-meta"></div>
-
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>VMWare ESXi install steps</p>
-<p>Get screenshots of each step for a step-by-step installation</p>
-<p>Install Linux VM on ESXi step-by-step instructions. Also assigning hardware like GPUs or network cards.</p>
-<p><a href="https://www.sysnettechsolutions.com/en/install-vmware-vsphere-esxi/">https://www.sysnettechsolutions.com/en/install-vmware-vsphere-esxi/</a></p>
-          
-        </div>
-
-        
-          <div>
-            <a class="read-more button inline" href="/posts/vmware-esxi-installation/">[Read more]</a>
-          </div>
-        
-      </article>
-    
 
     <div class="pagination">
   <div class="pagination__buttons">
@@ -419,6 +459,12 @@ Has tons of options for installing programs via Chocolatey, tweaking your PC, or
       </a>
     
     
+      ::
+    
+    
+      <a href="/page/5/" class="button inline next">
+        [<span class="button__text">Older posts</span>] &gt;
+      </a>
     
   </div>
 </div>

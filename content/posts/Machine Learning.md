@@ -38,8 +38,7 @@ Text Gen / Image Gen / STT / TTS / Classication / Multi-Modal / Sentiment Analys
 Model quantization is a method of reducing the size of an existing AI model (LLM, diffusion, video gen, etc) while maintaining accuracy. It works by reducing the precision of the weights and activations with a loss in quality proportional to the quantization level and method. Quantizing a model allows for larger models to be used with less of a computing requirment. For example, Llama 3.3 70B FP16 is about 140GB in size and would require a similar amount of memory to run. Quantizing it to 4 bit precision would only require about 40GB of memory to run. The preicision size is directly proportional to the memory required to run a model.
 To measure the change in quality from a quantized model compared to its unquantized form, you can measure its perplexity (PPL). {{< linebreak >}}
 
-Here is a table comparing the different Llama.cpp quantization levels of Llama 3 70B to its unquantized F16 form. [Source](https://github.com/ggml-org/llama.cpp/pull/6745#issuecomment-2093892514)
-{{< collapsible "View Table" >}}
+Below is a table comparing the different Llama.cpp quantization levels of Llama 3 70B to its unquantized F16 form. [Source](https://github.com/ggml-org/llama.cpp/pull/6745#issuecomment-2093892514)
 | Quantization | Size (GiB) | Perplexity (wiki.test) | Delta (FP16) |
 |:---|:---|:---|:---|
 | IQ1_S | 14.29 | 9.8655 +/- 0.0625 | 248.51% |
@@ -66,7 +65,6 @@ Here is a table comparing the different Llama.cpp quantization levels of Llama 3
 | Q6_K | 53.91 | 2.8441 +/- 0.0138 | 0.47% |
 | Q8_0 | 69.83 | 2.8316 +/- 0.0138 | 0.03% |
 | F16 | 131.43 | 2.8308 +/- 0.0138 | 0.00% |
-{{< /collapsible >}}
 
 In the table, the lower the precision is, the higher the perplexity. Perplexity values can be different depending on the model, its architecture, quantization method used, etc. I personally would not go lower than 4 bits per weight (about Q4 or Q4_K_M within Llama.cpp quantization).
 I prefer using ExLlama quantization as it tends to be more performant and accurate than Llama.cpp. The trade-off is that llama.cpp allows you to use both your VRAM and RAM together whereas ExLlama is fixed to the VRAM. EXL3 is the latest version of the Exllama quantization method and has fairly good quality even at low precision.
