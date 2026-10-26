@@ -1,0 +1,11 @@
+{
+  "name": "techsucks",
+  "compatibility_date": "2026-10-26",
+  "build": {
+    "command": "chmod a+x build.sh && ./build.sh"
+  },
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}
