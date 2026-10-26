@@ -1,9 +1,9 @@
 {{- $dataFile := .Get "dataFile" | default "words" -}}
-{{- $artData := .Site.Data.art -}}
+{{- $artData := hugo.Data.art -}}
 
 {{- $words := slice "Tech" -}}
 {{- if $artData -}}
-  {{- $data := index .Site.Data $dataFile -}}
+  {{- $data := index hugo.Data $dataFile -}}
   {{- if and $data (isset $data "prefixes") -}}
     {{- range $data.prefixes -}}
       {{- if ne . "Tech" -}}
