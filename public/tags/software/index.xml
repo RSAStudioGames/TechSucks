@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on TechSucks</title>
+    <link>https://techsucks.org/tags/software/</link>
+    <description>Recent content in Software on TechSucks</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
+    <atom:link href="https://techsucks.org/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Directory Opus Review</title>
+      <link>https://techsucks.org/posts/directory-opus-review/</link>
+      <pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
+      <guid>https://techsucks.org/posts/directory-opus-review/</guid>
+      <description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://techsucks.org/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Guide To Debloating Windows</title>
+      <link>https://techsucks.org/posts/guide-to-debloating-windows/</link>
+      <pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
+      <guid>https://techsucks.org/posts/guide-to-debloating-windows/</guid>
+      <description>&lt;p&gt;Work in progress (just like the rest of the site) ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;h1 id=&#34;guide-to-debloating-windows&#34;&gt;Guide To Debloating Windows:&lt;/h1&gt;&#xA;&lt;p&gt;The process of debloating Windows 10/11 is best done on a fresh installation of Windows. I hope you&amp;rsquo;re using W10, and not W11. Use &lt;a href=&#34;https://0patch.com/&#34;&gt;0Patch&lt;/a&gt; to stay up to date with security updates even after Microsoft kills off W10 on &lt;a href=&#34;https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281&#34;&gt;October 14th, 2025.&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-easier-way&#34;&gt;The Easier Way&lt;/h2&gt;&#xA;&lt;p&gt;To start debloating Windows 10 or 11, I usually start with &lt;a href=&#34;https://github.com/ChrisTitusTech/winutil&#34;&gt;WinUtil&lt;/a&gt; by &lt;a href=&#34;https://github.com/ChrisTitusTech/&#34;&gt;ChrisTitusTech&lt;/a&gt;. &lt;a href=&#34;https://winutil.christitus.com/dev/&#34;&gt;Documentation&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

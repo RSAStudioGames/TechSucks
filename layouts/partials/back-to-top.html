@@ -1,0 +1,55 @@
+<!-- Back to Top Button HTML -->
+<button id="back-to-top" aria-label="Back to Top">
+  <!-- Simple SVG Up Arrow -->
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<!-- Styles -->
+<style>
+  #back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333; /* Dark background */
+    color: white; /* White arrow */
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%; /* Rounded button */
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  #back-to-top:hover {
+    background-color: #555; /* Lighter on hover */
+    transform: translateY(-3px);
+  }
+</style>
+
+<!-- Script -->
+<script>
+  // Get the button
+  const backToTopBtn = document.getElementById("back-to-top");
+
+  // Show button when scrolling down 200px
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top when clicked
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>

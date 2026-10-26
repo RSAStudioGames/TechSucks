@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Review on TechSucks</title>
+    <link>https://techsucks.org/tags/review/</link>
+    <description>Recent content in Review on TechSucks</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
+    <atom:link href="https://techsucks.org/tags/review/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Directory Opus Review</title>
+      <link>https://techsucks.org/posts/directory-opus-review/</link>
+      <pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
+      <guid>https://techsucks.org/posts/directory-opus-review/</guid>
+      <description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://techsucks.org/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

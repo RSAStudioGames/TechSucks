@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    <title>LLM Benchmark Prompts :: TechSucks</title>
+  
+  <script defer src="https://stats.techsucks.org/script.js" data-website-id="3512b344-89b7-42ea-b378-97121d4dcae2"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Career strategy for people in IT from what I learnt in my time as an executive recruiter in IT." />
+<meta name="keywords" content="Benchmarks, AI" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://techsucks.org/posts/llm-benchmark-prompts/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://techsucks.org/terminal.css">
+
+<link rel="stylesheet" href="https://techsucks.org/style.css">
+
+
+<link rel="shortcut icon" href="https://techsucks.org/favicon.png">
+<link rel="apple-touch-icon" href="https://techsucks.org/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="LLM Benchmark Prompts">
+<meta property="og:description" content="Career strategy for people in IT from what I learnt in my time as an executive recruiter in IT." />
+<meta property="og:url" content="https://techsucks.org/posts/llm-benchmark-prompts/" />
+<meta property="og:site_name" content="TechSucks" />
+
+  <meta property="og:image" content="https://techsucks.org/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-12-23 15:07:24 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    TechSucks
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  
+  <div class="split-layout-wrapper">
+    
+    <aside class="sidebar">
+        <nav>
+            <h3 class="sidebar-header">Systems</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/servermaxxing">> <span>SERVERMAXXING</span></a></li>
+                <li><a href="/posts/server-building">> <span>Server Building</span></a></li>
+                <li><a href="/posts/personal-sovereign-cloud">> <span>Personal Cloud</span></a></li>
+                <li><a href="/posts/running-your-own-home-media-server">> <span>Home Media</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Software</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/guide-to-debloating-windows">> <span>Debloating Windows</span></a></li>
+                <li><a href="/posts/directory-opus-review">> <span>Directory Opus</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">"Intelligence"</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/machine-learning">> <span>Machine Learning</span></a></li>
+                <li><a href="/posts/llm-benchmarks">> <span>LLM Benchmarks</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Miscellaneous</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/sailing-the-high-seas">> <span>Sailing The High Seas</span></a></li>
+                <li><a href="/posts/managing-your-digital-privacy">> <span>Digital Privacy</span></a></li>
+
+                <li><a href="/posts/random-stuff">> <span>Random Stuff</span></a></li>
+            </ul>
+        </nav>
+
+        
+        <hr />
+        <h3 class="sidebar-header">
+            Table of Contents
+        </h3>
+        <div class="sidebar-list">
+            <nav id="TableOfContents"></nav>
+        </div>
+        
+
+    </aside>
+
+    <div class="main-content-area">
+        
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://techsucks.org/posts/llm-benchmark-prompts/">LLM Benchmark Prompts</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-12-23</time><span class="post-author">RSA</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://techsucks.org/tags/ai/">AI</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+
+
+  <div class="post-content"><div>
+        <p>This is just a copy of this <a href="https://pastebin.com/LmRhwUCA">pastebin</a> in case access is lost. I&rsquo;ll probably modify and add to the list once I have more time to work on it.</p>
+<hr>
+<p>A great set of prompts to test the limits and performance of different large language models (LLMs) would include a mix of linguistic challenges, technical questions, and creative tasks. This list of very hard prompts is designed to push LLMs to their limits in terms of linguistic understanding, reasoning, and knowledge:</p>
+<p>Translate the following idiomatic expressions into a foreign language of your choice and explain their meanings: &ldquo;barking up the wrong tree,&rdquo; &ldquo;put all your eggs in one basket,&rdquo; &ldquo;spill the beans.&rdquo;</p>
+<p>Write a brief summary of a hypothetical scientific paper on the potential discovery of a new subatomic particle, including its properties and implications for physics.</p>
+<p>Create a short story that combines elements from two seemingly unrelated genres, such as science fiction and romantic comedy.</p>
+<p>Explain the concept of Godel&rsquo;s incompleteness theorems in layman&rsquo;s terms and discuss its implications for the foundations of mathematics and computer science.</p>
+<p>Evaluate the ethical considerations of using artificial intelligence in medical decision-making, with examples of potential benefits and drawbacks.</p>
+<p>Imagine a new technology that could revolutionize the field of energy production. Describe how it works and its potential impact on society and the environment.</p>
+<p>Compose a poem using a highly constrained form, such as a sestina or a villanelle, on the theme of human connection in the digital age.</p>
+<p>Describe the process of protein folding and its significance in understanding diseases such as Alzheimer&rsquo;s and Parkinson&rsquo;s.</p>
+<p>Explain the concept of quantum entanglement and its potential applications in areas such as cryptography and quantum computing.</p>
+<p>Analyze the economic, political, and social factors that led to the fall of the Roman Empire and draw parallels to modern-day societies.</p>
+<p>Design an innovative public transportation system for a densely populated urban area, considering factors such as efficiency, sustainability, and accessibility.</p>
+<p>Write a dialogue between two philosophers with opposing viewpoints on the nature of consciousness and the mind-body problem.</p>
+<p>Propose a solution to the P versus NP problem in computer science and discuss its potential implications for algorithms and computational complexity.</p>
+<p>Explain the workings of blockchain technology and its potential applications beyond cryptocurrencies, such as in supply chain management and secure voting systems.</p>
+<p>Describe the possible existence of extraterrestrial life in the universe and discuss the Drake equation and the Fermi paradox as they relate to this topic.</p>
+<p>Create a detailed plan for addressing climate change on a global scale, considering various mitigation and adaptation strategies and potential barriers to their implementation.</p>
+<p>Analyze the role of social media in shaping public opinion and discuss its effects on democracy, including the spread of misinformation and the echo chamber phenomenon.</p>
+<p>Write a critical review of a fictional book that has not yet been written, analyzing its themes, characters, and literary devices.</p>
+<p>Propose a novel approach to solving world hunger, taking into account factors such as agriculture, distribution, and political will.</p>
+<p>Explain the concept of a &ldquo;theory of everything&rdquo; in physics and discuss the current status of research in this area, including the role of string theory and loop quantum gravity.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://techsucks.org/posts/it-career-strategy/" class="button inline prev">
+        &lt; [<span class="button__text">IT Career Strategy</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://techsucks.org/posts/machine-learning/" class="button inline next">
+         [<span class="button__text">Machine Learning</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+    </div>
+
+  </div>
+  
+
+  
+    
+
+  
+</div>
+
+
+<button id="back-to-top" aria-label="Back to Top">
+  
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+
+<style>
+  #back-to-top {
+    display: none;  
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;  
+    color: white;  
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;  
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  #back-to-top:hover {
+    background-color: #555;  
+    transform: translateY(-3px);
+  }
+</style>
+
+
+<script>
+  
+  const backToTopBtn = document.getElementById("back-to-top");
+
+  
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>

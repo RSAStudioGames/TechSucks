@@ -1,0 +1,105 @@
+{{ $file := .Get 0 }}
+{{ $r := resources.Get $file }}
+{{ if $r }}
+  {{ $data := $r | transform.Unmarshal }}
+  {{ $tableID := printf "csv-table-%d" (now.UnixNano) }}
+
+  <style>
+    /* Container for horizontal scrolling */
+    .csv-container {
+      overflow-x: auto;
+      width: 100%;
+      margin-bottom: 1rem;
+      border: 1px solid #04c61d;
+    }
+
+    .csv-sortable {
+      border-collapse: collapse;
+      width: 100%;
+      color: #ffffff;
+      font-family: sans-serif;
+      min-width: 600px; /* Ensures scroll appears on small screens */
+    }
+
+    .csv-sortable th, .csv-sortable td {
+      padding: 10px;
+      border: 1px solid #04c61d; /* Secondary */
+      white-space: nowrap; /* Prevents text wrapping to force scroll */
+    }
+
+    .csv-sortable th {
+      cursor: pointer;
+      user-select: none;
+      background-color: #300a24; /* Main */
+      color: #ffffff;
+      text-align: left;
+      transition: background-color 0.2s;
+      position: sticky; /* Optional: keeps headers visible while scrolling down */
+      top: 0;
+    }
+
+    .csv-sortable th:hover {
+      background-color: #04c61d; /* Secondary */
+      color: #300a24; /* Main text */
+    }
+
+    .csv-sortable td {
+      background-color: #300a24; /* Main */
+    }
+  </style>
+
+  <div class="csv-container">
+    <table id="{{ $tableID }}" class="csv-sortable">
+      <thead>
+        <tr>
+          {{ range index $data 0 }}
+            <th>{{ . }} &#8597;</th>
+          {{ end }}
+        </tr>
+      </thead>
+      <tbody>
+        {{ range after 1 $data }}
+          <tr>
+            {{ range . }}
+              <td>{{ . }}</td>
+            {{ end }}
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    (function() {
+      const table = document.getElementById("{{ $tableID }}");
+      const headers = table.querySelectorAll("th");
+      
+      headers.forEach((header, index) => {
+        header.addEventListener("click", () => {
+          const tbody = table.tBodies[0];
+          const rows = Array.from(tbody.rows);
+          const asc = header.getAttribute("data-order") === "asc";
+          
+          rows.sort((a, b) => {
+            const valA = a.cells[index].innerText.trim();
+            const valB = b.cells[index].innerText.trim();
+            const numA = parseFloat(valA.replace(/,/g, ''));
+            const numB = parseFloat(valB.replace(/,/g, ''));
+            
+            if (!isNaN(numA) && !isNaN(numB)) {
+              return asc ? numB - numA : numA - numB;
+            }
+            return asc ? valB.localeCompare(valA) : valA.localeCompare(valB);
+          });
+          
+          header.setAttribute("data-order", asc ? "desc" : "asc");
+          rows.forEach(row => tbody.appendChild(row));
+        });
+      });
+    })();
+  </script>
+{{ else }}
+  <p style="color: #04c61d; background: #300a24; padding: 10px;">
+    CSV file "{{ $file }}" not found in assets.
+  </p>
+{{ end }}

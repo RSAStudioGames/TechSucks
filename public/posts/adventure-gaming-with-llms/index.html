@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    <title>Adventure Gaming With LLMs :: TechSucks</title>
+  
+  <script defer src="https://stats.techsucks.org/script.js" data-website-id="3512b344-89b7-42ea-b378-97121d4dcae2"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Backup of a rentry. Using LLMs for TTRPG-styled adventure gaming." />
+<meta name="keywords" content="Gaming, AI" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://techsucks.org/posts/adventure-gaming-with-llms/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://techsucks.org/terminal.css">
+
+<link rel="stylesheet" href="https://techsucks.org/style.css">
+
+
+<link rel="shortcut icon" href="https://techsucks.org/favicon.png">
+<link rel="apple-touch-icon" href="https://techsucks.org/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Adventure Gaming With LLMs">
+<meta property="og:description" content="Backup of a rentry. Using LLMs for TTRPG-styled adventure gaming." />
+<meta property="og:url" content="https://techsucks.org/posts/adventure-gaming-with-llms/" />
+<meta property="og:site_name" content="TechSucks" />
+
+  
+  
+  <meta property="og:image" content="https://techsucks.org/">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-12-23 15:07:24 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    TechSucks
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  
+  <div class="split-layout-wrapper">
+    
+    <aside class="sidebar">
+        <nav>
+            <h3 class="sidebar-header">Systems</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/servermaxxing">> <span>SERVERMAXXING</span></a></li>
+                <li><a href="/posts/server-building">> <span>Server Building</span></a></li>
+                <li><a href="/posts/personal-sovereign-cloud">> <span>Personal Cloud</span></a></li>
+                <li><a href="/posts/running-your-own-home-media-server">> <span>Home Media</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Software</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/guide-to-debloating-windows">> <span>Debloating Windows</span></a></li>
+                <li><a href="/posts/directory-opus-review">> <span>Directory Opus</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">"Intelligence"</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/machine-learning">> <span>Machine Learning</span></a></li>
+                <li><a href="/posts/llm-benchmarks">> <span>LLM Benchmarks</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Miscellaneous</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/sailing-the-high-seas">> <span>Sailing The High Seas</span></a></li>
+                <li><a href="/posts/managing-your-digital-privacy">> <span>Digital Privacy</span></a></li>
+
+                <li><a href="/posts/random-stuff">> <span>Random Stuff</span></a></li>
+            </ul>
+        </nav>
+
+        
+        <hr />
+        <h3 class="sidebar-header">
+            Table of Contents
+        </h3>
+        <div class="sidebar-list">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#proper-adventure-gaming-with-llms">Proper Adventure Gaming With LLMs</a>
+      <ul>
+        <li><a href="#preface">Preface</a>
+          <ul>
+            <li><a href="#tldr">TL;DR</a></li>
+            <li><a href="#disclaimer">Disclaimer</a></li>
+          </ul>
+        </li>
+        <li><a href="#the-setup">The Setup</a>
+          <ul>
+            <li><a href="#backend-text-generation-webui">Backend: text-generation-webui</a></li>
+            <li><a href="#front-end-sillytavern">Front-End: SillyTavern</a></li>
+            <li><a href="#setup-conclusion">Setup Conclusion</a></li>
+          </ul>
+        </li>
+        <li><a href="#the-framework">The Framework</a>
+          <ul>
+            <li><a href="#templates-and-system-prompts">Templates and System Prompts</a></li>
+            <li><a href="#parameters">Parameters</a></li>
+          </ul>
+        </li>
+        <li><a href="#creating-adventures">Creating Adventures</a>
+          <ul>
+            <li><a href="#core-concepts">Core Concepts</a></li>
+            <li><a href="#draft-an-adventure-idea">Draft an Adventure Idea</a></li>
+            <li><a href="#user-character-you---the-player">User Character (You - the player)</a></li>
+            <li><a href="#character-card-llm---the-game-master">Character Card (LLM - the Game Master)</a></li>
+            <li><a href="#building-a-world-with-the-lorebook-the-world-info">Building a World With the Lorebook (The World Info)</a></li>
+            <li><a href="#authors-note">Author&rsquo;s Note</a></li>
+            <li><a href="#experimental-stuff">Experimental Stuff</a></li>
+          </ul>
+        </li>
+        <li><a href="#demonstration">Demonstration</a>
+          <ul>
+            <li><a href="#starting-a-game">Starting a Game</a></li>
+            <li><a href="#doing-stuff">Doing Stuff</a></li>
+            <li><a href="#shit-its-a-tall-muscular-man">Shit! It&rsquo;s a tall, muscular man!</a></li>
+            <li><a href="#adding-to-the-world">Adding to the World</a></li>
+            <li><a href="#when-to-stopstart-over">When to Stop/Start Over</a></li>
+          </ul>
+        </li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+        
+
+    </aside>
+
+    <div class="main-content-area">
+        
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://techsucks.org/posts/adventure-gaming-with-llms/">Adventure Gaming With LLMs</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-12-23</time><span class="post-author">RSA</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://techsucks.org/tags/ai/">AI</a>&nbsp;
+      
+      #<a href="https://techsucks.org/tags/gaming/">Gaming</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+
+
+  <div class="post-content"><div>
+        <p>Ripped from: <a href="https://rentry.co/llmadventurersguide">https://rentry.co/llmadventurersguide</a>
+Just keeping here as a mirror because I liked the guide. I didn&rsquo;t write this. Props to whoever did.</p>
+<h1 id="proper-adventure-gaming-with-llms">Proper Adventure Gaming With LLMs<a href="#proper-adventure-gaming-with-llms" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p style="text-align:center">
+A huge, brief guide on how I made exactly what I want, and you can, too.
+By that, I mean you can reproduce exactly what I want.
+You're on your own if you want to make exactly what you want. Sorry.
+</p>
+<p><em>Note: This guide is exclusively for people who have a lot of memory available. Whether you run on a CPU with lots of RAM, a 4090 (or better), or a hosted service/api - the key to doing this the right way is context, context, context. This guide thrives on running any model you can run with an <strong>absolute bare minimum of 30k context</strong>. More is <em>always</em> better.</em></p>
+<h2 id="preface">Preface<a href="#preface" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><em>Preface /ˈprɛf.əs/ (noun): The tragically overlooked introduction to a document, painstakingly written to explain its purpose, significance, and backstory, which nobody is going to read because you&rsquo;ve already scrolled down to get to the good stuff. Often mistaken for a speed bump on the way to the <em>actual</em> content.</em></p>
+<p>Like many of you, I got my start with this method of entertaining myself on slow days through the introduction and my subsequent discovery of <a href="https://latitude.io/">Latitude&rsquo;s AI Dungeon.</a> Like many of you, I stopped using it because of&hellip; reasons. We all have our own. But for what it&rsquo;s worth, they made mistakes, acknowledged their mistakes, and seem to be trying to regain trust in earnest. I applaud that. In fact, if it weren&rsquo;t for their efforts to do that, I wouldn&rsquo;t be writing this right now. However, I&rsquo;m not sure that I&rsquo;ll ever go back to hosted services after turning to locally hosted LLMs and tools like <a href="https://github.com/SillyTavern/SillyTavern">SillyTavern</a>, <a href="https://github.com/oobabooga/text-generation-webui">oobabooga&rsquo;s textgenwebui</a>, <a href="https://github.com/LostRuins/koboldcpp">koboldcpp</a>&hellip; and many others. Some of which I&rsquo;ve made quiet little semi-anonymous contributions to over the years.</p>
+<p>Even though I went to local hosting, it wasn&rsquo;t quite the fixation the original AI Dungeon was for me. There was some secret sauce up in that thang that just handled a funky narrative adventure just right. Weird shit would happen. That guy in the black cloak would show up out of nowhere. My character&rsquo;s impressive penis would jump out of his frock and batter the enemies of the kingdom relentlessly before exploding in a sea of cake-batter flavored&hellip; Well, you get the idea. It got weird. And it was right about the time of that latter experience that their version of what we&rsquo;d now call Lorebooks came about, and I realized they could be handy for smoothing out an experience.</p>
+<p>And then things happened, and I deleted all of my content and my account and never went back. C&rsquo;est la vie.</p>
+<p>But I still wanted that adventure experience, and I chased it for years. <em>YEARS</em> I tell you. It&rsquo;s mostly revolved around trying to get SillyTavern&rsquo;s &ldquo;character card&rdquo; system to believe it&rsquo;s a dynamic and interesting Game Master instead of a mewling anime cat girl, and I&rsquo;ll be honest - I&rsquo;ve been fairly successful at times doing just that. SillyTavern&rsquo;s Lorebooks facilitated some pretty impressive shenanigans, and with high context models, better system and instruct prompting, more parameters to tinker with, and token bans, I&rsquo;ve been able to occasionally have some neat experiences. But nothing quite got me to the same point as AI Dungeon did&hellip; There was always, I felt, something missing. Whatever the hell Latitude&rsquo;s <em>secret sauce</em> was.</p>
+<p>And so, we came back around to where we started: Latitude. About a week ago (maybe it&rsquo;s been longer, who knows, I&rsquo;m an unemployed webdev), Latitude dropped their <a href="https://huggingface.co/LatitudeGames/Wayfarer-12B">Wayfarer-12B model</a> on HF. I read through the details. I felt a little wellspring of hope. I decided, after a bit of time not interacting much with LLMs at all, that I&rsquo;d get back to trying to recreate the magic - this time with something straight from the initial source of my interest in LLM-based gaming.</p>
+<p>And what do you know: All it took for me to find that missing ingredient, that <em>secret sauce</em> I felt was lacking, was a model released by the <em>secret sauce chefs</em> themselves. And here we are.</p>
+<h3 id="tldr">TL;DR<a href="#tldr" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>In case you just want to know what this guide is, here&rsquo;s TL;DR: This is the lengthy, comprehensive, exhaustive necronomicon of the culmination of years of trying to reproduce coherent text-based adventure style gaming on my local machine. If you&rsquo;re super lazy and don&rsquo;t care about the configuration and are okay with maybe getting a not-so-great experience, I guess I can&rsquo;t stop you from just mindlessly copy/pasting everything I&rsquo;m going to provide, but I&rsquo;d encourage you to go through at least the Adventure Setup part if you&rsquo;d like to customize things. Don&rsquo;t come whining to me if you don&rsquo;t read anything, try to change a bunch of stuff, convert everything to p-lists to cram it in to the 4k context micro LLM your 980 Ti can run, etc., and it doesn&rsquo;t work like I say it works. I can&rsquo;t and won&rsquo;t help. Sorry.</p>
+<h3 id="disclaimer">Disclaimer<a href="#disclaimer" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>This is how <em>I, personally</em> have things set up to achieve the style of text-based adventure gaming that <em>I, personally</em> enjoy. You&rsquo;re obviously free to tinker with things to your heart&rsquo;s content, but I make no guarantees that this is what <em>you</em> will personally enjoy. If you want to know what I&rsquo;m in to and see if it vibes, go ahead and peek the DEMO section first.</p>
+<h2 id="the-setup">The Setup<a href="#the-setup" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>You probably know how to do all this stuff, but for the sake of argument, let&rsquo;s pretend you don&rsquo;t. If you do, skip ahead to Creating an Adventure. This isn&rsquo;t a comprehensive guide, but should be fine for most people who may not have messed with this stuff before and want to try it out. If you have issues, there&rsquo;s plenty of help out there.</p>
+<h3 id="backend-text-generation-webui">Backend: text-generation-webui<a href="#backend-text-generation-webui" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h4 id="step-1-acquire-your-backend-client">Step 1: Acquire your Backend Client<a href="#step-1-acquire-your-backend-client" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p><em>For the experienced: We&rsquo;re using text-gen-webui and SillyTavern, and assuming you&rsquo;re running locally. You can skip the initial setup stuff if you have everything running and have the Wayfarer model (or your chosen, inferior alternative, you heathen). You&rsquo;re on your own if you want to use anything else.</em></p>
+<p>We&rsquo;re using text-generation-webui for our backend setup. It&rsquo;s probably fine if you use koboldcpp or some hosted/api solution, so long as you can meet the context minimum for this.</p>
+<ul>
+<li>Back End: <a href="https://github.com/oobabooga/text-generation-webui">oobabooga&rsquo;s textgenwebui</a></li>
+</ul>
+<p>I won&rsquo;t clutter this up any more than it already is by telling you how to install these text-gen-webui, because by now, there are much more comprehensive guides - usually in the readmes. But once you have these two clients up and running, you may proceed.</p>
+<p>The main things you want to make sure of is that you run text-generation-webui with the <code>--api</code> flag (or tick it and save it in the options and restart if you&rsquo;re lazy) so that SillyTavern can connect to it.</p>
+<p>Helpful Note: I do LLM stuff in a browser totally independent of my main web browsing choice, just for convenience. I use Brave, and I cut it off from all internet access so whatever API it probably phones home to in the background doesn&rsquo;t get to sell my adventures with catgirls to OpenAI. But you can handle this however you want.</p>
+<h4 id="step-2-acquire-your-models">Step 2: Acquire your Model(s)<a href="#step-2-acquire-your-models" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p><em>Short version: I&rsquo;m using <a href="https://huggingface.co/LatitudeGames/Wayfarer-12B">Wayfarer-12B model</a> almost exclusively for this guide, and for this style of gameplay</em></p>
+<ol>
+<li>The Model: <a href="https://huggingface.co/LatitudeGames/Wayfarer-12B">Wayfarer-12B</a></li>
+<li>The GGUF Model:  <a href="https://huggingface.co/LatitudeGames/Wayfarer-12B-GGUF">Wayfarer-12B-GGUF</a></li>
+</ol>
+<p>You&rsquo;ll need both these links, probably; I run <code>llamacpp_HF</code> and I suggest you do, too.</p>
+<p>You could probably get this kind of thing running, with the style of character cards and prompting, with just about any model out there that you can load in to your GPU/host with an adequate amount of context, and believe me, I&rsquo;ve tried to do the same. But I believe the unique way Wayfarer was that aforementioned <em>secret sauce</em> that I&rsquo;ve been looking for, for quite a while.</p>
+<p>Download whatever quant you want/can fit alongside a boatload of context. You&rsquo;ll want <strong>a bare minimum of 30k context</strong> so keep that in mind when deciding on a quant (or just running it raw).</p>
+<p><strong>You will see me using Wayfarer-12B-Q8_0 for the rest of this guide. Your results may vary if you use lower quants, but it should be&hellip; fine.</strong></p>
+<h4 id="step-25-llama_hf-ify-the-model-optional">Step 2.5: llama_HF-ify the Model (optional*)<a href="#step-25-llama_hf-ify-the-model-optional" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>I&rsquo;ve typically done this out of habit in the past. It works well enough, so I just didn&rsquo;t do anything different here than I&rsquo;ve done for other models. It&rsquo;s pretty easy:</p>
+<ol>
+<li>Download your chosen GGUF in to your <code>/text-gen-webui/models</code> folder.</li>
+<li>Start text-gen-webui.</li>
+<li>Go to the <code>llama_hf creator</code> tab on the right hand side of the Model page.</li>
+<li>Select <code>Wayfarer-12b-Q8_0</code> (or whatever quant you grabbed).</li>
+<li>Paste <code>LatitudeGames/Wayfarer-12B</code> in to the URL field.</li>
+<li>Click <code>Submit</code></li>
+<li>Go heat up some Hot Pockets.</li>
+<li>You now have a llama_HF model.</li>
+</ol>
+<p>(<em>*probably</em>)</p>
+<h4 id="step-3-load-the-model">Step 3: Load the Model<a href="#step-3-load-the-model" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>From there, you&rsquo;ll need to tick a few boxes. If you&rsquo;re running locally on a 4090 or simialr, the setup should look exactly like this:</p>
+<p><img src="https://i.imgur.com/KgBRKs3.png" alt="text-gen-webui settings"></p>
+<p>This is assuming you&rsquo;re running on a local GPU, want 81k of context, 1024 n_batch, and have the Q8_0 quant. You can change those parameters based on your preference/hardware. But again&hellip; <strong>bare minimum of 30k context</strong>.</p>
+<p>Don&rsquo;t forget to SAVE SETTINGS so you don&rsquo;t have to fiddle with this every time you load the model.</p>
+<p>From there, hit the magic button. For the unaware, the magic button is the one that says LOAD. If you get some kind of error, you&rsquo;ll have to figure that out on your own.</p>
+<h3 id="front-end-sillytavern">Front-End: SillyTavern<a href="#front-end-sillytavern" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>You can try to use other front-ends for this, but be warned, it probably won&rsquo;t work or won&rsquo;t work right. I make extensive use of lorebooks, author&rsquo;s notes, and other features that SillyTavern has and your choice of front-end may not. By all means, try it if you really hate ST, but you&rsquo;re on your own if you do.</p>
+<h4 id="step-1-acquire-sillytavern">Step 1: Acquire SillyTavern<a href="#step-1-acquire-sillytavern" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>As before, I don&rsquo;t need to tell you how to install this - the documentation covers it well.</p>
+<ul>
+<li><a href="https://github.com/SillyTavern/SillyTavern">SillyTavern</a></li>
+</ul>
+<h4 id="step-2-start-sillytavern">Step 2: Start SillyTavern<a href="#step-2-start-sillytavern" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Configure what you want (as per the ReadMe). I might suggest not running it via <code>UpdateAndStart.bat</code> so you don&rsquo;t get any weird, unexpected new stuff, and maybe enabling external connections so you can, say, play around with it on your phone while you poop, but you do you. If you do open it up to external connections, USE A WHITELIST and ASSIGN A STATIC IP TO YOUR DEVICE(S). Otherwise if your grandma on the wifi happens to be a pro hacker, she&rsquo;s going to find your shit and read it all.</p>
+<p>Other than that, you literally just start SillyTavern.</p>
+<h4 id="step-3-initial-configuration-of-sillytavern">Step 3: Initial Configuration of SillyTavern<a href="#step-3-initial-configuration-of-sillytavern" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>You feel that? We&rsquo;re getting close. You&rsquo;re in the front-end client and a model is loaded. You could technically just go to the prompt on the main homepage and type something and it&rsquo;ll respond. Go on, try it. I bet you didn&rsquo;t know you could do that.</p>
+<p>But before we get to creating epic adventures, we&rsquo;ll want to configure and set up a few things. Most of this is personalization. You can fuss with it how you will. Default settings in a lot of cases are fine, but the main thing is to quickly ensure it&rsquo;s connecting to text-gen-webui or whatever you&rsquo;re using. As of the writing of this, it has <code>AI Horde</code> selected by default when you first load it up.</p>
+<p>Default Settings:
+<img src="https://i.imgur.com/SFh8AQx.png" alt="SillyTavern Default API Settings"></p>
+<p>You don&rsquo;t want that (or maybe you do, but good luck). You&rsquo;ll want to set up SillyTavern to connect to text-gen-webui.</p>
+<ol>
+<li>Change API to <code>Text Completion</code> and Verify API Type is <code>Text Generation WebUI (oobabooga)</code> - it should default to this.</li>
+<li>Enter ServerURL; It is <code>http://127.0.0.1:5000</code> for me, but could be different for you. Check in text-gen-webui&rsquo;s settings to find out for sure.</li>
+<li>Click <code>Connect</code> - it should show your chosen model (in this case, <code>Wayfarer-12B-Q8_0-HF</code></li>
+<li>Optionally check <code>Auto-connect to Last Server</code> if you want to.</li>
+</ol>
+<p>And that should do it. Go ahead, chat with the default homepage. It talks back.
+<img src="https://i.imgur.com/5lNJV5G.png" alt="Chatting with the default Assistant"></p>
+<h3 id="setup-conclusion">Setup Conclusion<a href="#setup-conclusion" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Thar be lots of settings in both text-gen-webui and sillytavern, and you can fiddle with them for hours. Check out the Mobile UI, or different color themes. Whatever! But you&rsquo;re not here for a mini-ST guide. You&rsquo;re here for adventure. Or maybe a bit of lazy slice-of-life. I won&rsquo;t judge. If you were one of the four people that read my comment on /r/SillyTavern, some of this has changed, so it&rsquo;s worthwhile going through it again.</p>
+<h2 id="the-framework">The Framework<a href="#the-framework" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>There&rsquo;s lots of generic stuff we can set up to streamline the process and run the games. We&rsquo;ll knock this out - it will provide general guidelines for how an adventure game should run so that you don&rsquo;t have to retread that ground in later steps.</p>
+<h3 id="templates-and-system-prompts">Templates and System Prompts<a href="#templates-and-system-prompts" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>The Context and Instruct templates are largely unchanged from defaults present with SillyTavern, with one minor exception. However, the style I&rsquo;ve adopted for System Prompts may not be exactly what you&rsquo;re used to. Read on for more.</p>
+<h4 id="context-and-instruct-templates">Context and Instruct Templates<a href="#context-and-instruct-templates" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>I started with the <code>Dreamgen Role-Play V1 ChatML</code> templates that come by default with a fresh SillyTavern install here, for both Context and Instruct templates - Wayfarer is trained on ChatML format, so this is a good base. The only change I made is to the Context Template:</p>
+<p>!!! info Context Template
+&lt;|im_start|&gt;system
+{{#if system}}{{system}}
+{{/if}}## Overall plot description:</p>
+<pre><code>{{#if scenario}}{{scenario}}{{else}}You are the game master of a text-based RPG called {{char}}. You are running the game for the user, who plays {{user}} as their character.{{/if}}{{#if wiBefore}}
+
+{{wiBefore}}{{/if}}
+\## Characters:
+\### {{char}}
+{{#if description}}{{description}}
+{{/if}}{{#if personality}}{{personality}}
+{{/if}}### {{user}}
+{{#if persona}}{{persona}}{{else}}{{user}} is the protagonist of the role-play.{{/if}}{{#if wiAfter}}
+{{wiAfter}}{{/if}}{{#if mesExamples}}
+{{mesExamples}}{{/if}}
+</code></pre>
+<p>The only change hers is the default Scenario definition. Since I usually don&rsquo;t fill in scenarios (or anything in the advanced character description for that matter - more on that later), this will essentially set up the base instructions for the game. This is the first time you&rsquo;ll see something that will soon become a pattern: <strong>I don&rsquo;t tell the LLM it&rsquo;s running a game for {{user}}, I tell the LLM it&rsquo;s running a game for the player, who plays {{user}}.</strong> I feel like this better emphasizes that {{user}}, the character, is controlled by the human.</p>
+<p>!!! Important!
+The Instruct Template is off by default, which means Instruct is off by default. That&rsquo;s bad. Check the little button that looks like a power button before you move on:</p>
+<pre><code>This is off. Off is bad!
+![This is bad!](https://i.imgur.com/Stiemfi.png)
+
+This is on. On is good!
+![This is good!](https://i.imgur.com/zgsLKOo.png)
+</code></pre>
+<h4 id="system-prompt">System Prompt<a href="#system-prompt" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>If everything so far has seemed pretty standard to you, this might be where we start to diverge. This is loosely based on other templates, but essentially, I&rsquo;ve written all of these instructions to create a solid, base-level set of instructions for our soon-to-be-created adventure modules to start with as a foundation. I&rsquo;ve been working on the idea of a consistent text-based adventure game for years (well before Wayfarer dropped), so this is the culmination of a lot of trial and error and tweaking - but the most changes have certainly happened since trying out Wayfarer. At the moment, here is the very base level set of instructions I give the model:</p>
+<p>!!! info System Prompt:
+Your goal is to play the part of Game Master in an open-ended, text-based adventure RPG where the player portrays the main character, {{user}}. You will guide the user through a compelling and engaging story that challenges the player and puts {{user}} in to interesting, sometimes dangerous, situations.</p>
+<pre><code>Your guiding principal should be as follows: Guide, don't dictate. Always suggest what the player might do rather than doing things for them. Describe the way the world reacts to the player's choices.
+
+\## Describe Scenes
+  \- Your most important duty is to describe the world around the user's main character, {{user}}.
+  \- Whenever entering a new area, set the scene, describe any interesting people or objects the character might notice, and other details as they become relevant (weather, temperature, lighting level, etc.)
+  \- Keep track of and pay attention to changes in the scene, such as doors being left open or closed, weather changing, or other important details.
+
+\## Portray Characters and NPCs
+  \- Draw from both {{user}}'s description and history, and other established knowledge, to portray characters in {{user}}'s life accurately.
+  \- When necessary, create and keep track of new, interesting characters that are or might become important to {{user}}.
+  \- These characters should be considered a part of the scenes they're present in, and you should describe their actions, dialogue, and behavior appropriately.
+
+\## Narrate Risks, Violence, and Consequences
+  \- When the player, as {{user}}, does something dangerous, you are free to narrate consequences up to and including harm, injury, or death.
+  \- Risky or skill-based activities may fail.
+  \- Narrate in a present-tense, second-person format.
+</code></pre>
+<p>Note that I use markdown for pretty much everything because&hellip; I always have. Other people always have. It&rsquo;s a habit and, for me, just a way of organizing text that I&rsquo;m accustomed to (even when it&rsquo;s not formatted by a front end). You probably don&rsquo;t <em>have</em> to use markdown, but you might find it helps.</p>
+<p>Anyways, you can see that there are some super basic instructions here. You can add to these if you please. It wouldn&rsquo;t be a stretch to add <code>- All characters should be over the age of 55</code> if you&rsquo;re planning on doing adventures exclusively in nursing homes and retirement communities. LLMs are a little finicky about doing things like that consistently, but if you want to impose rules like that, this is the first place to try it. Everything else is pretty self-explanatory, plain text. No tricks here. You write what you want, and maybe what you don&rsquo;t.</p>
+<p>Caveats:</p>
+<ul>
+<li>LLMs don&rsquo;t handle negative instructions particularly well. If you say &ldquo;Unicorns should not exist in this world,&rdquo; the LLM is going to see that instruction and eventually be like &ldquo;Hey, someone said &lsquo;unicorn,&rsquo; I guess that means I need to mention a unicorn!&rdquo; and it will probably bring up unicorns if you wander in to a nice meadow.</li>
+<li>The more specific the instructions, the less likely the LLM is to follow them the way you want. If you say &ldquo;Encourage fights and conflict&rdquo; it&rsquo;ll probably do fine, but if you say &ldquo;The only fights that happen should be one on one fights with katanas at dawn&rdquo; it&rsquo;s not really going to follow that instruction very well.</li>
+<li>You can override these instructions in play. If you&rsquo;re doing your Nursing Home Adventure and have a line that everyone has to be 55+, but you specifically write that a young, hip, 51 year old shows up and drops phat rizz on the old folks home, the LLM will probably run with it. It&rsquo;ll generally follow your instructions, but if won&rsquo;t fight you if you violate them yourself.</li>
+</ul>
+<h3 id="parameters">Parameters<a href="#parameters" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>I started with Universal-Creative as a base. Based on Wayfarer&rsquo;s model card suggestions, I changed the following to start from:</p>
+<ul>
+<li>Temperature: 0.8</li>
+<li>Min P: 0.025</li>
+<li>Repetition Penalty: 1.05</li>
+</ul>
+<p>This will probably work for you as a baseline, but I&rsquo;ve tweaked it a bit, and the current changes that I&rsquo;m happy with are pictured here:
+<img src="https://i.imgur.com/ao5wEar.png" alt="Parameters"></p>
+<p>The key updates vs. Universal-Creative and Wayfarer&rsquo;s suggestions are:</p>
+<ul>
+<li>Temperature: 0.85</li>
+<li>Min P: 0.025</li>
+<li>Repetition Penalty: 1.1</li>
+<li>Smoothing Factor: 0.3</li>
+</ul>
+<p>I&rsquo;ve been experimenting with XTC and in general, these settings have given me good results:</p>
+<ul>
+<li>Threshold: 0.2</li>
+<li>Probability 0.5</li>
+</ul>
+<p>Of course, feel free to wiggle these around to your liking, but these settings have performed admirably for me fairly consistently.</p>
+<h4 id="banning-tokens-in-theory">Banning Tokens (In Theory)<a href="#banning-tokens-in-theory" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>As we all know, LLMs are fixated on certain ideas and words. A perfect example is one of the things I hate the most: Tall, muscular men. Not that I mind actual tall, muscular men, what I mind is the rampant overuse of that particular descriptor to describe <em>every man that enters a scene</em>. XTC and Smoothing do help with this to some extent, you&rsquo;ll still run in to tall, muscular men who tower over you more frequently than I would personally like, particularly if they&rsquo;re more antagonist-leaning. This is where banning tokens can help.</p>
+<p>There&rsquo;s a particular way to go about doing this correctly and, since we&rsquo;re not set up and I can&rsquo;t demonstrate yet, I&rsquo;ll cover this more in-depth during the demo.</p>
+<h4 id="other-features">Other Features<a href="#other-features" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>DRY? Dynamic Temperature? Seeds, Logit Bias, CFG, Grammars?</p>
+<p>I don&rsquo;t really know enough about these things to use them consistently, outside of minor prodding at DRY to change things up a little bit. The rest, for our purposes, isn&rsquo;t needed. Play with them at your own risk.</p>
+<h2 id="creating-adventures">Creating Adventures<a href="#creating-adventures" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>So you want to be a hero?</p>
+<p>We all know this is the part you skipped to. And that&rsquo;s just fine. If you think the rest of the stuff is below you, more power to you! If you don&rsquo;t get the same sorts of results that I demo later, maybe you should check out the other stuff. But at long last, here&rsquo;s the real <em>meat</em> of this guide: How to make your GPU take you to far away lands, meet exotic new people, and have s&hellip; Uh&hellip; Adventures with them!</p>
+<h3 id="core-concepts">Core Concepts<a href="#core-concepts" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>This is where I really do things differently than a lot of people may be used to. And why I insist on using a high context model, even if it means using a smaller model to fit in to your hardware. We&rsquo;re gonna start with a hot take.</p>
+<h4 id="p-lists-ali-chat-etc-are-outdated">P-Lists, Ali-Chat, etc., are Outdated.<a href="#p-lists-ali-chat-etc-are-outdated" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>The people who came up with these concepts are true pioneers. They weren&rsquo;t misguided or misinformed; they were clever and creative people who were working with what they had at the time. They found something that clicked, stuck with it, and now these methods of describing (mostly) characters are fairly well established&hellip; they work. Right? Right. But it&rsquo;s long since time we evolved. These methods were developed for models that could barely break 4k context. Maybe 8k if you&rsquo;re lucky. But we routinely have models (and methods of wrangling them) that allow for <em>far, far, far more context</em> than we could ever dream of years ago. Because of that, we need new methods. But maybe not as new as you think.</p>
+<h4 id="plain-text-is-king">Plain Text is&hellip; King?<a href="#plain-text-is-king" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>What, another hot take?</p>
+<p>I&rsquo;ve been using mostly plain text(ish) bios for characters and scenes for a while now. My style has evolved over time, but in general, if I want a character, that character will be described as such:</p>
+<p>!!! info Character Bio
+# Full Name
+(Brief bio, one paragraph.)</p>
+<pre><code>\### Basic Physical Stats
+\- \*\*Age:\*\*
+\- \*\*Gender:\*\*
+\- \*\*Height:\*\*
+\- \*\*Weight:\*\*
+\- \*\*Hair Color:\*\*
+\- \*\*Eye Color:\*\*
+\- \*\*Skin Color:\*\*
+\- \*\*Race/Species:\*\*
+\- \*\*Occupation:\*\*
+
+\### Appearance
+(Physical appearance, one or two paragraphs)
+
+\### Clothing
+(Typical clothing, one or two paragraphs)
+
+\### Personality and Behavior
+(Personality and behavior, one paragraph)
+
+\### Unique Attributes
+(Unique attributes, unordered list, title and short description.)
+</code></pre>
+<p>If properly filled out, this can be around 1000 tokens or so. This is why I like context so much! You can write as much or as little as you like, or make ChatGPT write as much or as little as it likes, and have a fairly well fleshed-out character for yourself. This can be used if you still want to have one-on-one sessions with individual characters, and it can be used for your player characters. It&rsquo;s versatile, and in my experience, very <em>very</em> effective. It&rsquo;s something I&rsquo;ve tweaked a lot, but I&rsquo;ve used this particular format for probably over a year.</p>
+<p>The basic physical stats is pretty open to adding more detail if you like. Maybe a vampire is 1102 years old, but needs an Apparent Age of 29. Prefer a body type over concrete height/weight numbers? Go for it. Want to add your character&rsquo;s cup size? Why the hell not. Go nuts.</p>
+<p>For the other info, you can add more headers if you want other information, behaviors, etc. to factor in to the character, but you don&rsquo;t have to. Be creative with this if you&rsquo;d like.  Sure, why not. An example of something I&rsquo;ll add is an Equipment section, with a list of important items they always have on their person. I&rsquo;ll provide two examples in the next section - which will serve as our player characters in the ongoing example and demo.</p>
+<p>I feel like you probably  <em>could</em> get too detailed in the info here, and the LLM might lose some of it, but in the examples below, you&rsquo;ll see profiles at about the length that I usually use. I find that they work just fine.</p>
+<h3 id="draft-an-adventure-idea">Draft an Adventure Idea<a href="#draft-an-adventure-idea" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>What do you want to be? Where do you want to go? So far, I&rsquo;ve experimented with three genres:</p>
+<ul>
+<li>Cthulhu Noir: A detective/mystery drama set in the 1920s with supernatural elements.</li>
+<li>Generic Fantasy Adventure: D&amp;D-style setting, with all the expected tropes.</li>
+<li>Modern Slice-of-Life: Just a regular person living in a regular city.</li>
+</ul>
+<p>Wayfarer (and my methods) handle all three well enough, but I will note that it is especially keen on fantasy settings. The weirder you make things, the more it might not perform well.</p>
+<p>Either way, think of a place where you want to explore and do stuff, and think of who you want to be. Let&rsquo;s go through this process with an example:</p>
+<blockquote>
+<p>I want to be an adventurer in a swords-and-sorcery fantasy world where anything can happen.</p>
+</blockquote>
+<p>It&rsquo;s as good a start as any.</p>
+<h3 id="user-character-you---the-player">User Character (You - the player)<a href="#user-character-you---the-player" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Who do you want to play? There are no limits here, but you do have to start somewhere, and I usually start with the player character before coming up with the Character Card, just because the player character <em>tends to be</em> a bit more complex. You want to define yourself fairly well so that your sense of identity in the adventure remains consistent, normalized, and known by you. If you use the shorter formats, you may notice details you can&rsquo;t adequately describe with that method changing from session to session.</p>
+<p>So let&rsquo;s run with the idea that we want to be an adventurer in a swords-and-sorcery fantasy world where anything can happen. Great! We need characters. Normally, I like to fill out the template above and write things out to my own taste and my own liking, but for our purposes, I&rsquo;m just going to get ChatGPT to whip up something relatively generic.</p>
+<p>You have two choices. Meet your generic adventurers!</p>
+<table>
+  <thead>
+      <tr>
+          <th>Elira Thalwyn</th>
+          <th>Darrin Valthorne</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img src="https://i.imgur.com/j35kN2V.png" alt="Elira Thalwyn">{%5:%5}</td>
+          <td><img src="https://i.imgur.com/A9MIVN5.png" alt="Darrin Valthorne">{%5:%5}</td>
+      </tr>
+  </tbody>
+</table>
+<p>Note: These aren&rsquo;t proper SillyTavern character cards; you can&rsquo;t import cards as User personas (yet).</p>
+<p>!!! info Elira&rsquo;s Bio
+# Elira Thalwyn</p>
+<pre><code>Elira Thalwyn was born in a small, bustling village nestled in the shadow of the Verdant Mountains. Raised by a blacksmith father and a herbalist mother, she grew up surrounded by the heat of the forge and the soothing aromas of medicinal plants. Her humble upbringing instilled in her a strong work ethic and a deep respect for nature. As she grew older, she discovered an innate talent for archery and tracking, skills that made her invaluable as a hunter and protector of her village. Despite her skill and courage, Elira remains grounded, driven by a fierce loyalty to her community and an unshakable determination to make her own way in the world.
+
+\### Basic Physical Stats:
+\- \*\*Age:\*\* 27  
+\- \*\*Gender:\*\* Female  
+\- \*\*Height:\*\* 5'7&quot;  
+\- \*\*Weight:\*\* 135 lbs  
+\- \*\*Hair Color:\*\* Chestnut brown, often tied back in a loose braid  
+\- \*\*Eye Color:\*\* Hazel-green  
+\- \*\*Skin Color:\*\* Light tan with freckles across her nose and cheeks  
+\- \*\*Race/Species:\*\* Human  
+\- \*\*Occupation:\*\* Hunter and tracker  
+
+\### Appearance:
+Elira has a lean, athletic build honed by years of trekking through forests and scaling rocky hillsides. Her chestnut-brown hair is sun-streaked and usually tied back in a practical braid, though a few loose strands often escape to frame her freckled face. Her hazel-green eyes are sharp and alert, constantly scanning her surroundings. Her skin carries a healthy tan, with faint scars on her arms and hands—testaments to her time spent in the wilderness. Despite her practical lifestyle, she exudes a quiet, natural beauty and carries herself with a confident, no-nonsense demeanor.
+
+\### Clothing:
+Elira typically wears practical, well-worn leather armor reinforced with plates on her shoulders and bracers on her arms. Her tunic is made of sturdy linen, dyed a deep forest green, and her boots are tall, laced, and built for endurance. Over her armor, she wears a hooded cloak that doubles as camouflage in the woods, dyed in mottled greens and browns. A belt around her waist holds pouches for herbs, small tools, and a sheathed hunting knife. Her quiver and longbow are always slung over her back, a testament to her role as a hunter.
+
+\### Personality and Behavior:
+Elira is pragmatic, resourceful, and fiercely independent. Her upbringing has made her self-sufficient, and she takes pride in her ability to solve problems on her own. She’s naturally observant and prefers action over words, often speaking only when she has something important to say. However, she is deeply loyal and protective of those she cares about, willing to risk her life for her village or friends. 
+
+While generally calm and patient, Elira’s temper can flare if someone endangers her loved ones or disrespects her values. Beneath her tough exterior, she has a warm, nurturing side, often helping the injured or sharing her knowledge of herbal remedies. She occasionally struggles with feelings of inadequacy, particularly when comparing herself to wealthier or more accomplished individuals.
+
+\### Unique Attributes:
+\- \*\*Master Tracker:\*\* Elira can identify and follow even the faintest trails, whether it’s footprints in soft dirt or a snapped twig in a dense forest. This skill makes her invaluable when hunting or searching for lost travelers.  
+\- \*\*Expert Archer:\*\* Years of practice have made Elira a crack shot with her longbow, able to hit distant or moving targets with remarkable precision.  
+\- \*\*Herbal Knowledge:\*\* Thanks to her mother’s teachings, Elira can identify and use various plants for medicinal purposes. She’s often called upon to treat minor injuries and ailments.  
+\- \*\*Stubborn Resolve:\*\* Once Elira has set her mind on something, she’s nearly impossible to deter. While this can be an asset, it sometimes leads her into dangerous or reckless situations.  
+\- \*\*Limited Social Grace:\*\* Elira’s bluntness and preference for solitude can make her seem aloof or unapproachable, particularly to strangers or in formal settings.  
+\- \*\*Overprotective Nature:\*\* Her loyalty to her loved ones sometimes causes her to be overbearing, inadvertently stifling others’ independence.  
+</code></pre>
+<p>!!! info Darrin Valthorne&rsquo;s Bio
+# Darrin Valthorne</p>
+<pre><code>Darrin Valthorne was born in the bustling trade city of Elmshade, nestled in the heart of the kingdom of Ardell. Raised as the son of a blacksmith, he spent his youth forging weapons and armor, dreaming of the adventures they might see. When war swept across the land, Darrin enlisted in the city guard, quickly earning a reputation as a stalwart and honorable warrior. After years of service, he left the military to roam the land as a sellsword, offering his blade to those in need. Now, he wanders the kingdoms, seeking both purpose and a chance to leave a lasting legacy.
+
+\### Basic Physical Stats:
+\- \*\*Age:\*\* 32  
+\- \*\*Gender:\*\* Male 
+\- \*\*Height:\*\* 6'2&quot; 
+\- \*\*Weight:\*\* 210 lbs  
+\- \*\*Hair Color:\*\* Dark brown 
+\- \*\*Eye Color:\*\* Steel gray  
+\- \*\*Skin Color:\*\* Lightly tanned 
+\- \*\*Race/Species:\*\* Human  
+\- \*\*Occupation:\*\* Sellsword, former city guard 
+
+\### Appearance:
+Darrin is a ruggedly handsome man, with a square jaw, high cheekbones, and a faint scar running diagonally from his left brow to his cheekbone. His broad shoulders and muscular build reflect years of combat training and hard labor. His dark brown hair is cropped short, but often tousled from travel, and a neatly trimmed beard frames his jawline. His steel-gray eyes have a piercing intensity, hinting at a man who has seen both the horrors and triumphs of battle. 
+
+\### Clothing:
+Darrin typically wears a well-worn leather jerkin over a chainmail hauberk, practical for both protection and mobility. His traveling boots are scuffed but sturdy, and a dark green woolen cloak drapes over his shoulders, pinned with a simple iron clasp. At his side hangs a longsword with a plain but reliable steel hilt, and a dagger is strapped to his thigh. His clothes bear the marks of a traveler: dirt-stained hems, small patches of repair, and an aura of functionality over style.
+
+\### Personality and Behavior:
+Darrin is pragmatic and focused, with a strong sense of justice that sometimes gets him into trouble. Though he’s fiercely loyal to those he trusts, he often keeps people at arm’s length, wary of betrayal. He has a dry sense of humor and a knack for lightening tense situations, though his brooding demeanor can make others see him as overly serious. Darrin holds himself to a high moral standard and struggles with guilt when he feels he’s failed. While his past experiences have made him cautious, he often finds himself unable to ignore a call for help, even when it’s inconvenient or dangerous.
+
+\### Unique Attributes:
+\- \*\*Skilled Swordsman:\*\* Years of service in the city guard have honed Darrin's swordsmanship. He’s particularly skilled in defensive combat, often using calculated moves to outlast his opponents. 
+\- \*\*Iron Will:\*\* Darrin has an unyielding determination and rarely backs down from a challenge. This mental toughness allows him to endure situations where others might falter. 
+\- \*\*Scarred Past:\*\* Despite his exterior of stoicism, Darrin carries emotional scars from his time in the military. He occasionally struggles with nightmares and self-doubt, which can affect his focus in critical moments.  
+\- \*\*Tactical Thinking:\*\* Darrin excels at reading situations and planning combat strategies, but his caution can sometimes make him hesitate in high-pressure scenarios.
+</code></pre>
+<p>They&rsquo;re both such bold, daring choices. Shit, is that another tall, muscular man? GOD DAM-</p>
+<p>Anyways, slap the images and info in to your User Personas. You can add one, or both, but the LLM will get confused if you switch between them mid-game. Do you want to be Darrin and have Elira as a GM-controlled adventuring companion? Well, stay tuned, I&rsquo;ll tell you how to do that later! You don&rsquo;t necessarily <em>need</em> the Personality and Behavior section (since that&rsquo;s more for use as a one-on-one character card), but it doesn&rsquo;t hurt to have it.</p>
+<p>Onward, to generic adventure with our generic characters! But seriously, make up your own if you want. In fact, you should.</p>
+<h3 id="character-card-llm---the-game-master">Character Card (LLM - the Game Master)<a href="#character-card-llm---the-game-master" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Here&rsquo;s where we tell the LLM how our little game really works. The Character Card, surprisingly enough, isn&rsquo;t really where a lot of the worldbuilding context takes place. It&rsquo;s a lesson for the LLM on how to be a proper Game Master, above all else. I suppose, in essence, we really are creating a character here - but that character is the Game Master for our adventure, not a &ldquo;scene&rdquo; (Oh god, how I&rsquo;ve tried&hellip;) or an individual as so many people are used to. The following contents will show you how we accomplish that.</p>
+<h4 id="description">Description<a href="#description" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Okay, this is going to look a little familiar, but trust me: works.</p>
+<p>!!! info Description
+You are a long-term roleplaying partner serving as a Game Master, narrating the events, scenes, and relationships in {{user}}&rsquo;s life in an endless, adventure style roleplay for the player, who plays {{char}}.</p>
+<pre><code>Fresh Adventure is a text-based adventure game set in the fictional land of Malythos, spefically in the Shattered Kingdoms part of the continent. The world is based on fantasy-medieval tropes, with most of the races, concepts, and settings one can expect in that setting. Magic exists, but is relatively rare, and there have been a few interesting feats of engineering and technological progress, though the world remains mostly in a swords-and-sorcery state.
+
+The Shattered Kingdoms are a loose collection of realms that co-exist along the coast of Malythos. It is mostly occupied by humans, with a few isolated camps, tribes, and settlements belonging to other fantasy races.
+
+Your primary tasks are:
+
+\## Narrating the Scene
+  \- Describe the locations and people {{user}} visits in detail, using full paragraphs. Always ensure the scene is set before focusing on character and object interactions.
+  \- Smoothly transition from scene to scene as {{user}} moves through the world.
+  \- Narrate the scene in second-person, present-tense format at all times.
+  \- Never skip events, even if they seem trivial. Provide opportunities for {{user}} to interact with the world and its characters.
+
+\## Controlling NPCs and Other Characters
+  \- Populate the world with side characters, NPCs, animals, creatures, monsters, mythical creatures, and other living beings where appropriate.
+  \- Maintain consistent personalities and behavior for characters and creatures, especially reoccurring ones.
+  \- Most humanoid characters {{user}} interacts with should be friendly or neutral.
+
+\## Consistent and Detailed Narration Without Shortcuts
+  \- Narrate the scene without skipping over important events and details.
+  \- Always follow the cadence of {{user}}'s posts. {{user}}'s post will indicate whether or not a scene should be skipped. 
+  \- If {{user}}'s post doesn't specify, always choose not to skip or fast forward any scenes.
+  \- Narrate in a present tense, second-person format.
+  \- Avoid narrating {{user}}'s dialogue. Instead, allow for a natural back and forth between {{user}} and whoever {{user}} is talking to.
+</code></pre>
+<p>Look a bit familiar? It should. It&rsquo;s basically the same format I use for the System Prompt when we were setting up the Context/Instruct/System stuff! Where it differs, it should be obvious, is that it&rsquo;s a bit more specific in the sort of setting and game we want to have. This, for example, is suited for a fantasy adventure in a magical land. But if we&rsquo;re doing modern slice-of-life, maybe you want to specify that the world should be populated with regular, average folks instead of monsters and mythical creatures. Or maybe you do want monsters and mythical creatures in your modern world. You have that freedom here!</p>
+<p>Use the concepts demonstrated here to fine tune how each individual adventure is going to play out. This is pretty simple, really. You don&rsquo;t necessarily have to add anything else to this, but making little changes here will narrow down the scope as we get closer in the context to the actual gameplay/prompts. Trust me - I&rsquo;ve tried multiple ways of setting this stuff up, and this is what usually works best. It&rsquo;s fine if it&rsquo;s a bit redundant - it feels like sometimes, it needs to be.</p>
+<h4 id="first-message">First Message<a href="#first-message" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>I want to preface this by saying that much of what you are about to see is pure deception.</p>
+<p>But I&rsquo;m not deceiving you here; we&rsquo;re deceiving the AI. I&rsquo;ve tried a lot of things for a first message, but in the past few years, I&rsquo;ve figured one thing out: If you want the LLM to behave a certain way, the first message is one of the most impactful ways of setting those guidelines out there. The same holds true for what we&rsquo;re working on here.</p>
+<p>So here it is:</p>
+<p>!!! info First Message
+# Welcome to Fresh Adventure!
+## *A Text-Based Adventure Roleplaying Game.*
+©2025, SAI Entertainment, LLC.</p>
+<pre><code>\---
+
+Welcome, user!
+
+It is my pleasure to be your game master as you play {{user}} as you navigate the world of Malythos!
+
+Fresh Adventure is text-based adventure RPG set in the fictional realm of Malythos, where you play the role of the adventurer, {{user}}. I have the honor of being your game master, helping to set the scene and describe events and dialogue as you experience {{user}}'s adventures. You have the freedom to do what you want and go where you please; I will fill in all the details, and play all the side characters needed to ensure you have a fun, fulfilling experience!
+
+\*Disclaimer: This game may feature graphic themes such as violence toward {{user}}, combat, dungeons, monster encounters, war, blood, and gore. {{user}} can, and will, encounter dangerous situations, fights, bandit attacks, and hostile creatures! If you are under the age of 18, or do not wish to experience mature and violent content, please try one of our more wholesome titles!\*
+
+\---
+
+\### Instructions
+
+Fresh Adventure begins wherever you'd like! You can choose to wake up either in a wilderness camp, or in an inn in a city, or along a road. Just state where and how you want to begin, and I'll set the scene! When you are ready to begin, tell me how the adventure should begin by typing \`!start (brief description of the staring conditions),\` and I will do the rest. From there, just tell me what you (as {{user}}) want to do, and I'll make sure you get to experience every detail!
+
+Then, just play and have fun, and try to immerse yourself in the role of {{user}}.
+
+\---
+</code></pre>
+<p>And here&rsquo;s what it looks like if you copy/paste correctly (and I escaped the markdown correctly):</p>
+<p><img src="https://i.imgur.com/O6isOhU.png" alt="Deception!"></p>
+<p>Let&rsquo;s break down what we&rsquo;re doing here bit by bit.</p>
+<p>!!! info The Title/Subtitle
+# Welcome to Fresh Adventure!
+## *A Text-Based Adventure Roleplaying Game.*
+©2025, SAI Entertainment, LLC.</p>
+<p>This is purely thematic. Maybe it helps, maybe it doesn&rsquo;t. I think it looks cool, though. SAI Entertainment, LLC. is an entirely made up company. At least, I think it is. If it&rsquo;s not, and there&rsquo;s a real one, I have nothing to do with it. Either way, I think this kind of sets the mood (maybe more for the player) that this is a text-based adventure game, not just a jury-rigged LLM pretending to be one. Immersion helps!</p>
+<p>!!! info Greeting
+Welcome, user!</p>
+<pre><code>It is my pleasure to be your game master as you play {{user}} as you navigate the world of Malythos!
+
+Fresh Adventure is text-based adventure RPG set in the fictional realm of Malythos, where you play the role of the adventurer, {{user}}. I have the honor of being your game master, helping to set the scene and describe events and dialogue as you experience {{user}}'s adventures. You have the freedom to do what you want and go where you please; I will fill in all the details, and play all the side characters needed to ensure you have a fun, fulfilling experience!
+</code></pre>
+<p>Describing the world the game is set in and how the game is going to proceed. This is not for the user, but for the LLM, of course. You know what card you clicked. But this gives the LLM some solid instructions on what the coming interactions should be like.</p>
+<p>!!! info Disclaimer
+*Disclaimer: This game may feature graphic themes such as violence toward {{user}}, combat, dungeons, monster encounters, war, blood, and gore. {{user}} can, and will, encounter dangerous situations, fights, bandit attacks, and hostile creatures! If you are under the age of 18, or do not wish to experience mature and violent content, please try one of our more wholesome titles!*</p>
+<p>Safety tools! But&hellip; not really. More deception here. This isn&rsquo;t a disclaimer for you. You know what you&rsquo;re getting in to. This is specifically designed to dictate what kinds of things are going to happen as the game proceeds. If you put in here that there will be monsters and bandits, there will be monsters and bandits in the game. If you put in a disclaimer that there will be horror elements, there will be horror elements. If your disclaimer says that there will be naked catgirl barmaids in every tavern, well, I think you can guess what you&rsquo;re going to find in ye olde tavern. Use this disclaimer to tailor the sort of stuff that will happen in this session. But remember the rules on being specific from above - the more specific you are, the less likely the LLM is to hit each note.</p>
+<p>!!! info Instructions
+### Instructions</p>
+<pre><code>Fresh Adventure begins wherever you'd like! You can choose to wake up either in a wilderness camp, or in an inn in a city, or along a road. Just state where and how you want to begin, and I'll set the scene! When you are ready to begin, tell me how the adventure should begin by typing \`!start (brief description of the staring conditions),\` and I will do the rest. From there, just tell me what you (as {{user}}) want to do, and I'll make sure you get to experience every detail!
+
+Then, just play and have fun, and try to immerse yourself in the role of {{user}}.
+</code></pre>
+<p>The Instructions part leans a bit more in to some of the experimental aspects coming up later. For now, we set up a !start &ldquo;command&rdquo; that the LLM can recognize as a request to spin up the starting post. Using it looks a bit like this:</p>
+<p><img src="https://i.imgur.com/LNSlIFr.png" alt="It begins."></p>
+<p>This is where you&rsquo;ll likely need to do a swipe or ten to get things started right. Sometimes the model will have a little trouble latching on to the format, style, etc. But in general, it hits the mark fairly quickly and once it does, it&rsquo;ll stick to the correct style as the session goes on.</p>
+<p>At the onset, here&rsquo;s how our output is looking: <code>Output generated in 4.28 seconds (49.56 tokens/s, 212 tokens, context 2232, seed 1104295997)</code></p>
+<p>&ldquo;But you said you want <em>lots of context</em> and <em>the more the better</em> but that&rsquo;s only like 2k, this is just fine with an 8k context!*</p>
+<p>NO! It&rsquo;s not! Or at least&hellip; It won&rsquo;t be. Because, you see, here&rsquo;s where I unleash upon you one of the secrets that really makes this experience damn near magical: This is just the start. This world is barely built, and we&rsquo;re going to spend <em>hours</em> or <em>days</em> adding to it. Or at least&hellip; we could. For my personal worlds, I do. I do it because that&rsquo;s what drives the immersion and spontaneity.</p>
+<p>Do I still engage in roleplaying with actual humans? Of course. I play D&amp;D all the time. I go on <em>those</em> websites. I love human interaction. But I also love to build, create, and adventure in ways that human partners don&rsquo;t necessarily facilitate. This, however, does facilitate that. A human partner has their own motivations and ideas, and that&rsquo;s great for some things. But sometimes, you just want to grab a set of Lego bricks and start snapping things together to see what you get. And that&rsquo;s how I describe this whole experience. That&rsquo;s what I liked about the O.G. AI Dungeon, and that&rsquo;s what I like about this.</p>
+<p>Creating a new world is just the beginning; now we&rsquo;re going to start filling it out.</p>
+<h4 id="character-lore">Character Lore<a href="#character-lore" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>We&rsquo;re going to touch on this more later, but using a Lorebook as Character Lore (character being the character card) is the bread and butter of continuous worldbuilding.</p>
+<p>As you explore a newly created adventure, you&rsquo;re going to meet people, go to places, and do things. Some of those people and places and things will be things you don&rsquo;t want to forget, things that might change the world, or maybe people you want to meet again&hellip; or travel with, long-term.</p>
+<p>With 80k context, there&rsquo;s a lot you can do in one session, but that session will have to end at some point. You can use the summarize extension, pretend you don&rsquo;t care if stuff scrolls out of context, etc., but eventually, you&rsquo;ll want to start fresh. Character Lore is how you take the meaningful experiences you&rsquo;ve had in one session, in to another one.</p>
+<p>As well as how you define constants and variables, of course, but&hellip; we&rsquo;ll get in to that in the Lorebook section. For now, create a new Lorebook and attach it to the Character via the Character Lorebook button, like so:</p>
+<p>Create the Lorebook:
+<img src="https://i.imgur.com/iCH8ywx.png" alt="Create Lorebook"></p>
+<p>Add it to the Character Lorebook:
+<img src="https://i.imgur.com/JLvDz0M.png" alt="Add Character Lore"></p>
+<p>Make sure the globe icon is green and you&rsquo;re all set! Anything we add to that Lorebook later (and we will) will automatically trigger any time we use this character card.</p>
+<h4 id="other-features-eg-advanced-definitions">Other Features (e.g. Advanced Definitions)<a href="#other-features-eg-advanced-definitions" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>I don&rsquo;t typically mess with Advanced Definitions and haven&rsquo;t found a need for auxillary lorebooks (yet). Thus, all I really have to say here is that none of the other aspects of the Character Card are particularly important for this. That may change, but for now, that&rsquo;s how it is.</p>
+<h3 id="building-a-world-with-the-lorebook-the-world-info">Building a World With the Lorebook (The World Info)<a href="#building-a-world-with-the-lorebook-the-world-info" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Everything we&rsquo;ve created so far is enough for us to start an adventure. The LLM will figure shit out just fine. But maybe you want a little bit of consistency in your sessions, or maybe you want things that happened in prior sessions to have lasting consequences or leave memories. Maybe you don&rsquo;t want the world to forget that you won the big archery contest in that town you were just in. Maybe you don&rsquo;t want to lose that nifty NPC you encountered. Or you want a traveling companion, or even a full party. Well, the Lorebook is how you do that - and more.</p>
+<p>I&rsquo;ll admit that I&rsquo;m no Lorebook guru, but I can certainly show you how to utilize it to keep adding to your world.</p>
+<h4 id="established-information">Established Information<a href="#established-information" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>When you&rsquo;re creating a fresh adventure, you might want to add some established information that will stay the same from session to session. For example, our little adventure is set in the land of Malythos. What is Malythos? Where is it? When is it? If you try to figure that out in Sesson 1, the model will give you some information. If you try to figure it out in Session 2, the game will give you totally different information. So maybe we want to store some information so that any time we ask about Malythos, we get (more or less) the same information every time.</p>
+<p>Let&rsquo;s say for the sake of argument, Malythos is a continent, not a whole planet. And it&rsquo;s an arid desert continent. We could, of course, put that in to the Description, or maybe the AN, or elsewhere&hellip; but why not the Lorebook? This is another case of &ldquo;This is the way it&rsquo;s worked for me most consistently,&rdquo; so that&rsquo;s why I advise doing it. The Lorebook is basically your memory from session to session - think of like taking notes in a D&amp;D session. You may not have perfect recall of the whole entire session, but you have the important stuff. Same basic idea.</p>
+<p>So let&rsquo;s add a new entry to our Lorebook, which we already created:</p>
+<p><img src="https://i.imgur.com/BHT1Rz4.png" alt="Add Lorebook Entry"></p>
+<p>The Primary Keywords are what terms and words will trigger this entry to inject its self in to the context, if it&rsquo;s not there already. For now, none of the other settings need to be changed.</p>
+<p>Here is the text:</p>
+<p>!!! info Malythos
+Malythos is a vast, barren desert continent with patches of fertile land here and there. It is surrounded entirely by the Rybold Sea. Most major cities are along the Fertile Coast and Cloud River, with oceanic and river shipping being a main source of trade and transportation. Beyond the gates of settlements, towns, and cities, the climate and terrain are rocky, sandy, hot, and unforgiving. Rumors of vast riches in these desolate lands tempt adventurers to explore them.</p>
+<p>This establishes Malythos as a desert continent with some settlements along the coast and a river. There are a few names; Rybold Sea, Fertile Coast, Cloud River. All of these things could be Lorebook Entries as well to help build an interesting, established world, but this is fine for now.</p>
+<p>This will get us a different start if we start all over again:</p>
+<p><img src="https://i.imgur.com/zwxTvbI.png" alt="A new start?"></p>
+<p>Now that&rsquo;s a bit more specific a climate and setting to start in. But it still fits or fantasy world vibe; now it&rsquo;s just in a more arid and desolate location.</p>
+<p>But here&rsquo;s the fun part: What if you don&rsquo;t give, say, the Cloud River a lorebook entry and start poking around and trying to learn about it? Well, AI is going to do what AI does best. It&rsquo;s going to make some shit up. And sometimes&hellip; that&rsquo;s how you get new lorebook entries. I know I do.</p>
+<p><img src="https://i.imgur.com/VplOkuD.png" alt="New info? That’s going in the Lorebook"></p>
+<p>Here, you can see I&rsquo;m asking a bartender about the Cloud River. The model is making shit up to answer my questions. But it&rsquo;s not bad info; it&rsquo;s compelling and there&rsquo;s mystery behind it. It&rsquo;s something to explore. Or maybe I don&rsquo;t explore it. But I can still add a lorebook entry with that new info if I like it. Also, the reason he&rsquo;s pissed that I&rsquo;m not reaching for my coin purse is because he previously insisted asking questions wasn&rsquo;t free. What a jerk.</p>
+<p>The point is, you can define as much as you want in the Lorebook, and fill in the blanks with stuff you learn during the adventure. It&rsquo;s like magic!</p>
+<h4 id="everything-else">Everything Else<a href="#everything-else" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>The Lorebook can store pretty much anything in it, for the most part. It&rsquo;s almost entirely taken the place of the Author&rsquo;s Note for me for many things. I&rsquo;ll throw NPCs in there, cities, timelines of events, things a character did that was cool, etc., etc. It&rsquo;s a Todd Howard situation. It just works, and you generally don&rsquo;t have to fuss with the more advanced settings if you don&rsquo;t want to. But there are some instances where those settings make sense to play with.</p>
+<p>For example:</p>
+<ul>
+<li><strong>Non-recursable</strong>: Useful if you don&rsquo;t want other Lorebook entries to trigger this one. If I were to add a Cloud River entry, and didn&rsquo;t want it to trigger every time the Malythos entry triggers (because that entry mentions the Cloud River), I could check this box.</li>
+<li><strong>Prevent further recursion</strong>: Useful for the opposite case. If I don&rsquo;t want anything (like Cloud RIver) in the Malythos entry to trigger other Lorebook entries, I could check this.</li>
+</ul>
+<p>These two settings are a little situational and can help you save a bit of context space by avoiding redundant/unnecessary triggers. Just because I&rsquo;m in Malythose doesn&rsquo;t mean I need to know all about the Cloud River, after all.</p>
+<p>I&rsquo;ll be coming back to the Lorebook and some of the more advanced features in the Experimental Stuff and Demonstration sections, but for now, you should have a solid baseline for building out your world.</p>
+<h3 id="authors-note">Author&rsquo;s Note<a href="#authors-note" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>I used to have lots and lots and lots of stuff in here. But anymore, this is more of a testbed for stuff I might put in the Lorebook or System Prompt. Anything worth being in here all the time is worth being in a Lorebook constant or the System Prompt or Character Card. But by all means, use it as you please.</p>
+<h3 id="experimental-stuff">Experimental Stuff<a href="#experimental-stuff" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>I&rsquo;ve played with a few concepts over the past week or so to see if I can implement them in to the gameplay. I may update this section if I come upon anything else interesting, but for now, it&rsquo;s a little sparse. I did try to implement some way of calling for and reacting to dice rolls, but it was too inconsistent and the model was either overbearing with it or didn&rsquo;t utilize it enough, with no good in between.</p>
+<h4 id="meta-commands">Meta Commands<a href="#meta-commands" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>I have had an unusually high amount of success with adding Meta Commands in to my modules. What&rsquo;s a Meta Command? Don&rsquo;t worry if you&rsquo;ve never heard of these before, because I made the name up. But it turns out, you&rsquo;re familiar with one already.</p>
+<p><code>!start</code> is technically a Meta Command. The first one I made, for example, which is why it&rsquo;s baked in to my First Message template. Lately, the definitions for them them go in to a Lorebook Constant, preferably in a dedicated Global lorebook (just a lorebook I created that&rsquo;s on all the time). But I&rsquo;ve had enough success with it that I&rsquo;ll probably add it to the system prompt later as a permanent addition to adventure gameplay. Here&rsquo;s what I have for Meta Commands right now, in my Lorebook:</p>
+<p><img src="https://i.imgur.com/cwwKRdS.png" alt="Settings"></p>
+<p>!!! info Content:
+## Commands
+Game Master instructions for player commands. When a command (typically a word preceded by a question mark, such as `!start`) is issued, the game will be paused and you will respond as per the instructions of each command. Do not continue the game until the player posts an action for {{user}}. All commands are considered OOC interactions and do not effect the game world if used during play.</p>
+<pre><code> \- \`!start (Starting conditions - optional)\`: Start a new game. Use provided conditions or, if none are given, generate a random start to the game. Can only be used if there is not already a game in progress.
+ \- \`!info (Information requested)\`: Pause the game and provide the information requested by the player to the best of your ability.
+ \- \`!bio (Character)\`: When the player uses this command to request a character bio, fill out the following template, preserving all markdown:
+\```
+\# Full Name
+
+(Brief bio, one paragraph.)
+
+\### Basic Physical Stats
+\- \*\*Age:\*\*
+\- \*\*Gender:\*\*
+\- \*\*Height:\*\*
+\- \*\*Weight:\*\*
+\- \*\*Hair Color:\*\*
+\- \*\*Eye Color:\*\*
+\- \*\*Skin Color:\*\*
+\- \*\*Race:\*\*
+\- \*\*Occupation:\*\*
+
+\### Appearance
+(Physical appearance, one or two paragraphs)
+
+\### Clothing
+(Typical clothing, one or two paragraphs)
+
+\### Personality and Behavior
+(Personality and behavior, one paragraph)
+
+\### Unique Attributes
+(Unique attributes, unordered list, title and short description.)
+\```
+</code></pre>
+<p>For the settings, I have the strategy set to <code>Constant</code> and Position set to <code>At Depth: System</code> at a depth of 3. That keeps the required knowledge fairly fresh.</p>
+<p>The <code>!info</code> command does a fantastic job, however. Here you can see the results, which are fairly typical (though sometimes a swipe or two is required):</p>
+<p><img src="https://i.imgur.com/2K8MUGO.png" alt="Cloud River Lore?"></p>
+<p>Note: I didn&rsquo;t add the prior Cloud River lore to the Lorebook so the model is just making shit up again. <code>!info</code> as it happens is a great way to get content for new Lorebook entries.</p>
+<p>As for <code>!bio</code>, well&hellip; Hey, that template looks familiar&hellip; That part is definitely experimental (it doesn&rsquo;t always work right) but I wanted to add some way to quickly capture an NPC for the purposes of creating a new bio for them. It facilitates my laziness. When it works, it&rsquo;s great and I&rsquo;ll usually try a couple of swipes to get something I can use as a basis for adding a fixed NPC/traveling companion to the Lorebook.</p>
+<p><img src="https://i.imgur.com/jdvfWSf.png" alt="When it works…">
+Close enough!</p>
+<h2 id="demonstration">Demonstration<a href="#demonstration" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Put all that together and what&rsquo;ve you got? An adventure game, baby! Is it perfect? Hell no. Is it fun? Usually. Is it going to get me employed if I put it on my resume? The jury is still out on that one.</p>
+<p>But let&rsquo;s start fresh. Here we are, as Elira, ready to take our first (real, non-example) steps in to this world. It&rsquo;s a fantasy adventure, that&rsquo;s kinda sorta been given some Wild West vibes because I randomly decided the continent is mostly desert. A world of possibilities awaits us.</p>
+<p><img src="https://i.imgur.com/lr16scx.png" alt="Starting fresh."></p>
+<p>This will be an unfiltered demo; if I have to swipe or regenerate, I&rsquo;ll say so. If I don&rsquo;t say so, assume I didn&rsquo;t have to! Everything is set up in a fresh clone of SillyTavern, as written in these instructions. All that&rsquo;s left to do is see if it works.</p>
+<h3 id="starting-a-game">Starting a Game<a href="#starting-a-game" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>You should be fairly confident in how to kick this off by now if you&rsquo;ve read through at least the last section. If you&rsquo;re still confused, well, uh&hellip; It&rsquo;s right there in the first message. You use the !start Meta Command and tell the model where we&rsquo;re starting off. Though based on the description we have set in the global constant Lorebook entry, I&rsquo;m sure we could just type <code>!start</code> alone and get something serviceable. Let&rsquo;s start with Elira on the trail of a wounded bandit who has a treasure map. That&rsquo;s a good way to dive right in, right?</p>
+<p><img src="https://i.imgur.com/LL3EVbl.png" alt="On the trail…"></p>
+<p>Not a bad start. It&rsquo;s a bit lacking in details, but we can roll with it. You may have noted that I have the token limit for responses set to around 400 tokens. I find that this keeps things moving at a good pace for me. You can raise it or lower it as you please. But it&rsquo;s my turn! I need to <em>do some stuff</em>. And it looks like we&rsquo;re going to find the guy pretty quickly. But&hellip; Hmmm, I want some info about this first.</p>
+<p>The <code>!info</code> meta command usually gives me good results, so let&rsquo;s try it out:
+<img src="https://i.imgur.com/FIl5duW.png" alt="Can I hit him?"></p>
+<p>That&rsquo;s a tough shot. I could try it, but I&rsquo;m not sure I&rsquo;d make it and if I miss&hellip; I might alert him to how close I am. Elira is an expert archer, but it still feels like a gamble. Maybe I should get closer&hellip;</p>
+<h3 id="doing-stuff">Doing Stuff<a href="#doing-stuff" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>We&rsquo;re in the thick of it now. The way we have things set up, this adventure runs a lot like classic adventure games do:</p>
+<ul>
+<li>You state, in first person, what you want to do.</li>
+<li>The narrator states, in second person, what happens.</li>
+</ul>
+<p>And so on and so forth in perpetuity. Only here, there aren&rsquo;t any fancy stat tracking systems. You won&rsquo;t have to worry about whether you have the right dexterity or stealth values (though&hellip; keep an eye on the experimental section).</p>
+<p>I think we&rsquo;re going to try to get closer. We could shoot, but we might miss at this range.</p>
+<p><img src="https://i.imgur.com/qP5pAKK.png" alt="Closer…"></p>
+<p>Not bad. He&rsquo;s more alert, but he didn&rsquo;t directly see us. We need to get closer, though, to make sure we don&rsquo;t miss. A cornered bandit could be dangerous.</p>
+<p><img src="https://i.imgur.com/xl5eGzY.png" alt="And closer…"></p>
+<p>We&rsquo;re close enough to get a good look at him and&hellip; wait&hellip; Oh, god, no&hellip;</p>
+<h3 id="shit-its-a-tall-muscular-man">Shit! It&rsquo;s a tall, muscular man!<a href="#shit-its-a-tall-muscular-man" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Dammit! I&rsquo;m sick of this bullshit!</p>
+<h4 id="banning-tokens-in-practice">Banning Tokens (In Practice)<a href="#banning-tokens-in-practice" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Okay, so I obviously edited that last response to make the model look like it wrote that he&rsquo;s a tall, muscular figure. But it&rsquo;s all for a good cause: Banning tokens. Any time you come across a theme the model insists on treading/retreading, some word you just don&rsquo;t like, some way of describing people or characters, instead of trying to tell the model not to do that anymore, consider banning tokens. In this case, I never want to see another tall, muscular man again.</p>
+<p>This works great if you incorporate positive prompts that encourage more of the things you do like. For example, I might put in to the Author&rsquo;s Note that most people I meet should be of average build and height (a fairly decent use case for the Author&rsquo;s Note over the Lorebook), in addition to banning tokens. Combined, that <em>should</em> keep most people relatively normal as opposed to dotting the landscape with giant huge hulking monster muscle men.</p>
+<p>Anyways, to ban tokens, it&rsquo;s fairly straightforward. For some reason, I&rsquo;m getting mixed results using SillyTavern&rsquo;s built-in method of getting token IDs, but text-generation-webui can handle it, so I&rsquo;ve been using that lately. First, you copy the offending text to the clipboard. Then, in text-generation-webui, go to the Notebook and paste it there, like so:</p>
+<p><img src="https://i.imgur.com/voen70R.png" alt="Damn you, mountain men"></p>
+<p>And then, click on the Tokens tab and hit the button at the top to get a list of token IDs:</p>
+<p><img src="https://i.imgur.com/KWwllTO.png" alt="There it is."></p>
+<p><strong>It&rsquo;s important to paste in a fragment as opposed to just a single word you don&rsquo;t like</strong> because the token for &ldquo;muscular&rdquo; (without a space) is different from the token for &quot; muscular&rdquo; with the latter being what you&rsquo;ll find in the middle of a sentence. Ban the token as you find it <em>in situ</em> rather than just typing it in to the Notebook and getting the token. Also keep in mind that &quot; muscular&quot; and &quot; Muscular&quot; are two different tokens. If the word you&rsquo;re pissed at comes at the beginning of a sentence, you&rsquo;ll want to remember that. So in this case, I want to ban both &quot; tall&quot; and &quot; muscular&quot; to make sure I just get normal sized people from now on. This means that my token list in SillyTavern under Banned Tokens in the Paramaters is going to be [18260, 51403]. If it starts using these words at the start of sentences, I can ban those, too, but this will do for now:</p>
+<p><img src="https://i.imgur.com/i5CBCIV.png" alt="Git on outta here… git!"></p>
+<p>Oh shit. I don&rsquo;t like scars, either? Well if I decide, later, I don&rsquo;t want the &quot; scar&quot; token to be in my game, I just throw it on to the end of the existing list, like so:</p>
+<p><img src="https://i.imgur.com/7sqQwgO.png" alt="No scars for me."></p>
+<p>And we&rsquo;re set. No tall, muscular, scarred people in MY adventure.</p>
+<p>Sometimes, some models will try to duck these bans and may describe a &ldquo;tall, mus cular guy with a large Scar&rdquo; or something like that, but I have found Wayfarer at least to be fairly adverse to doing this. Your mileage may vary, and it will probably depend on what tokens you ban. If you do a game set in a murder mystery hotel and ban &quot; hotel&quot; it&rsquo;s going to try to get around it, for example. Okay, now that&rsquo;s out of the way, let&rsquo;s regenerate and get our damn map.</p>
+<p><img src="https://i.imgur.com/TKnFtlg.png" alt="Much better!"></p>
+<p>The adventure continues, sans giant muscle man, and we wind up in a fight. Aside from the slight edit to demonstrate token banning, none of this require any swipes or regens. You&rsquo;ll likely require a few over a longer adventure, but this kind of gameplay is fairly normal. In general, it&rsquo;s following the disclaimer text and the other guidelines well enough. It is, still, a little player biased&hellip; I&rsquo;m unlikely to lose this fight. But it at least adds some elements of danger and not everything I do works perfectly, exactly as I intended it. Which, in my opinion, is what makes this particular method and model so good!</p>
+<p>If you want to see what happens, you&rsquo;ll just have to try it for yourself.</p>
+<h3 id="adding-to-the-world">Adding to the World<a href="#adding-to-the-world" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>As I mentioned above, ideally for me, this world is always growing. There&rsquo;s always some new thing or place or person I don&rsquo;t want to lose when I eventually move on to the next session. That is, once again, where the Lorebook and some of the more advanced features come in clutch.</p>
+<h4 id="companions-and-npcs">Companions and NPCs<a href="#companions-and-npcs" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Remember Isara? She seemed pretty cool. Let&rsquo;s say I want to work together with her for a while and have her join me on my travels. If you&rsquo;ll recall, we already used the experimental <code>!bio</code> command to generate a decent little character bio for her - similar to the one we use for player characters. And there&rsquo;s a very effective way of adding that character bio to any new scene we create with the Lorebook.</p>
+<p>First, I&rsquo;ll format the bio that we generated earlier so it&rsquo;s got the proper markdown. As I said previously, I don&rsquo;t think the markdown really matters for the sake of the model, but it does help me stay consistent and organized with anything I put to text. Here she is:</p>
+<p>!!! info Isara Thornscale
+# Isara Thornscale</p>
+<pre><code>A former student of your father's and experienced hunter, Isara has a reputation for being skilled yet unpredictable. Her red hair is shorter now, cut to shoulder-length and streaked with silver, while the scar that mars her jawline tells the story of a close call during a hunt gone wrong. Tension lines her face, marking her as someone who lives life at high alert, always ready for what the wild throws next. Years of surviving in dangerous territory have left her with an aura of readiness that seems permanently etched onto her features. Though she's never explicitly stated why she left, many whisper about something dark driving her away - some secret buried deep enough to leave permanent shadows in her gaze. Despite the air of danger surrounding her, she speaks calmly and quietly, which suggests that the surface-level aggression belies a deeper complexity to her character that hasn't fully revealed itself to the wider world yet. Isara's connection to you stems from her time learning alongside your father, cementing her as one of the few people you still hold in esteem after his passing. However, even you struggle to understand exactly what drives her these days, making her an enigmatic companion with hidden depths and unknown loyalties.
+
+\## Basic Physical Stats
+ \- \*\*Age\*\*: 36
+ \- \*\*Gender\*\*: Female
+ \- \*\*Height\*\*: 5'9&quot;
+ \- \*\*Weight\*\*: 160lbs
+ \- \*\*Hair color\*\*: Red with streaks of gray
+ \- \*\*Eye color\*\*: Emerald green
+ \- \*\*Skin color\*\*: Pale complexion, lightly tanned
+ \- \*\*Race\*\*: Human
+
+\## Appearace
+Isara is tall and athletic, built solidly from years of physical labor and survival in the wilderness. Her body bears several visible scars, proof of the dangers she has faced, while her keen green eyes scan her surroundings constantly. A prominent jagged scar runs down the left side of her jawline, marking a past ordeal she rarely mentions.
+
+\## Clothing
+Wearing a mix of leather and cloth garments designed for comfort and mobility, she sports a pair of worn, sturdy leather leggings and a forest green shirt with reinforced elbows and shoulders. A dark cloak hangs loosely from her broad frame, useful for blending in with the forest shadows when necessary. Around her hips, she keeps a wide utility belt holding various tools, a flask of water, and her trusted hunting knife secured in a sheath within easy reach.
+
+\## Personality and Behavior
+Steadfast and calculating, Isara approaches most situations with caution, weighing every option before taking action. Her wit is quick, and her tongue sharper; she rarely pulls punches, preferring brutal honesty. Despite this, she shows a softer side when it comes to protecting the innocent, though she's unlikely to admit it openly. She trusts very few people, but maintains an odd fondness for you due to your shared connections. Loyalty isn't easily earned, and she expects the same from anyone who claims alliance with her.
+
+\## Unique Attributes
+ \- \*\*Expert Hunter\*\*: Years of tracking experience and survival skills make Isara invaluable for hunting or exploring the untamed wilderness.
+ \- \*\*Quick thinking in combat\*\*: Whether armed or unarmed, she can adapt swiftly to any situation and counter accordingly.
+ \- \*\*Recognized by her distinctive voice\*\*: Even in a crowd, her voice is unmistakably hers, carrying an edge that reflects her personality.
+ \- \*\*Intuitive understanding of the natural world\*\*: Long-term exposure to nature has given Isara a sixth sense for approaching storms, animal behavior, and environmental hazards.
+</code></pre>
+<p>Now, we take this and we open up the Lorebook for our adventure and slap it in there, with these settings:</p>
+<p><img src="https://i.imgur.com/AIPH08x.png" alt="Isara"></p>
+<p>Strategy is set to Constant. Contstants don&rsquo;t need keywords; they&rsquo;ll just hang out where they get put forever. And just to be safe, for added NPCs, I usually check Prevent further recursion - it&rsquo;s not really necessary for an NPC.</p>
+<p>So this gets her in to a new game just fine, but what if we want all future games to assume she&rsquo;s <em>always</em> traveling with us? Even if we don&rsquo;t mention her by name when we use <code>!start</code>, she should be there. There are any number of ways to handle this, but I usually just tack some info on to the content of the Lorebook entry, e.g. a <code>\## Companion</code> category. Something like this:</p>
+<p>!!! info Companion
+## Companion
+Isara has been traveling with you for three weeks now as you track down the person who stole Redcliff Town&rsquo;s infamous llama statue. She camps with you every night and you rotate keeping watch. She has taken on the role of hunting and cooking, while you clean and tend to the fire.</p>
+<p>You can add more detail to this, but this should work&hellip; let&rsquo;s find out if it does.</p>
+<p><img src="https://i.imgur.com/4ONwNXZ.png" alt="There she is!"></p>
+<p>It took a couple regens, but it eventually set the scene with Isara nearby. In the other attempts, I&rsquo;m sure it would have mentioned her if I got up and started poking around. If you find it&rsquo;s having a hard time placing your NPCs/Companions, you can reinforce the idea with a blurb in the Author&rsquo;s Note, I&rsquo;ve found, but that&rsquo;s usually not necessary.</p>
+<p>I&rsquo;ve had some <em>mild</em> difficulty with the model trying to track more than one companion, but it seems to handle a single companion just fine. More than that and it sometimes loses track of who is who.</p>
+<h4 id="events">Events<a href="#events" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>Sometimes a thing happens that you want to be fully realized in the history of your world. Let&rsquo;s say, for example, that Isara and I once got in to a huge brawl at the local tavern in Silver Oak Settlement, and we were subsequently banned from the tavern and the town its self. Well, maybe I&rsquo;d want that to factor in to things if our travels take us back around Silver Oak Settlement.</p>
+<p>You can make up your own history and events, or just commit things that actually happen in the game to the Lorebook - either way, the model will usually remember them. For my purposes, I will usually create another Constant in the card&rsquo;s lorebook that includes a timeline of things that have happened. In that same entry, I&rsquo;ll devise some basic calendar system that the world uses just so it can track things in chronological order.</p>
+<p>Let&rsquo;s throw the Silver Oak incident in to the Lorebook as an event on a timeline.</p>
+<p>!!! info Timeline Lorebook Entry
+## Calendar
+Malythos operates on a standard calendar that includes 30 days to a week, 3 weeks to a month, 10 months to a year, and 100 years to a King&rsquo;s Age.</p>
+<pre><code>It is currently Year 3 of the 9th King's Age.
+
+\## Timeline of Events
+\- Year 3, 9th King's, 2nd month: {{char}} and Isara began traveling together, sharing a common interest.
+\- Year 3, 9th King's, 3rd month: {{char}} and Isara were involved in a brawl in the tavern of Silver Oak Settlement, the Rusty Mule. The brawl resulted in several injuries, including a Isara sustaining a broken finger and {{char}} bruising a rib. As a result of the brawl, {{char}} and Isara were banned from both the tavern, as well as the entire town of Silver Oak Settlement and threatened with imprisonment if they ever returned.
+</code></pre>
+<p>Basic, but it&rsquo;ll work for now. I added this to the Lorebook as a constant just like Isara (Timeline of events and NPC companions so far are the only thing I generally add as constants), but after the Author&rsquo;s Note so it&rsquo;s a bit further down, and we&rsquo;ll see how she reacts when I suggest we swing by and say hello!</p>
+<p><img src="https://i.imgur.com/Jj6QGeG.png" alt="Not a great idea…"></p>
+<p>Oh. Looks like she&rsquo;s still a little sore, a little pissed, and overall not too keen on the idea of going back to Silver Oak. Imagine that.</p>
+<p>The possibilities here are limitless. Nothing can stop you from populating your world with events and characters. Well&hellip; Unless you manage to overflow the context. Don&rsquo;t do that.</p>
+<h3 id="when-to-stopstart-over">When to Stop/Start Over<a href="#when-to-stopstart-over" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>So you&rsquo;re going through an adventure and things are going great, but you&rsquo;re starting to butt up to whatever context limit you&rsquo;re running with&hellip;. which I hope is fairly high, for your sake.</p>
+<p>What I&rsquo;ve found thus far with this model and method is that, for the most part, the adventures will have fairly well-defined beginnings, middles, and ends. You&rsquo;ll generally start off, maybe a bit aimless. Maybe you find your own goal, maybe the model puts one in front of you. You pursue the goal, you accomplish the goal, and you resolve the aftermath&hellip; and then you&rsquo;re kind of in a situation where a bunch of stuff happened, but you&rsquo;re on the verge of that &ldquo;starting a new thing&rdquo; situation.</p>
+<p>It&rsquo;s usually at about that point where I&rsquo;ll decide what was important, if anything, and start compiling it in to the Lorebook entries. Perfection is truly the enemy of good here. Use D&amp;D session note rules. Remember the important stuff and don&rsquo;t sweat the details. Maybe record the fact that you stormed the castle and saved the prince, but don&rsquo;t worry about each sword blow, minor injury, or victory you scored as you made your way to him. Totally appropriate to remember the huuuuuuuge&hellip; tracts of land, though.</p>
+<p>Once you&rsquo;ve got things documented, start fresh and adeventure onward! The world will remember your deeds (if you recorded them) and you&rsquo;ll have a whole bunch of context available for the next adventure.</p>
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><strong>Not one single thing in this guide</strong> is set in stone. It should serve as an example of what you <em>can</em> do, without telling you what you <em>should</em> do. It is the culmination of years of screwing around, trying different models, seeing what works and what doesn&rsquo;t, what feels good and what doesn&rsquo;t, and adapting my own thoughts and methods in to something that (once found that <em>secret sauce</em> again) has become the thing I was looking for in running a LLM as an adventure game master.</p>
+<p>All of the content herein was created by me or some AI. The images are AI generated and the character bios are AI generated. I&rsquo;d encourage you to create your own rather than relying on AI-generated content; it&rsquo;s more fun when you&rsquo;re taking a character you made just for yourself in to a fresh adventure. But do what you have to do to have fun.</p>
+<p>Edit, tweak, improvise, adapt, change, manipulate, experiment, and <em>fuck with</em> this. All of it. Make it your own. The process detailed here creates something I can spend a quiet evening enjoying, and if you create something with this process that you can enjoy, cool! If not, mess with it til you do enjoy it.</p>
+<p>That&rsquo;s it. That&rsquo;s all. Really. Go kill some bandits.</p>
+<p><em>(I may at some point include everything I created in a fresh install of ST in a zip file or something for ease of just downloading it and jumping right in but for now, copy/paste will get you there)</em></p>
+<p>This work is licensed under CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.
+To view a copy of this license, visit <a href="https://creativecommons.org/publicdomain/zero/1.0/">https://creativecommons.org/publicdomain/zero/1.0/</a>.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://techsucks.org/posts/llm-benchmarks/" class="button inline prev">
+        &lt; [<span class="button__text">LLM Inference Benchmarks</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://techsucks.org/posts/directory-opus-review/" class="button inline next">
+         [<span class="button__text">Directory Opus Review</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+    </div>
+
+  </div>
+  
+
+  
+    
+
+  
+</div>
+
+
+<button id="back-to-top" aria-label="Back to Top">
+  
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+
+<style>
+  #back-to-top {
+    display: none;  
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;  
+    color: white;  
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;  
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  #back-to-top:hover {
+    background-color: #555;  
+    transform: translateY(-3px);
+  }
+</style>
+
+
+<script>
+  
+  const backToTopBtn = document.getElementById("back-to-top");
+
+  
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>

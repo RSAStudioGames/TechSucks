@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    <title>Guide To Debloating Windows :: TechSucks</title>
+  
+  <script defer src="https://stats.techsucks.org/script.js" data-website-id="3512b344-89b7-42ea-b378-97121d4dcae2"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to de-crappify Windows 10 or 11 enough to make it useable while blocking a fair bit of their spyware." />
+<meta name="keywords" content="Software, Debloating, Windows" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://techsucks.org/posts/guide-to-debloating-windows/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://techsucks.org/terminal.css">
+
+<link rel="stylesheet" href="https://techsucks.org/style.css">
+
+
+<link rel="shortcut icon" href="https://techsucks.org/favicon.png">
+<link rel="apple-touch-icon" href="https://techsucks.org/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Guide To Debloating Windows">
+<meta property="og:description" content="How to de-crappify Windows 10 or 11 enough to make it useable while blocking a fair bit of their spyware." />
+<meta property="og:url" content="https://techsucks.org/posts/guide-to-debloating-windows/" />
+<meta property="og:site_name" content="TechSucks" />
+
+  <meta property="og:image" content="https://techsucks.org/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-12-23 15:07:24 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    TechSucks
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  
+  <div class="split-layout-wrapper">
+    
+    <aside class="sidebar">
+        <nav>
+            <h3 class="sidebar-header">Systems</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/servermaxxing">> <span>SERVERMAXXING</span></a></li>
+                <li><a href="/posts/server-building">> <span>Server Building</span></a></li>
+                <li><a href="/posts/personal-sovereign-cloud">> <span>Personal Cloud</span></a></li>
+                <li><a href="/posts/running-your-own-home-media-server">> <span>Home Media</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Software</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/guide-to-debloating-windows">> <span>Debloating Windows</span></a></li>
+                <li><a href="/posts/directory-opus-review">> <span>Directory Opus</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">"Intelligence"</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/machine-learning">> <span>Machine Learning</span></a></li>
+                <li><a href="/posts/llm-benchmarks">> <span>LLM Benchmarks</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Miscellaneous</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/sailing-the-high-seas">> <span>Sailing The High Seas</span></a></li>
+                <li><a href="/posts/managing-your-digital-privacy">> <span>Digital Privacy</span></a></li>
+
+                <li><a href="/posts/random-stuff">> <span>Random Stuff</span></a></li>
+            </ul>
+        </nav>
+
+        
+        <hr />
+        <h3 class="sidebar-header">
+            Table of Contents
+        </h3>
+        <div class="sidebar-list">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#guide-to-debloating-windows">Guide To Debloating Windows:</a>
+      <ul>
+        <li><a href="#the-easier-way">The Easier Way</a></li>
+        <li><a href="#why-windows-gets-bloated">Why Windows gets bloated</a>
+          <ul>
+            <li><a href="#specific-examples-of-bloatwaretelemetry">Specific examples of bloatware/telemetry</a></li>
+            <li><a href="#impact-on-gamingproductivity">Impact on gaming/productivity</a></li>
+            <li><a href="#privacy-implications-in-more-detail">Privacy implications in more detail</a></li>
+            <li><a href="#long-term-maintenance-tips">Long-term maintenance tips</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#useful-tools">Useful Tools:</a></li>
+  </ul>
+</nav>
+        </div>
+        
+
+    </aside>
+
+    <div class="main-content-area">
+        
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://techsucks.org/posts/guide-to-debloating-windows/">Guide To Debloating Windows</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-12-23</time><span class="post-author">RSA</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://techsucks.org/tags/software/">Software</a>&nbsp;
+      
+      #<a href="https://techsucks.org/tags/windows/">Windows</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+
+
+  <div class="post-content"><div>
+        <p>Work in progress (just like the rest of the site) ¯\_(ツ)_/¯</p>
+<h1 id="guide-to-debloating-windows">Guide To Debloating Windows:<a href="#guide-to-debloating-windows" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>The process of debloating Windows 10/11 is best done on a fresh installation of Windows. I hope you&rsquo;re using W10, and not W11. Use <a href="https://0patch.com/">0Patch</a> to stay up to date with security updates even after Microsoft kills off W10 on <a href="https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281">October 14th, 2025.</a></p>
+<h2 id="the-easier-way">The Easier Way<a href="#the-easier-way" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>To start debloating Windows 10 or 11, I usually start with <a href="https://github.com/ChrisTitusTech/winutil">WinUtil</a> by <a href="https://github.com/ChrisTitusTech/">ChrisTitusTech</a>. <a href="https://winutil.christitus.com/dev/">Documentation</a>.</p>
+<p>1. Run WinUtil</p>
+<p><strong><em>PowerShell</em></strong>: Run <code>irm &quot;https://christitus.com/win&quot; | iex</code> <br />
+
+<strong><em>Command Prompt</em></strong>: <code>powershell -command &quot;irm &quot;https://christitus.com/win&quot; | iex&quot;</code> </p>
+<p><img src="/images/launchpowershell.png" alt=""></p>
+<p>Any of those three options (should you have them) will launch PowerShell</p>
+<p><img src="/images/powershellchrisutildebloatcommand.png" alt=""></p>
+<p>My terminal may look different than yours, but the command is still the same. Make sure you&rsquo;re using PowerShell and NOT Command Prompt.</p>
+<p>2. Navigate to the “Tweaks” tab</p>
+<p><img src="/images/tweaks-tab-dark_hu_75e31561a8cfb84.webp" alt=""></p>
+<p>If you&rsquo;re new to using this tool and don&rsquo;t know what most of the options mean, I&rsquo;d just select “Standard” from the recommended selections at the top and then click “Run Tweaks&quot;<br>
+Here are the tweaks in WinUtil and what I&rsquo;d recommend for the average user to choose:</p>
+<ul>
+<li>
+<p>Select: <strong>Create Restore Point</strong> <br />
+
+Note: This creates a restore point in case something ever goes wrong on your PC, you have a good point to restore.</p>
+</li>
+<li>
+<p>Select: <strong>Delete Temporary Files</strong> <br />
+
+Note: Usually doesn&rsquo;t hurt to run this and possibly free up some space.</p>
+</li>
+<li>
+<p>Select: <strong>Disable ConsumerFeatures</strong> <br />
+
+Note: Disables the automatic installation of random games and third-party apps that microsoft forces on it&rsquo;s users after installation or updates. It could potentially disable the Phone Link feature.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Telemetry</strong> <br />
+
+Note: Blocks a lot of the built-in features microsoft has to spy on its users.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Activity History</strong> <br />
+
+Note: It&rsquo;s my personal preference to keep this off.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Explorer Automatic Folder Discovery</strong> <br />
+
+Note: It&rsquo;s my personal preference to keep this off. Stops Windows Explorer from automatically changing the folder settings based on the content inside, such as, changing a folder to be optimized for music if music files are detected in the folder.</p>
+</li>
+<li>
+<p>Select: <strong>Disable GameDVR</strong> <br />
+
+Note: Disables the Xbox app screen recording function and some other game features. Not needed whatsoever and can even lower your performance in games.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Hibernation</strong> <br />
+
+Note: Disables hibernation. I recommend leaving this on if you&rsquo;re on a laptop.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Homegroup</strong> <br />
+
+Note: Not really needed on the average user&rsquo;s computer. Leave on if you know you need it.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Location Tracking</strong> <br />
+
+Note: Self-explanatory. Recommended option.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Storage Sense</strong> <br />
+
+Note: Personal preference to leave off</p>
+</li>
+<li>
+<p>Select: <strong>Disable Wifi-Sense</strong> <br />
+
+Note: Used to spy on you and all the wifi networks around your device.</p>
+</li>
+<li>
+<p>Select: <strong>Select: Enable End Task With Right Click</strong> <br />
+
+Note: Allows you to end the task when right-clicking an application from the taskbar.</p>
+</li>
+<li>
+<p>Select: <strong>Run Disk Cleanup</strong> <br />
+
+Note: Usually doesn&rsquo;t hurt to run this and possibly free up some space. Will also remove old unneeded windows update files.</p>
+</li>
+<li>
+<p>Deselect: <strong>Change Windows Terminal default: PowerShell 5 → PowerShell 7</strong> <br />
+
+Note: Personal preference. If you don&rsquo;t know what it is, don&rsquo;t worry about it.</p>
+</li>
+<li>
+<p>Deselect: <strong>Disable PowerShell 7 Telemetry</strong> <br />
+
+Note: Only if you used the above option. Stops microsoft from spying on your usage of PowerShell.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Recall</strong> <br />
+
+Note: Highly recommended option. Major safety concern created by microsoft.</p>
+</li>
+<li>
+<p>Deselect: <strong>Set Hibernation as default</strong> <br />
+
+Note: Select if you are using a laptop.</p>
+</li>
+<li>
+<p>Select: <strong>Set Services to Manual</strong> <br />
+
+Note: Sets a lot of useless, bloat, and telemetry services to manual that don&rsquo;t need to be running all the time.</p>
+</li>
+<li>
+<p>Select: <strong>Debloat Brave</strong> <br />
+
+Note: I recommend if you use Brave browser.</p>
+</li>
+<li>
+<p>Select: <strong>Debloat Edge</strong> <br />
+
+Note: I recommend if you use MS Edge.</p>
+</li>
+<li>
+<p>Deselect: <strong>Adobe Network Block</strong></p>
+</li>
+<li>
+<p>Deselect: <strong>Adobe Debloat</strong></p>
+</li>
+<li>
+<p>Deselect: <strong>Disable IPv6</strong></p>
+</li>
+<li>
+<p>Deselect: <strong>Prefer IPv4 over IPv6</strong></p>
+</li>
+<li>
+<p>Deselect: <strong>Disable Teredo</strong></p>
+</li>
+<li>
+<p>Select: <strong>Disable Background Apps</strong></p>
+</li>
+<li>
+<p>Select: <strong>Disable Microsoft Copilot</strong> <br />
+
+Note: My opinion is that Copilot is garbage. Do what you wish.</p>
+</li>
+<li>
+<p>Deselect: <strong>Disable Fullscreen Optimizations</strong> <br />
+
+Note: <a href="https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/">Fullscreen optimizations</a> run games in an optimized borderless windowed mode. I usually leave this option deselected.</p>
+</li>
+<li>
+<p>Select: <strong>Disable Intel MM (vPro LMS)</strong> <br />
+
+Note: Recommended unless you know what this is and need it for something.</p>
+</li>
+<li>
+<p>Deselect: <strong>Disable Notification Tray/Calendar</strong></p>
+</li>
+<li>
+<p>Select: <strong>Disable Windows Platform Binary Table (WPBT)</strong></p>
+</li>
+<li>
+<p>Deselect: <strong>Set Display to Performance</strong></p>
+</li>
+<li>
+<p>Select: <strong>Set Classic Right-Click Menu</strong> <br />
+
+Note: Windows 11 only option. I prefer this as it gives you the full-featured context menu back instead of the half-useless version microsoft pushes on you.</p>
+</li>
+<li>
+<p>Deselect: <strong>Set Time to UTC</strong></p>
+</li>
+<li>
+<p>Deselect: <strong>Remove ALL MS Store Apps</strong> <br />
+
+Note: This will remove ALL microsoft store apps besides the essentials required to make WinGet work.</p>
+</li>
+<li>
+<p>Select: <strong>Remove Home from explorer</strong> <br />
+
+Note: Personal preference</p>
+</li>
+<li>
+<p>Select: <strong>Remove Gallery from explorer</strong> <br />
+
+Note: Personal preference</p>
+</li>
+<li>
+<p>Select: <strong>Remove OneDrive</strong> <br />
+
+Note: Moves OneDrive files to Default Home Folders and Uninstalls it. Do not select if you use OneDrive.</p>
+</li>
+<li>
+<p>Select: <strong>Block Razer Software Installs</strong> <br />
+
+Note: If you have a Razer device (my condolences to your wallet), don&rsquo;t use this option.</p>
+</li>
+</ul>
+<p>I then like to run <strong>OO Shutup 10</strong>. Go to “Actions” in the top bar then select “Apply only recommended settings” you&rsquo;ll be good. This will block a lot of background spying/telemetry by microsoft and some general annoyances. Read the descriptions of what the other options do if you&rsquo;re unfamiliar with them as they can lead to some significant changes.</p>
+<p>Then, under “Customize Preferences” (the right bar of WinUtil in the tweaks tab), I usually change the following:</p>
+<ul>
+<li>
+<p>Enable <strong>Dark Theme for Windows</strong> <br />
+
+Note: Personal preference. Enables Dark Mode system-wide</p>
+</li>
+<li>
+<p>Disable <strong>Bing Search in Start Menu</strong> <br />
+
+Note: Personal preference. I don&rsquo;t like my start menu to send all my search results to bing&rsquo;s servers.</p>
+</li>
+<li>
+<p>Disable <strong>NumLock on Startup</strong> <br />
+
+Note: Personal preference.</p>
+</li>
+<li>
+<p>Disable <strong>Verbose Messages During Logon</strong> <br />
+
+Note: Personal preference. Not really needed for the average user.</p>
+</li>
+<li>
+<p>Disable <strong>Recommendations In Start Menu</strong> <br />
+
+Note: Personal preference. Be aware disabling this will disable Windows Spotlight in the lock screen.</p>
+</li>
+<li>
+<p>Disable <strong>Remove Settings Home Page</strong></p>
+</li>
+<li>
+<p>Enable <strong>Snap Window</strong></p>
+</li>
+<li>
+<p>Enable <strong>Snap Assist Flyout</strong></p>
+</li>
+<li>
+<p>Enable <strong>Snap Assist Suggestion</strong></p>
+</li>
+<li>
+<p>Disable <strong>Mouse Acceleration</strong> <br />
+
+Note: Disables <a href="https://prosettings.net/cdn-cgi/image/dpr=1%2Cf=auto%2Cfit=cover%2Ch=608%2Cq=95%2Cw=1080/wp-content/uploads/mouse-accel-article.png">mouse acceleration</a> so your mouse cursor will move around the screen at a consistent speed based on your settings. Recommended if you game on that device.</p>
+</li>
+<li>
+<p>Disable <strong>Sticky Keys</strong> <br />
+
+Note: Disables Sticky Keys so it will no longer activate upon pressing the “Shift” key 5 times rapidly. Recommended if you game on that device.</p>
+</li>
+<li>
+<p>Enable <strong>Show Hidden Files</strong></p>
+</li>
+<li>
+<p>Enable <strong>Show File Extensions</strong></p>
+</li>
+<li>
+<p>Disable <strong>Search Button in Taskbar</strong> <br />
+
+Note: Personal preference.</p>
+</li>
+<li>
+<p>Disable <strong>Task View Button in Taskbar</strong> <br />
+
+Note: Personal preference.</p>
+</li>
+<li>
+<p>Disable <strong>Center Taskbar Items</strong> <br />
+
+Note: Windows 11 only. Personal preference.</p>
+</li>
+<li>
+<p>Disable <strong>Widgets Button in Taskbar</strong> <br />
+
+Note: Personal preference.</p>
+</li>
+<li>
+<p>Enable <strong>Detailed BSoD</strong> <br />
+
+Note: Gives you more detailed crash reports should you encounter a Blue Screen of Death which is helpful for debugging.</p>
+</li>
+<li>
+<p>Enable <strong>S3 Sleep</strong> <br />
+
+Note: Recommended if you use a laptop. S3 Sleep prevents unwanted wake-ups and battery drain, unlike Modern Standby which wakes your device more often.</p>
+</li>
+<li>
+<p>Enable: <strong>Add and Activate Ultimate Performance Profile</strong> <br />
+
+Note: Not recommended if you are on a <strong>laptop</strong> as it will use more power and drain your battery life significantly faster.<br>
+I believe this also changes the execution policy to <code>Restricted</code>. You can check this using <code>Get-ExecutionPolicy</code></p>
+</li>
+</ul>
+<h2 id="why-windows-gets-bloated">Why Windows gets bloated<a href="#why-windows-gets-bloated" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="specific-examples-of-bloatwaretelemetry">Specific examples of bloatware/telemetry<a href="#specific-examples-of-bloatwaretelemetry" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h3 id="impact-on-gamingproductivity">Impact on gaming/productivity<a href="#impact-on-gamingproductivity" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h3 id="privacy-implications-in-more-detail">Privacy implications in more detail<a href="#privacy-implications-in-more-detail" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h3 id="long-term-maintenance-tips">Long-term maintenance tips<a href="#long-term-maintenance-tips" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<h1 id="useful-tools">Useful Tools:<a href="#useful-tools" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Here are some helpful tools I&rsquo;ve found in my time managing Windows systems. They have their own strengths and weaknesses, but they will let you take control over your OS, improve your system privacy, optimize performance in some areas, and remove some annoyances beyond what is easily accessible in the system settings menus.</p>
+<ul>
+<li>
+<p><a href="https://winutil.christitus.com/dev/">WinUtil</a><br>
+Mostly covered in the debloating guide. TO DO: Go over the other options in detail.</p>
+</li>
+<li>
+<p><a href="https://www.oo-software.com/en/shutup10">O&amp;O ShutUp10++</a></p>
+</li>
+<li>
+<p><a href="https://winaerotweaker.com/">WinAeroTweaker</a><br>
+Love this tool, super helpful way to debloat some parts of windows, and also allows you to do a LOT of customization options and tweaks to Windows 10 or 11.</p>
+</li>
+<li>
+<p><a href="https://github.com/10se1ucgo/DisableWinTracking">DisableWinTracking</a></p>
+</li>
+<li>
+<p><a href="https://github.com/crazy-max/WindowsSpyBlocker">Windows Spy Blocker</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Sycnex/Windows10Debloater">Windows 10 Debloater Script</a></p>
+</li>
+<li>
+<p><a href="https://github.com/builtbybel/bloatbox">Bloatbox</a></p>
+</li>
+<li>
+<p><a href="https://github.com/BluePointLilac/ContextMenuManager/blob/master/README-en.md">ContextMenuManager</a></p>
+</li>
+<li>
+<p><a href="https://www.thewindowsclub.com/downloads/UWT5.zip">Ultimate Windows Tweaker</a></p>
+</li>
+</ul>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://techsucks.org/posts/gaming/" class="button inline prev">
+        &lt; [<span class="button__text">Gaming</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://techsucks.org/posts/running-your-own-home-media-server/" class="button inline next">
+         [<span class="button__text">Home Media Server</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+    </div>
+
+  </div>
+  
+
+  
+    
+
+  
+</div>
+
+
+<button id="back-to-top" aria-label="Back to Top">
+  
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+
+<style>
+  #back-to-top {
+    display: none;  
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;  
+    color: white;  
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;  
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  #back-to-top:hover {
+    background-color: #555;  
+    transform: translateY(-3px);
+  }
+</style>
+
+
+<script>
+  
+  const backToTopBtn = document.getElementById("back-to-top");
+
+  
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>

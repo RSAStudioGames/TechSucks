@@ -1,0 +1,49 @@
+<div class="sc-img-row {{ if eq (.Get "breakout") "true" }}sc-breakout{{ end }}">
+  {{/* Loop through parameters */}}
+  {{ range slice (.Get "img1") (.Get "img2") (.Get "img3") }}
+    {{ if . }}
+      {{ $cleanPath := strings.TrimPrefix "/" . }}
+      {{ $img := resources.Get $cleanPath }}
+      
+      {{ if $img }}
+        <img src="{{ $img.RelPermalink }}" 
+             alt="" 
+             class="sc-row-item"
+             style="{{ with $.Get "mw" }}max-width: {{ . }}px;{{ end }} {{ with $.Get "mh" }}max-height: {{ . }}px;{{ end }}">
+      {{ else }}
+        <p style="color: red;">Error: {{ $cleanPath }} not found in assets/</p>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+
+<style>
+  .sc-img-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+
+  /* Optional: Breakout allows images to go wider than the text column */
+  .sc-breakout {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .sc-row-item {
+    height: auto;
+    /* Default behavior: fill available flex space */
+    width: 100%; 
+    flex: 1;
+    object-fit: contain;
+  }
+</style>

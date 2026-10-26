@@ -1,0 +1,31 @@
+{{/* 
+  Usage: {{< alert type="info" >}} Your text here {{< /alert >}} 
+  Types: quote (default), info, success, warning, danger
+*/}}
+
+{{ $type := .Get "type" | default "quote" }}
+
+{{/* Define Colors and Icons based on Type */}}
+{{ $colorMap := dict 
+  "quote"   (dict "main" "#546E7A" "bg" "#ECEFF1" "text" "#37474F" "icon" "M10 11h-4a1 1 0 01-1-1v-3a1 1 0 011-1h3a1 1 0 001-1v-1a1 1 0 00-1-1h-2a1 1 0 00-1 1v1a1 1 0 01-2 0v-1a3 3 0 013-3h2a3 3 0 013 3v2a3 3 0 01-3 3h-1v2h2a1 1 0 011 1v2a1 1 0 01-1 1zm9 0h-4a1 1 0 01-1-1v-3a1 1 0 011-1h3a1 1 0 001-1v-1a1 1 0 00-1-1h-2a1 1 0 00-1 1v1a1 1 0 01-2 0v-1a3 3 0 013-3h2a3 3 0 013 3v2a3 3 0 01-3 3h-1v2h2a1 1 0 011 1v2a1 1 0 01-1 1z")
+  "info"    (dict "main" "#42A5F5" "bg" "#E3F2FD" "text" "#0D47A1" "icon" "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z")
+  "success" (dict "main" "#66BB6A" "bg" "#E8F5E9" "text" "#1B5E20" "icon" "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z")
+  "warning" (dict "main" "#FFA726" "bg" "#FFF3E0" "text" "#BF360C" "icon" "M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z")
+  "danger"  (dict "main" "#EF5350" "bg" "#FFEBEE" "text" "#B71C1C" "icon" "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z")
+}}
+
+{{ $theme := index $colorMap $type }}
+
+<div class="hugo-alert-box" style="display: flex; width: 100%; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+  <!-- Icon Section -->
+  <div style="background-color: {{ $theme.main }}; width: 60px; min-width: 60px; display: flex; align-items: center; justify-content: center;">
+    <svg fill="white" width="24" height="24" viewBox="0 0 24 24">{{ $theme.icon | safeHTML }}</svg>
+  </div>
+  
+  <!-- Content Section -->
+  <div style="background-color: {{ $theme.bg }}; color: {{ $theme.text }}; flex-grow: 1; padding: 15px 20px; display: flex; align-items: center;">
+    <div style="margin: 0; font-weight: 500;">
+      {{ .Inner }}
+    </div>
+  </div>
+</div>

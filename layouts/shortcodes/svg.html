@@ -1,0 +1,27 @@
+{{ $src := .Get "src" }}
+{{ $width := .Get "width" }}
+{{ $height := .Get "height" }}
+{{ $align := .Get "align" | default "left" }}
+
+{{/* Base styles to remove borders common in Terminal theme */}}
+{{ $styles := "border: none !important; box-shadow: none !important; background: transparent !important;" }}
+
+{{/* Handle Alignment */}}
+{{ if eq $align "center" }}
+  {{ $styles = print $styles "display: block; margin-left: auto; margin-right: auto;" }}
+{{ else if eq $align "right" }}
+  {{ $styles = print $styles "display: block; margin-left: auto; margin-right: 0;" }}
+{{ else }}
+  {{ $styles = print $styles "display: block; margin-right: auto; margin-left: 0;" }}
+{{ end }}
+
+{{/* Handle Dimensions */}}
+{{ if $width }}
+  {{ $styles = print $styles "width: " $width ";" }}
+{{ end }}
+
+{{ if $height }}
+  {{ $styles = print $styles "height: " $height ";" }}
+{{ end }}
+
+<img src="{{ $src | relURL }}" style="{{ $styles | safeCSS }}" alt="SVG Image">

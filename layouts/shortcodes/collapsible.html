@@ -1,0 +1,17 @@
+<style>
+  details.terminal-collapse summary {
+    cursor: pointer;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+  }
+
+</style>
+
+<details class="terminal-collapse">
+    <summary>{{ .Get 0 | default "Expand" }}</summary>
+    <div class="terminal-content">
+        {{ .Inner | markdownify }}
+    </div>
+</details>

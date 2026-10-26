@@ -1,0 +1,3 @@
+{{ $image := resources.Get (.Get "src") }}
+{{ $scaled := $image.Resize (printf "%sx" (.Get "width")) }}
+<img src="{{ $scaled.RelPermalink }}" width="{{ .Get "width" }}" alt="{{ .Get "alt" }}">

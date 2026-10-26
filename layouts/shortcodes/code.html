@@ -1,0 +1,89 @@
+{{- $lang := .Get "lang" | default (.Get 0) | default "bash" -}}
+{{- $content := transform.Highlight (trim .Inner "\n\r") $lang "style=monokai,noClasses=false" -}}
+
+<div class="aesthetic-container">
+    <div class="aesthetic-header">
+        <span class="aesthetic-dot red"></span>
+        <span class="aesthetic-dot yellow"></span>
+        <span class="aesthetic-dot green"></span>
+    </div>
+    <div class="aesthetic-code-box">
+        {{ $content }}
+    </div>
+</div>
+
+<style>
+    .aesthetic-container {
+        background-color: #300a24; 
+        color: #f8f8f2;
+        font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+        border-radius: 6px;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: block;
+        margin: 20px 0;
+        width: max-content; 
+        max-width: 100%;    
+        border: 1px solid #5e5e5e; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .aesthetic-header {
+        padding: 10px 15px;
+        background: #3e3e3e; 
+        display: flex;
+        gap: 8px;
+        border-bottom: 1px solid #2c2c2c;
+    }
+
+    .aesthetic-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .aesthetic-dot.red { background-color: #ff5f56; }
+    .aesthetic-dot.yellow { background-color: #ffbd2e; }
+    .aesthetic-dot.green { background-color: #27c93f; }
+
+    .aesthetic-code-box {
+        padding: 3px 3px 3px 3px;
+        overflow-x: auto;
+    }
+
+    .aesthetic-code-box pre,
+    .aesthetic-code-box code,
+    .aesthetic-code-box div {
+        margin: 0 !important;  
+        padding: 0 !important;
+        border: none !important; 
+        outline: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        width: auto !important;
+    }
+
+    .aesthetic-code-box table {
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+        border: none !important;
+        margin: 0 !important;
+    }
+    .aesthetic-code-box td,
+    .aesthetic-code-box tr {
+        padding: 0 !important;
+        border: none !important;
+    }
+</style>
+
+
+{{/*
+USAGE GUIDE:
+
+Block Code (Window style, with window controls/dots) (Leave 'LANGUAGE' out to default to Bash):
+
+{{< code LANGUAGE >}}
+#!/bin/bash
+echo "This is a block"
+{{< /code >}}
+
+*/}}

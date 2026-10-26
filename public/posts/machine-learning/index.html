@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    <title>Machine Learning :: TechSucks</title>
+  
+  <script defer src="https://stats.techsucks.org/script.js" data-website-id="3512b344-89b7-42ea-b378-97121d4dcae2"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI/ML related tools and info." />
+<meta name="keywords" content="Machine Learning, AI" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://techsucks.org/posts/machine-learning/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://techsucks.org/terminal.css">
+
+<link rel="stylesheet" href="https://techsucks.org/style.css">
+
+
+<link rel="shortcut icon" href="https://techsucks.org/favicon.png">
+<link rel="apple-touch-icon" href="https://techsucks.org/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Machine Learning">
+<meta property="og:description" content="AI/ML related tools and info." />
+<meta property="og:url" content="https://techsucks.org/posts/machine-learning/" />
+<meta property="og:site_name" content="TechSucks" />
+
+  <meta property="og:image" content="https://techsucks.org/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-12-23 15:07:24 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    TechSucks
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  
+  <div class="split-layout-wrapper">
+    
+    <aside class="sidebar">
+        <nav>
+            <h3 class="sidebar-header">Systems</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/servermaxxing">> <span>SERVERMAXXING</span></a></li>
+                <li><a href="/posts/server-building">> <span>Server Building</span></a></li>
+                <li><a href="/posts/personal-sovereign-cloud">> <span>Personal Cloud</span></a></li>
+                <li><a href="/posts/running-your-own-home-media-server">> <span>Home Media</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Software</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/guide-to-debloating-windows">> <span>Debloating Windows</span></a></li>
+                <li><a href="/posts/directory-opus-review">> <span>Directory Opus</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">"Intelligence"</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/machine-learning">> <span>Machine Learning</span></a></li>
+                <li><a href="/posts/llm-benchmarks">> <span>LLM Benchmarks</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Miscellaneous</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/sailing-the-high-seas">> <span>Sailing The High Seas</span></a></li>
+                <li><a href="/posts/managing-your-digital-privacy">> <span>Digital Privacy</span></a></li>
+
+                <li><a href="/posts/random-stuff">> <span>Random Stuff</span></a></li>
+            </ul>
+        </nav>
+
+        
+        <hr />
+        <h3 class="sidebar-header">
+            Table of Contents
+        </h3>
+        <div class="sidebar-list">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ai-models">AI Models</a>
+      <ul>
+        <li><a href="#text-generation-models">Text Generation Models</a></li>
+        <li><a href="#image-generation-models">Image Generation Models</a></li>
+      </ul>
+    </li>
+    <li><a href="#quantization">Quantization</a></li>
+    <li><a href="#tools">Tools</a>
+      <ul>
+        <li><a href="#gpt4all">GPT4ALL</a></li>
+        <li><a href="#ollama">Ollama</a></li>
+        <li><a href="#text-generation-web-ui">Text Generation Web UI</a></li>
+        <li><a href="#aphrodite-engine">Aphrodite Engine</a></li>
+        <li><a href="#vllm">vLLM</a></li>
+        <li><a href="#whisper-web-ui">Whisper Web UI</a></li>
+      </ul>
+    </li>
+    <li><a href="#benchmarks">Benchmarks</a></li>
+    <li><a href="#to-dosort">TO DO/SORT:</a></li>
+  </ul>
+</nav>
+        </div>
+        
+
+    </aside>
+
+    <div class="main-content-area">
+        
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://techsucks.org/posts/machine-learning/">Machine Learning</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-12-23</time><span class="post-author">RSA</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://techsucks.org/tags/ai/">AI</a>&nbsp;
+      
+      #<a href="https://techsucks.org/tags/machine-learning/">Machine Learning</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+
+
+  <div class="post-content"><div>
+        <blockquote>
+<p>Work in progress ¯\_(ツ)_/¯</p>
+</blockquote>
+<p>Find info about AI hardware in <a href="https://techsucks.org/posts/servermaxxing">servermaxxing</a></p>
+<h1 id="ai-models">AI Models<a href="#ai-models" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Resources for rating of models &amp; their uses&hellip;</p>
+<p>Here are some places you can download AI models from:</p>
+<ul>
+<li><a href="https://huggingface.co/">Hugging Face</a>
+<ul>
+<li>Recommended users to download from:
+<ul>
+<li><a href="https://huggingface.co/bartowski">bartowski</a></li>
+<li><a href="https://huggingface.co/mradermacher">mradermacher</a></li>
+<li><a href="https://huggingface.co/Dracones">Dracones</a></li>
+<li><a href="https://huggingface.co/TheBloke">TheBloke</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://www.kaggle.com/">Kaggle</a></li>
+</ul>
+<p>Handy tool to estimate the VRAM needed to run a model: <a href="https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator">VRAM Calculator</a></p>
+<p>Text Gen / Image Gen / STT / TTS / Classication / Multi-Modal / Sentiment Analysis / Embedding</p>
+<h2 id="text-generation-models">Text Generation Models<a href="#text-generation-models" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h2 id="image-generation-models">Image Generation Models<a href="#image-generation-models" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h1 id="quantization">Quantization<a href="#quantization" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Model quantization is a method of reducing the size of an existing AI model (LLM, diffusion, video gen, etc) while maintaining accuracy. It works by reducing the precision of the weights and activations with a loss in quality proportional to the quantization level and method. Quantizing a model allows for larger models to be used with less of a computing requirment. For example, Llama 3.3 70B FP16 is about 140GB in size and would require a similar amount of memory to run. Quantizing it to 4 bit precision would only require about 40GB of memory to run. The preicision size is directly proportional to the memory required to run a model.
+To measure the change in quality from a quantized model compared to its unquantized form, you can measure its perplexity (PPL). <br />
+</p>
+<p>Here is a table comparing the different Llama.cpp quantization levels of Llama 3 70B to its unquantized F16 form. <a href="https://github.com/ggml-org/llama.cpp/pull/6745#issuecomment-2093892514">Source</a>
+<style>
+  details.terminal-collapse summary {
+    cursor: pointer;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    outline: none;
+  }
+
+</style>
+
+<details class="terminal-collapse">
+    <summary>View Table</summary>
+    <div class="terminal-content">
+        <table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Quantization</th>
+          <th style="text-align: left">Size (GiB)</th>
+          <th style="text-align: left">Perplexity (wiki.test)</th>
+          <th style="text-align: left">Delta (FP16)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">IQ1_S</td>
+          <td style="text-align: left">14.29</td>
+          <td style="text-align: left">9.8655 +/- 0.0625</td>
+          <td style="text-align: left">248.51%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ1_M</td>
+          <td style="text-align: left">15.60</td>
+          <td style="text-align: left">8.5193 +/- 0.0530</td>
+          <td style="text-align: left">200.95%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ2_XXS</td>
+          <td style="text-align: left">17.79</td>
+          <td style="text-align: left">6.6705 +/- 0.0405</td>
+          <td style="text-align: left">135.64%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ2_XS</td>
+          <td style="text-align: left">19.69</td>
+          <td style="text-align: left">5.7486 +/- 0.0334</td>
+          <td style="text-align: left">103.07%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ2_S</td>
+          <td style="text-align: left">20.71</td>
+          <td style="text-align: left">5.5215 +/- 0.0318</td>
+          <td style="text-align: left">95.05%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q2_K_S</td>
+          <td style="text-align: left">22.79</td>
+          <td style="text-align: left">5.4334 +/- 0.0325</td>
+          <td style="text-align: left">91.94%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ2_M</td>
+          <td style="text-align: left">22.46</td>
+          <td style="text-align: left">4.8959 +/- 0.0276</td>
+          <td style="text-align: left">72.95%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q2_K</td>
+          <td style="text-align: left">24.56</td>
+          <td style="text-align: left">4.7763 +/- 0.0274</td>
+          <td style="text-align: left">68.73%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ3_XXS</td>
+          <td style="text-align: left">25.58</td>
+          <td style="text-align: left">3.9671 +/- 0.0211</td>
+          <td style="text-align: left">40.14%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ3_XS</td>
+          <td style="text-align: left">27.29</td>
+          <td style="text-align: left">3.7210 +/- 0.0191</td>
+          <td style="text-align: left">31.45%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q3_K_S</td>
+          <td style="text-align: left">28.79</td>
+          <td style="text-align: left">3.6502 +/- 0.0192</td>
+          <td style="text-align: left">28.95%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ3_S</td>
+          <td style="text-align: left">28.79</td>
+          <td style="text-align: left">3.4698 +/- 0.0174</td>
+          <td style="text-align: left">22.57%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ3_M</td>
+          <td style="text-align: left">29.74</td>
+          <td style="text-align: left">3.4402 +/- 0.0171</td>
+          <td style="text-align: left">21.53%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q3_K_M</td>
+          <td style="text-align: left">31.91</td>
+          <td style="text-align: left">3.3617 +/- 0.0172</td>
+          <td style="text-align: left">18.75%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q3_K_L</td>
+          <td style="text-align: left">34.59</td>
+          <td style="text-align: left">3.3016 +/- 0.0168</td>
+          <td style="text-align: left">16.63%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ4_XS</td>
+          <td style="text-align: left">35.30</td>
+          <td style="text-align: left">3.0310 +/- 0.0149</td>
+          <td style="text-align: left">7.07%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IQ4_NL</td>
+          <td style="text-align: left">37.30</td>
+          <td style="text-align: left">3.0261 +/- 0.0149</td>
+          <td style="text-align: left">6.90%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q4_K_S</td>
+          <td style="text-align: left">37.58</td>
+          <td style="text-align: left">3.0050 +/- 0.0148</td>
+          <td style="text-align: left">6.15%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q4_K_M</td>
+          <td style="text-align: left">39.60</td>
+          <td style="text-align: left">2.9674 +/- 0.0146</td>
+          <td style="text-align: left">4.83%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q5_K_S</td>
+          <td style="text-align: left">45.32</td>
+          <td style="text-align: left">2.8843 +/- 0.0141</td>
+          <td style="text-align: left">1.89%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q5_K_M</td>
+          <td style="text-align: left">46.52</td>
+          <td style="text-align: left">2.8656 +/- 0.0139</td>
+          <td style="text-align: left">1.23%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q6_K</td>
+          <td style="text-align: left">53.91</td>
+          <td style="text-align: left">2.8441 +/- 0.0138</td>
+          <td style="text-align: left">0.47%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Q8_0</td>
+          <td style="text-align: left">69.83</td>
+          <td style="text-align: left">2.8316 +/- 0.0138</td>
+          <td style="text-align: left">0.03%</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">F16</td>
+          <td style="text-align: left">131.43</td>
+          <td style="text-align: left">2.8308 +/- 0.0138</td>
+          <td style="text-align: left">0.00%</td>
+      </tr>
+  </tbody>
+</table>
+
+    </div>
+</details>
+</p>
+<p>In the table, the lower the precision is, the higher the perplexity. Perplexity values can be different depending on the model, its architecture, quantization method used, etc. I personally would not go lower than 4 bits per weight (about Q4 or Q4_K_M within Llama.cpp quantization).
+I prefer using ExLlama quantization as it tends to be more performant and accurate than Llama.cpp. The trade-off is that llama.cpp allows you to use both your VRAM and RAM together whereas ExLlama is fixed to the VRAM. EXL3 is the latest version of the Exllama quantization method and has fairly good quality even at low precision.</p>
+<h1 id="tools">Tools<a href="#tools" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Here are a few different AI tools I&rsquo;ve found that are (relatively) simple to use and have lots of strong features.</p>
+<h2 id="gpt4all">GPT4ALL<a href="#gpt4all" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://www.nomic.ai/gpt4all">https://www.nomic.ai/gpt4all</a></p>
+<p>GPT4ALL is an easy to use application with minimal setup required to hop right into using LLMs personally. It also offers text embedding, to read documents you give it, and the ability to use an on-device AI model or connect to an API provider (ChatGPT/Claude/Vertex/etc).</p>
+<p>Supports Nvidia, AMD, and Intel GPUs as well as CPU.</p>
+<h2 id="ollama">Ollama<a href="#ollama" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://ollama.com/">https://ollama.com/</a></p>
+<p>Ollama is another easy way of serving LLMs. You can download the install package for Windows, Mac OS, or Linux, install it, and quickly download LLMs on your device with a single command. Ollama is based on <a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a> which allows you to offload the AI model onto your CPU/RAM to fit larger models, or if you dont have a GPU, run solely on a CPU/RAM.</p>
+<p>To do: COVER HOW TO ADD AND LOAD MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?) (OS Support?)</p>
+<h2 id="text-generation-web-ui">Text Generation Web UI<a href="#text-generation-web-ui" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://github.com/oobabooga/text-generation-webui/">https://github.com/oobabooga/text-generation-webui/</a></p>
+<p>Text Generation Web UI, often referred to as <em>Oobabooga</em> or <em>Text Gen Web UI</em> is a relatively simple and straightforward way to run LLMs.</p>
+<p>Supports Nvidia, AMD, and Intel GPUs as well as CPUs.</p>
+<p>COVER HOW TO ADD AND LOAD MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?) (OS Support?)</p>
+<h2 id="aphrodite-engine">Aphrodite Engine<a href="#aphrodite-engine" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://aphrodite.pygmalion.chat/">https://aphrodite.pygmalion.chat/</a></p>
+<p>Aphrodite Engine (AE) supports a bunch of different quantization methods and is great for advanced users with beefier hardware who want to serve LLMs efficiently for their own uses. While AE supports GGUF quantizations, it cannot offload models to CPU &amp; RAM because of its paged attention system. It has relatively higher generation speeds than its counterparts, but the paged attention system isn&rsquo;t <em>as</em> memory efficient for the GPU-poor.</p>
+<p>Supports most popular quantization methods.</p>
+<p>To do: MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?)</p>
+<h2 id="vllm">vLLM<a href="#vllm" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://docs.vllm.ai/en/latest/">https://docs.vllm.ai/en/latest/</a></p>
+<p>Very robust and memory-efficient inference engine.</p>
+<p>Supports most popular quantization methods.</p>
+<p>To do: MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?) (OS Support?)</p>
+<h2 id="whisper-web-ui">Whisper Web UI<a href="#whisper-web-ui" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://github.com/jhj0517/Whisper-WebUI">https://github.com/jhj0517/Whisper-WebUI</a></p>
+<p>Super useful speech to text transcription tool. Let&rsquo;s you transcribe audio files, video files, and YouTube links of videos. Can transcribe into SRT, WebVTT, TXT, and LRC files.<br>
+Has a simple to use and (mostly) self-explanatory user interface. Also has features for <a href="https://symbl.ai/developers/blog/what-is-speaker-diarization/">diarization</a> (detect different speakers), background music removal (to split music track from spoken voice), text to text translation, and can even directly transcribe from your microphone whatever you&rsquo;re saying. Supports a large variety of Speech to Text models. I personally use Large-V3-Turbo on INT8, with that, I can transcribe an hour of audio in less than 5 minutes on a 1080Ti, ~30-45 seconds on a V100, or ~10-15 seconds on a 4090, all with diarization enabled (not including model load times, just inference).</p>
+<p>Whisper Web UI works well on Nvidia GPUs and, albeit slower, on CPU. I am pretty sure you could get it working on AMD GPUs with <a href="https://github.com/vosen/ZLUDA">ZLUDA</a>, but I haven&rsquo;t personally done that yet.</p>
+<h1 id="benchmarks">Benchmarks<a href="#benchmarks" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>Some benchmarks are on <a href="/posts/servermaxxing/">SERVERMAXXING</a> already. I plan on putting a table with all the different cards &amp; models I&rsquo;ll test here. <br />
+
+You can also find some more basic LLM inference speed benchmarks on <a href="https://techsucks.org/posts/llm-benchmarks/">LLM Inference Benchmarks</a>. I&rsquo;ve spent a lot of time testing models and adding existing benchmarks to a single list.<br>
+<a href="https://arena.ai/leaderboard">Arena.ai</a> is my go-to for finding the best models overall.<br>
+<a href="https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard">UGI Leaderboard</a></p>
+<h1 id="to-dosort">TO DO/SORT:<a href="#to-dosort" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<p>(My preferred place to download AI models and datasets and access pre-existing project &ldquo;spaces&rdquo;)<br>
+(Another good site to download AI models and datasets)</p>
+<p><a href="https://github.com/XueyanZhang/awesome-ai-mode-api">https://github.com/XueyanZhang/awesome-ai-mode-api</a> - Missing quite a few providers but its outdated so ¯\_(ツ)_/¯</p>
+<p><a href="https://mail.bycloud.ai/">https://mail.bycloud.ai/</a> - AI papers explained</p>
+<p><a href="https://lastweekin.ai/">https://lastweekin.ai/</a></p>
+<p><a href="https://rentry.org/IsolatedLinuxWebService">https://rentry.org/IsolatedLinuxWebService</a></p>
+<p><a href="https://aijobs.net/insights/glossary/all/">https://aijobs.net/insights/glossary/all/</a></p>
+<ul>
+<li>Cover:
+<ul>
+<li>LLMs, what tensors are, and how AI is basically just a ton of algebra done by the GPU</li>
+<li>GPUs and which might be better for AI (pros and cons of AMD/Intel/Nvidia)</li>
+<li>Cloud hosting AI</li>
+<li>basics of transformers</li>
+<li>some basic info on AI papers</li>
+<li>Quantizations both methods and types</li>
+<li>Front-end options</li>
+<li>SillyTavern</li>
+<li>creating your own basic AI tools using AI as your developer (for the average non-programmer, non-IT savvy to be able to program a basic tool)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>What are tokens</li>
+<li>How does AI understand language (more or less)</li>
+<li>What are loras</li>
+<li>Finetuning vs full training vs loras vs merges etc</li>
+<li>MoE vs Dense models</li>
+<li>List of services you can rent GPUs or inference from&hellip;</li>
+<li>LLM samplers and basics of how they work</li>
+</ul>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://techsucks.org/posts/llm-benchmark-prompts/" class="button inline prev">
+        &lt; [<span class="button__text">LLM Benchmark Prompts</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://techsucks.org/posts/managing-your-digital-privacy/" class="button inline next">
+         [<span class="button__text">Managing Your Digital Privacy</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+    </div>
+
+  </div>
+  
+
+  
+    
+
+  
+</div>
+
+
+<button id="back-to-top" aria-label="Back to Top">
+  
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+
+<style>
+  #back-to-top {
+    display: none;  
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;  
+    color: white;  
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;  
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  #back-to-top:hover {
+    background-color: #555;  
+    transform: translateY(-3px);
+  }
+</style>
+
+
+<script>
+  
+  const backToTopBtn = document.getElementById("back-to-top");
+
+  
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    <title>LLM Inference Benchmarks :: TechSucks</title>
+  
+  <script defer src="https://stats.techsucks.org/script.js" data-website-id="3512b344-89b7-42ea-b378-97121d4dcae2"></script>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Basic LLM inference benchmarks I&#39;ve collected over time." />
+<meta name="keywords" content="AI, Benchmarks, LLM" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://techsucks.org/posts/llm-benchmarks/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="https://techsucks.org/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="https://techsucks.org/terminal.css">
+
+<link rel="stylesheet" href="https://techsucks.org/style.css">
+
+
+<link rel="shortcut icon" href="https://techsucks.org/favicon.png">
+<link rel="apple-touch-icon" href="https://techsucks.org/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="LLM Inference Benchmarks">
+<meta property="og:description" content="Basic LLM inference benchmarks I&#39;ve collected over time." />
+<meta property="og:url" content="https://techsucks.org/posts/llm-benchmarks/" />
+<meta property="og:site_name" content="TechSucks" />
+
+  <meta property="og:image" content="https://techsucks.org/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2026-01-19 14:24:34 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    TechSucks
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  
+  <div class="split-layout-wrapper">
+    
+    <aside class="sidebar">
+        <nav>
+            <h3 class="sidebar-header">Systems</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/servermaxxing">> <span>SERVERMAXXING</span></a></li>
+                <li><a href="/posts/server-building">> <span>Server Building</span></a></li>
+                <li><a href="/posts/personal-sovereign-cloud">> <span>Personal Cloud</span></a></li>
+                <li><a href="/posts/running-your-own-home-media-server">> <span>Home Media</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Software</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/guide-to-debloating-windows">> <span>Debloating Windows</span></a></li>
+                <li><a href="/posts/directory-opus-review">> <span>Directory Opus</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">"Intelligence"</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/machine-learning">> <span>Machine Learning</span></a></li>
+                <li><a href="/posts/llm-benchmarks">> <span>LLM Benchmarks</span></a></li>
+            </ul>
+            <hr />
+            <h3 class="sidebar-header">Miscellaneous</h3>
+            <ul class="sidebar-list">
+                <li><a href="/posts/sailing-the-high-seas">> <span>Sailing The High Seas</span></a></li>
+                <li><a href="/posts/managing-your-digital-privacy">> <span>Digital Privacy</span></a></li>
+
+                <li><a href="/posts/random-stuff">> <span>Random Stuff</span></a></li>
+            </ul>
+        </nav>
+
+        
+        <hr />
+        <h3 class="sidebar-header">
+            Table of Contents
+        </h3>
+        <div class="sidebar-list">
+            <nav id="TableOfContents"></nav>
+        </div>
+        
+
+    </aside>
+
+    <div class="main-content-area">
+        
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://techsucks.org/posts/llm-benchmarks/">LLM Inference Benchmarks</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-01-19</time><span class="post-author">RSA</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://techsucks.org/tags/llm/">LLM</a>&nbsp;
+      
+      #<a href="https://techsucks.org/tags/ai/">AI</a>&nbsp;
+      
+      #<a href="https://techsucks.org/tags/benchmarks/">Benchmarks</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+
+
+  <div class="post-content"><div>
+        <p>Work in progress page&hellip; <br />
+
+LLM inference benchmarks I&rsquo;ve done myself or collected from the community and other online resources.
+<br />
+</p>
+<p>A quick way to calculate your max theoritical output speed for a dense model is with <code>bandwidth / size_of_llm_in_gb = max_tok_per_sec</code> <br />
+
+For example, Llama 3.3 iQ5KM is 50 GB in size. A V100 16GB (SXM2) has 900GB/s of memory bandwidth. 900 / 50 = 18. Now of course, there is always going to be some overhead which is why my results are ~14 tokens per second which is about 80% of the theoritical max. As low as 70% will be commonplace. If you are getting less than 70% performance, try different quantization methods, inference backends, or operating systems. Typically, headless Linux (I prefer Ubuntu server) will get you better results than using Windows OS.</p>
+
+
+
+  
+  
+
+  
+  <style>
+    .bench-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+    }
+    
+    .bench-search, .bench-sort {
+      padding: 10px;
+      border: 1px solid #04c61d;
+      background: #300a24;
+      color: #ffffff;
+      font-size: 1rem;
+      outline: none;
+    }
+    
+    .bench-search { flex-grow: 1; }
+    .bench-search::placeholder { color: #aaa; }
+
+    .bench-grid {
+      display: grid;
+      grid-template-columns: 1fr;  
+      gap: 20px;
+      font-family: sans-serif;
+    }
+
+    @media (min-width: 768px) {
+      .bench-grid {
+        grid-template-columns: 1fr 1fr;  
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .bench-grid {
+        grid-template-columns: 1fr 1fr 1fr;  
+      }
+    }
+
+    .bench-card {
+      background-color: #300a24;
+      border: 2px solid #04c61d;
+      color: #ffffff;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 0; 
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+     
+    .bench-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;  
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .bench-label {
+      color: #04c61d;
+      font-weight: bold;
+      font-size: 1.1rem; 
+       
+    }
+
+    .bench-val {
+       
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+     
+    .bench-mem-line {
+      font-size: 1rem; 
+      color: #ffffff;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .hidden { display: none; }
+  </style>
+
+  
+  <div class="bench-controls">
+    <input type="text" id="search-bench-1772479354247827508" class="bench-search" placeholder="Search">
+    <select id="sort-bench-1772479354247827508" class="bench-sort">
+      <option value="speed_desc">Sort by: Speed (Fastest)</option>
+      <option value="speed_asc">Sort by: Speed (Slowest)</option>
+      <option value="vram_desc">Total VRAM</option>
+      <option value="gpu_count_desc"># of GPUs</option>
+      <option value="params_desc">Model Parameters</option>
+      <option value="ram_desc">Total RAM</option>
+    </select>
+  </div>
+
+  <div id="grid-bench-1772479354247827508" class="bench-grid"></div>
+
+  <script>
+    (function() {
+      
+      
+      
+      
+      const rawData = [
+        
+          {
+            c0_gpuModel:   "",
+            c1_gpuComp:    "",
+            c2_gpuCount:   "",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Threadripper Pro 3955wx",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "512GB",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "2.8",
+            
+            c17_modelName: "DeepSeek R1",
+            c18_params:    "671B",
+            c19_quant:     "Q5 K S",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "",
+            c1_gpuComp:    "",
+            c2_gpuCount:   "",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "EPYC 7K62",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "1024GB",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "2.9",
+            
+            c17_modelName: "DeepSeek R1",
+            c18_params:    "671B",
+            c19_quant:     "Q5 K S",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "",
+            c1_gpuComp:    "",
+            c2_gpuCount:   "",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "EPYC 7K62",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "512GB",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "4.2",
+            
+            c17_modelName: "DeepSeek R1",
+            c18_params:    "671B",
+            c19_quant:     "Q5 K S",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "",
+            c1_gpuComp:    "",
+            c2_gpuCount:   "",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "EPYC 9654",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "1.5TB",
+            c10_ramType:   "DDR5",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "4.5",
+            
+            c17_modelName: "DeepSeek R1",
+            c18_params:    "671B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3070",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "8GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "70.94",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3080",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "10GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "106.4",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3080 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "12GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "106.71",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4070 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "12GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "82.21",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4080",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "16GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "106.22",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4080",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "16GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "40.29",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "20GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "58.59",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "20GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "20.85",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "111.74",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "46.51",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "127.74",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "54.34",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 5000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "32GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "89.87",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 5000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "32GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "32.67",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "2",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "108.07",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "2",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "47.15",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "2",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "16.29",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "2",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "122.56",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "2",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "53.72",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "2",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "19.06",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX A6000",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "102.22",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX A6000",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "40.25",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX A6000",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "14.58",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "130.99",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "51.97",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "18.36",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A40",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "88.95",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A40",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "33.95",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A40",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "12.08",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "L40S",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "113.6",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "L40S",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "43.42",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "L40S",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "48GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "15.31",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "56.14",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "20.58",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "7.33",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "138.31",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "54.56",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "22.11",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 SXM 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "133.38",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 SXM 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "53.18",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 SXM 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "24.33",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "H100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "144.49",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "H100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "67.79",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "H100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "80GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "25.01",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "104.94",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "46.4",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "16.89",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "5.82",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "116.13",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "52.12",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "18.76",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "6.45",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX A6000",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "93.73",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX A6000",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "38.87",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX A6000",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "14.32",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX A6000",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "4.74",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "118.99",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "50.25",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "17.96",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Ada",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "6.06",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A40",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "83.79",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A40",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "33.28",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A40",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "11.91",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A40",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "3.98",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "L40S",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "105.72",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "L40S",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "42.48",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "L40S",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "14.99",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "L40S",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "5.03",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "117.3",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "51.54",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "22.68",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "7.38",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 SXM 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "97.7",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 SXM 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "45.45",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 SXM 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "19.6",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A100 SXM 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "6.92",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "H100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "118.14",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "H100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "62.9",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "H100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "26.2",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "H100 PCIe 80GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "320GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "9.63",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M1 Max 32-Core GPU 64GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "34.49",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M1 Max 32-Core GPU 64GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "18.43",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M1 Max 32-Core GPU 64GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "4.09",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M2 Ultra 76-Core GPU 192GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "192GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "76.28",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M2 Ultra 76-Core GPU 192GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "192GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "36.25",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M2 Ultra 76-Core GPU 192GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "192GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "12.13",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M2 Ultra 76-Core GPU 192GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "192GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "4.71",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M3 Max 40-Core GPU 64GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "50.74",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M3 Max 40-Core GPU 64GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "22.39",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "8B",
+            c19_quant:     "F16",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "M3 Max 40-Core GPU 64GB",
+            c1_gpuComp:    "Apple",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "Apple",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "7.53",
+            
+            c17_modelName: "Llama 3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "1024",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "MLC LLM",
+            c14_ver:       "",
+            c16_speed:     "186.7",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "7B",
+            c19_quant:     "4-Bit",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "MLC LLM",
+            c14_ver:       "",
+            c16_speed:     "107.4",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "13B",
+            c19_quant:     "4-Bit",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "EXL2",
+            c14_ver:       "",
+            c16_speed:     "161.67",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "7B",
+            c19_quant:     "4BPW",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "EXL2",
+            c14_ver:       "",
+            c16_speed:     "92.11",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "13B",
+            c19_quant:     "4BPW",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "144.93",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "7B",
+            c19_quant:     "Q4",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090 Ti",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "86.65",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "13B",
+            c19_quant:     "Q4",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "MLC LLM",
+            c14_ver:       "",
+            c16_speed:     "204.8",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "7B",
+            c19_quant:     "4-Bit",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "MLC LLM",
+            c14_ver:       "",
+            c16_speed:     "113.5",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "13B",
+            c19_quant:     "4-Bit",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "EXL2",
+            c14_ver:       "",
+            c16_speed:     "177.46",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "7B",
+            c19_quant:     "4BPW",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "EXL2",
+            c14_ver:       "",
+            c16_speed:     "105.94",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "13B",
+            c19_quant:     "4BPW",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "151.1",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "7B",
+            c19_quant:     "Q4",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "88",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "13B",
+            c19_quant:     "Q4",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A10G",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "MLC LLM",
+            c14_ver:       "",
+            c16_speed:     "24.8",
+            
+            c17_modelName: "CodeLlama",
+            c18_params:    "34B",
+            c19_quant:     "FP16",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A10G",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "14.37",
+            
+            c17_modelName: "CodeLlama",
+            c18_params:    "34B",
+            c19_quant:     "FP16",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A10G",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "vLLM",
+            c14_ver:       "",
+            c16_speed:     "16.67",
+            
+            c17_modelName: "CodeLlama",
+            c18_params:    "34B",
+            c19_quant:     "FP16",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A10G",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "8",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "MLC LLM",
+            c14_ver:       "",
+            c16_speed:     "41.3",
+            
+            c17_modelName: "CodeLlama",
+            c18_params:    "34B",
+            c19_quant:     "FP16",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A10G",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "8",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "11.83",
+            
+            c17_modelName: "CodeLlama",
+            c18_params:    "34B",
+            c19_quant:     "FP16",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "A10G",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "8",
+            c3_vramTotal:  "192GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "vLLM",
+            c14_ver:       "",
+            c16_speed:     "23.5",
+            
+            c17_modelName: "CodeLlama",
+            c18_params:    "34B",
+            c19_quant:     "FP16",
+            c20_context:   "256",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "V100 16GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "64GB",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "Xeon 6132",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "96GB",
+            c10_ramType:   "DDR4-2666",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "19",
+            
+            c17_modelName: "Qwen 3",
+            c18_params:    "32B",
+            c19_quant:     "Q6 K L",
+            c20_context:   "32768",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "V100 16GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "64GB",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "Xeon 6132",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "96GB",
+            c10_ramType:   "DDR4-2666",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "30",
+            
+            c17_modelName: "Qwen 3 30B-A3B",
+            c18_params:    "30B",
+            c19_quant:     "Q6 K L",
+            c20_context:   "32768",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "V100 16GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "64GB",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "Xeon 6132",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "96GB",
+            c10_ramType:   "DDR4-2666",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "18",
+            
+            c17_modelName: "DeepSeek R1 Distill Qwen",
+            c18_params:    "32B",
+            c19_quant:     "Q6 K L",
+            c20_context:   "32768",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "V100 16GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "64GB",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "Xeon 6132",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "96GB",
+            c10_ramType:   "DDR4-2666",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "27",
+            
+            c17_modelName: "Qwen 3 Next 80B-A3B",
+            c18_params:    "80B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "32768",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "V100 16GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "64GB",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "Xeon 6132",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "96GB",
+            c10_ramType:   "DDR4-2666",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "11.5",
+            
+            c17_modelName: "MiniMax M2.1 REAP 50",
+            c18_params:    "116B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "32768",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "V100 16GB",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "4",
+            c3_vramTotal:  "64GB",
+            
+            c5_cpuCount:   "2",
+            c6_cpuModel:   "Xeon 6132",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "96GB",
+            c10_ramType:   "DDR4-2666",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "14",
+            
+            c17_modelName: "Llama 3.3",
+            c18_params:    "70B",
+            c19_quant:     "Q5 K M",
+            c20_context:   "32768",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "MI100",
+            c1_gpuComp:    "AMD",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "EPYC 9334",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "DDR5-4800",
+            
+            c13_engine:    "EXL2",
+            c14_ver:       "",
+            c16_speed:     "4",
+            
+            c17_modelName: "Mistral Large 2407",
+            c18_params:    "123B",
+            c19_quant:     "4BPW",
+            c20_context:   "32768",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "MI100",
+            c1_gpuComp:    "AMD",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "EPYC 9334",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "64GB",
+            c10_ramType:   "DDR5-4800",
+            
+            c13_engine:    "EXL2",
+            c14_ver:       "",
+            c16_speed:     "4",
+            
+            c17_modelName: "Behemoth V2.2",
+            c18_params:    "123B",
+            c19_quant:     "4BPW",
+            c20_context:   "32768",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "78",
+            
+            c17_modelName: "Qwen 3 Next 80B-A3B",
+            c18_params:    "80B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "256000",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "9.72",
+            
+            c17_modelName: "Llama 3.3 Instruct",
+            c18_params:    "70B",
+            c19_quant:     "Q8",
+            c20_context:   "64000",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "18.61",
+            
+            c17_modelName: "Gigaberg Mistral Large",
+            c18_params:    "123B",
+            c19_quant:     "Q4 K S",
+            c20_context:   "64000",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "28.56",
+            
+            c17_modelName: "Llama 3.3",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "21.55",
+            
+            c17_modelName: "Qwen 3",
+            c18_params:    "32B",
+            c19_quant:     "BF16",
+            c20_context:   "40960",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "33.01",
+            
+            c17_modelName: "Qwen 3",
+            c18_params:    "32B",
+            c19_quant:     "Q8 K XL",
+            c20_context:   "131072",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "45.25",
+            
+            c17_modelName: "Gemma 3 Instruct QAT",
+            c18_params:    "27B",
+            c19_quant:     "Q4",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "50.92",
+            
+            c17_modelName: "Devstral Small 2505",
+            c18_params:    "24B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "53.18",
+            
+            c17_modelName: "Qwen QwQ",
+            c18_params:    "32B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "53.91",
+            
+            c17_modelName: "DeepSeek R1 Distill Qwen",
+            c18_params:    "32B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "68.22",
+            
+            c17_modelName: "Llama 4 Scout 17B-16E Instruct",
+            c18_params:    "109B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "68.47",
+            
+            c17_modelName: "Gemma 3 Instruct",
+            c18_params:    "12B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "76.68",
+            
+            c17_modelName: "Devstral Small 2505",
+            c18_params:    "24B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "79",
+            
+            c17_modelName: "Mistral Small 3.1 2503 Instruct",
+            c18_params:    "24B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "78.02",
+            
+            c17_modelName: "Mistral Small 3.1 2503 Instruct",
+            c18_params:    "24B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     "400W Power Cap"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "69.02",
+            
+            c17_modelName: "Mistral Small 3.1 2503 Instruct",
+            c18_params:    "24B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     "300W Power Cap"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "107.51",
+            
+            c17_modelName: "Qwen 3",
+            c18_params:    "14B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "131072",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "122.95",
+            
+            c17_modelName: "Qwen 3 30B-A3B",
+            c18_params:    "30B",
+            c19_quant:     "Q8 K XL",
+            c20_context:   "131072",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "153.63",
+            
+            c17_modelName: "Qwen 3",
+            c18_params:    "8B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "131072",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 6000 Pro",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "96GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "W5-3435X",
+            c7_cpuComp:    "Intel",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR5",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "7.44",
+            
+            c17_modelName: "Qwen 3 235-A22B",
+            c18_params:    "235B",
+            c19_quant:     "Q4 K S",
+            c20_context:   "42000",
+            c21_notes:     "50\/94 layers offloaded"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "78.27",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "13B",
+            c19_quant:     "",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 4090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "1",
+            c3_vramTotal:  "24GB",
+            
+            c5_cpuCount:   "",
+            c6_cpuModel:   "",
+            c7_cpuComp:    "",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "123.31",
+            
+            c17_modelName: "Llama 2",
+            c18_params:    "7B",
+            c19_quant:     "",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "147.85",
+            
+            c17_modelName: "ERNIE 4.5 21B-A3B",
+            c18_params:    "21B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "131.2",
+            
+            c17_modelName: "Qwen 3 VL 30B-A3B",
+            c18_params:    "30B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "130.23",
+            
+            c17_modelName: "GPT OSS",
+            c18_params:    "120B",
+            c19_quant:     "MXFP4",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "128.16",
+            
+            c17_modelName: "Nemotron 3 Nano 30B-A3B",
+            c18_params:    "30B",
+            c19_quant:     "",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "116.49",
+            
+            c17_modelName: "Ling Flash 2.0",
+            c18_params:    "100B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "91",
+            
+            c17_modelName: "Grove MoE Inst",
+            c18_params:    "33B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "68.58",
+            
+            c17_modelName: "Qwen 3 Next 80B-A3B",
+            c18_params:    "80B",
+            c19_quant:     "Q5 K M",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "67.15",
+            
+            c17_modelName: "Solar Open",
+            c18_params:    "100B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "58.53",
+            
+            c17_modelName: "AI21 Jamba2 Mini",
+            c18_params:    "52B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "57.79",
+            
+            c17_modelName: "IBM Granite 4.0 H Small",
+            c18_params:    "32B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "54.31",
+            
+            c17_modelName: "GLM 4.5 Air",
+            c18_params:    "106B",
+            c19_quant:     "UD Q4 K XL",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "45.85",
+            
+            c17_modelName: "Hunyuan A13B Instruct",
+            c18_params:    "80B",
+            c19_quant:     "Q6 K XL",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "33.27",
+            
+            c17_modelName: "Dots LLM 1 Instruct",
+            c18_params:    "142B",
+            c19_quant:     "Q4",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "33.03",
+            
+            c17_modelName: "Llama 4 Scout 17B-16E Instruct",
+            c18_params:    "109B",
+            c19_quant:     "Q5 K M",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "32.98",
+            
+            c17_modelName: "Magistral Small 2507",
+            c18_params:    "24B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "26.96",
+            
+            c17_modelName: "Gemma 3 Instruct",
+            c18_params:    "27B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "24.68",
+            
+            c17_modelName: "MiniMax M2.1",
+            c18_params:    "230B",
+            c19_quant:     "Q3 K M",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "24.11",
+            
+            c17_modelName: "EXAONE 4.0",
+            c18_params:    "32B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "23.67",
+            
+            c17_modelName: "Qwen 3",
+            c18_params:    "32B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "23.23",
+            
+            c17_modelName: "Olmo 3.1",
+            c18_params:    "32B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "21.91",
+            
+            c17_modelName: "Hermes 4.3",
+            c18_params:    "36B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "21.61",
+            
+            c17_modelName: "Seed OSS Instruct",
+            c18_params:    "36B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "19.56",
+            
+            c17_modelName: "Falcon H1",
+            c18_params:    "34B",
+            c19_quant:     "UD Q8 K XL",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "19.18",
+            
+            c17_modelName: "Llama 3.3 Instruct",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "18.37",
+            
+            c17_modelName: "Apertus 2509 Instruct",
+            c18_params:    "70B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "17.51",
+            
+            c17_modelName: "Qwen 2.5",
+            c18_params:    "72B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "16.16",
+            
+            c17_modelName: "Llama 3.3 Nemotron Super",
+            c18_params:    "49B",
+            c19_quant:     "Q8",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "13.54",
+            
+            c17_modelName: "Qwen 3 VL 235B-A22B",
+            c18_params:    "235B",
+            c19_quant:     "Q3 K M",
+            c20_context:   "",
+            c21_notes:     "MoE Model"
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "6.4",
+            
+            c17_modelName: "Mistral Large 2407",
+            c18_params:    "123B",
+            c19_quant:     "Q4 K M",
+            c20_context:   "",
+            c21_notes:     ""
+          },
+        
+          {
+            c0_gpuModel:   "RTX 3090",
+            c1_gpuComp:    "NVIDIA",
+            c2_gpuCount:   "3",
+            c3_vramTotal:  "72GB",
+            
+            c5_cpuCount:   "1",
+            c6_cpuModel:   "Ryzen Threadripper 1920X",
+            c7_cpuComp:    "AMD",
+            
+            c9_ramTotal:   "",
+            c10_ramType:   "DDR4",
+            
+            c13_engine:    "llama.cpp",
+            c14_ver:       "",
+            c16_speed:     "4.63",
+            
+            c17_modelName: "Grok 2",
+            c18_params:    "",
+            c19_quant:     "Q2 K",
+            c20_context:   "",
+            c21_notes:     "MoE?"
+          },
+        
+      ];
+
+      const gridFn = document.getElementById("grid-bench-1772479354247827508");
+      const searchInput = document.getElementById("search-bench-1772479354247827508");
+      const sortSelect = document.getElementById("sort-bench-1772479354247827508");
+
+      
+      function parseSize(str) {
+        if (!str) return 0;
+        str = str.toUpperCase().replace(/,/g, '');
+        let val = parseFloat(str);
+        if (str.includes("TB")) return val * 1024;
+        if (str.includes("MB")) return val / 1024;
+        return val;
+      }
+      function parseParams(str) { return str ? parseFloat(str.replace(/B/i, '')) : 0; }
+      function parseSpeed(str) { return parseFloat(str) || 0; }
+      function parseNum(str) { return parseFloat(str) || 0; }
+
+      
+      function render(data) {
+        gridFn.innerHTML = "";
+        data.forEach(item => {
+          
+          
+          let gpuPart = "";
+          if (item.c0_gpuModel && item.c0_gpuModel.trim() !== "") {
+            if (item.c2_gpuCount && item.c2_gpuCount.trim() !== "") {
+              gpuPart += item.c2_gpuCount + "x ";
+            }
+            gpuPart += `${item.c1_gpuComp} ${item.c0_gpuModel}`;
+          }
+
+          let cpuPart = "";
+          if (item.c6_cpuModel && item.c6_cpuModel.trim() !== "") {
+             if (item.c5_cpuCount && item.c5_cpuCount.trim() !== "") {
+               cpuPart += item.c5_cpuCount + "x ";
+             }
+             cpuPart += `${item.c7_cpuComp} ${item.c6_cpuModel}`;
+          }
+          
+          let systemLine = gpuPart;
+          if (gpuPart !== "" && cpuPart !== "") {
+            systemLine += " | " + cpuPart;
+          } else if (gpuPart === "") {
+            systemLine = cpuPart;
+          }
+
+          
+          let memParts = [];
+          if (item.c3_vramTotal && item.c3_vramTotal.trim() !== "") {
+            memParts.push(`Total VRAM: ${item.c3_vramTotal}`);
+          }
+          if (item.c9_ramTotal && item.c9_ramTotal.trim() !== "") {
+            let rStr = "RAM: ";
+            if (item.c10_ramType && item.c10_ramType.trim() !== "") {
+              rStr += `${item.c10_ramType} - `;
+            }
+            rStr += item.c9_ramTotal;
+            memParts.push(rStr);
+          }
+          
+          let memHtml = "";
+          if (memParts.length > 0) {
+            memHtml = `<div class="bench-mem-line">${memParts.join(" | ")}</div>`;
+          }
+
+          
+          let engineLine = item.c13_engine;
+          if (item.c14_ver && item.c14_ver.trim().length > 0) {
+            engineLine += ` V${item.c14_ver}`;
+          }
+          if (item.c20_context && item.c20_context.trim().length > 0) {
+            engineLine += ` | Context Size: ${item.c20_context}`;
+          }
+
+          
+          let notesBlock = "";
+          if (item.c21_notes && item.c21_notes.trim() !== "") {
+             notesBlock = `
+              <div class="bench-row">
+                <span class="bench-label">Notes:</span>
+                <span class="bench-val">${item.c21_notes}</span>
+              </div>`;
+          }
+
+          
+          const card = document.createElement("div");
+          card.className = "bench-card";
+          card.innerHTML = `
+            <div class="bench-row">
+              <span class="bench-label">System:</span>
+              <div class="bench-val">
+                <div>${systemLine}</div>
+                ${memHtml}
+              </div>
+            </div>
+
+            <div class="bench-row">
+              <span class="bench-label">Model:</span>
+              <span class="bench-val">${item.c17_modelName} ${item.c18_params} (${item.c19_quant})</span>
+            </div>
+
+            <div class="bench-row">
+              <span class="bench-label">Config:</span>
+              <span class="bench-val">${engineLine}</span>
+            </div>
+
+            <div class="bench-row">
+              <span class="bench-label">Speed:</span>
+              <span class="bench-val">${item.c16_speed} t/s</span>
+            </div>
+
+            ${notesBlock}
+          `;
+          gridFn.appendChild(card);
+        });
+
+        if(data.length === 0) gridFn.innerHTML = "<p style='color:white'>No results found.</p>";
+      }
+
+      
+      function sortData() {
+        const val = sortSelect.value;
+        const sorted = [...filteredData];
+        sorted.sort((a, b) => {
+          switch (val) {
+            case "speed_desc": return parseSpeed(b.c16_speed) - parseSpeed(a.c16_speed);
+            case "speed_asc":  return parseSpeed(a.c16_speed) - parseSpeed(b.c16_speed);
+            case "vram_desc":  return parseSize(b.c3_vramTotal) - parseSize(a.c3_vramTotal);
+            case "gpu_count_desc": return parseNum(b.c2_gpuCount) - parseNum(a.c2_gpuCount);
+            case "params_desc": return parseParams(b.c18_params) - parseParams(a.c18_params);
+            case "quant_asc": return a.c19_quant.localeCompare(b.c19_quant);
+            case "ram_desc": return parseSize(b.c9_ramTotal) - parseSize(a.c9_ramTotal);
+            case "engine_asc": return a.c13_engine.localeCompare(b.c13_engine);
+            default: return 0;
+          }
+        });
+        render(sorted);
+      }
+
+      let filteredData = [...rawData];
+      function filterData() {
+        const query = searchInput.value.toLowerCase();
+        filteredData = rawData.filter(item => {
+          const txt = Object.values(item).join(" ").toLowerCase();
+          return txt.includes(query);
+        });
+        sortData();
+      }
+
+      searchInput.addEventListener("input", filterData);
+      sortSelect.addEventListener("change", sortData);
+      sortData();
+
+    })();
+  </script>
+
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="https://techsucks.org/posts/adventure-gaming-with-llms/" class="button inline next">
+         [<span class="button__text">Adventure Gaming With LLMs</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+    </div>
+
+  </div>
+  
+
+  
+    
+
+  
+</div>
+
+
+<button id="back-to-top" aria-label="Back to Top">
+  
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+
+<style>
+  #back-to-top {
+    display: none;  
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #333;  
+    color: white;  
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;  
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  #back-to-top:hover {
+    background-color: #555;  
+    transform: translateY(-3px);
+  }
+</style>
+
+
+<script>
+  
+  const backToTopBtn = document.getElementById("back-to-top");
+
+  
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>

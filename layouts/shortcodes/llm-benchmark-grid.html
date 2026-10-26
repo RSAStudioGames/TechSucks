@@ -1,0 +1,299 @@
+{{ $file := .Get 0 }}
+{{ $r := resources.Get $file }}
+{{ if $r }}
+  {{ $rows := $r | transform.Unmarshal }}
+  {{ $uniqueID := printf "bench-%d" (now.UnixNano) }}
+
+  <!-- Styles -->
+  <style>
+    .bench-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+    }
+    
+    .bench-search, .bench-sort {
+      padding: 10px;
+      border: 1px solid #04c61d;
+      background: #300a24;
+      color: #ffffff;
+      font-size: 1rem;
+      outline: none;
+    }
+    
+    .bench-search { flex-grow: 1; }
+    .bench-search::placeholder { color: #aaa; }
+
+    .bench-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* Mobile 1 col */
+      gap: 20px;
+      font-family: sans-serif;
+    }
+
+    @media (min-width: 768px) {
+      .bench-grid {
+        grid-template-columns: 1fr 1fr; /* Tablet 2 cols */
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .bench-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Desktop 3 cols */
+      }
+    }
+
+    .bench-card {
+      background-color: #300a24;
+      border: 2px solid #04c61d;
+      color: #ffffff;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 0; 
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* Grid layout: Label (Fixed Width) | Value (Remaining Space) */
+    .bench-row {
+      display: grid;
+      grid-template-columns: 80px 1fr; /* Sets the specific split point */
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .bench-label {
+      color: #04c61d;
+      font-weight: bold;
+      font-size: 1.1rem; 
+      /* No border, just alignment */
+    }
+
+    .bench-val {
+      /* Values align to the left of this column */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    /* Secondary Line (VRAM/RAM) */
+    .bench-mem-line {
+      font-size: 1rem; 
+      color: #ffffff;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .hidden { display: none; }
+  </style>
+
+  <!-- Controls -->
+  <div class="bench-controls">
+    <input type="text" id="search-{{ $uniqueID }}" class="bench-search" placeholder="Search">
+    <select id="sort-{{ $uniqueID }}" class="bench-sort">
+      <option value="speed_desc">Sort by: Speed (Fastest)</option>
+      <option value="speed_asc">Sort by: Speed (Slowest)</option>
+      <option value="vram_desc">Total VRAM</option>
+      <option value="gpu_count_desc"># of GPUs</option>
+      <option value="params_desc">Model Parameters</option>
+      <option value="ram_desc">Total RAM</option>
+    </select>
+  </div>
+
+  <div id="grid-{{ $uniqueID }}" class="bench-grid"></div>
+
+  <script>
+    (function() {
+      // 1. Data Mapping
+      // 0:GPU Model, 1:GPU Comp, 2:GPU Count, 3:VRAM Total
+      // 5:CPU Count, 6:CPU Model, 7:CPU Comp, 9:RAM Total, 10:RAM Type
+      // 13:Engine, 14:Ver, 16:Speed, 17:Model, 18:Params, 19:Quant, 20:Context, 21:Notes
+      const rawData = [
+        {{ range after 1 $rows }}
+          {
+            c0_gpuModel:   "{{ index . 0 }}",
+            c1_gpuComp:    "{{ index . 1 }}",
+            c2_gpuCount:   "{{ index . 2 }}",
+            c3_vramTotal:  "{{ index . 3 }}",
+            
+            c5_cpuCount:   "{{ index . 5 }}",
+            c6_cpuModel:   "{{ index . 6 }}",
+            c7_cpuComp:    "{{ index . 7 }}",
+            
+            c9_ramTotal:   "{{ index . 9 }}",
+            c10_ramType:   "{{ index . 10 }}",
+            
+            c13_engine:    "{{ index . 13 }}",
+            c14_ver:       "{{ index . 14 }}",
+            c16_speed:     "{{ index . 16 }}",
+            
+            c17_modelName: "{{ index . 17 }}",
+            c18_params:    "{{ index . 18 }}",
+            c19_quant:     "{{ index . 19 }}",
+            c20_context:   "{{ index . 20 }}",
+            c21_notes:     "{{ index . 21 }}"
+          },
+        {{ end }}
+      ];
+
+      const gridFn = document.getElementById("grid-{{ $uniqueID }}");
+      const searchInput = document.getElementById("search-{{ $uniqueID }}");
+      const sortSelect = document.getElementById("sort-{{ $uniqueID }}");
+
+      // 2. Helpers
+      function parseSize(str) {
+        if (!str) return 0;
+        str = str.toUpperCase().replace(/,/g, '');
+        let val = parseFloat(str);
+        if (str.includes("TB")) return val * 1024;
+        if (str.includes("MB")) return val / 1024;
+        return val;
+      }
+      function parseParams(str) { return str ? parseFloat(str.replace(/B/i, '')) : 0; }
+      function parseSpeed(str) { return parseFloat(str) || 0; }
+      function parseNum(str) { return parseFloat(str) || 0; }
+
+      // 3. Render
+      function render(data) {
+        gridFn.innerHTML = "";
+        data.forEach(item => {
+          
+          // --- System Line ---
+          let gpuPart = "";
+          if (item.c0_gpuModel && item.c0_gpuModel.trim() !== "") {
+            if (item.c2_gpuCount && item.c2_gpuCount.trim() !== "") {
+              gpuPart += item.c2_gpuCount + "x ";
+            }
+            gpuPart += `${item.c1_gpuComp} ${item.c0_gpuModel}`;
+          }
+
+          let cpuPart = "";
+          if (item.c6_cpuModel && item.c6_cpuModel.trim() !== "") {
+             if (item.c5_cpuCount && item.c5_cpuCount.trim() !== "") {
+               cpuPart += item.c5_cpuCount + "x ";
+             }
+             cpuPart += `${item.c7_cpuComp} ${item.c6_cpuModel}`;
+          }
+          
+          let systemLine = gpuPart;
+          if (gpuPart !== "" && cpuPart !== "") {
+            systemLine += " | " + cpuPart;
+          } else if (gpuPart === "") {
+            systemLine = cpuPart;
+          }
+
+          // --- VRAM/RAM Line ---
+          let memParts = [];
+          if (item.c3_vramTotal && item.c3_vramTotal.trim() !== "") {
+            memParts.push(`Total VRAM: ${item.c3_vramTotal}`);
+          }
+          if (item.c9_ramTotal && item.c9_ramTotal.trim() !== "") {
+            let rStr = "RAM: ";
+            if (item.c10_ramType && item.c10_ramType.trim() !== "") {
+              rStr += `${item.c10_ramType} - `;
+            }
+            rStr += item.c9_ramTotal;
+            memParts.push(rStr);
+          }
+          
+          let memHtml = "";
+          if (memParts.length > 0) {
+            memHtml = `<div class="bench-mem-line">${memParts.join(" | ")}</div>`;
+          }
+
+          // --- Config Line ---
+          let engineLine = item.c13_engine;
+          if (item.c14_ver && item.c14_ver.trim().length > 0) {
+            engineLine += ` V${item.c14_ver}`;
+          }
+          if (item.c20_context && item.c20_context.trim().length > 0) {
+            engineLine += ` | Context Size: ${item.c20_context}`;
+          }
+
+          // --- Notes ---
+          let notesBlock = "";
+          if (item.c21_notes && item.c21_notes.trim() !== "") {
+             notesBlock = `
+              <div class="bench-row">
+                <span class="bench-label">Notes:</span>
+                <span class="bench-val">${item.c21_notes}</span>
+              </div>`;
+          }
+
+          // --- HTML Structure ---
+          const card = document.createElement("div");
+          card.className = "bench-card";
+          card.innerHTML = `
+            <div class="bench-row">
+              <span class="bench-label">System:</span>
+              <div class="bench-val">
+                <div>${systemLine}</div>
+                ${memHtml}
+              </div>
+            </div>
+
+            <div class="bench-row">
+              <span class="bench-label">Model:</span>
+              <span class="bench-val">${item.c17_modelName} ${item.c18_params} (${item.c19_quant})</span>
+            </div>
+
+            <div class="bench-row">
+              <span class="bench-label">Config:</span>
+              <span class="bench-val">${engineLine}</span>
+            </div>
+
+            <div class="bench-row">
+              <span class="bench-label">Speed:</span>
+              <span class="bench-val">${item.c16_speed} t/s</span>
+            </div>
+
+            ${notesBlock}
+          `;
+          gridFn.appendChild(card);
+        });
+
+        if(data.length === 0) gridFn.innerHTML = "<p style='color:white'>No results found.</p>";
+      }
+
+      // 4. Sort & Filter
+      function sortData() {
+        const val = sortSelect.value;
+        const sorted = [...filteredData];
+        sorted.sort((a, b) => {
+          switch (val) {
+            case "speed_desc": return parseSpeed(b.c16_speed) - parseSpeed(a.c16_speed);
+            case "speed_asc":  return parseSpeed(a.c16_speed) - parseSpeed(b.c16_speed);
+            case "vram_desc":  return parseSize(b.c3_vramTotal) - parseSize(a.c3_vramTotal);
+            case "gpu_count_desc": return parseNum(b.c2_gpuCount) - parseNum(a.c2_gpuCount);
+            case "params_desc": return parseParams(b.c18_params) - parseParams(a.c18_params);
+            case "quant_asc": return a.c19_quant.localeCompare(b.c19_quant);
+            case "ram_desc": return parseSize(b.c9_ramTotal) - parseSize(a.c9_ramTotal);
+            case "engine_asc": return a.c13_engine.localeCompare(b.c13_engine);
+            default: return 0;
+          }
+        });
+        render(sorted);
+      }
+
+      let filteredData = [...rawData];
+      function filterData() {
+        const query = searchInput.value.toLowerCase();
+        filteredData = rawData.filter(item => {
+          const txt = Object.values(item).join(" ").toLowerCase();
+          return txt.includes(query);
+        });
+        sortData();
+      }
+
+      searchInput.addEventListener("input", filterData);
+      sortSelect.addEventListener("change", sortData);
+      sortData();
+
+    })();
+  </script>
+{{ else }}
+  <p style="color:red">CSV not found.</p>
+{{ end }}

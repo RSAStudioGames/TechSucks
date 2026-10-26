@@ -1,0 +1,107 @@
+/* Wrapper to hold sidebar and content side-by-side */
+.split-layout-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--accent);
+    padding-right: 20px;
+}
+
+/* Content Area styling */
+.main-content-area {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+/* Mobile: Stack them vertically */
+@media (max-width: 600px) {
+    .split-layout-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--accent);
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+}
+/* Sidebar Header Styling */
+.sidebar-header {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px; /* Space between header and links */
+    color: var(--accent); /* Makes the header green like the theme */
+    font-weight: bold;
+}
+
+/* Sidebar List Styling */
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 5px; /* Slight indent for sub-links */
+}
+
+/* Sidebar Separator Line */
+.sidebar hr {
+    margin: 20px 0; /* Spacing above and below the line */
+    opacity: 0.5;   /* Make the line slightly subtle */
+}
+
+/* Sidebar Link Styling - Only underline the text, not the "> " prefix */
+.sidebar-list a {
+    text-decoration: none;
+}
+
+.sidebar-list a:hover span {
+    text-decoration: underline;
+}
+
+/* --- Table of Contents Specific Styles --- */
+#TableOfContents {
+    font-size: 0.9em;
+}
+
+#TableOfContents ul {
+    list-style: none;
+    padding-left: 15px;
+    margin: 0;
+}
+
+/* Remove indent for the very first level */
+#TableOfContents > ul {
+    padding-left: 0;
+}
+
+#TableOfContents li {
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+}
+
+#TableOfContents a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+#TableOfContents > ul > li > a {
+    color: var(--accent);
+}
+
+#TableOfContents a:hover {
+    text-decoration: underline;
+}

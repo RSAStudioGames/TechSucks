@@ -1,0 +1,17 @@
+{{ $containerWidth := "500px" }}
+
+<div style="
+    background-color: #f6e9e1;
+    color: black;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: {{ $containerWidth }};
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+">
+    {{ $content := .Inner }}
+    {{ $content := $content | replaceRE "(?m)^\\\\>(.*)" "<span style='color: #77992b'>&gt;$1</span>" }}
+    {{ $content := $content | replaceRE "\n" "  \n" }}
+    {{ $content | markdownify }}
+</div>
