@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Home on TechSucks</title>
-		<link>https://techsucks.org/</link>
+		<link>http://localhost:1313/</link>
 		<description>Recent content in Home on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,159 +12,159 @@
 		
 			<lastBuildDate>Sat, 11 Apr 2026 23:56:29 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Elecom Huge Plus Review</title>
-				<link>https://techsucks.org/posts/elecom-huge-plus-review/</link>
+				<link>http://localhost:1313/posts/elecom-huge-plus-review/</link>
 				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
-				<guid>https://techsucks.org/posts/elecom-huge-plus-review/</guid>
+				<guid>http://localhost:1313/posts/elecom-huge-plus-review/</guid>
 				<description>&lt;p&gt;I was never much one for trackball mice, they always felt too slow and clunky for my tastes, but that was before I received the Elecom Huge Plus, and I am very happy with my purchase.&lt;/p&gt;&#xA;&lt;p&gt;Let me start with the things I don’t like about it. For one, you need to occasionally lubricate the rollers in the mouse to keep it moving smoothly. It occasionally ‘sticks’ a bit for very short horizontal movements due to the triangular positioning of the three rollers when they aren’t regularly maintained. And unlike most other mice I’ve used, trackballs require (minimal and very simple) maintenance to keep them going smoothly. But besides those few issues, it is a phenomenal mouse.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Arduino Uno Q Review</title>
-				<link>https://techsucks.org/posts/arduino-uno-q-review/</link>
+				<link>http://localhost:1313/posts/arduino-uno-q-review/</link>
 				<pubDate>Thu, 12 Mar 2026 19:21:43 +0000</pubDate>
-				<guid>https://techsucks.org/posts/arduino-uno-q-review/</guid>
+				<guid>http://localhost:1313/posts/arduino-uno-q-review/</guid>
 				<description>&lt;p&gt;Ok so full disclosure, I don&amp;rsquo;t have much experience with Arduino boards and microcontrollers overall besides some hobby experience in setting up stuff for Home Assistant and some small projects like a car parking assistant. My knowledge of embedded development is borderline non-existent. That being said, these are my first impressions of the Arduino Uno Q.&lt;/p&gt;&#xA;&lt;p&gt;The Arduino Uno Q is Qualcomm’s first new board after its acquisition of Arduino. I got the Arduino Uno Q 2GB model so I could run a few automations and python-based web services for my workflows without needing to run them on power-hungry and expensive full-featured server. It’s basically a microcontroller and single board computer (SBC) in one and seems to be a good competitor to the raspberry pi. Pis have a much more mature ecosystem, but their costs have ballooned to quite a ridiculous cost for the projects they’re used for and my tastes. So already, my use-case for this board aligns better with a raspberry pi than a microcontroller.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>LLM Inference Benchmarks</title>
-				<link>https://techsucks.org/posts/llm-benchmarks/</link>
+				<link>http://localhost:1313/posts/llm-benchmarks/</link>
 				<pubDate>Mon, 19 Jan 2026 14:24:34 +0000</pubDate>
-				<guid>https://techsucks.org/posts/llm-benchmarks/</guid>
+				<guid>http://localhost:1313/posts/llm-benchmarks/</guid>
 				<description>&lt;p&gt;Work in progress page&amp;hellip; &lt;br /&gt;&#xA;&#xA;LLM inference benchmarks I&amp;rsquo;ve done myself or collected from the community and other online resources.&#xA;&lt;br /&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;A quick way to calculate your max theoritical output speed for a dense model is with &lt;code&gt;bandwidth / size_of_llm_in_gb = max_tok_per_sec&lt;/code&gt; &lt;br /&gt;&#xA;&#xA;For example, Llama 3.3 iQ5KM is 50 GB in size. A V100 16GB (SXM2) has 900GB/s of memory bandwidth. 900 / 50 = 18. Now of course, there is always going to be some overhead which is why my results are ~14 tokens per second which is about 80% of the theoritical max. As low as 70% will be commonplace. If you are getting less than 70% performance, try different quantization methods, inference backends, or operating systems. Typically, headless Linux (I prefer Ubuntu server) will get you better results than using Windows OS.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Adventure Gaming With LLMs</title>
-				<link>https://techsucks.org/posts/adventure-gaming-with-llms/</link>
+				<link>http://localhost:1313/posts/adventure-gaming-with-llms/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/adventure-gaming-with-llms/</guid>
+				<guid>http://localhost:1313/posts/adventure-gaming-with-llms/</guid>
 				<description>&lt;p&gt;Ripped from: &lt;a href=&#34;https://rentry.co/llmadventurersguide&#34;&gt;https://rentry.co/llmadventurersguide&lt;/a&gt;&#xA;Just keeping here as a mirror because I liked the guide. I didn&amp;rsquo;t write this. Props to whoever did.&lt;/p&gt;&#xA;&lt;h1 id=&#34;proper-adventure-gaming-with-llms&#34;&gt;Proper Adventure Gaming With LLMs&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align:center&#34;&gt;&#xA;A huge, brief guide on how I made exactly what I want, and you can, too.&#xA;By that, I mean you can reproduce exactly what I want.&#xA;You&#39;re on your own if you want to make exactly what you want. Sorry.&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: This guide is exclusively for people who have a lot of memory available. Whether you run on a CPU with lots of RAM, a 4090 (or better), or a hosted service/api - the key to doing this the right way is context, context, context. This guide thrives on running any model you can run with an &lt;strong&gt;absolute bare minimum of 30k context&lt;/strong&gt;. More is &lt;em&gt;always&lt;/em&gt; better.&lt;/em&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Directory Opus Review</title>
-				<link>https://techsucks.org/posts/directory-opus-review/</link>
+				<link>http://localhost:1313/posts/directory-opus-review/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/directory-opus-review/</guid>
-				<description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://techsucks.org/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/directory-opus-review/</guid>
+				<description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Gaming</title>
-				<link>https://techsucks.org/posts/gaming/</link>
+				<link>http://localhost:1313/posts/gaming/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/gaming/</guid>
+				<guid>http://localhost:1313/posts/gaming/</guid>
 				<description>&lt;p&gt;&lt;a href=&#34;https://fractalsoftworks.com/&#34;&gt;Starsector&lt;/a&gt; - review the game (Spoiler: it&amp;rsquo;s really fun. Movement has a bit of a learning curve), tips and tricks, where to find and how to install mods, fun modpacks&lt;br&gt;&#xA;Brawlhalla - combos and tips, etc&lt;br&gt;&#xA;Minecraft - modpacks, server hosting basic, docker servers, VPSs, esp32 server, favorite version, etc&lt;/p&gt;&#xA;&lt;p&gt;Favorite Games:&lt;br&gt;&#xA;Minecraft&lt;br&gt;&#xA;Brawlhalla&lt;br&gt;&#xA;Starsector&lt;br&gt;&#xA;Sid Meier&amp;rsquo;s Pirates!&lt;br&gt;&#xA;Sid Meier&amp;rsquo;s Civilization 4&lt;br&gt;&#xA;Arma 3&lt;br&gt;&#xA;Factorio&lt;br&gt;&#xA;Insaniquarium&lt;br&gt;&#xA;Plants vs. Zombies&lt;br&gt;&#xA;Baldur&amp;rsquo;s Gate 3&lt;br&gt;&#xA;Cyberpunk 2077&lt;br&gt;&#xA;Divinity Original Sin&lt;br&gt;&#xA;Divinity Original Sin 2&lt;br&gt;&#xA;The Witcher 3&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Guide To Debloating Windows</title>
-				<link>https://techsucks.org/posts/guide-to-debloating-windows/</link>
+				<link>http://localhost:1313/posts/guide-to-debloating-windows/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/guide-to-debloating-windows/</guid>
+				<guid>http://localhost:1313/posts/guide-to-debloating-windows/</guid>
 				<description>&lt;h1 id=&#34;a-simple-guide-to-debloating-windows&#34;&gt;A Simple Guide to Debloating Windows&lt;/h1&gt;&#xA;&lt;p&gt;Windows comes with with a bunch of extra apps, background tracking that is effectively &lt;a href=&#34;https://www.youtube.com/watch?v=j2TyrLZT0r0&#34;&gt;spyware&lt;/a&gt;, and features nobody wants or asked for (like copilot). I&amp;rsquo;ll show you how to remove a majority of the junk Windows comes with to reduce data collection, remove clutter, and very likely speed up your computer.&#xA;I always run this on any new installation of Windows 10/11, but that isn&amp;rsquo;t required for this process to work. If you want to stay on Windows 10, you can use &lt;a href=&#34;https://0patch.com/&#34;&gt;0Patch&lt;/a&gt; to stay up to date with security updates even after Microsoft kills off W10 on &lt;a href=&#34;https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281&#34;&gt;October 14th, 2025.&lt;/a&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Home Media Server</title>
-				<link>https://techsucks.org/posts/running-your-own-home-media-server/</link>
+				<link>http://localhost:1313/posts/running-your-own-home-media-server/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/running-your-own-home-media-server/</guid>
-				<description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Why JellyFin and not Plex&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Support for audiobooks/music/movies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic hardware needed&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic installation guide for JellyFin&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Where to acquire movies/shows/music/audiobooks&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Where to purchase DVDs&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ripping DVDs to add to your media server&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://techsucks.org/posts/sailing-the-high-seas/&#34;&gt;Sailing The High Seas&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Arr stack&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Remote access&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<guid>http://localhost:1313/posts/running-your-own-home-media-server/</guid>
+				<description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Why JellyFin and not Plex&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Support for audiobooks/music/movies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic hardware needed&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic installation guide for JellyFin&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Where to acquire movies/shows/music/audiobooks&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Where to purchase DVDs&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ripping DVDs to add to your media server&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/sailing-the-high-seas/&#34;&gt;Sailing The High Seas&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Arr stack&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Remote access&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>IT Career Strategy</title>
-				<link>https://techsucks.org/posts/it-career-strategy/</link>
+				<link>http://localhost:1313/posts/it-career-strategy/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/it-career-strategy/</guid>
+				<guid>http://localhost:1313/posts/it-career-strategy/</guid>
 				<description>&lt;p&gt;IT Career Strategy&lt;/p&gt;&#xA;&lt;p&gt;My advice as a former boutique IT recruiter…&lt;/p&gt;&#xA;&lt;p&gt;Resume building…&lt;/p&gt;&#xA;&lt;p&gt;Working with recruiters… (finding the right recruiter and not some resume pusher)&lt;/p&gt;&#xA;&lt;p&gt;What to know…&lt;/p&gt;&#xA;&lt;p&gt;Certifications… What&amp;rsquo;s it worth? CompTIA worth it (not really)?&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>LLM Benchmark Prompts</title>
-				<link>https://techsucks.org/posts/llm-benchmark-prompts/</link>
+				<link>http://localhost:1313/posts/llm-benchmark-prompts/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/llm-benchmark-prompts/</guid>
+				<guid>http://localhost:1313/posts/llm-benchmark-prompts/</guid>
 				<description>&lt;p&gt;This is just a copy of this &lt;a href=&#34;https://pastebin.com/LmRhwUCA&#34;&gt;pastebin&lt;/a&gt; in case access is lost. I&amp;rsquo;ll probably modify and add to the list once I have more time to work on it.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;A great set of prompts to test the limits and performance of different large language models (LLMs) would include a mix of linguistic challenges, technical questions, and creative tasks. This list of very hard prompts is designed to push LLMs to their limits in terms of linguistic understanding, reasoning, and knowledge:&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Machine Learning</title>
-				<link>https://techsucks.org/posts/machine-learning/</link>
+				<link>http://localhost:1313/posts/machine-learning/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/machine-learning/</guid>
+				<guid>http://localhost:1313/posts/machine-learning/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Find info about AI hardware in &lt;a href=&#34;https://techsucks.org/posts/servermaxxing&#34;&gt;servermaxxing&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-models&#34;&gt;AI Models&lt;/h1&gt;&#xA;&lt;p&gt;Resources for rating of models &amp;amp; their uses&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;Here are some places you can download AI models from:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/&#34;&gt;Hugging Face&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Recommended users to download from:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/bartowski&#34;&gt;bartowski&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/mradermacher&#34;&gt;mradermacher&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/Dracones&#34;&gt;Dracones&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/TheBloke&#34;&gt;TheBloke&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.kaggle.com/&#34;&gt;Kaggle&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Handy tool to estimate the VRAM needed to run a model: &lt;a href=&#34;https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator&#34;&gt;VRAM Calculator&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Text Gen / Image Gen / STT / TTS / Classication / Multi-Modal / Sentiment Analysis / Embedding&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Managing Your Digital Privacy</title>
-				<link>https://techsucks.org/posts/managing-your-digital-privacy/</link>
+				<link>http://localhost:1313/posts/managing-your-digital-privacy/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/managing-your-digital-privacy/</guid>
-				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&#xA;{.is-info}&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;The “I have nothing to hide&amp;quot; argument annoys me because it shows that tech companies and the government have done such a good at convincing people that you only need privacy if you&amp;rsquo;re doing something malicious.&lt;/p&gt;&#xA;&lt;p&gt;This is a HIGHLY recommended read: &lt;a href=&#34;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&#34;&gt;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://rejectconvenience.com/&#34;&gt;https://rejectconvenience.com/&lt;/a&gt; - &lt;a href=&#34;https://www.youtube.com/@rejectconvenience&#34;&gt;https://www.youtube.com/@rejectconvenience&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you want to start getting a better handle of your digital privacy, I recommend by first debloating your Windows 10 or 11 version by following my guide on &lt;a href=&#34;https://techsucks.org/debloating-windows-os&#34;&gt;/debloating-windows-os&lt;/a&gt;. This will block a lot of tracking telemetry microsoft includes which tracks nearly everything you do from searches in your start menu, opening steam, what games you play, what settings you open, etc. I&amp;rsquo;ll get a more detailed list of exactly what data microsoft collects on individuals and why people should care.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/managing-your-digital-privacy/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&#xA;{.is-info}&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;The “I have nothing to hide&amp;quot; argument annoys me because it shows that tech companies and the government have done such a good at convincing people that you only need privacy if you&amp;rsquo;re doing something malicious.&lt;/p&gt;&#xA;&lt;p&gt;This is a HIGHLY recommended read: &lt;a href=&#34;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&#34;&gt;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://rejectconvenience.com/&#34;&gt;https://rejectconvenience.com/&lt;/a&gt; - &lt;a href=&#34;https://www.youtube.com/@rejectconvenience&#34;&gt;https://www.youtube.com/@rejectconvenience&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you want to start getting a better handle of your digital privacy, I recommend by first debloating your Windows 10 or 11 version by following my guide on &lt;a href=&#34;http://localhost:1313/debloating-windows-os&#34;&gt;/debloating-windows-os&lt;/a&gt;. This will block a lot of tracking telemetry microsoft includes which tracks nearly everything you do from searches in your start menu, opening steam, what games you play, what settings you open, etc. I&amp;rsquo;ll get a more detailed list of exactly what data microsoft collects on individuals and why people should care.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Personal Sovereign Cloud</title>
-				<link>https://techsucks.org/posts/personal-sovereign-cloud/</link>
+				<link>http://localhost:1313/posts/personal-sovereign-cloud/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/personal-sovereign-cloud/</guid>
+				<guid>http://localhost:1313/posts/personal-sovereign-cloud/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;guide-running-your-own-sovereign-cloud&#34;&gt;Guide: Running Your Own Sovereign Cloud&lt;/h1&gt;&#xA;&lt;p&gt;Want to be free of Google Drive/OneDrive/Mega/iCloud/Dropbox/etc? Hate the big corpos invading your privacy and looking at all of your photos, files, whatever? Well you deserve to have privacy and security for your files, this is your way to take back your data and stop letting big corporations drain your wallet so you can store your important documents/family photos/Linux ISOs safely.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Server Building Guide</title>
-				<link>https://techsucks.org/posts/server-building/</link>
+				<link>http://localhost:1313/posts/server-building/</link>
 				<pubDate>Tue, 23 Dec 2025 14:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/server-building/</guid>
+				<guid>http://localhost:1313/posts/server-building/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress (just like the rest of the site) ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I pulled a lot of this out from the &lt;a href=&#34;https://techsucks.org/posts/servermaxxing&#34;&gt;SERVERMAXXING&lt;/a&gt; page as it wasn&amp;rsquo;t that relevant to running AI models so this will have a heavier focus on AI uses for the time being.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;This will cover what kind of hardware you want to look for when building your own personal server and what you should focus on for specific use-cases.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>SERVERMAXXING</title>
-				<link>https://techsucks.org/posts/servermaxxing/</link>
+				<link>http://localhost:1313/posts/servermaxxing/</link>
 				<pubDate>Wed, 17 Dec 2025 17:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/servermaxxing/</guid>
-				<description>&lt;h1 id=&#34;ai-server-builds&#34;&gt;AI Server Builds&lt;/h1&gt;&#xA;&lt;p&gt;Here are some server setups I&amp;rsquo;ll be covering that can run large models with budget prices. By budget I mean it won&amp;rsquo;t cost the same as a new Ferrari, which some SOTA systems can easily surpass. I&amp;rsquo;ll be going over specific hardware to look for in more detail over on the &lt;a href=&#34;https://techsucks.org/posts/server-building/&#34;&gt;Server Building&lt;/a&gt; page. These aren&amp;rsquo;t branded products or off-the-shelf systems. I&amp;rsquo;ve curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who&amp;rsquo;ve tried them out to give you an accurate picture of how they would work in a real-world situation. &lt;br /&gt;&#xA;&#xA;You can find the all the benchmarks I&amp;rsquo;ve run myself and collected in the &lt;a href=&#34;https://techsucks.org/posts/llm-benchmarks/&#34;&gt;LLM Inference Benchmarks&lt;/a&gt; page.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/servermaxxing/</guid>
+				<description>&lt;h1 id=&#34;ai-server-builds&#34;&gt;AI Server Builds&lt;/h1&gt;&#xA;&lt;p&gt;Here are some server setups I&amp;rsquo;ll be covering that can run large models with budget prices. By budget I mean it won&amp;rsquo;t cost the same as a new Ferrari, which some SOTA systems can easily surpass. I&amp;rsquo;ll be going over specific hardware to look for in more detail over on the &lt;a href=&#34;http://localhost:1313/posts/server-building/&#34;&gt;Server Building&lt;/a&gt; page. These aren&amp;rsquo;t branded products or off-the-shelf systems. I&amp;rsquo;ve curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who&amp;rsquo;ve tried them out to give you an accurate picture of how they would work in a real-world situation. &lt;br /&gt;&#xA;&#xA;You can find the all the benchmarks I&amp;rsquo;ve run myself and collected in the &lt;a href=&#34;https://techsucks.org/posts/llm-benchmarks/&#34;&gt;LLM Inference Benchmarks&lt;/a&gt; page.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
-				<link>https://techsucks.org/posts/programming/</link>
+				<link>http://localhost:1313/posts/programming/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/programming/</guid>
-				<description>&lt;p&gt;&lt;img src=&#34;https://techsucks.org/images/programmingmemebook.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;&#xA;&lt;p&gt;“Let me read you from the Zen of Python: There should be one and preferably only one obvious way to do it, which is why we have three different versions, 12 different ways to install them, and 80 different frameworks for the same thing: Easy Install, Anaconda, conda, pip, homebrew.” - Programmers Are Also Human&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/programming/</guid>
+				<description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/programmingmemebook.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;&#xA;&lt;p&gt;“Let me read you from the Zen of Python: There should be one and preferably only one obvious way to do it, which is why we have three different versions, 12 different ways to install them, and 80 different frameworks for the same thing: Easy Install, Anaconda, conda, pip, homebrew.” - Programmers Are Also Human&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
-				<link>https://techsucks.org/posts/random-stuff/</link>
+				<link>http://localhost:1313/posts/random-stuff/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/random-stuff/</guid>
-				<description>&lt;p&gt;Uhhhh idk, this is for a bunch of stuff I&amp;rsquo;ve found so far that I haven&amp;rsquo;t found a place to categorize them into yet. Probably gonna be a place for all this stuff in the future as I add more to the site, but for now here it is&lt;/p&gt;&#xA;&lt;h2 id=&#34;minor-annoyances-and-crap&#34;&gt;Minor annoyances and crap&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://techsucks.org/images/dtnsl7oicbaefxpxqbu88yvmeu1g29iwu8ck.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I hate that little thing showing up on youtube thumbnails on my home page. It&amp;rsquo;s so easy to click on by accident if you&amp;rsquo;re opening a few pages in new tabs to queue up your watch list when you wanna waste time.&lt;br&gt;&#xA;Here&amp;rsquo;s how I got rid of it:&lt;br&gt;&#xA;Step 1: Get &lt;a href=&#34;https://ublockorigin.com/&#34;&gt;https://ublockorigin.com/&lt;/a&gt; to block ads (&lt;a href=&#34;https://adnauseam.io/&#34;&gt;https://adnauseam.io/&lt;/a&gt; is a better option IMO because it poisons advertiser data collection on you)&#xA;Step 2: Go to the settings and into the &amp;ldquo;My Filters&amp;rdquo; tab and add the following:&#xA;&lt;code&gt;www.youtube.com##div[class^=&#39;ytInlinePlayerControlsTopLeftControls&#39;]&lt;/code&gt;&#xA;&lt;code&gt;www.youtube.com##.ytm-paid-content-overlay-renderer&lt;/code&gt;&#xA;&lt;code&gt;www.youtube.com##a[href*=&amp;quot;https://support.google.com/youtube?p=ppp&amp;quot;]&lt;/code&gt;&#xA;&lt;code&gt;www.youtube.com##.ytp-paid-content-overlay&lt;/code&gt;&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/random-stuff/</guid>
+				<description>&lt;p&gt;Uhhhh idk, this is for a bunch of stuff I&amp;rsquo;ve found so far that I haven&amp;rsquo;t found a place to categorize them into yet. Probably gonna be a place for all this stuff in the future as I add more to the site, but for now here it is&lt;/p&gt;&#xA;&lt;h2 id=&#34;minor-annoyances-and-crap&#34;&gt;Minor annoyances and crap&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/dtnsl7oicbaefxpxqbu88yvmeu1g29iwu8ck.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I hate that little thing showing up on youtube thumbnails on my home page. It&amp;rsquo;s so easy to click on by accident if you&amp;rsquo;re opening a few pages in new tabs to queue up your watch list when you wanna waste time.&lt;br&gt;&#xA;Here&amp;rsquo;s how I got rid of it:&lt;br&gt;&#xA;Step 1: Get &lt;a href=&#34;https://ublockorigin.com/&#34;&gt;https://ublockorigin.com/&lt;/a&gt; to block ads (&lt;a href=&#34;https://adnauseam.io/&#34;&gt;https://adnauseam.io/&lt;/a&gt; is a better option IMO because it poisons advertiser data collection on you)&#xA;Step 2: Go to the settings and into the &amp;ldquo;My Filters&amp;rdquo; tab and add the following:&#xA;&lt;code&gt;www.youtube.com##div[class^=&#39;ytInlinePlayerControlsTopLeftControls&#39;]&lt;/code&gt;&#xA;&lt;code&gt;www.youtube.com##.ytm-paid-content-overlay-renderer&lt;/code&gt;&#xA;&lt;code&gt;www.youtube.com##a[href*=&amp;quot;https://support.google.com/youtube?p=ppp&amp;quot;]&lt;/code&gt;&#xA;&lt;code&gt;www.youtube.com##.ytp-paid-content-overlay&lt;/code&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
-				<link>https://techsucks.org/posts/sailing-the-high-seas/</link>
+				<link>http://localhost:1313/posts/sailing-the-high-seas/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/sailing-the-high-seas/</guid>
-				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&#xA;{.is-info}&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;sailing-the-high-seas---piracy-and-you&#34;&gt;Sailing The High Seas - Piracy and You&lt;/h1&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;    &lt;img &#xD;&#xA;      src=&#34;https://techsucks.org/images/remember-its-always-moral-to-pirate-adobe-products-v0-93mneank0obd1.jpeg&#34; &#xD;&#xA;      alt=&#34;Adobe is trash&#34;&#xD;&#xA;      &#xD;&#xA;        width=&#34;500&#34; &#xD;&#xA;        data-width=&#34;500&#34; &#xD;&#xA;        style=&#34;cursor: zoom-in;&#34; &#xD;&#xA;        onclick=&#34;if(this.hasAttribute(&#39;width&#39;)) { this.removeAttribute(&#39;width&#39;); this.style.cursor=&#39;zoom-out&#39;; } else { this.setAttribute(&#39;width&#39;, this.getAttribute(&#39;data-width&#39;)); this.style.cursor=&#39;zoom-in&#39;; }&#34;&#xD;&#xA;      &#xD;&#xA;    &gt;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;&#xA;&lt;p&gt;Yarrr! So it&amp;rsquo;s the pirate&amp;rsquo;s life for you, eh? Here&amp;rsquo;s information I&amp;rsquo;ve gleaned over the years… &lt;br /&gt;&#xA;&#xA;Biggest thing is… If you like the software and you plan on using it a lot, purchase it to support the developers. (Unless it&amp;rsquo;s Adobe or Microsoft products) &lt;br /&gt;&#xA;&#xA;This guide is purely for educational purposes. I will not provide tutorials on how to pirate specific software. Use your brain. &lt;br /&gt;&#xA;&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/sailing-the-high-seas/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&#xA;{.is-info}&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;sailing-the-high-seas---piracy-and-you&#34;&gt;Sailing The High Seas - Piracy and You&lt;/h1&gt;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;    &lt;img &#xD;&#xA;      src=&#34;http://localhost:1313/images/remember-its-always-moral-to-pirate-adobe-products-v0-93mneank0obd1.jpeg&#34; &#xD;&#xA;      alt=&#34;Adobe is trash&#34;&#xD;&#xA;      &#xD;&#xA;        width=&#34;500&#34; &#xD;&#xA;        data-width=&#34;500&#34; &#xD;&#xA;        style=&#34;cursor: zoom-in;&#34; &#xD;&#xA;        onclick=&#34;if(this.hasAttribute(&#39;width&#39;)) { this.removeAttribute(&#39;width&#39;); this.style.cursor=&#39;zoom-out&#39;; } else { this.setAttribute(&#39;width&#39;, this.getAttribute(&#39;data-width&#39;)); this.style.cursor=&#39;zoom-in&#39;; }&#34;&#xD;&#xA;      &#xD;&#xA;    &gt;&#xD;&#xA;  &#xD;&#xA;&#xD;&#xA;&#xA;&lt;p&gt;Yarrr! So it&amp;rsquo;s the pirate&amp;rsquo;s life for you, eh? Here&amp;rsquo;s information I&amp;rsquo;ve gleaned over the years… &lt;br /&gt;&#xA;&#xA;Biggest thing is… If you like the software and you plan on using it a lot, purchase it to support the developers. (Unless it&amp;rsquo;s Adobe or Microsoft products) &lt;br /&gt;&#xA;&#xA;This guide is purely for educational purposes. I will not provide tutorials on how to pirate specific software. Use your brain. &lt;br /&gt;&#xA;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
-				<link>https://techsucks.org/posts/server-gpu-driver-installation/</link>
+				<link>http://localhost:1313/posts/server-gpu-driver-installation/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/server-gpu-driver-installation/</guid>
+				<guid>http://localhost:1313/posts/server-gpu-driver-installation/</guid>
 				<description>&lt;p&gt;My personal notes for installing GPU drivers. AMD drivers were a lot simpler to install, but Nvidia drivers were their own kind of problem and docs didn&amp;rsquo;t always give reproducible results. It&amp;rsquo;s probably a me problem, but this saved me lots of problems with Nvidia drivers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;gpu-drivers&#34;&gt;&lt;strong&gt;GPU Drivers&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Prerequisites for installing on Virtual Machines (&lt;strong&gt;ESXI&lt;/strong&gt;):&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;pciPassthru.use64bitMMIO = TRUE&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;pciPassthru.64bitMMIOSizeGB = 48&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;(Rule of thumb: MMIO size must be a power of 2 and at least twice the value of the current total VRAM for the VM. EX: V100 16gb = 32. M40 24GB = 48.)&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
-				<link>https://techsucks.org/posts/useful-linux-stuff/</link>
+				<link>http://localhost:1313/posts/useful-linux-stuff/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/useful-linux-stuff/</guid>
+				<guid>http://localhost:1313/posts/useful-linux-stuff/</guid>
 				<description>&lt;p&gt;Work in progress (just like the rest of the site) ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;h2 id=&#34;useful-packages&#34;&gt;&lt;strong&gt;Useful Packages&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Homebrew - &lt;a href=&#34;https://brew.sh/&#34;&gt;https://brew.sh/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;INSTALL COMMAND: &lt;code&gt;/bin/bash -c &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;quot;&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Homebrew is a free and open-source package manager that simplifies the installation of software on macOS and Linux.&lt;/p&gt;&#xA;&lt;p&gt;UV - &lt;a href=&#34;https://docs.astral.sh/uv/#installation&#34;&gt;https://docs.astral.sh/uv/#installation&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;INSTALL COMMAND: &lt;code&gt;curl -LsSf https://astral.sh/uv/install.sh | sh&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;UV is an extremely fast Python package and project manager written in Rust, designed to replace tools like pip and pip-tools.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
-				<link>https://techsucks.org/posts/useful-windows-tools/</link>
+				<link>http://localhost:1313/posts/useful-windows-tools/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/useful-windows-tools/</guid>
+				<guid>http://localhost:1313/posts/useful-windows-tools/</guid>
 				<description>&lt;p&gt;Work in progress (just like the rest of the site) ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;p&gt;Here are some tools I&amp;rsquo;ve found to be quite useful for me when working with Windows.&lt;/p&gt;&#xA;&lt;p&gt;Directory Opus - &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;https://www.gpsoft.com.au/&lt;/a&gt;&#xA;An incredibly good replacement for Windows Explorer. I absolutely love this thing. Huuuuuuuuuuuge range of customization, including its own scripting language. Amazing tool for power users who are frustrated with the limitations imposed by microsoft.&lt;/p&gt;&#xA;&lt;p&gt;WinUtil - &lt;a href=&#34;https://github.com/ChrisTitusTech/winutil&#34;&gt;https://github.com/ChrisTitusTech/winutil&lt;/a&gt;&lt;br&gt;&#xA;Has tons of options for installing programs via Chocolatey, tweaking your PC, or debloating windows overall.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>
-				<link>https://techsucks.org/posts/vmware-esxi-installation/</link>
+				<link>http://localhost:1313/posts/vmware-esxi-installation/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/vmware-esxi-installation/</guid>
+				<guid>http://localhost:1313/posts/vmware-esxi-installation/</guid>
 				<description>&lt;p&gt;VMWare ESXi install steps&lt;/p&gt;&#xA;&lt;p&gt;Get screenshots of each step for a step-by-step installation&lt;/p&gt;&#xA;&lt;p&gt;Install Linux VM on ESXi step-by-step instructions. Also assigning hardware like GPUs or network cards.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.sysnettechsolutions.com/en/install-vmware-vsphere-esxi/&#34;&gt;https://www.sysnettechsolutions.com/en/install-vmware-vsphere-esxi/&lt;/a&gt;&lt;/p&gt;</description>
 			</item>
 	</channel>

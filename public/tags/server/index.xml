@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Server on TechSucks</title>
-		<link>https://techsucks.org/tags/server/</link>
+		<link>http://localhost:1313/tags/server/</link>
 		<description>Recent content in Server on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,34 +12,34 @@
 		
 			<lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/tags/server/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/server/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Home Media Server</title>
-				<link>https://techsucks.org/posts/running-your-own-home-media-server/</link>
+				<link>http://localhost:1313/posts/running-your-own-home-media-server/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/running-your-own-home-media-server/</guid>
-				<description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Why JellyFin and not Plex&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Support for audiobooks/music/movies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic hardware needed&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic installation guide for JellyFin&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Where to acquire movies/shows/music/audiobooks&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Where to purchase DVDs&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ripping DVDs to add to your media server&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://techsucks.org/posts/sailing-the-high-seas/&#34;&gt;Sailing The High Seas&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Arr stack&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Remote access&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<guid>http://localhost:1313/posts/running-your-own-home-media-server/</guid>
+				<description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Why JellyFin and not Plex&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Support for audiobooks/music/movies&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic hardware needed&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Basic installation guide for JellyFin&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Where to acquire movies/shows/music/audiobooks&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Where to purchase DVDs&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Ripping DVDs to add to your media server&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://localhost:1313/posts/sailing-the-high-seas/&#34;&gt;Sailing The High Seas&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Arr stack&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Remote access&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 			<item>
 				<title>Personal Sovereign Cloud</title>
-				<link>https://techsucks.org/posts/personal-sovereign-cloud/</link>
+				<link>http://localhost:1313/posts/personal-sovereign-cloud/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/personal-sovereign-cloud/</guid>
+				<guid>http://localhost:1313/posts/personal-sovereign-cloud/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h1 id=&#34;guide-running-your-own-sovereign-cloud&#34;&gt;Guide: Running Your Own Sovereign Cloud&lt;/h1&gt;&#xA;&lt;p&gt;Want to be free of Google Drive/OneDrive/Mega/iCloud/Dropbox/etc? Hate the big corpos invading your privacy and looking at all of your photos, files, whatever? Well you deserve to have privacy and security for your files, this is your way to take back your data and stop letting big corporations drain your wallet so you can store your important documents/family photos/Linux ISOs safely.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Server Building Guide</title>
-				<link>https://techsucks.org/posts/server-building/</link>
+				<link>http://localhost:1313/posts/server-building/</link>
 				<pubDate>Tue, 23 Dec 2025 14:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/server-building/</guid>
+				<guid>http://localhost:1313/posts/server-building/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress (just like the rest of the site) ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;I pulled a lot of this out from the &lt;a href=&#34;https://techsucks.org/posts/servermaxxing&#34;&gt;SERVERMAXXING&lt;/a&gt; page as it wasn&amp;rsquo;t that relevant to running AI models so this will have a heavier focus on AI uses for the time being.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;This will cover what kind of hardware you want to look for when building your own personal server and what you should focus on for specific use-cases.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>SERVERMAXXING</title>
-				<link>https://techsucks.org/posts/servermaxxing/</link>
+				<link>http://localhost:1313/posts/servermaxxing/</link>
 				<pubDate>Wed, 17 Dec 2025 17:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/servermaxxing/</guid>
-				<description>&lt;h1 id=&#34;ai-server-builds&#34;&gt;AI Server Builds&lt;/h1&gt;&#xA;&lt;p&gt;Here are some server setups I&amp;rsquo;ll be covering that can run large models with budget prices. By budget I mean it won&amp;rsquo;t cost the same as a new Ferrari, which some SOTA systems can easily surpass. I&amp;rsquo;ll be going over specific hardware to look for in more detail over on the &lt;a href=&#34;https://techsucks.org/posts/server-building/&#34;&gt;Server Building&lt;/a&gt; page. These aren&amp;rsquo;t branded products or off-the-shelf systems. I&amp;rsquo;ve curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who&amp;rsquo;ve tried them out to give you an accurate picture of how they would work in a real-world situation. &lt;br /&gt;&#xA;&#xA;You can find the all the benchmarks I&amp;rsquo;ve run myself and collected in the &lt;a href=&#34;https://techsucks.org/posts/llm-benchmarks/&#34;&gt;LLM Inference Benchmarks&lt;/a&gt; page.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/servermaxxing/</guid>
+				<description>&lt;h1 id=&#34;ai-server-builds&#34;&gt;AI Server Builds&lt;/h1&gt;&#xA;&lt;p&gt;Here are some server setups I&amp;rsquo;ll be covering that can run large models with budget prices. By budget I mean it won&amp;rsquo;t cost the same as a new Ferrari, which some SOTA systems can easily surpass. I&amp;rsquo;ll be going over specific hardware to look for in more detail over on the &lt;a href=&#34;http://localhost:1313/posts/server-building/&#34;&gt;Server Building&lt;/a&gt; page. These aren&amp;rsquo;t branded products or off-the-shelf systems. I&amp;rsquo;ve curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who&amp;rsquo;ve tried them out to give you an accurate picture of how they would work in a real-world situation. &lt;br /&gt;&#xA;&#xA;You can find the all the benchmarks I&amp;rsquo;ve run myself and collected in the &lt;a href=&#34;https://techsucks.org/posts/llm-benchmarks/&#34;&gt;LLM Inference Benchmarks&lt;/a&gt; page.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Mouse on TechSucks</title>
-		<link>https://techsucks.org/tags/mouse/</link>
+		<link>http://localhost:1313/tags/mouse/</link>
 		<description>Recent content in Mouse on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Sat, 11 Apr 2026 23:56:29 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/tags/mouse/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/mouse/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Elecom Huge Plus Review</title>
-				<link>https://techsucks.org/posts/elecom-huge-plus-review/</link>
+				<link>http://localhost:1313/posts/elecom-huge-plus-review/</link>
 				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
-				<guid>https://techsucks.org/posts/elecom-huge-plus-review/</guid>
+				<guid>http://localhost:1313/posts/elecom-huge-plus-review/</guid>
 				<description>&lt;p&gt;I was never much one for trackball mice, they always felt too slow and clunky for my tastes, but that was before I received the Elecom Huge Plus, and I am very happy with my purchase.&lt;/p&gt;&#xA;&lt;p&gt;Let me start with the things I don’t like about it. For one, you need to occasionally lubricate the rollers in the mouse to keep it moving smoothly. It occasionally ‘sticks’ a bit for very short horizontal movements due to the triangular positioning of the three rollers when they aren’t regularly maintained. And unlike most other mice I’ve used, trackballs require (minimal and very simple) maintenance to keep them going smoothly. But besides those few issues, it is a phenomenal mouse.&lt;/p&gt;</description>
 			</item>
 	</channel>

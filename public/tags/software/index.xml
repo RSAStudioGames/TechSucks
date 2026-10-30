@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Software on TechSucks</title>
-		<link>https://techsucks.org/tags/software/</link>
+		<link>http://localhost:1313/tags/software/</link>
 		<description>Recent content in Software on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,19 +12,19 @@
 		
 			<lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/tags/software/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/software/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Directory Opus Review</title>
-				<link>https://techsucks.org/posts/directory-opus-review/</link>
+				<link>http://localhost:1313/posts/directory-opus-review/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/directory-opus-review/</guid>
-				<description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://techsucks.org/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/directory-opus-review/</guid>
+				<description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Guide To Debloating Windows</title>
-				<link>https://techsucks.org/posts/guide-to-debloating-windows/</link>
+				<link>http://localhost:1313/posts/guide-to-debloating-windows/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/guide-to-debloating-windows/</guid>
+				<guid>http://localhost:1313/posts/guide-to-debloating-windows/</guid>
 				<description>&lt;h1 id=&#34;a-simple-guide-to-debloating-windows&#34;&gt;A Simple Guide to Debloating Windows&lt;/h1&gt;&#xA;&lt;p&gt;Windows comes with with a bunch of extra apps, background tracking that is effectively &lt;a href=&#34;https://www.youtube.com/watch?v=j2TyrLZT0r0&#34;&gt;spyware&lt;/a&gt;, and features nobody wants or asked for (like copilot). I&amp;rsquo;ll show you how to remove a majority of the junk Windows comes with to reduce data collection, remove clutter, and very likely speed up your computer.&#xA;I always run this on any new installation of Windows 10/11, but that isn&amp;rsquo;t required for this process to work. If you want to stay on Windows 10, you can use &lt;a href=&#34;https://0patch.com/&#34;&gt;0Patch&lt;/a&gt; to stay up to date with security updates even after Microsoft kills off W10 on &lt;a href=&#34;https://support.microsoft.com/en-us/windows/windows-10-support-ends-on-october-14-2025-2ca8b313-1946-43d3-b55c-2b95b107f281&#34;&gt;October 14th, 2025.&lt;/a&gt;&lt;/p&gt;</description>
 			</item>
 	</channel>

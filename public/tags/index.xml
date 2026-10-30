@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on TechSucks</title>
-		<link>https://techsucks.org/tags/</link>
+		<link>http://localhost:1313/tags/</link>
 		<description>Recent content in Tags on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,103 +12,103 @@
 		
 			<lastBuildDate>Sat, 11 Apr 2026 23:56:29 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Mouse</title>
-				<link>https://techsucks.org/tags/mouse/</link>
+				<link>http://localhost:1313/tags/mouse/</link>
 				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
-				<guid>https://techsucks.org/tags/mouse/</guid>
+				<guid>http://localhost:1313/tags/mouse/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Review</title>
-				<link>https://techsucks.org/tags/review/</link>
+				<link>http://localhost:1313/tags/review/</link>
 				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
-				<guid>https://techsucks.org/tags/review/</guid>
+				<guid>http://localhost:1313/tags/review/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Arduino</title>
-				<link>https://techsucks.org/tags/arduino/</link>
+				<link>http://localhost:1313/tags/arduino/</link>
 				<pubDate>Thu, 12 Mar 2026 19:21:43 +0000</pubDate>
-				<guid>https://techsucks.org/tags/arduino/</guid>
+				<guid>http://localhost:1313/tags/arduino/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>AI</title>
-				<link>https://techsucks.org/tags/ai/</link>
+				<link>http://localhost:1313/tags/ai/</link>
 				<pubDate>Mon, 19 Jan 2026 14:24:34 +0000</pubDate>
-				<guid>https://techsucks.org/tags/ai/</guid>
+				<guid>http://localhost:1313/tags/ai/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Benchmarks</title>
-				<link>https://techsucks.org/tags/benchmarks/</link>
+				<link>http://localhost:1313/tags/benchmarks/</link>
 				<pubDate>Mon, 19 Jan 2026 14:24:34 +0000</pubDate>
-				<guid>https://techsucks.org/tags/benchmarks/</guid>
+				<guid>http://localhost:1313/tags/benchmarks/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>LLM</title>
-				<link>https://techsucks.org/tags/llm/</link>
+				<link>http://localhost:1313/tags/llm/</link>
 				<pubDate>Mon, 19 Jan 2026 14:24:34 +0000</pubDate>
-				<guid>https://techsucks.org/tags/llm/</guid>
+				<guid>http://localhost:1313/tags/llm/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Career</title>
-				<link>https://techsucks.org/tags/career/</link>
+				<link>http://localhost:1313/tags/career/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/career/</guid>
+				<guid>http://localhost:1313/tags/career/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Cloud</title>
-				<link>https://techsucks.org/tags/cloud/</link>
+				<link>http://localhost:1313/tags/cloud/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/cloud/</guid>
+				<guid>http://localhost:1313/tags/cloud/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Gaming</title>
-				<link>https://techsucks.org/tags/gaming/</link>
+				<link>http://localhost:1313/tags/gaming/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/gaming/</guid>
+				<guid>http://localhost:1313/tags/gaming/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Machine Learning</title>
-				<link>https://techsucks.org/tags/machine-learning/</link>
+				<link>http://localhost:1313/tags/machine-learning/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/machine-learning/</guid>
+				<guid>http://localhost:1313/tags/machine-learning/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Privacy</title>
-				<link>https://techsucks.org/tags/privacy/</link>
+				<link>http://localhost:1313/tags/privacy/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/privacy/</guid>
+				<guid>http://localhost:1313/tags/privacy/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Server</title>
-				<link>https://techsucks.org/tags/server/</link>
+				<link>http://localhost:1313/tags/server/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/server/</guid>
+				<guid>http://localhost:1313/tags/server/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Software</title>
-				<link>https://techsucks.org/tags/software/</link>
+				<link>http://localhost:1313/tags/software/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/software/</guid>
+				<guid>http://localhost:1313/tags/software/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Windows</title>
-				<link>https://techsucks.org/tags/windows/</link>
+				<link>http://localhost:1313/tags/windows/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/tags/windows/</guid>
+				<guid>http://localhost:1313/tags/windows/</guid>
 				<description></description>
 			</item>
 	</channel>

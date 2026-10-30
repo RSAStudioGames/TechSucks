@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>AI on TechSucks</title>
-		<link>https://techsucks.org/tags/ai/</link>
+		<link>http://localhost:1313/tags/ai/</link>
 		<description>Recent content in AI on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,41 +12,41 @@
 		
 			<lastBuildDate>Mon, 19 Jan 2026 14:24:34 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>LLM Inference Benchmarks</title>
-				<link>https://techsucks.org/posts/llm-benchmarks/</link>
+				<link>http://localhost:1313/posts/llm-benchmarks/</link>
 				<pubDate>Mon, 19 Jan 2026 14:24:34 +0000</pubDate>
-				<guid>https://techsucks.org/posts/llm-benchmarks/</guid>
+				<guid>http://localhost:1313/posts/llm-benchmarks/</guid>
 				<description>&lt;p&gt;Work in progress page&amp;hellip; &lt;br /&gt;&#xA;&#xA;LLM inference benchmarks I&amp;rsquo;ve done myself or collected from the community and other online resources.&#xA;&lt;br /&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;A quick way to calculate your max theoritical output speed for a dense model is with &lt;code&gt;bandwidth / size_of_llm_in_gb = max_tok_per_sec&lt;/code&gt; &lt;br /&gt;&#xA;&#xA;For example, Llama 3.3 iQ5KM is 50 GB in size. A V100 16GB (SXM2) has 900GB/s of memory bandwidth. 900 / 50 = 18. Now of course, there is always going to be some overhead which is why my results are ~14 tokens per second which is about 80% of the theoritical max. As low as 70% will be commonplace. If you are getting less than 70% performance, try different quantization methods, inference backends, or operating systems. Typically, headless Linux (I prefer Ubuntu server) will get you better results than using Windows OS.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Adventure Gaming With LLMs</title>
-				<link>https://techsucks.org/posts/adventure-gaming-with-llms/</link>
+				<link>http://localhost:1313/posts/adventure-gaming-with-llms/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/adventure-gaming-with-llms/</guid>
+				<guid>http://localhost:1313/posts/adventure-gaming-with-llms/</guid>
 				<description>&lt;p&gt;Ripped from: &lt;a href=&#34;https://rentry.co/llmadventurersguide&#34;&gt;https://rentry.co/llmadventurersguide&lt;/a&gt;&#xA;Just keeping here as a mirror because I liked the guide. I didn&amp;rsquo;t write this. Props to whoever did.&lt;/p&gt;&#xA;&lt;h1 id=&#34;proper-adventure-gaming-with-llms&#34;&gt;Proper Adventure Gaming With LLMs&lt;/h1&gt;&#xA;&lt;p style=&#34;text-align:center&#34;&gt;&#xA;A huge, brief guide on how I made exactly what I want, and you can, too.&#xA;By that, I mean you can reproduce exactly what I want.&#xA;You&#39;re on your own if you want to make exactly what you want. Sorry.&#xA;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Note: This guide is exclusively for people who have a lot of memory available. Whether you run on a CPU with lots of RAM, a 4090 (or better), or a hosted service/api - the key to doing this the right way is context, context, context. This guide thrives on running any model you can run with an &lt;strong&gt;absolute bare minimum of 30k context&lt;/strong&gt;. More is &lt;em&gt;always&lt;/em&gt; better.&lt;/em&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>LLM Benchmark Prompts</title>
-				<link>https://techsucks.org/posts/llm-benchmark-prompts/</link>
+				<link>http://localhost:1313/posts/llm-benchmark-prompts/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/llm-benchmark-prompts/</guid>
+				<guid>http://localhost:1313/posts/llm-benchmark-prompts/</guid>
 				<description>&lt;p&gt;This is just a copy of this &lt;a href=&#34;https://pastebin.com/LmRhwUCA&#34;&gt;pastebin&lt;/a&gt; in case access is lost. I&amp;rsquo;ll probably modify and add to the list once I have more time to work on it.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;A great set of prompts to test the limits and performance of different large language models (LLMs) would include a mix of linguistic challenges, technical questions, and creative tasks. This list of very hard prompts is designed to push LLMs to their limits in terms of linguistic understanding, reasoning, and knowledge:&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Machine Learning</title>
-				<link>https://techsucks.org/posts/machine-learning/</link>
+				<link>http://localhost:1313/posts/machine-learning/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/machine-learning/</guid>
+				<guid>http://localhost:1313/posts/machine-learning/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Find info about AI hardware in &lt;a href=&#34;https://techsucks.org/posts/servermaxxing&#34;&gt;servermaxxing&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;ai-models&#34;&gt;AI Models&lt;/h1&gt;&#xA;&lt;p&gt;Resources for rating of models &amp;amp; their uses&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;Here are some places you can download AI models from:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/&#34;&gt;Hugging Face&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Recommended users to download from:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/bartowski&#34;&gt;bartowski&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/mradermacher&#34;&gt;mradermacher&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/Dracones&#34;&gt;Dracones&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://huggingface.co/TheBloke&#34;&gt;TheBloke&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.kaggle.com/&#34;&gt;Kaggle&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Handy tool to estimate the VRAM needed to run a model: &lt;a href=&#34;https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator&#34;&gt;VRAM Calculator&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Text Gen / Image Gen / STT / TTS / Classication / Multi-Modal / Sentiment Analysis / Embedding&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>SERVERMAXXING</title>
-				<link>https://techsucks.org/posts/servermaxxing/</link>
+				<link>http://localhost:1313/posts/servermaxxing/</link>
 				<pubDate>Wed, 17 Dec 2025 17:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/servermaxxing/</guid>
-				<description>&lt;h1 id=&#34;ai-server-builds&#34;&gt;AI Server Builds&lt;/h1&gt;&#xA;&lt;p&gt;Here are some server setups I&amp;rsquo;ll be covering that can run large models with budget prices. By budget I mean it won&amp;rsquo;t cost the same as a new Ferrari, which some SOTA systems can easily surpass. I&amp;rsquo;ll be going over specific hardware to look for in more detail over on the &lt;a href=&#34;https://techsucks.org/posts/server-building/&#34;&gt;Server Building&lt;/a&gt; page. These aren&amp;rsquo;t branded products or off-the-shelf systems. I&amp;rsquo;ve curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who&amp;rsquo;ve tried them out to give you an accurate picture of how they would work in a real-world situation. &lt;br /&gt;&#xA;&#xA;You can find the all the benchmarks I&amp;rsquo;ve run myself and collected in the &lt;a href=&#34;https://techsucks.org/posts/llm-benchmarks/&#34;&gt;LLM Inference Benchmarks&lt;/a&gt; page.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/servermaxxing/</guid>
+				<description>&lt;h1 id=&#34;ai-server-builds&#34;&gt;AI Server Builds&lt;/h1&gt;&#xA;&lt;p&gt;Here are some server setups I&amp;rsquo;ll be covering that can run large models with budget prices. By budget I mean it won&amp;rsquo;t cost the same as a new Ferrari, which some SOTA systems can easily surpass. I&amp;rsquo;ll be going over specific hardware to look for in more detail over on the &lt;a href=&#34;http://localhost:1313/posts/server-building/&#34;&gt;Server Building&lt;/a&gt; page. These aren&amp;rsquo;t branded products or off-the-shelf systems. I&amp;rsquo;ve curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who&amp;rsquo;ve tried them out to give you an accurate picture of how they would work in a real-world situation. &lt;br /&gt;&#xA;&#xA;You can find the all the benchmarks I&amp;rsquo;ve run myself and collected in the &lt;a href=&#34;https://techsucks.org/posts/llm-benchmarks/&#34;&gt;LLM Inference Benchmarks&lt;/a&gt; page.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

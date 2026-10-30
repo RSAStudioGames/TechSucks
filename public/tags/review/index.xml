@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Review on TechSucks</title>
-		<link>https://techsucks.org/tags/review/</link>
+		<link>http://localhost:1313/tags/review/</link>
 		<description>Recent content in Review on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,27 +12,27 @@
 		
 			<lastBuildDate>Sat, 11 Apr 2026 23:56:29 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/tags/review/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/review/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Elecom Huge Plus Review</title>
-				<link>https://techsucks.org/posts/elecom-huge-plus-review/</link>
+				<link>http://localhost:1313/posts/elecom-huge-plus-review/</link>
 				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
-				<guid>https://techsucks.org/posts/elecom-huge-plus-review/</guid>
+				<guid>http://localhost:1313/posts/elecom-huge-plus-review/</guid>
 				<description>&lt;p&gt;I was never much one for trackball mice, they always felt too slow and clunky for my tastes, but that was before I received the Elecom Huge Plus, and I am very happy with my purchase.&lt;/p&gt;&#xA;&lt;p&gt;Let me start with the things I don’t like about it. For one, you need to occasionally lubricate the rollers in the mouse to keep it moving smoothly. It occasionally ‘sticks’ a bit for very short horizontal movements due to the triangular positioning of the three rollers when they aren’t regularly maintained. And unlike most other mice I’ve used, trackballs require (minimal and very simple) maintenance to keep them going smoothly. But besides those few issues, it is a phenomenal mouse.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Arduino Uno Q Review</title>
-				<link>https://techsucks.org/posts/arduino-uno-q-review/</link>
+				<link>http://localhost:1313/posts/arduino-uno-q-review/</link>
 				<pubDate>Thu, 12 Mar 2026 19:21:43 +0000</pubDate>
-				<guid>https://techsucks.org/posts/arduino-uno-q-review/</guid>
+				<guid>http://localhost:1313/posts/arduino-uno-q-review/</guid>
 				<description>&lt;p&gt;Ok so full disclosure, I don&amp;rsquo;t have much experience with Arduino boards and microcontrollers overall besides some hobby experience in setting up stuff for Home Assistant and some small projects like a car parking assistant. My knowledge of embedded development is borderline non-existent. That being said, these are my first impressions of the Arduino Uno Q.&lt;/p&gt;&#xA;&lt;p&gt;The Arduino Uno Q is Qualcomm’s first new board after its acquisition of Arduino. I got the Arduino Uno Q 2GB model so I could run a few automations and python-based web services for my workflows without needing to run them on power-hungry and expensive full-featured server. It’s basically a microcontroller and single board computer (SBC) in one and seems to be a good competitor to the raspberry pi. Pis have a much more mature ecosystem, but their costs have ballooned to quite a ridiculous cost for the projects they’re used for and my tastes. So already, my use-case for this board aligns better with a raspberry pi than a microcontroller.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Directory Opus Review</title>
-				<link>https://techsucks.org/posts/directory-opus-review/</link>
+				<link>http://localhost:1313/posts/directory-opus-review/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/directory-opus-review/</guid>
-				<description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://techsucks.org/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/directory-opus-review/</guid>
+				<description>&lt;p&gt;Made by &lt;a href=&#34;https://www.gpsoft.com.au/&#34;&gt;GP Software&lt;/a&gt; &lt;br&gt;&#xA;Price: $89 AUD - Single License&lt;br&gt;&#xA;Supports &lt;strong&gt;Windows&lt;/strong&gt; 7, 8, 10, and 11, but not ARM.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/directory_opus_box.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I absolutely LOVE Directory Opus. As soon as I tried it for the first time, I knew I never wanted to go back to the mess that is Windows Explorer, and don&amp;rsquo;t even get me started on its buggier successor. I found DOpus when looking for an alternative to Windows Explorer that would allow me to scroll while dragging files; a very nice quality of life bonus to any file browser. At first, the high price point of $89 AUD (about $60 USD) put me off, but after running the trial, I knew it was the right choice. Really what amazes me the most, besides how polished it feels, is its INSANE amount of customization options available, including the ability to run scripts to customize functions.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

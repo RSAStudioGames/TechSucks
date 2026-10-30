@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Privacy on TechSucks</title>
-		<link>https://techsucks.org/tags/privacy/</link>
+		<link>http://localhost:1313/tags/privacy/</link>
 		<description>Recent content in Privacy on TechSucks</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
@@ -12,13 +12,13 @@
 		
 			<lastBuildDate>Tue, 23 Dec 2025 15:07:24 +0000</lastBuildDate>
 		
-			<atom:link href="https://techsucks.org/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/privacy/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Managing Your Digital Privacy</title>
-				<link>https://techsucks.org/posts/managing-your-digital-privacy/</link>
+				<link>http://localhost:1313/posts/managing-your-digital-privacy/</link>
 				<pubDate>Tue, 23 Dec 2025 15:07:24 +0000</pubDate>
-				<guid>https://techsucks.org/posts/managing-your-digital-privacy/</guid>
-				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&#xA;{.is-info}&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;The “I have nothing to hide&amp;quot; argument annoys me because it shows that tech companies and the government have done such a good at convincing people that you only need privacy if you&amp;rsquo;re doing something malicious.&lt;/p&gt;&#xA;&lt;p&gt;This is a HIGHLY recommended read: &lt;a href=&#34;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&#34;&gt;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://rejectconvenience.com/&#34;&gt;https://rejectconvenience.com/&lt;/a&gt; - &lt;a href=&#34;https://www.youtube.com/@rejectconvenience&#34;&gt;https://www.youtube.com/@rejectconvenience&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you want to start getting a better handle of your digital privacy, I recommend by first debloating your Windows 10 or 11 version by following my guide on &lt;a href=&#34;https://techsucks.org/debloating-windows-os&#34;&gt;/debloating-windows-os&lt;/a&gt;. This will block a lot of tracking telemetry microsoft includes which tracks nearly everything you do from searches in your start menu, opening steam, what games you play, what settings you open, etc. I&amp;rsquo;ll get a more detailed list of exactly what data microsoft collects on individuals and why people should care.&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/managing-your-digital-privacy/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;Work in progress ¯\_(ツ)_/¯&#xA;{.is-info}&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;The “I have nothing to hide&amp;quot; argument annoys me because it shows that tech companies and the government have done such a good at convincing people that you only need privacy if you&amp;rsquo;re doing something malicious.&lt;/p&gt;&#xA;&lt;p&gt;This is a HIGHLY recommended read: &lt;a href=&#34;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&#34;&gt;https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://rejectconvenience.com/&#34;&gt;https://rejectconvenience.com/&lt;/a&gt; - &lt;a href=&#34;https://www.youtube.com/@rejectconvenience&#34;&gt;https://www.youtube.com/@rejectconvenience&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you want to start getting a better handle of your digital privacy, I recommend by first debloating your Windows 10 or 11 version by following my guide on &lt;a href=&#34;http://localhost:1313/debloating-windows-os&#34;&gt;/debloating-windows-os&lt;/a&gt;. This will block a lot of tracking telemetry microsoft includes which tracks nearly everything you do from searches in your start menu, opening steam, what games you play, what settings you open, etc. I&amp;rsquo;ll get a more detailed list of exactly what data microsoft collects on individuals and why people should care.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

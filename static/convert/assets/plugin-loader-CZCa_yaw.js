@@ -1,0 +1,1 @@
+import{t as e}from"./abstract-plugin-loader-Dk6D8a4m.js";var t=function(e){this.less=e};t.prototype=Object.assign(new e,{loadPlugin(e,t,n,r,i){return new Promise((a,o)=>{i.loadFile(e,t,n,r).then(a).catch(o)})}});export{t as default};
