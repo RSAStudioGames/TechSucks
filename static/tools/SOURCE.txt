@@ -1,0 +1,17 @@
+IT Tools for TechSucks /tools/
+
+Upstream: https://github.com/CorentinTh/it-tools
+Revision: d505845f918e946ec300af7b36efc107e2f66e9e
+Source: https://github.com/CorentinTh/it-tools/tree/d505845f918e946ec300af7b36efc107e2f66e9e
+License: GPL-3.0 (included in LICENSE)
+
+The included SOURCE.patch scopes icons and browser configuration to /tools/.
+Apply it to the upstream revision, install dependencies with pnpm 9.11.0
+using pnpm install --frozen-lockfile, then build with:
+BASE_URL=/tools/ VITE_VERCEL_ENV=production pnpm build
+
+The dist files are copied into Hugo's static/tools/ directory.
+Each tool path, upstream alias, and /about gets a copy of dist/index.html
+in its own directory, so Hugo serves direct links and page refreshes
+without server rewrites. Assets use absolute /tools/ URLs.
+Hugo's normal build copies these files; no Node server is needed.

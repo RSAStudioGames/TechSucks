@@ -1,0 +1,76 @@
+diff --git a/index.html b/index.html
+index e8b8a60..5dd38ff 100644
+--- a/index.html
++++ b/index.html
+@@ -2,7 +2,7 @@
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8" />
+-    <link rel="icon" href="favicon.ico" />
++    <link rel="icon" href="/tools/favicon.ico" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>IT Tools - Handy online tools for developers</title>
+     <meta itemprop="name" content="IT Tools - Handy online tools for developers" />
+@@ -14,13 +14,13 @@
+       itemprop="description"
+       content="Collection of handy online tools for developers, with great UX. IT Tools is a free and open-source collection of handy online tools for developers & people working in IT."
+     />
+-    <link rel="author" href="humans.txt" />
++    <link rel="author" href="/tools/humans.txt" />
+     <link rel="canonical" href="https://it-tools.tech" />
+ 
+-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#18a058" />
++    <link rel="apple-touch-icon" sizes="180x180" href="/tools/apple-touch-icon.png" />
++    <link rel="icon" type="image/png" sizes="32x32" href="/tools/favicon-32x32.png" />
++    <link rel="icon" type="image/png" sizes="16x16" href="/tools/favicon-16x16.png" />
++    <link rel="mask-icon" href="/tools/safari-pinned-tab.svg" color="#18a058" />
+     <meta name="msapplication-TileColor" content="#da532c" />
+     <meta name="theme-color" content="#ffffff" />
+ 
+diff --git a/public/browserconfig.xml b/public/browserconfig.xml
+index b3930d0..228401a 100644
+--- a/public/browserconfig.xml
++++ b/public/browserconfig.xml
+@@ -2,7 +2,7 @@
+ <browserconfig>
+     <msapplication>
+         <tile>
+-            <square150x150logo src="/mstile-150x150.png"/>
++            <square150x150logo src="/tools/mstile-150x150.png"/>
+             <TileColor>#da532c</TileColor>
+         </tile>
+     </msapplication>
+diff --git a/vite.config.ts b/vite.config.ts
+index 42a2cb2..1f6718e 100644
+--- a/vite.config.ts
++++ b/vite.config.ts
+@@ -67,22 +67,22 @@ export default defineConfig({
+         background_color: '#f1f5f9',
+         icons: [
+           {
+-            src: '/favicon-16x16.png',
++            src: `${baseUrl}favicon-16x16.png`,
+             type: 'image/png',
+             sizes: '16x16',
+           },
+           {
+-            src: '/favicon-32x32.png',
++            src: `${baseUrl}favicon-32x32.png`,
+             type: 'image/png',
+             sizes: '32x32',
+           },
+           {
+-            src: '/android-chrome-192x192.png',
++            src: `${baseUrl}android-chrome-192x192.png`,
+             sizes: '192x192',
+             type: 'image/png',
+           },
+           {
+-            src: '/android-chrome-512x512.png',
++            src: `${baseUrl}android-chrome-512x512.png`,
+             sizes: '512x512',
+             type: 'image/png',
+             purpose: 'any maskable',
