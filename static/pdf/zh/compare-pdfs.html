@@ -1,0 +1,530 @@
+<!DOCTYPE html><html lang="zh" dir="ltr"><head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Compare PDFs Online Free - Compare PDFs Tool | BentoPDF">
+    <meta name="description" content="并排比较两个 PDF。免费，无需上传，无需注册。完全在您的浏览器中运行。">
+    <meta name="keywords" content="compare pdfs, online pdf">
+    <meta name="author" content="BentoPDF">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.bentopdf.com/zh/compare-pdfs">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bentopdf.com/zh/compare-pdfs">
+    <meta property="og:title" content="在线免费比较 PDF - 比较 PDF 工具 | BentoPDF">
+    <meta property="og:description" content="并排比较两个 PDF。免费，无需上传，无需注册。完全在您的浏览器中运行。">
+    <meta property="og:image" content="https://www.bentopdf.com/images/og-tools.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="BentoPDF">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.bentopdf.com/zh/compare-pdfs">
+    <meta name="twitter:title" content="免费比较 PDF">
+    <meta name="twitter:description" content="并排比较两个 PDF。免费，无需上传，无需注册。完全在您的浏览器中运行。">
+    <meta name="twitter:image" content="https://www.bentopdf.com/images/og-tools.png">
+    <meta name="twitter:site" content="@BentoPDF">
+
+    <!-- Mobile Web App -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Compare PDFs">
+
+    <title>比较 PDF - BentoPDF</title>
+
+    <style>.compare-viewer-wrapper.overlay-mode{background:#fff;align-items:stretch;min-height:0;padding:1.5rem;display:flex;position:relative;overflow:hidden}.compare-viewer-wrapper.overlay-mode #panel-1{scrollbar-width:none;-ms-overflow-style:none;flex:auto;width:100%;height:100%;min-height:0;overflow:auto}.compare-viewer-wrapper.overlay-mode #panel-1::-webkit-scrollbar{display:none}.compare-viewer-wrapper.overlay-mode #panel-2{pointer-events:none;background:0 0;min-height:0;position:absolute;inset:1.5rem;overflow:hidden}.compare-viewer-wrapper.overlay-mode .compare-panel-label{display:none}.compare-viewer-wrapper.overlay-mode .compare-canvas-stage canvas{width:auto;height:auto;position:static;top:auto;left:auto}.compare-viewer-wrapper.overlay-mode #panel-2 .compare-canvas-stage canvas{background:0 0}.compare-viewer-wrapper.side-by-side-mode{background:#fff;gap:0;padding:0;display:flex}.compare-workspace{grid-template-columns:minmax(0,1fr) 20rem;align-items:stretch;gap:1rem;min-height:clamp(32rem,72vh,56rem);display:grid}.compare-viewer-wrapper{height:100%;min-height:0}.compare-viewer-wrapper.side-by-side-mode #panel-1,.compare-viewer-wrapper.side-by-side-mode #panel-2{height:100%;min-height:0;box-shadow:none;border:none;border-radius:0;flex:1;overflow:auto}.compare-viewer-wrapper.side-by-side-mode #panel-1{border-right:2px solid #cbd5e1}.compare-panel{background:#fff;min-width:0;min-height:0;position:relative}.compare-panel-label{z-index:5;text-transform:uppercase;letter-spacing:.05em;color:#64748b;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);background:#fffffff2;border-bottom:1px solid #e2e8f0;padding:.5rem 1rem;font-size:.75rem;font-weight:600;position:sticky;top:0}.compare-canvas-stage{--compare-stage-pad-top:1.5rem;--compare-stage-pad-x:1.75rem;--compare-stage-pad-bottom:1.75rem;width:max-content;padding:var(--compare-stage-pad-top) var(--compare-stage-pad-x) var(--compare-stage-pad-bottom);margin:0 auto;position:relative}.compare-canvas-stage canvas{background:#fff;display:block}.compare-highlight-layer{inset:var(--compare-stage-pad-top) var(--compare-stage-pad-x) var(--compare-stage-pad-bottom);pointer-events:none;position:absolute}.compare-highlight{border:none;border-radius:2px;position:absolute}.compare-highlight.added{background:#22c55e47}.compare-highlight.removed,.compare-highlight.page-removed{background:#ef444447}.compare-highlight.modified{background:#f59e0b47}.compare-highlight.moved{background:#a855f747}.compare-highlight.style-changed{background:#3b82f647}.compare-highlight.active{outline-offset:1px;outline:2px solid #6366f1b3}.compare-placeholder{text-align:center;color:#475569;background:#ffffffeb;border:1px dashed #94a3b8;border-radius:.75rem;justify-content:center;align-items:center;padding:1rem;display:flex;position:absolute;inset:2rem}.compare-placeholder.hidden{display:none}.compare-sidebar{background:#0f172a99;border:1px solid #33415580;border-radius:.75rem;flex-direction:column;gap:0;height:100%;min-height:0;display:flex;overflow:hidden}.compare-sidebar-header{border-bottom:1px solid #33415580;padding:.5rem .75rem}.compare-sidebar-filters{border-bottom:1px solid #33415566;flex-direction:column;gap:0;padding:0;display:flex}.compare-filter-group{flex-wrap:wrap;align-items:center;gap:.25rem;padding:.375rem .75rem;display:flex}.compare-filter-group+.compare-filter-group{border-top:1px solid #33415540}.compare-filter-label{text-transform:uppercase;letter-spacing:.08em;color:#64748b;width:100%;font-size:.5625rem;font-weight:600}.compare-pill{cursor:pointer;white-space:nowrap;border:1px solid #0000;border-radius:9999px;align-items:center;gap:.1875rem;padding:.125rem .5rem;font-size:.625rem;font-weight:600;transition:all .15s;display:inline-flex}.compare-pill.removed{color:#fca5a5;background:#ef44441a;border-color:#ef444426}.compare-pill.removed.active{background:#ef444440;border-color:#ef444480}.compare-pill.modified{color:#fcd34d;background:#f59e0b1a;border-color:#f59e0b26}.compare-pill.modified.active{background:#f59e0b40;border-color:#f59e0b80}.compare-pill.added{color:#86efac;background:#22c55e1a;border-color:#22c55e26}.compare-pill.added.active{background:#22c55e40;border-color:#22c55e80}.compare-pill.moved{color:#c4b5fd;background:#a855f71a;border-color:#a855f726}.compare-pill.moved.active{background:#a855f740;border-color:#a855f780}.compare-pill.style-changed{color:#93c5fd;background:#3b82f61a;border-color:#3b82f626}.compare-pill.style-changed.active{background:#3b82f640;border-color:#3b82f680}.compare-pill.category{color:#a5b4fc;background:#6366f11a;border-color:#6366f126}.compare-pill.category.active{background:#6366f140;border-color:#6366f180}.compare-pill.category.disabled{opacity:.35;text-decoration:line-through}.compare-change-list{flex:1;min-height:0;padding:.75rem;overflow-y:auto}#compare-change-list{flex-direction:column;gap:.5rem;display:flex}.compare-change-item{cursor:pointer;color:#cbd5e1;border:1px solid #3341554d;border-radius:.5rem;padding:.5rem .75rem;font-size:.8125rem;line-height:1.5;transition:background .15s}.compare-change-item:hover{background:#6366f10f;border-color:#6366f133}.compare-change-item.active{background:#6366f11a;border-color:#6366f14d}.compare-section-header{align-items:center;gap:.375rem;margin-top:.25rem;padding:.25rem 0;display:flex}.compare-section-label{text-transform:uppercase;letter-spacing:.05em;font-size:.6875rem;font-weight:600}.compare-section-label.added,.compare-section-label.page-added{color:#86efac}.compare-section-label.removed,.compare-section-label.page-removed{color:#fca5a5}.compare-section-label.modified{color:#fcd34d}.compare-section-label.moved{color:#c4b5fd}.compare-section-label.style-changed{color:#93c5fd}.compare-section-count{color:#64748b;font-size:.625rem;font-weight:600}.compare-section-line{background:#33415566;flex:1;height:1px}.compare-change-dot{border-radius:50%;flex-shrink:0;width:.375rem;height:.375rem}.compare-change-dot.added{background:#22c55e}.compare-change-dot.removed{background:#ef4444}.compare-change-dot.modified{background:#f59e0b}.compare-change-dot.page-added{background:#22c55e}.compare-change-dot.page-removed{background:#ef4444}.compare-change-dot.moved{background:#a855f7}.compare-change-dot.style-changed{background:#3b82f6}.compare-change-desc{color:#e2e8f0;overflow-wrap:anywhere;white-space:pre-line;font-size:.8125rem}.compare-change-empty{color:#64748b;text-align:center;padding:2rem 1rem;font-size:.8125rem}@media (width<=1023px){.compare-workspace{grid-template-columns:minmax(0,1fr);min-height:0}.compare-sidebar{height:auto;max-height:24rem}.compare-viewer-wrapper{height:auto;min-height:24rem}.compare-viewer-wrapper.side-by-side-mode{gap:1rem;padding:1rem}.compare-canvas-stage{--compare-stage-pad-top:1rem;--compare-stage-pad-x:1rem;--compare-stage-pad-bottom:1rem}}</style>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pdf/site.webmanifest">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/pdf/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/pdf/images/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/pdf/images/favicon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/pdf/images/apple-touch-icon.png">
+    <link rel="icon" href="/pdf/favicon.ico" sizes="32x32">
+    <script type="module" crossorigin="" src="/pdf/assets/compare-pdfs-CflZxqpn.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/rolldown-runtime-BCiCTKAo.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/lucide-CALlRNjy.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/lucide-init-CYue7eIL.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/dist-DtDNafWJ.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/dist-CzjzTGOP.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/__vite-browser-external-BwpP9LFt.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/purify.es-B9ve_eFf.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/i18n-BwIqBb1X.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/ui-HoGl2MNN.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/main-BrdEIMbQ.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/mobileMenu-CGb4P9So.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/simple-mode-footer-CMd9sH33.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/full-width-B8_6ejC9.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/es-CEZCUPQt.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/wasm-provider-DmYxgiUM.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/cpdf-helper-DptKQCjW.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/pymupdf-loader-BY_oP07B.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/pdf-decrypt-CMdJrx52.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/password-prompt-26M16IAU.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/load-pdf-document-DgwDwkMM.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/tesseract-runtime-B3SvJbIm.js">
+    <link rel="stylesheet" crossorigin="" href="/pdf/assets/lucide-Bx22EkJ2.css">
+    <link rel="stylesheet" crossorigin="" href="/pdf/assets/style-DzMhwNtC.css">
+  <link rel="alternate" hreflang="ar" href="https://www.bentopdf.com/ar/compare-pdfs"><link rel="alternate" hreflang="be" href="https://www.bentopdf.com/be/compare-pdfs"><link rel="alternate" hreflang="ca" href="https://www.bentopdf.com/ca/compare-pdfs"><link rel="alternate" hreflang="da" href="https://www.bentopdf.com/da/compare-pdfs"><link rel="alternate" hreflang="de" href="https://www.bentopdf.com/de/compare-pdfs"><link rel="alternate" hreflang="en" href="https://www.bentopdf.com/compare-pdfs"><link rel="alternate" hreflang="es" href="https://www.bentopdf.com/es/compare-pdfs"><link rel="alternate" hreflang="fa" href="https://www.bentopdf.com/fa/compare-pdfs"><link rel="alternate" hreflang="fr" href="https://www.bentopdf.com/fr/compare-pdfs"><link rel="alternate" hreflang="id" href="https://www.bentopdf.com/id/compare-pdfs"><link rel="alternate" hreflang="it" href="https://www.bentopdf.com/it/compare-pdfs"><link rel="alternate" hreflang="ja" href="https://www.bentopdf.com/ja/compare-pdfs"><link rel="alternate" hreflang="ko" href="https://www.bentopdf.com/ko/compare-pdfs"><link rel="alternate" hreflang="nl" href="https://www.bentopdf.com/nl/compare-pdfs"><link rel="alternate" hreflang="pl" href="https://www.bentopdf.com/pl/compare-pdfs"><link rel="alternate" hreflang="pt" href="https://www.bentopdf.com/pt/compare-pdfs"><link rel="alternate" hreflang="ru" href="https://www.bentopdf.com/ru/compare-pdfs"><link rel="alternate" hreflang="sk" href="https://www.bentopdf.com/sk/compare-pdfs"><link rel="alternate" hreflang="sv" href="https://www.bentopdf.com/sv/compare-pdfs"><link rel="alternate" hreflang="tr" href="https://www.bentopdf.com/tr/compare-pdfs"><link rel="alternate" hreflang="uk" href="https://www.bentopdf.com/uk/compare-pdfs"><link rel="alternate" hreflang="vi" href="https://www.bentopdf.com/vi/compare-pdfs"><link rel="alternate" hreflang="zh" href="https://www.bentopdf.com/zh/compare-pdfs"><link rel="alternate" hreflang="zh-TW" href="https://www.bentopdf.com/zh-TW/compare-pdfs"><link rel="alternate" hreflang="x-default" href="https://www.bentopdf.com/compare-pdfs"></head>
+
+  <body class="antialiased bg-gray-900">
+     <nav class="bg-gray-800 border-b border-gray-700 sticky top-0 z-30" data-simple-nav="true">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-start items-center h-16">
+          <div class="flex-shrink-0 flex items-center cursor-pointer">
+            <img id="nav-logo" src="/pdf/images/favicon-no-bg.svg" alt="Bento PDF 徽标" class="h-8 w-8">
+            <span id="nav-brand" class="text-white font-bold text-xl ml-2">
+              <a href="/pdf/zh">BentoPDF</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+     
+    <div id="uploader" class="min-h-screen flex flex-col items-center justify-start py-12 p-4 bg-gray-900">
+      <div id="tool-uploader" class="bg-gray-800 rounded-xl shadow-xl px-4 py-8 md:p-8 max-w-[96rem] w-full text-gray-200 border border-gray-700">
+        <button id="back-to-tools" class="flex items-center gap-2 text-indigo-300 hover:text-indigo-400 mb-6 font-semibold">
+          <i data-lucide="arrow-left" class="cursor-pointer"></i>
+          <span class="cursor-pointer" data-i18n="tools.backToTools">返回工具列表</span>
+        </button>
+
+        <nav aria-label="面包屑导航" data-bentopdf-breadcrumb="" data-no-i18n="" class="text-sm text-gray-400 mb-4"><a href="/pdf/zh" class="hover:text-indigo-300">BentoPDF</a><span aria-hidden="true" class="mx-2">›</span><span class="text-gray-300" aria-current="page">比较 PDF</span></nav><h1 class="text-2xl font-bold text-white mb-2" data-i18n="tools:comparePdfs.name">比较 PDF</h1>
+        <p class="text-gray-400 mb-6" data-i18n="tools:comparePdfs.subtitle">并排比较两个 PDF。</p>
+
+        <!-- File Upload Areas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div id="drop-zone-1" class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300">
+            <div id="file-display-1" class="flex flex-col items-center justify-center">
+              <i data-lucide="file-text" class="w-8 h-8 mb-2 text-gray-400"></i>
+              <p class="text-sm text-gray-400" data-i18n="tools:comparePdfs.firstPdf">第一个 PDF</p>
+              <p class="text-xs text-gray-500" data-i18n="tools:comparePdfs.clickOrDrop">点击或拖放</p>
+            </div>
+            <input id="file-input-1" type="file" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" accept="application/pdf">
+          </div>
+          <div id="drop-zone-2" class="relative flex flex-col items-center justify-center w-full h-48 md:h-64 border-2 border-dashed border-gray-600 rounded-xl cursor-pointer bg-gray-900 hover:bg-gray-700 transition-colors duration-300">
+            <div id="file-display-2" class="flex flex-col items-center justify-center">
+              <i data-lucide="file-text" class="w-8 h-8 mb-2 text-gray-400"></i>
+              <p class="text-sm text-gray-400" data-i18n="tools:comparePdfs.secondPdf">第二个 PDF</p>
+              <p class="text-xs text-gray-500" data-i18n="tools:comparePdfs.clickOrDrop">点击或拖放</p>
+            </div>
+            <input id="file-input-2" type="file" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" accept="application/pdf">
+          </div>
+        </div>
+
+        <!-- Compare Viewer (hidden until both files loaded) -->
+        <div id="compare-viewer" class="hidden">
+          <!-- Toolbar -->
+          <div class="flex flex-wrap items-center gap-3 mb-3 p-2 bg-gray-900 rounded-lg border border-gray-700">
+            <button id="prev-page-compare" class="btn p-1.5 rounded bg-gray-700 hover:bg-gray-600 disabled:opacity-50" disabled="" title="上一页">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            </button>
+            <span class="text-sm text-white font-medium">第 <span id="current-page-display-compare">1</span> 页 / <span id="total-pages-display-compare">1</span></span>
+            <button id="next-page-compare" class="btn p-1.5 rounded bg-gray-700 hover:bg-gray-600 disabled:opacity-50" disabled="" title="下一页">
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+
+            <div class="border-l border-gray-700 h-5 mx-1"></div>
+
+            <div class="bg-gray-700 p-0.5 rounded flex gap-0.5">
+              <button id="view-mode-overlay" class="btn bg-indigo-600 px-2.5 py-1 rounded text-xs font-semibold">叠加</button>
+              <button id="view-mode-side" class="btn px-2.5 py-1 rounded text-xs font-semibold">并排</button>
+            </div>
+
+            <div class="border-l border-gray-700 h-5 mx-1"></div>
+
+            <button id="prev-change-btn" class="btn bg-gray-700 hover:bg-gray-600 px-2.5 py-1 rounded text-xs font-semibold disabled:opacity-50" disabled="" title="上一处更改">
+              <i data-lucide="chevron-up" class="w-3.5 h-3.5"></i>
+            </button>
+            <button id="next-change-btn" class="btn bg-gray-700 hover:bg-gray-600 px-2.5 py-1 rounded text-xs font-semibold disabled:opacity-50" disabled="" title="下一处更改">
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+            </button>
+
+            <div class="border-l border-gray-700 h-5 mx-1"></div>
+
+            <button id="zoom-out-btn" class="btn p-1.5 rounded bg-gray-700 hover:bg-gray-600 disabled:opacity-50" title="缩小">
+              <i data-lucide="minus" class="w-3.5 h-3.5"></i>
+            </button>
+            <span id="zoom-level-display" class="text-xs text-gray-300 font-medium min-w-[3rem] text-center select-none">100%</span>
+            <button id="zoom-in-btn" class="btn p-1.5 rounded bg-gray-700 hover:bg-gray-600 disabled:opacity-50" title="放大">
+              <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+            </button>
+            <button id="zoom-reset-btn" class="btn px-2.5 py-1 rounded bg-gray-700 hover:bg-gray-600 text-xs font-semibold" title="重置缩放以适应">适合</button>
+
+            <div class="flex-1"></div>
+
+            <div id="overlay-controls" class="hidden flex items-center gap-2">
+              <div class="bg-gray-700 p-0.5 rounded flex gap-0.5">
+                <button id="overlay-scope-all" class="btn bg-indigo-600 px-2.5 py-1 rounded text-xs font-semibold">所有更改</button>
+                <button id="overlay-scope-content-only" class="btn px-2.5 py-1 rounded text-xs font-semibold bg-gray-700">仅内容</button>
+              </div>
+              <button id="flicker-btn" class="btn bg-gray-700 hover:bg-gray-600 px-2.5 py-1 rounded text-xs font-semibold">闪烁</button>
+              <label class="flex items-center gap-1.5 text-xs text-gray-300 cursor-pointer"><input type="checkbox" id="overlay-ocr-toggle" checked="" class="w-3.5 h-3.5 rounded text-indigo-600 bg-gray-700 border-gray-600"> OCR</label>
+              <input type="range" id="opacity-slider" min="0" max="1" step="0.05" value="0.5" class="w-20 accent-indigo-500">
+            </div>
+
+            <div id="side-by-side-controls" class="flex items-center gap-2">
+              <label class="flex items-center gap-1.5 text-xs text-gray-300 cursor-pointer"><input type="checkbox" id="sync-scroll-toggle" checked="" class="w-3.5 h-3.5 rounded text-indigo-600 bg-gray-700 border-gray-600"> 同步滚动</label>
+              <label class="flex items-center gap-1.5 text-xs text-gray-300 cursor-pointer"><input type="checkbox" id="ocr-toggle" checked="" class="w-3.5 h-3.5 rounded text-indigo-600 bg-gray-700 border-gray-600"> OCR</label>
+            </div>
+
+            <div class="relative" id="export-dropdown-wrapper">
+              <button id="export-dropdown-btn" class="btn bg-indigo-600 hover:bg-indigo-500 px-3 py-1.5 rounded text-xs font-semibold flex items-center gap-1.5 disabled:opacity-50" disabled=""><i data-lucide="upload" class="w-3.5 h-3.5"></i> 导出 <i data-lucide="chevron-down" class="w-3 h-3"></i></button>
+              <div id="export-dropdown-menu" class="hidden absolute right-0 top-full mt-1 w-48 bg-gray-800 border border-gray-600 rounded-lg shadow-xl z-50 py-1">
+                <div class="px-3 py-1.5 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">导出为 PDF</div>
+                <button data-export-mode="overlay" class="export-menu-item export-menu-item-overlay w-full px-3 py-2 text-sm text-left text-gray-200 hover:bg-gray-700 flex items-center gap-2 hidden"><i data-lucide="layers" class="w-4 h-4 text-gray-400"></i> 叠加视图</button>
+                <button data-export-mode="split" class="export-menu-item export-menu-item-side w-full px-3 py-2 text-sm text-left text-gray-200 hover:bg-gray-700 flex items-center gap-2"><i data-lucide="columns-2" class="w-4 h-4 text-gray-400"></i> 分屏视图</button>
+                <button data-export-mode="alternating" class="export-menu-item export-menu-item-side w-full px-3 py-2 text-sm text-left text-gray-200 hover:bg-gray-700 flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4 text-gray-400"></i> 交替</button>
+                <button data-export-mode="left" class="export-menu-item export-menu-item-side w-full px-3 py-2 text-sm text-left text-gray-200 hover:bg-gray-700 flex items-center gap-2"><i data-lucide="columns-2" class="w-4 h-4 text-gray-400"></i> 左侧文档</button>
+                <button data-export-mode="right" class="export-menu-item export-menu-item-side w-full px-3 py-2 text-sm text-left text-gray-200 hover:bg-gray-700 flex items-center gap-2"><i data-lucide="columns-2" class="w-4 h-4 text-gray-400"></i> 右侧文档</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="compare-workspace">
+            <div id="compare-viewer-wrapper" class="compare-viewer-wrapper side-by-side-mode border border-slate-200 relative">
+              <div id="panel-1" class="compare-panel overflow-auto">
+                <div class="compare-panel-label" id="compare-panel-label-1">原始文件</div>
+                <div class="compare-canvas-stage">
+                  <canvas id="canvas-compare-1" class="block mx-auto"></canvas>
+                  <div id="highlights-1" class="compare-highlight-layer"></div>
+                  <div id="placeholder-1" class="compare-placeholder hidden"></div>
+                </div>
+              </div>
+              <div id="panel-2" class="compare-panel overflow-auto">
+                <div class="compare-panel-label" id="compare-panel-label-2">已修改</div>
+                <div class="compare-canvas-stage">
+                  <canvas id="canvas-compare-2" class="block mx-auto" style="opacity: 1"></canvas>
+                  <div id="highlights-2" class="compare-highlight-layer"></div>
+                  <div id="placeholder-2" class="compare-placeholder hidden"></div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="compare-sidebar">
+              <div class="compare-sidebar-header">
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                    <i data-lucide="search" class="w-4 h-4 text-gray-400"></i>
+                  </span>
+                  <input type="text" id="compare-search-input" placeholder="搜索更改..." class="w-full pl-9 pr-3 py-2 bg-gray-700 text-white text-sm border border-gray-600 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+              </div>
+
+              <div class="compare-sidebar-filters">
+                <div class="compare-filter-group">
+                  <div class="compare-filter-label">更改类型</div>
+                  <button id="filter-removed" class="compare-pill removed"><span class="compare-change-dot removed"></span> <span id="summary-removed-count">0</span> 已删除</button>
+                  <button id="filter-added" class="compare-pill added"><span class="compare-change-dot added"></span> <span id="summary-added-count">0</span> 已新增</button>
+                  <button id="filter-modified" class="compare-pill modified"><span class="compare-change-dot modified"></span> <span id="summary-modified-count">0</span> 已修改</button>
+                  <button id="filter-moved" class="compare-pill moved"><span class="compare-change-dot moved"></span> <span id="summary-moved-count">0</span> 已移动</button>
+                  <button id="filter-style-changed" class="compare-pill style-changed"><span class="compare-change-dot style-changed"></span> <span id="summary-style-changed-count">0</span> 样式</button>
+                </div>
+                <div class="compare-filter-group">
+                  <div class="compare-filter-label">内容</div>
+                  <button id="category-text" class="compare-pill category active"><span id="category-count-text">0</span> 文字</button>
+                  <button id="category-image" class="compare-pill category active"><span id="category-count-image">0</span> 图片</button>
+                  <button id="category-header-footer" class="compare-pill category active"><span id="category-count-header-footer">0</span> 页眉</button>
+                  <button id="category-annotation" class="compare-pill category active"><span id="category-count-annotation">0</span> 批注</button>
+                  <button id="category-formatting" class="compare-pill category active"><span id="category-count-formatting">0</span> 格式</button>
+                  <button id="category-background" class="compare-pill category active"><span id="category-count-background">0</span> 背景</button>
+                </div>
+              </div>
+
+              <div class="compare-change-list">
+                <div id="change-list-empty" class="compare-change-empty">上传两个 PDF 以查看差异。</div>
+                <div id="compare-change-list" class="hidden"></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loader Modal -->
+    <div id="loader-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+      <div class="bg-gray-800 p-8 rounded-lg flex flex-col items-center gap-4 border border-gray-700 shadow-xl">
+        <div class="solid-spinner"></div>
+        <p id="loader-text" class="text-white text-lg font-medium" data-i18n="loader.processing">处理中...</p>
+      </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div id="alert-modal" class="fixed inset-0 bg-gray-900 bg-opacity-90 flex items-center justify-center z-50 hidden">
+      <div class="bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full border border-gray-700">
+        <h3 id="alert-title" class="text-xl font-bold text-white mb-2" data-i18n="alert.title">提示</h3>
+        <p id="alert-message" class="text-gray-300 mb-6"></p>
+        <button id="alert-ok" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">确定</button>
+      </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-8 text-center" data-i18n="howItWorks.title">使用方法</h2>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+            1
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">上传文件</h3>
+            <p class="text-gray-400" data-i18n="howItWorks.step1">点击或拖放您的文件到此处</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+            2
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">处理</h3>
+            <p class="text-gray-400" data-i18n="howItWorks.step2">点击处理按钮开始</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+            3
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-white mb-1">下载</h3>
+            <p class="text-gray-400" data-i18n="howItWorks.step3">立即保存处理后的文件</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Tools Section -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="relatedTools.title">相关 PDF 工具</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <a href="/pdf/zh/merge-pdf" class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700">
+          <h3 class="text-white font-semibold mb-1">合并 PDF</h3>
+          <p class="text-gray-400 text-sm">免费在线合并 PDF 工具</p>
+        </a>
+        <a href="/pdf/zh/compress-pdf" class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700">
+          <h3 class="text-white font-semibold mb-1">压缩 PDF</h3>
+          <p class="text-gray-400 text-sm">免费在线压缩 PDF 工具</p>
+        </a>
+        <a href="/pdf/zh/split-pdf" class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700">
+          <h3 class="text-white font-semibold mb-1">分割 PDF</h3>
+          <p class="text-gray-400 text-sm">免费在线分割 PDF 工具</p>
+        </a>
+        <a href="/pdf/zh/edit-pdf" class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700">
+          <h3 class="text-white font-semibold mb-1">编辑 PDF</h3>
+          <p class="text-gray-400 text-sm">免费在线编辑 PDF 工具</p>
+        </a>
+        <a href="/pdf/zh/rotate-pdf" class="block bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors border border-gray-700">
+          <h3 class="text-white font-semibold mb-1">旋转 PDF</h3>
+          <p class="text-gray-400 text-sm">免费在线旋转 PDF 工具</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="faq.sectionTitle">常见问题</h2>
+      <div class="faq-list">
+        <details class="faq-d">
+          <summary class="faq-d-q">如何查看 PDF 两个版本之间改了什么？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">将原始文件作为第一个 PDF 上传，修订版作为第二个。工具会配对匹配的页面，然后在每对页面上高亮显示新增、删除、修改和移动的内容，并用计数器显示每种更改的数量。</p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">并排模式和叠加模式有什么区别？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">并排模式会把两个页面并排显示并同步滚动，最适合阅读文字更改。叠加模式会把修订页叠放在原页之上，并提供不透明度滑块，使位移或缩放的元素一目了然，“闪烁”按钮会开关顶层页面，让细微的移动变得清晰可见。</p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">可以比较没有文字层的扫描版 PDF 吗？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">开启 OCR 后，页面图片会在您的浏览器中交给 Tesseract 识别，并比较识别出的文字，因此扫描文档也可以检查。OCR 目前使用英语语言模型，并且比比较已含文字的 PDF 更慢。</p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">可以过滤掉格式更改，只查看文字差异吗？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">更改分为文字、图片、页眉页脚、批注、格式和背景几类，每类都有自己的开关。关闭您不关心的类别，并使用文字搜索框查找特定的更改词语或短语。</p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">如果不同版本之间页面被添加、删除或重新排序会怎样？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">页面是按内容相似度而非页码配对的，所以插入一页不会打乱后面所有页面。没有对应页面的页面会被报告为新增或删除，页面导航则按工具建立的配对逐一跳转。</p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">它能检测评论和批注的更改吗？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">批注更改是单独的类别，所以新增或删除的评论、高亮和标记会与正文文字分开标记，并可通过批注过滤器显示或隐藏。</p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">可以把比较结果保存为报告吗？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">“导出为 PDF”菜单会生成比较结果的 PDF。在并排模式下，您可以选择分屏视图、交替页面，或仅导出带高亮的左侧或右侧文档；在叠加模式下则导出叠加视图。</p>
+        </details>
+        <details class="faq-d">
+          <summary class="faq-d-q">这两个 PDF 会被发送到任何地方进行比较吗？ <i data-lucide="plus" class="faq-d-icon"></i></summary>
+          <p class="faq-d-a">不会。渲染、页面配对、OCR 和更改检测都通过 WebAssembly 和 Web Worker 在您的浏览器中运行，不会传输任何内容，所以合同和其他机密草稿都留在您的电脑上。</p>
+        </details>
+      </div>
+    </section>
+     <footer class="mt-16 border-t-2 border-gray-700 py-8" data-simple-footer="true">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <div class="flex items-center mb-2">
+              <img id="footer-logo" src="/pdf/images/favicon.svg" alt="Bento PDF 徽标" class="h-8 w-8 mr-2">
+              <span id="footer-brand" class="text-white font-bold text-lg">BentoPDF</span>
+            </div>
+            <p id="footer-copyright" class="text-gray-400 text-sm">© 2026 BentoPDF。保留所有权利。</p>
+            <p class="text-gray-500 text-xs mt-2">
+              <span data-i18n="footer.version">版本</span>
+              <span id="app-version">2.8.11</span>
+            </p>
+          </div>
+          <div id="simple-mode-lang-switcher" class="flex-shrink-0"></div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "比较 PDF - BentoPDF",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any - Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script>
+
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "如何在线比较 PDF",
+  "description": "了解如何使用 BentoPDF 比较 PDF",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "上传文件",
+      "text": "点击或拖放您的文件"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "处理",
+      "text": "点击处理按钮"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "下载",
+      "text": "下载处理后的文件"
+    }
+  ]
+}</script>
+
+    
+  
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "如何查看 PDF 两个版本之间改了什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "将原始文件作为第一个 PDF 上传，修订版作为第二个。工具会配对匹配的页面，然后在每对页面上高亮显示新增、删除、修改和移动的内容，并用计数器显示每种更改的数量。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "并排模式和叠加模式有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "并排模式会把两个页面并排显示并同步滚动，最适合阅读文字更改。叠加模式会把修订页叠放在原页之上，并提供不透明度滑块，使位移或缩放的元素一目了然，“闪烁”按钮会开关顶层页面，让细微的移动变得清晰可见。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以比较没有文字层的扫描版 PDF 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "开启 OCR 后，页面图片会在您的浏览器中交给 Tesseract 识别，并比较识别出的文字，因此扫描文档也可以检查。OCR 目前使用英语语言模型，并且比比较已含文字的 PDF 更慢。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以过滤掉格式更改，只查看文字差异吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "更改分为文字、图片、页眉页脚、批注、格式和背景几类，每类都有自己的开关。关闭您不关心的类别，并使用文字搜索框查找特定的更改词语或短语。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如果不同版本之间页面被添加、删除或重新排序会怎样？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "页面是按内容相似度而非页码配对的，所以插入一页不会打乱后面所有页面。没有对应页面的页面会被报告为新增或删除，页面导航则按工具建立的配对逐一跳转。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "它能检测评论和批注的更改吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "批注更改是单独的类别，所以新增或删除的评论、高亮和标记会与正文文字分开标记，并可通过批注过滤器显示或隐藏。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以把比较结果保存为报告吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "“导出为 PDF”菜单会生成比较结果的 PDF。在并排模式下，您可以选择分屏视图、交替页面，或仅导出带高亮的左侧或右侧文档；在叠加模式下则导出叠加视图。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "这两个 PDF 会被发送到任何地方进行比较吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会。渲染、页面配对、OCR 和更改检测都通过 WebAssembly 和 Web Worker 在您的浏览器中运行，不会传输任何内容，所以合同和其他机密草稿都留在您的电脑上。"
+      }
+    }
+  ]
+}</script><script type="application/ld+json" data-bentopdf-organization="">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BentoPDF",
+  "url": "https://www.bentopdf.com",
+  "logo": "https://www.bentopdf.com/images/favicon.svg",
+  "sameAs": [
+    "https://github.com/alam00000/bentopdf",
+    "https://x.com/BentoPDF",
+    "https://www.linkedin.com/company/bentopdf/",
+    "https://www.instagram.com/thebentopdf/"
+  ]
+}</script><script type="application/ld+json" data-bentopdf-breadcrumb="">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "BentoPDF",
+      "item": "https://www.bentopdf.com/zh"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "比较 PDF",
+      "item": "https://www.bentopdf.com/zh/compare-pdfs"
+    }
+  ]
+}</script></body></html>

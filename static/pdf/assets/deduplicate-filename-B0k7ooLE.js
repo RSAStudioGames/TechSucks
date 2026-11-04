@@ -1,0 +1,1 @@
+function e(e,t){if(!t.has(e))return t.add(e),e;let n=e.lastIndexOf(`.`),r=n>0,i=r?e.slice(0,n):e,a=r?e.slice(n):``,o=1,s=`${i} (${o})${a}`;for(;t.has(s);)o++,s=`${i} (${o})${a}`;return t.add(s),s}function t(e,t){return`${e}_${t}`}export{t as n,e as t};

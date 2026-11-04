@@ -1,0 +1,1 @@
+import{n as e,t}from"./lucide-CALlRNjy.js";document.addEventListener(`DOMContentLoaded`,()=>{t({icons:e})});
