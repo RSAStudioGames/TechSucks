@@ -10,21 +10,28 @@
 		
 		
 		
-			<lastBuildDate>Sat, 11 Apr 2026 23:56:29 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://techsucks.org/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Mouse</title>
-				<link>https://techsucks.org/tags/mouse/</link>
-				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
-				<guid>https://techsucks.org/tags/mouse/</guid>
+				<title>Linux</title>
+				<link>https://techsucks.org/tags/linux/</link>
+				<pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://techsucks.org/tags/linux/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Review</title>
 				<link>https://techsucks.org/tags/review/</link>
-				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
+				<pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
 				<guid>https://techsucks.org/tags/review/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Mouse</title>
+				<link>https://techsucks.org/tags/mouse/</link>
+				<pubDate>Sat, 11 Apr 2026 23:56:29 +0000</pubDate>
+				<guid>https://techsucks.org/tags/mouse/</guid>
 				<description></description>
 			</item>
 			<item>

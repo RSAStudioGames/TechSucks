@@ -1,3 +1,17 @@
++++
+title = "CachyOS Review"
+date = "2026-11-11"
+draft = false
+author = "RSA"
+cover = ""
+tags = ["Review", "Linux"]
+keywords = ["CachyOS", "Linux", "KDE"]
+description = "My experience switching from Windows to CachyOS"
+showFullContent = false
+readingTime = false
+hideComments = false
++++
+
 Alright, I've finally gotten around to writing some more.
 I've finally switched away from Windows and I'm so happy I did. CachyOS (using KDE) has been such a great experience. It's stable, fast, privacy-respecting, and fast. Did I say fast twice? Well I'll say it one more time. It's fast. Everything feels so darn snappy. Opening the application launcher (start menu equivalent on Windows) is instant, the search is both accurate and reactive, apps open incredibly fast. I just love it.
 

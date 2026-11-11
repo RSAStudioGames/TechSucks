@@ -11,9 +11,9 @@ title: "Home"
 
 I'm RSA, and I've got ~20 years of self-taught tech experience at this point; everything from server administration and development to consulting and game design. I'm really passionate about computers and technology, and even more passionate when complaining about it all.
 
-This is info repo for all my tech/IT knowledge and whatever other projects I feel like sharing. I made this site because I really feel like the internet is going downhill fast, especially since LLMs like Ch\*tGPT became a thing. It genuinely saddens me to see so little content diversity online as people's unique creative outlets get killed off and and corporations take their places. Online freedom of speech keeps diminishing and companies restrict what you can say so they can be advertiser-friendly, all under the guise of protecting people's feelings…
+This is an info repo for all my tech/IT knowledge and whatever other projects I feel like sharing. I started this site because I really feel like the internet is going downhill fast, especially since brainrot machines like Ch\*tGPT became a thing. It genuinely saddens me to see so little content diversity online as people's unique creative outlets get killed off and replaced with averaged-out designs while corporations take the place of what was once a highly unique and expressive landscape. Our online freedom of speech keeps diminishing as companies restrict what you can say so they can be advertiser-friendly.
 
-Most people only visit a handful of select websites anymore. The days of expressive and creative personal blogs are basically dead. Sure, there's still some cool sites out there, hard to find as they may be, but they're completely eclipsed by the corpo pages, you know the ones[\--](https://news.ycombinator.com/item?id=35228566) youtube, tiktok, twitter, and facebook's AI-plagued corpse. Even as early as 2010, [Wired was calling out the issue](https://www.wired.com/2010/08/ff-webrip/).
+Most people only visit a handful of select websites anymore. The days of creative and expressive personal blogs feels basically dead. Sure, there's still some cool sites out there, hard to find as they may be, but they're completely eclipsed by the corpo pages, you know the ones[\--](https://news.ycombinator.com/item?id=35228566) youtube, tiktok, twitter, and facebook's AI-plagued corpse. Even as early as 2010, [Wired was calling out the issue](https://www.wired.com/2010/08/ff-webrip/).
 
 I've got two main goals for this page, share my knowledge and passion for technology to help people learn about computers and tech in a world where those skills are becoming increasingly [important](https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes), while also getting back at those who profit from gatekeeping this kind of knowledge.
 
@@ -32,7 +32,6 @@ Here are some links I recommend checking out:
 [https://digdeeper.neocities.org/index.xhtml](https://digdeeper.neocities.org/index.xhtml)  
 [https://lobste.rs/](https://lobste.rs/)  
 [https://www.greaterwrong.com/](https://www.greaterwrong.com/)  
-[TechPowerUp - GPU Specs](https://www.techpowerup.com/gpu-specs/)
 
 Search engine I highly recommend. Paid subscription, but no ads or tracking and doesn't advertise malware unlike google… - [https://kagi.com/](https://kagi.com/)
 

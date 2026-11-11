@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sat, 11 Apr 2026 23:56:29 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://techsucks.org/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>CachyOS Review</title>
+				<link>https://techsucks.org/posts/cachyos-review/</link>
+				<pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://techsucks.org/posts/cachyos-review/</guid>
+				<description>&lt;p&gt;Alright, I&amp;rsquo;ve finally gotten around to writing some more.&#xA;I&amp;rsquo;ve finally switched away from Windows and I&amp;rsquo;m so happy I did. CachyOS (using KDE) has been such a great experience. It&amp;rsquo;s stable, fast, privacy-respecting, and fast. Did I say fast twice? Well I&amp;rsquo;ll say it one more time. It&amp;rsquo;s fast. Everything feels so darn snappy. Opening the application launcher (start menu equivalent on Windows) is instant, the search is both accurate and reactive, apps open incredibly fast. I just love it.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Elecom Huge Plus Review</title>
 				<link>https://techsucks.org/posts/elecom-huge-plus-review/</link>
@@ -117,13 +124,6 @@
 				<pubDate>Wed, 17 Dec 2025 17:07:24 +0000</pubDate>
 				<guid>https://techsucks.org/posts/servermaxxing/</guid>
 				<description>&lt;h1 id=&#34;ai-server-builds&#34;&gt;AI Server Builds&lt;/h1&gt;&#xA;&lt;p&gt;Here are some server setups I&amp;rsquo;ll be covering that can run large models with budget prices. By budget I mean it won&amp;rsquo;t cost the same as a new Ferrari, which some SOTA systems can easily surpass. I&amp;rsquo;ll be going over specific hardware to look for in more detail over on the &lt;a href=&#34;https://techsucks.org/posts/server-building/&#34;&gt;Server Building&lt;/a&gt; page. These aren&amp;rsquo;t branded products or off-the-shelf systems. I&amp;rsquo;ve curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who&amp;rsquo;ve tried them out to give you an accurate picture of how they would work in a real-world situation. &lt;br /&gt;&#xA;&#xA;You can find the all the benchmarks I&amp;rsquo;ve run myself and collected in the &lt;a href=&#34;https://techsucks.org/posts/llm-benchmarks/&#34;&gt;LLM Inference Benchmarks&lt;/a&gt; page.&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title></title>
-				<link>https://techsucks.org/posts/cachyos-review/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://techsucks.org/posts/cachyos-review/</guid>
-				<description>&lt;p&gt;Alright, I&amp;rsquo;ve finally gotten around to writing some more.&#xA;I&amp;rsquo;ve finally switched away from Windows and I&amp;rsquo;m so happy I did. CachyOS (using KDE) has been such a great experience. It&amp;rsquo;s stable, fast, privacy-respecting, and fast. Did I say fast twice? Well I&amp;rsquo;ll say it one more time. It&amp;rsquo;s fast. Everything feels so darn snappy. Opening the application launcher (start menu equivalent on Windows) is instant, the search is both accurate and reactive, apps open incredibly fast. I just love it.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title></title>

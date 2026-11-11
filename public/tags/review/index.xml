@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sat, 11 Apr 2026 23:56:29 +0000</lastBuildDate>
+			<lastBuildDate>Wed, 11 Nov 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://techsucks.org/tags/review/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>CachyOS Review</title>
+				<link>https://techsucks.org/posts/cachyos-review/</link>
+				<pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+				<guid>https://techsucks.org/posts/cachyos-review/</guid>
+				<description>&lt;p&gt;Alright, I&amp;rsquo;ve finally gotten around to writing some more.&#xA;I&amp;rsquo;ve finally switched away from Windows and I&amp;rsquo;m so happy I did. CachyOS (using KDE) has been such a great experience. It&amp;rsquo;s stable, fast, privacy-respecting, and fast. Did I say fast twice? Well I&amp;rsquo;ll say it one more time. It&amp;rsquo;s fast. Everything feels so darn snappy. Opening the application launcher (start menu equivalent on Windows) is instant, the search is both accurate and reactive, apps open incredibly fast. I just love it.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Elecom Huge Plus Review</title>
 				<link>https://techsucks.org/posts/elecom-huge-plus-review/</link>
