@@ -1,0 +1,6 @@
+BentoPDF 2.8.11
+Source: https://github.com/alam00000/bentopdf/tree/cc97429413ee13fa977d18627003b9b69e1787e6
+License: AGPL-3.0-only, see LICENSE and upstream third-party notices.
+Built with BASE_URL=/pdf/.
+Local adaptation: LibreOffice compressed assets are downloaded in chunks.
+Reproducible build and adaptation source: https://github.com/RSAStudioGames/TechSucks/tree/main/scripts/pdf

@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="sv" dir="ltr"><head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDF-arbetsflödesbyggare - Visuellt flöde | BentoPDF</title>
+    <meta name="title" content="PDF Workflow Builder - Visual Pipeline | BentoPDF">
+    <meta name="description" content="Bygg egna PDF-bearbetningsflöden visuellt. Dra, koppla ihop och kör PDF-verktyg i följd. Gratis, säkert och körs helt i din webbläsare.">
+    <meta name="keywords" content="pdf workflow, pdf automation, pdf pipeline, visual pdf editor, node editor">
+    <meta name="author" content="BentoPDF">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <link rel="canonical" href="https://www.bentopdf.com/sv/pdf-workflow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bentopdf.com/sv/pdf-workflow">
+    <meta property="og:title" content="PDF-arbetsflödesbyggare - Visuellt flöde | BentoPDF">
+    <meta property="og:description" content="Bygg egna PDF-bearbetningsflöden visuellt. Dra, koppla ihop och kör PDF-verktyg i följd.">
+    <meta property="og:image" content="https://www.bentopdf.com/images/og-tools.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="BentoPDF">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.bentopdf.com/sv/pdf-workflow">
+    <meta name="twitter:title" content="PDF-arbetsflödesbyggare">
+    <meta name="twitter:description" content="Bygg egna PDF-bearbetningsflöden visuellt.">
+    <meta name="twitter:image" content="https://www.bentopdf.com/images/og-tools.png">
+    <meta name="twitter:site" content="@BentoPDF">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="PDF Workflow">
+
+    <link rel="manifest" href="/pdf/site.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="/pdf/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/pdf/images/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/pdf/images/favicon-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/pdf/images/apple-touch-icon.png">
+    <link rel="icon" href="/pdf/favicon.ico" sizes="32x32">
+
+    <style>#rete-container{cursor:default;-webkit-user-select:none;user-select:none;background-image:radial-gradient(circle,#374151 1px,#0000 1px);background-size:20px 20px}#toolbox-sidebar{-webkit-user-select:none;user-select:none}#rete-container.is-panning{cursor:grabbing}#rete-container [data-testid=node]{cursor:pointer}#rete-container [data-testid=node]:active{cursor:grabbing}.wf-node{flex-direction:column;align-items:center;width:280px;display:flex;position:relative}.wf-card{border:2px solid var(--cat-color,#6b7280);background:#1f2937;border-radius:12px;width:100%;transition:box-shadow .2s;overflow:hidden}.wf-selected .wf-card{box-shadow:0 0 0 3px color-mix(in srgb, var(--cat-color) 40%, transparent)}.wf-header{justify-content:space-between;align-items:center;padding:8px 14px 4px;display:flex}.wf-cat{color:var(--cat-color,#9ca3af);text-transform:uppercase;letter-spacing:.05em;font-size:11px;font-weight:600}.wf-divider{background:#374151;height:1px;margin:0 14px}.wf-body{align-items:flex-start;gap:10px;padding:10px 14px 12px;display:flex}.wf-icon{width:18px;height:18px;color:var(--cat-color,#9ca3af);flex-shrink:0;margin-top:1px}.wf-info{flex:1;min-width:0}.wf-title{color:#f3f4f6;font-size:13px;font-weight:600;line-height:1.3}.wf-desc{color:#9ca3af;margin-top:2px;font-size:11px;line-height:1.3}.wf-tag{background:color-mix(in srgb, var(--cat-color) 15%, transparent);color:var(--cat-color,#9ca3af);white-space:nowrap;border-radius:4px;flex-shrink:0;align-self:center;padding:2px 8px;font-size:10px;font-weight:500}.wf-sockets{z-index:1;justify-content:center;gap:8px;display:flex;position:relative}.wf-sockets-top{margin-bottom:-7px}.wf-sockets-bottom{margin-top:-7px}.wf-socket-slot{justify-content:center;align-items:center;display:flex}.wf-socket{background:var(--socket-color,#6366f1);width:14px;height:14px;box-shadow:0 0 0 1px var(--socket-color,#6366f1);cursor:crosshair;border:2px solid #1f2937;border-radius:50%;transition:transform .15s}.wf-socket:hover{transform:scale(1.3)}.connection .main-path{stroke:#6366f1;stroke-width:2px;fill:none}@keyframes wf-bar-slide{0%{background-position:200% 0}to{background-position:-200% 0}}@keyframes wf-dot-pulse{0%,to{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}.wf-bar-slide{animation:1.5s ease-in-out infinite wf-bar-slide}.wf-dot-pulse{animation:1.2s ease-in-out infinite wf-dot-pulse}</style>
+    <script type="module" crossorigin="" src="/pdf/assets/pdf-workflow-DNL28UVX.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/rolldown-runtime-BCiCTKAo.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/lucide-CALlRNjy.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/dist-DtDNafWJ.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/dist-CzjzTGOP.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/__vite-browser-external-BwpP9LFt.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/purify.es-B9ve_eFf.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/i18n-BthF3n50.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/ui-BE-xzJeE.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/typeof-B5XbjTb1.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/defineProperty-8d_fL0DV.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/slicedToArray-CThUI1fQ.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/wasm-provider-5l7fHf3Z.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/alternate-merge-hlfTMwdW.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/tesseract-runtime-vHNaWStZ.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/cpdf-helper-vvWEW5yn.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/pymupdf-loader-T162GvUV.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/pdf-decrypt-BqZ2Izs1.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/es-CPD-7Unk.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/load-pdf-document-DTVSBwsz.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/heic2any-C1Zf-smx.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/image-input-utils-Bf85odk6.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/preload-helper-E67Ot0_g.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/pdf-operations-CzDIJ4z4.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/image-effects-Cy9f1obV.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/compress-CzNvcuUR.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/fontkit.es-BrGUg_jP.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/freetext-script-BaDHAGRO.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/font-loader-DmJur6iI.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/ocr-Xmwp4l0v.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/flatten-annotations-Bd95eeuM.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/sanitize-NbFTfd-K.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/lib-B2ZgVije.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/stream-browserify-DS2XQLoY.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/digital-sign-pdf-JtRKH8z4.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/redact-document-data-CvC1KZmu.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/wasm-cdn-config-84Nsb1FC.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/ghostscript-loader-ugpskMBA.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/libreoffice-loader-BMlz5Gpy.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/ghostscript-dynamic-loader-COqF_rVk.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/email-to-pdf-P7Q5Grsj.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/jszip.min-ByaMSIwd.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/xps-repair-D75LmTzd.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/markdown-plugins-DbYu6c28.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/main-D_ijjlHS.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/mobileMenu-CGb4P9So.js">
+    <link rel="modulepreload" crossorigin="" href="/pdf/assets/faqModal-sVFklHd8.js">
+    <link rel="stylesheet" crossorigin="" href="/pdf/assets/lucide-Bx22EkJ2.css">
+    <link rel="stylesheet" crossorigin="" href="/pdf/assets/style-DzMhwNtC.css">
+  <link rel="alternate" hreflang="ar" href="https://www.bentopdf.com/ar/pdf-workflow"><link rel="alternate" hreflang="be" href="https://www.bentopdf.com/be/pdf-workflow"><link rel="alternate" hreflang="ca" href="https://www.bentopdf.com/ca/pdf-workflow"><link rel="alternate" hreflang="da" href="https://www.bentopdf.com/da/pdf-workflow"><link rel="alternate" hreflang="de" href="https://www.bentopdf.com/de/pdf-workflow"><link rel="alternate" hreflang="en" href="https://www.bentopdf.com/pdf-workflow"><link rel="alternate" hreflang="es" href="https://www.bentopdf.com/es/pdf-workflow"><link rel="alternate" hreflang="fa" href="https://www.bentopdf.com/fa/pdf-workflow"><link rel="alternate" hreflang="fr" href="https://www.bentopdf.com/fr/pdf-workflow"><link rel="alternate" hreflang="id" href="https://www.bentopdf.com/id/pdf-workflow"><link rel="alternate" hreflang="it" href="https://www.bentopdf.com/it/pdf-workflow"><link rel="alternate" hreflang="ja" href="https://www.bentopdf.com/ja/pdf-workflow"><link rel="alternate" hreflang="ko" href="https://www.bentopdf.com/ko/pdf-workflow"><link rel="alternate" hreflang="nl" href="https://www.bentopdf.com/nl/pdf-workflow"><link rel="alternate" hreflang="pl" href="https://www.bentopdf.com/pl/pdf-workflow"><link rel="alternate" hreflang="pt" href="https://www.bentopdf.com/pt/pdf-workflow"><link rel="alternate" hreflang="ru" href="https://www.bentopdf.com/ru/pdf-workflow"><link rel="alternate" hreflang="sk" href="https://www.bentopdf.com/sk/pdf-workflow"><link rel="alternate" hreflang="sv" href="https://www.bentopdf.com/sv/pdf-workflow"><link rel="alternate" hreflang="tr" href="https://www.bentopdf.com/tr/pdf-workflow"><link rel="alternate" hreflang="uk" href="https://www.bentopdf.com/uk/pdf-workflow"><link rel="alternate" hreflang="vi" href="https://www.bentopdf.com/vi/pdf-workflow"><link rel="alternate" hreflang="zh" href="https://www.bentopdf.com/zh/pdf-workflow"><link rel="alternate" hreflang="zh-TW" href="https://www.bentopdf.com/zh-TW/pdf-workflow"><link rel="alternate" hreflang="x-default" href="https://www.bentopdf.com/pdf-workflow"></head>
+
+  <body class="antialiased bg-gray-900 h-[100dvh] flex flex-col overflow-hidden">
+    
+    <nav class="bg-gray-900 border-b border-white/10 sticky top-0 z-30">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 flex items-center cursor-pointer" id="home-logo">
+            <img id="nav-logo" src="/pdf/images/favicon-no-bg.svg" alt="Bento PDF-logotyp" class="h-8 w-8">
+            <span id="nav-brand" class="text-white font-bold text-xl ml-2">
+              <a href="/pdf/sv">BentoPDF</a>
+            </span>
+          </div>
+    
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex flex-1 items-center justify-center space-x-2 xl:space-x-8">
+            <a href="/pdf/sv" class="nav-link" data-i18n="nav.home">Hem</a>
+            <a href="/pdf/sv/about" class="nav-link" data-i18n="nav.about">Om</a>
+            <a href="/pdf/sv/contact" class="nav-link" data-i18n="nav.contact">Kontakt</a>
+            <a href="/pdf/sv/licensing" class="nav-link" data-i18n="nav.licensing">Licensiering</a>
+            <div class="nav-products">
+              <button id="products-menu-button" type="button" class="nav-link nav-products-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="products-menu"><span>Produkter</span> <i data-lucide="chevron-down" class="nav-products-chevron"></i></button>
+              <div id="products-menu" class="nav-products-menu" role="menu" hidden=""><a href="/pdf/sv/kura" role="menuitem"> <span class="nav-product-text"> <b>Kura</b> <small>Konverteringsmotor för PDF/A, PDF/UA och PDF/X.</small> </span> </a> <a href="/pdf/sv/hyper-compress" role="menuitem"> <span class="nav-product-text"> <b>Hyper Compress</b> <small>PDF-komprimeringsmotor som bevarar innehållet.</small> </span> </a></div>
+            </div><a href="https://www.bentopdf.com/docs/sv" class="nav-link" data-i18n="nav.docs">Docs</a> <a href="/pdf/blog" class="nav-link">Blogg</a></div>
+    
+          <div class="hidden lg:flex items-center flex-shrink-0">
+            <a href="https://github.com/alam00000/bentopdf/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium bg-gray-800 text-gray-200 border border-gray-600 pl-2.5 pr-3 py-1 rounded-full transition-colors duration-200 shadow-sm hover:shadow-md hover:bg-gray-700">
+              <svg class="w-4 h-4 flex-shrink-0 text-gray-200" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+              </svg>
+              <span id="github-stars-desktop">-</span>
+            </a>
+          </div>
+    
+          <!-- Mobile Hamburger Button -->
+          <div class="lg:hidden flex items-center gap-4">
+            <a href="https://github.com/alam00000/bentopdf/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium bg-gray-800 text-gray-200 border border-gray-600 pl-2.5 pr-3 py-1 rounded-full transition-colors duration-200 shadow-sm hover:shadow-md hover:bg-gray-700">
+              <svg class="w-4 h-4 flex-shrink-0 text-gray-200" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+              </svg>
+              <span id="github-stars-mobile">-</span>
+            </a>
+            <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only" data-i18n="nav.openMainMenu">Öppna huvudmenyn</span>
+              <!-- Hamburger Icon -->
+              <svg id="menu-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <!-- Close Icon -->
+              <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-gray-900 border-t border-white/10">
+        <div class="px-2 pt-2 pb-3 space-y-1 text-center">
+          <a href="/pdf/sv" class="mobile-nav-link" data-i18n="nav.home">Hem</a>
+          <a href="/pdf/sv/about" class="mobile-nav-link" data-i18n="nav.about">Om</a>
+          <a href="/pdf/sv/contact" class="mobile-nav-link" data-i18n="nav.contact">Kontakt</a>
+          <a href="/pdf/sv/licensing" class="mobile-nav-link" data-i18n="nav.licensing">Licensiering</a>
+          <button id="mobile-products-button" type="button" class="mobile-nav-link mobile-products-trigger" aria-expanded="false" aria-controls="mobile-products-menu"><span>Produkter</span> <i data-lucide="chevron-down" class="mobile-products-chevron"></i></button>
+          <div id="mobile-products-menu" class="mobile-products-menu" hidden="">
+            <a href="/pdf/sv/kura" class="mobile-nav-link">Kura</a>
+            <a href="/pdf/sv/hyper-compress" class="mobile-nav-link">Hyper Compress</a>
+          </div><a href="https://www.bentopdf.com/docs/sv" class="mobile-nav-link" data-i18n="nav.docs">Docs</a> <a href="/pdf/blog" class="mobile-nav-link">Blogg</a></div>
+      </div>
+    </nav>
+
+    <h1 class="sr-only">PDF-arbetsflödesbyggare gratis online - Kedja PDF-verktyg i en körning</h1>
+
+    <!-- Main Workflow Layout -->
+    <div id="workflow-app" class="flex flex-1 min-h-0">
+      <!-- LEFT SIDEBAR: Node Toolbox -->
+      <aside id="toolbox-sidebar" class="w-60 bg-gray-800 border-r border-gray-700 flex-col overflow-y-auto flex-shrink-0 hidden md:flex max-md:fixed max-md:inset-y-0 max-md:left-0 max-md:z-40 max-md:shadow-2xl">
+        <div class="p-3 border-b border-gray-700">
+          <h2 class="text-white font-bold text-sm mb-2">Noder</h2>
+          <input id="node-search" type="text" placeholder="Sök noder..." class="w-full bg-gray-900 border border-gray-600 text-white rounded-md px-2 py-1.5 text-xs focus:border-indigo-500 focus:outline-none">
+        </div>
+
+        <div id="toolbox-categories" class="flex-1 p-2 space-y-2 text-sm"></div>
+      </aside>
+      <div id="toolbox-backdrop" class="hidden max-md:fixed max-md:inset-0 max-md:bg-black/40 max-md:z-30"></div>
+
+      <!-- CENTER: Canvas + Toolbar -->
+      <main class="flex-1 flex flex-col min-w-0">
+        <!-- Top Toolbar -->
+        <div id="workflow-toolbar" class="h-11 bg-gray-800 border-b border-gray-700 flex items-center px-2 md:px-4 gap-1.5 md:gap-2 flex-shrink-0">
+          <button id="toolbox-toggle" title="Toolbox" class="md:hidden bg-gray-700 hover:bg-gray-600 text-white p-1.5 rounded-lg transition-colors">
+            <i class="ph ph-plus-circle text-lg"></i>
+          </button>
+          <button id="run-btn" title="Run" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-3 md:px-4 py-1.5 rounded-lg flex items-center gap-1.5 text-sm transition-colors"><i class="ph ph-play text-base"></i> <span class="hidden md:inline">Kör</span></button>
+          <button id="clear-btn" title="Clear" class="bg-gray-700 hover:bg-gray-600 text-white px-2.5 md:px-3 py-1.5 rounded-lg text-sm flex items-center gap-1 transition-colors"><i class="ph ph-trash text-base md:hidden"></i> <span class="hidden md:inline">Rensa</span></button>
+          <div class="flex-1"></div>
+          <button id="save-btn" title="Spara" class="bg-gray-700 hover:bg-gray-600 text-white px-2.5 md:px-3 py-1.5 rounded-lg text-sm flex items-center gap-1 transition-colors"><i class="ph ph-floppy-disk text-sm"></i> <span class="hidden md:inline">Spara</span></button>
+          <button id="faq-open-btn" title="FAQ" type="button" class="bg-gray-700 hover:bg-gray-600 text-white px-2.5 md:px-3 py-1.5 rounded-lg text-sm flex items-center gap-1 transition-colors" aria-haspopup="dialog" aria-controls="faq-modal" aria-expanded="false"><i class="ph ph-question text-sm"></i> <span class="hidden md:inline">FAQ</span></button>
+          <button id="load-btn" title="Load" class="bg-gray-700 hover:bg-gray-600 text-white px-2.5 md:px-3 py-1.5 rounded-lg text-sm flex items-center gap-1 transition-colors"><i class="ph ph-folder-open text-sm"></i> <span class="hidden md:inline">Ladda</span></button>
+          <button id="export-btn" title="Export" class="bg-gray-700 hover:bg-gray-600 text-white px-2.5 md:px-3 py-1.5 rounded-lg text-sm flex items-center gap-1 transition-colors"><i class="ph ph-export text-sm"></i> <span class="hidden md:inline">Exportera</span></button>
+          <button id="import-btn" title="Import" class="bg-gray-700 hover:bg-gray-600 text-white px-2.5 md:px-3 py-1.5 rounded-lg text-sm flex items-center gap-1 transition-colors"><i class="ph ph-download-simple text-sm"></i> <span class="hidden md:inline">Importera</span></button>
+        </div>
+
+        <!-- Rete.js Canvas -->
+        <div id="rete-container" class="flex-1 relative"></div>
+
+        <!-- Bottom Status Bar -->
+        <div id="status-bar" class="h-7 bg-gray-800 border-t border-gray-700 hidden md:flex items-center px-4 text-xs text-gray-400">
+          <span id="status-text">Redo</span>
+          <div class="flex-1"></div>
+          <span id="node-count">0 noder</span>
+        </div>
+      </main>
+
+      <!-- RIGHT SIDEBAR: Selected Node Settings -->
+      <aside id="settings-sidebar" class="w-64 bg-gray-800 border-l border-gray-700 flex flex-col overflow-y-auto flex-shrink-0 hidden max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:z-40 max-md:shadow-2xl">
+        <div class="p-3 border-b border-gray-700 flex items-center justify-between">
+          <h2 id="settings-title" class="text-white font-bold text-sm">Inställningar</h2>
+          <button id="close-settings" class="text-gray-400 hover:text-white transition-colors">
+            <i class="ph ph-x text-base"></i>
+          </button>
+        </div>
+        <div id="settings-content" class="flex-1 p-3 space-y-3"></div>
+      </aside>
+    </div>
+
+    <footer class="flex-none border-t border-gray-700 bg-gray-800 px-3 sm:px-4 py-2 sm:py-2.5 text-[11px] sm:text-xs text-gray-500">
+      <nav class="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 sm:gap-x-4 gap-y-0.5" aria-label="Webbplatslänkar">
+        <a href="/pdf/sv" class="hidden sm:inline hover:text-gray-200" data-i18n="nav.home">Hem</a>
+        <a href="/pdf/sv/about" class="hover:text-gray-200" data-i18n="nav.about">Om</a>
+        <a href="/pdf/sv/faq" class="hover:text-gray-200" data-i18n="footer.faqLink">FAQ</a>
+        <a href="/pdf/sv/licensing" class="hover:text-gray-200" data-i18n="nav.licensing">Licensiering</a>
+        <a href="/pdf/sv/privacy" class="hover:text-gray-200"><span class="sm:hidden" data-i18n="footer.privacyShort">Integritet</span><span class="hidden sm:inline" data-i18n="footer.privacyPolicy">Integritetspolicy</span></a>
+        <a href="/pdf/sv/terms" class="hover:text-gray-200"><span class="sm:hidden" data-i18n="footer.termsShort">Villkor</span><span class="hidden sm:inline" data-i18n="footer.termsAndConditions">Villkor</span></a>
+        <a href="/pdf/sv/contact" class="hover:text-gray-200" data-i18n="nav.contact">Kontakt</a>
+      </nav>
+    </footer>
+
+    <!-- Loader Modal -->
+    <div id="loader-modal" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
+      <div class="bg-gray-800/95 p-8 rounded-2xl flex flex-col items-center gap-4 border border-gray-600/50 shadow-2xl">
+        <div class="solid-spinner"></div>
+        <p id="loader-text" class="text-white text-lg font-medium">Bearbetar...</p>
+      </div>
+    </div>
+
+    <!-- Save Template Modal -->
+    <div id="save-template-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+      <div class="bg-gray-800/95 rounded-2xl shadow-2xl p-6 max-w-sm w-full mx-4 border border-gray-600/50">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+            <i class="ph ph-floppy-disk text-lg text-indigo-400"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Spara mall</h3>
+        </div>
+        <label class="block text-xs font-medium text-gray-400 mb-1.5">Mallnamn</label>
+        <input id="save-template-name" type="text" placeholder="t.ex. Fakturaflöde" class="w-full bg-gray-900/80 border border-gray-600/60 text-white rounded-lg px-3 py-2.5 text-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/30 focus:outline-none placeholder-gray-500 mb-1">
+        <p id="save-template-error" class="text-red-400 text-xs mb-4 hidden"></p>
+        <div class="flex gap-2 mt-4">
+          <button id="save-template-cancel" class="flex-1 bg-gray-700/80 hover:bg-gray-600 text-gray-300 font-medium py-2.5 px-4 rounded-lg transition-colors text-sm">Avbryt</button>
+          <button id="save-template-confirm" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 px-4 rounded-lg transition-colors text-sm">Spara</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Template Modal -->
+    <div id="load-template-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+      <div class="bg-gray-800/95 rounded-2xl shadow-2xl p-6 max-w-md w-full mx-4 border border-gray-600/50">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-9 h-9 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+            <i class="ph ph-folder-open text-lg text-indigo-400"></i>
+          </div>
+          <h3 class="text-base font-semibold text-white">Ladda mall</h3>
+        </div>
+        <div id="load-template-list" class="space-y-1.5 max-h-64 overflow-y-auto mb-4"></div>
+        <p id="load-template-empty" class="text-gray-500 text-sm text-center py-6 hidden">Inga sparade mallar ännu.</p>
+        <button id="load-template-cancel" class="w-full bg-gray-700/80 hover:bg-gray-600 text-gray-300 font-medium py-2.5 px-4 rounded-lg transition-colors text-sm mt-2">Avbryt</button>
+      </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div id="alert-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+      <div class="bg-gray-800/95 rounded-2xl shadow-2xl p-6 max-w-sm w-full mx-4 border border-gray-600/50">
+        <h3 id="alert-title" class="text-lg font-semibold text-white mb-2">Varning</h3>
+        <p id="alert-message" class="text-gray-300 text-sm mb-6"></p>
+        <button id="alert-ok" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 px-4 rounded-lg transition-colors text-sm">OK</button>
+      </div>
+    </div>
+
+    <!-- PDF Password Modal -->
+    <div id="pdf-password-modal" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+      <div class="bg-gray-800/95 rounded-2xl shadow-2xl border border-gray-600/50 p-5 w-80 mx-4">
+        <h3 class="text-white font-semibold text-sm mb-1"><i class="ph ph-lock text-sm"></i> Skyddad PDF</h3>
+        <p id="pdf-password-filename" class="text-gray-400 text-xs mb-3 truncate"></p>
+        <input type="password" id="pdf-password-input" placeholder="Ange lösenord" class="w-full bg-gray-900 border border-gray-600 text-white rounded-md px-3 py-2 text-xs focus:border-indigo-500 focus:outline-none mb-1">
+        <p id="pdf-password-error" class="text-red-400 text-xs mb-3 hidden">Fel lösenord</p>
+        <div class="flex gap-2">
+          <button id="pdf-password-skip" class="flex-1 bg-gray-700/80 hover:bg-gray-600 text-gray-300 text-xs py-2 rounded-lg transition-colors">Hoppa över</button>
+          <button id="pdf-password-unlock" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white text-xs py-2 rounded-lg transition-colors">Lås upp</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="faq-modal-title" aria-hidden="true">
+      <div class="bg-gray-800 rounded-lg w-full max-w-3xl max-h-[85vh] overflow-y-auto relative border border-gray-700 shadow-2xl">
+        <button id="faq-close-btn" type="button" class="absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-lg bg-gray-700 hover:bg-gray-600 text-white" aria-label="Stäng FAQ">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        <section class="max-w-4xl mx-auto px-6 pt-12 pb-8">
+          <h2 id="faq-modal-title" class="text-2xl md:text-3xl font-bold text-white mb-6 text-center" data-i18n="faq.sectionTitle">Vanliga frågor och svar</h2>
+          <div class="faq-list">
+            <details class="faq-d">
+              <summary class="faq-d-q">Vad är PDF-arbetsflödesbyggaren till för? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">Den kedjar flera PDF-åtgärder i en körning. I stället för att öppna ett verktyg, ladda ned och mata in resultatet i nästa verktyg för varje steg kopplar du ihop noder på en canvas, som PDF-indata, Komprimera, Vattenstämpel och Ladda ned, ställer in varje nods alternativ och klickar på Kör för att bearbeta allt i följd.</p>
+            </details>
+            <details class="faq-d">
+              <summary class="faq-d-q">Kan jag köra samma arbetsflöde på många PDF-filer samtidigt? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">Ja. PDF-indatanoden accepterar flera filer. En Slå ihop-nod kombinerar dem till ett dokument, medan andra noder bearbetar varje PDF för sig. När fler än en fil kommer ut i slutet paketerar Ladda ned-noden dem automatiskt i en ZIP.</p>
+            </details>
+            <details class="faq-d">
+              <summary class="faq-d-q">Varför låter det mig inte koppla ihop två noder? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">Uttagen är typade: PDF (ett enda dokument), MultiPDF (flera dokument) och Bild. En nod som förväntar sig en enda PDF accepterar inte ett MultiPDF-utdata, så lägg en Slå ihop-nod emellan, och bildutdata matar bara noder som tar emot bilder. Kopplingar går alltid från botten av en nod till toppen av nästa.</p>
+            </details>
+            <details class="faq-d">
+              <summary class="faq-d-q">Varför klagar det på att Kryptera måste vara sista steget? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">När en PDF har krypterats kan senare noder inte läsa den, så motorn avvisar ett arbetsflöde där något annat än utdata kommer efter Kryptera. Flytta Kryptera till strax före Ladda ned. Lösenordsskyddade indata är det motsatta fallet: körningen pausar och frågar efter lösenordet.</p>
+            </details>
+            <details class="faq-d">
+              <summary class="faq-d-q">Vad händer om ett steg misslyckas? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">Körningen stannar vid den noden, som blir röd med ett felmeddelande, och ingenting nedströms skapas. Rätta inställningen eller indata och kör igen. Det är enklast att först bygga en version med två noder och lägga till steg när den fungerar.</p>
+            </details>
+            <details class="faq-d">
+              <summary class="faq-d-q">Kan jag spara ett arbetsflöde och använda det senare? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">Ja. Spara lagrar det som en namngiven mall i webbläsarens lokala lagring, och Ladda hämtar tillbaka det i en senare session i samma webbläsare. Exportera skriver layouten till en workflow.json-fil som du kan säkerhetskopiera eller skicka till en kollega, och Importera återställer noder, positioner, kopplingar och inställningar från den filen.</p>
+            </details>
+            <details class="faq-d">
+              <summary class="faq-d-q">Innehåller ett sparat arbetsflöde mina dokument? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">Nej. Mallar och exporterade JSON-filer innehåller bara nodtyperna, deras inställningar, positioner och kopplingar. PDF-filerna väljs på nytt varje gång du kör. Inställningarna sparas som de skrivits, så undvik att exportera ett arbetsflöde med ett lösenord inskrivet i en Kryptera-nod om du tänker dela det.</p>
+            </details>
+            <details class="faq-d">
+              <summary class="faq-d-q">Bearbetas filerna på en server? <i data-lucide="plus" class="faq-d-icon"></i></summary>
+              <p class="faq-d-a">Nej. Varje nod körs i din webbläsare med samma motorer som de enskilda verktygen, och den enda nätverksaktiviteten är att hämta en bearbetningsmodul som Ghostscript första gången en nod behöver en. Dina PDF-filer lämnar aldrig maskinen, inte ens i en lång körning med många steg.</p>
+            </details>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PDF-arbetsflödesbyggare - BentoPDF",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any - Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script>
+  
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad är PDF-arbetsflödesbyggaren till för?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Den kedjar flera PDF-åtgärder i en körning. I stället för att öppna ett verktyg, ladda ned och mata in resultatet i nästa verktyg för varje steg kopplar du ihop noder på en canvas, som PDF-indata, Komprimera, Vattenstämpel och Ladda ned, ställer in varje nods alternativ och klickar på Kör för att bearbeta allt i följd."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jag köra samma arbetsflöde på många PDF-filer samtidigt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. PDF-indatanoden accepterar flera filer. En Slå ihop-nod kombinerar dem till ett dokument, medan andra noder bearbetar varje PDF för sig. När fler än en fil kommer ut i slutet paketerar Ladda ned-noden dem automatiskt i en ZIP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Varför låter det mig inte koppla ihop två noder?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uttagen är typade: PDF (ett enda dokument), MultiPDF (flera dokument) och Bild. En nod som förväntar sig en enda PDF accepterar inte ett MultiPDF-utdata, så lägg en Slå ihop-nod emellan, och bildutdata matar bara noder som tar emot bilder. Kopplingar går alltid från botten av en nod till toppen av nästa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Varför klagar det på att Kryptera måste vara sista steget?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "När en PDF har krypterats kan senare noder inte läsa den, så motorn avvisar ett arbetsflöde där något annat än utdata kommer efter Kryptera. Flytta Kryptera till strax före Ladda ned. Lösenordsskyddade indata är det motsatta fallet: körningen pausar och frågar efter lösenordet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad händer om ett steg misslyckas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Körningen stannar vid den noden, som blir röd med ett felmeddelande, och ingenting nedströms skapas. Rätta inställningen eller indata och kör igen. Det är enklast att först bygga en version med två noder och lägga till steg när den fungerar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jag spara ett arbetsflöde och använda det senare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Spara lagrar det som en namngiven mall i webbläsarens lokala lagring, och Ladda hämtar tillbaka det i en senare session i samma webbläsare. Exportera skriver layouten till en workflow.json-fil som du kan säkerhetskopiera eller skicka till en kollega, och Importera återställer noder, positioner, kopplingar och inställningar från den filen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Innehåller ett sparat arbetsflöde mina dokument?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. Mallar och exporterade JSON-filer innehåller bara nodtyperna, deras inställningar, positioner och kopplingar. PDF-filerna väljs på nytt varje gång du kör. Inställningarna sparas som de skrivits, så undvik att exportera ett arbetsflöde med ett lösenord inskrivet i en Kryptera-nod om du tänker dela det."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bearbetas filerna på en server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. Varje nod körs i din webbläsare med samma motorer som de enskilda verktygen, och den enda nätverksaktiviteten är att hämta en bearbetningsmodul som Ghostscript första gången en nod behöver en. Dina PDF-filer lämnar aldrig maskinen, inte ens i en lång körning med många steg."
+      }
+    }
+  ]
+}</script><script type="application/ld+json" data-bentopdf-organization="">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "BentoPDF",
+  "url": "https://www.bentopdf.com",
+  "logo": "https://www.bentopdf.com/images/favicon.svg",
+  "sameAs": [
+    "https://github.com/alam00000/bentopdf",
+    "https://x.com/BentoPDF",
+    "https://www.linkedin.com/company/bentopdf/",
+    "https://www.instagram.com/thebentopdf/"
+  ]
+}</script></body></html>

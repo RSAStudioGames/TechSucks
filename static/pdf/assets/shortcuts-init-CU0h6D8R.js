@@ -1,0 +1,1 @@
+import{i as e}from"./main-D_ijjlHS.js";function t(){e.init(),console.log(`Global shortcuts initialized`)}export{t};

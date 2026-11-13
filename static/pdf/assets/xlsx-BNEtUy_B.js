@@ -1,0 +1,1 @@
+export{t as CFB,n as SSF,_ as default,i as parse_xlscfb,a as parse_zip,s as read,o as readFile,o as readFileSync,c as set_cptable,l as set_fs,r as stream,u as utils,d as version,h as write,p as writeFile,p as writeFileSync,f as writeFileAsync,m as writeFileXLSX,g as writeXLSX}from"./xlsx-DPN7eKpb.js";
