@@ -17,7 +17,7 @@ Most people only visit a handful of select websites anymore. The days of creativ
 
 I've got two main goals for this page, share my knowledge and passion for technology to help people learn about computers and tech in a world where those skills are becoming increasingly [important](https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes), while also getting back at those who profit from gatekeeping this kind of knowledge.
 
-Throughout my tech journey, I've discovered many interesting creators with some great insight, namely people like Louis Rossmann, Leadius USA, Linus Tech Tips, and Level1Techs. You're bound to see some of their influence and inspiration on here.
+Throughout my tech journey, I've discovered many interesting creators with some great insight, namely people like Louis Rossmann, Leadius USA, Linus Tech Tips, and Level1Techs. You're bound to see some of their influence and inspiration on this site.
 
 I'm putting most of my effort into [SERVERMAXXING](/posts/servermaxxing) right now which covers a lot about AI-related hardware currently, but will be expanded to cover most general server stuff, including hardware guides and basics of what to look for depending on your use case. Once I'm finished with that page, I'll start focusing on the other pages and expanding more.
 
