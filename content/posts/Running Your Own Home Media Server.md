@@ -12,9 +12,9 @@ hideComments = false
 
 -   Why JellyFin and not Plex
     -   Support for audiobooks/music/movies
-    
 -   Basic hardware needed
 -   Basic installation guide for JellyFin
+    - My personal JellyFin docker compose stack
 -   Where to acquire movies/shows/music/audiobooks
     -   Where to purchase DVDs
         -   Ripping DVDs to add to your media server
