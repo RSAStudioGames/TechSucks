@@ -57,9 +57,14 @@ OneAPI... well, Intel has a long way to go, but in all fairness, they only joine
 | AMD          |                   | RDNA 4.0     | RX 9070 XT     |
 
 </br>
-{{< img src="/images/ebay-tesla-results.webp" width="600" alt="ebay-tesla-results" >}}
-
-{{< img src="/images/mi50amd-ebay.webp" width="600" alt="mi50amd-ebay" >}}
+<div style="display: grid; grid-template-columns: repeat(2, 40%); justify-content: center; align-items: center; gap: 15px;">
+  <a href="/images/ebay-tesla-results.webp">
+    {{< img src="/images/ebay-tesla-results.webp" alt="eBay results for Nvidia Tesla GPUs" >}}
+  </a>
+  <a href="/images/mi50amd-ebay.webp">
+    {{< img src="/images/mi50amd-ebay.webp" alt="eBay listing for an AMD Instinct MI50" >}}
+  </a>
+</div>
 
 [Tesla](https://en.wikipedia.org/wiki/Nvidia_Tesla) is Nvidia's line of datacenter GPUs. These are fairly easy to find on the second-hand market, mainly on ebay. When you're searching for these GPUs, you're bound to find many with what seems like massive amounts of VRAM. This may seem great, but you need to be careful with your selection.
 
