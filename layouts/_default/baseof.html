@@ -49,13 +49,14 @@
             </ul>
         </nav>
 
-        {{ if (.Params.Toc | default .Site.Params.Toc) }}
+        {{ $toc := .TableOfContents }}
+        {{ if and (.Params.Toc | default .Site.Params.Toc) (strings.Contains $toc "<a href=") }}
         <hr />
         <h3 class="sidebar-header">
             {{ (.Params.TocTitle | default .Site.Params.TocTitle) | default "Table of Contents" }}
         </h3>
         <div class="sidebar-list">
-            {{ .TableOfContents }}
+            {{ $toc }}
         </div>
         {{ end }}
 
