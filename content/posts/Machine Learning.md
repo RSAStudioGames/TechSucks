@@ -33,6 +33,7 @@ Text Gen / Image Gen / STT / TTS / Classication / Multi-Modal / Sentiment Analys
 ## Image Generation Models 
 
 # Quantization
+*TLDR: "Compress" the model to make it a bit faster and fit within your system resources at a cost to its intelligence.* </br>
 Model quantization is a method of reducing the size of an existing AI model (LLM, diffusion, video gen, etc) while maintaining accuracy. It works by reducing the precision of the weights and activations with a loss in quality proportional to the quantization level and method. Quantizing a model allows for larger models to be used with less of a computing requirment. For example, Llama 3.3 70B FP16 is about 140GB in size and would require a similar amount of memory to run. Quantizing it to 4 bit precision would only require about 40GB of memory to run. The preicision size is directly proportional to the memory required to run a model.
 To measure the change in quality from a quantized model compared to its unquantized form, you can measure its perplexity (PPL). {{< linebreak >}}
 
@@ -137,7 +138,7 @@ You can also find some more basic LLM inference speed benchmarks on [LLM Inferen
  (My preferred place to download AI models and datasets and access pre-existing project "spaces")  
  (Another good site to download AI models and datasets)  
 
-[https://github.com/XueyanZhang/awesome-ai-mode-api](https://github.com/XueyanZhang/awesome-ai-mode-api) - Missing quite a few providers but its outdated so ¯\\\_(ツ)\_/¯
+[https://github.com/XueyanZhang/awesome-ai-mode-api](https://github.com/XueyanZhang/awesome-ai-mode-api)
 
 [https://mail.bycloud.ai/](https://mail.bycloud.ai/) - AI papers explained
 
