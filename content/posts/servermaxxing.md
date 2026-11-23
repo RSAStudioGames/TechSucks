@@ -1,7 +1,7 @@
 +++
 title = "SERVERMAXXING"
 date = "2025-12-17T17:07:24Z"
-#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
+#dateFormat = "2006-01-02"
 author = "RSA"
 tags = ["AI", "Server"]
 keywords = ["Server", "AI", "Benchmarks"]
@@ -13,7 +13,7 @@ hideComments = false
 
 
 # AI Server Builds
-Here are some server setups I'll be covering that can run large models with budget prices. By budget I mean it won't cost the same as a new Ferrari, which some SOTA systems can easily surpass. I'll be going over specific hardware to look for in more detail over on the [Server Building](/posts/server-building) page. These aren't branded products or off-the-shelf systems. I've curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who've tried them out to give you an accurate picture of how they would work in a real-world situation. {{< linebreak >}}
+Here are some server setups I'll be covering that can run large models with budget prices. For clarication, when I say budget I mean it won't cost the same as a new Ferrari, which some new and SOTA systems can easily surpass. I'll be going over specific hardware to look for in more detail over on the [Server Building](/posts/server-building) page. These aren't branded products or off-the-shelf systems. I've curated these from community builds. I have personally built and tested multiple of these systems, while others are based on extensive research, real-world benchmarks, deep dives into component specs, and reports from users who've tried them out to give you an accurate picture of how they would work in a real-world situation. </br>
 You can find the all the benchmarks I've run myself and collected in the [LLM Inference Benchmarks](https://techsucks.org/posts/llm-benchmarks/) page.
 
 Quick Comparison (pricing estimates prior to OpenAI destroying the memory market)
@@ -26,15 +26,24 @@ Quick Comparison (pricing estimates prior to OpenAI destroying the memory market
 | [DEBTMAXXING](#debtmaxxing) | ~$9500| N/A | 512GB | {{< textcolor color="red" >}}Slow{{< /textcolor >}} |
 | [Tetobox](#tetobox) | x | 48GB | 128GB | {{< textcolor color="yellow" >}}Fair{{< /textcolor >}} |
 
-</br>
-
-## Getting Started
-
-So you've got three main ways to run AI models. NVIDIA GPUs, AMD GPUs, or CPUs. Nvidia will give you the least headaches (usually), especially on windows. AMD will give you more headaches and somewhat lower performance than Nvidia GPUs, but you can get really good deals on them while having more VRAM than most Nvidia cards at the same, and sometimes higher price points. Finally, CPUs are simple to run LLMs on with llama.cpp-based inference tools (Text Gen Web UI, Ollama, etc), but they're realllllllllllly slow compared to GPUs.
+## Getting Started With Hardware
+So you've got three main ways to run AI models. NVIDIA GPUs, AMD GPUs, or CPUs. </br>
+Nvidia will give you the least headaches (usually), especially on windows.
+The AMD GPU software ecosystem has matured enough to be just as simple to use as Nvidia cards given that you use more modern GPUs. AMD cards tend to have better VRAM capacity for their price so they make for better budget options when it comes to running larger models. </br>
+Finally, CPUs are simple to run LLMs on with llama.cpp-based inference tools (Text Gen Web UI, Ollama, etc), but they're reallllly slow compared to GPUs.
 
 If you want to run an AI model on your own hardware, decommissioned data center GPUs or CPUs are the way to go if you don't want to spend hella cash on some fancy new tech that is bound to be overpriced. That being said, GPUs and CPUs are already stupidly expensive. Crypto-mining, Nvidia and AMD being greedy (mainly Nvidia), the massive AI spike pushing demand toward datacenter GPUs over the tiny consumer market, and scalping due to low availability (again, thank Nvidia and AMD and their blatant marketing lies and low consumer card availability) have caused the GPU market to skyrocket in price for not only new, but used GPUs. Overall availability is at an all-time low while prices are insanely high.
 
-There isn't much support yet for NPUs/TPUs/APUs yet as both the software and hardware ecosystem in the consumer market isn't that mature yet. I recently found an inference engine — [Lemonade Server](https://lemonade-server.ai/) — which as of now, has support for the Ryzen AI 300 Series of NPUs. When it comes to TPUs, you can find hardware such as Google Coral for smaller-scale ML projects, but you won't be running Stable Diffusion on it without a fair bit of tweaking.
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem;">
+<div style="flex: 2 1 18rem; min-width: 0;">
+
+There still isn't much support for NPUs/TPUs/APUs in the consumer market as both the software and hardware ecosystem isn't that mature yet nor are they all too commonly found in consumer devices. I recently found an inference engine called [Lemonade Server](https://github.com/lemonade-sdk/lemonade) which supports some AMD NPUs. </br>
+When it comes to TPUs, you can find hardware such as Google Coral for smaller-scale ML projects, but you won't be running Qwen 27B on it unless you know what you're doing.
+</div>
+<div style="flex: 1 1 12rem; min-width: 0;">
+{{< img src="/images/ghidorah-cpus-npus-gpus-meme.png" width="200" >}}
+</div>
+</div>
 
 Nvidia has [CUDA](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html), AMD has [ROCm](https://rocm.docs.amd.com/en/latest/), and Intel has [OneAPI](https://www.intel.com/content/www/us/en/developer/articles/guide/installation-guide-for-oneapi-toolkits.html).  
 CUDA is the most mature with the most well-developed features and support.  
@@ -55,7 +64,7 @@ OneAPI... well, Intel has a long way to go, but in all fairness, they only joine
 | AMD          | Instinct Mi200    | CDNA 2.0     |                |
 | AMD          |                   | RDNA 3.0     | RX 7900 XTX    |
 | AMD          |                   | RDNA 4.0     | RX 9070 XT     |
-
+---
 </br>
 <div style="display: grid; grid-template-columns: repeat(2, 40%); justify-content: center; align-items: center; gap: 15px;">
   <a href="/images/ebay-tesla-results.webp">
