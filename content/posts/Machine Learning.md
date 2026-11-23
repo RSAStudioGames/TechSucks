@@ -28,12 +28,17 @@ Here are some places you can download AI models from:
 Handy tool to estimate the VRAM needed to run a model: [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator)
 
 Text Gen / Image Gen / STT / TTS / Classication / Multi-Modal / Sentiment Analysis / Embedding
+
 ## Text Generation Models
+Text generation models are language models that use machine learning with the task of generating new text given when given other text. These models can be trained to follow specific instructions or for specific purposes ranging from generating stories, code, summarization, translation, and more. For example, when given an imcomplete sentence or a short portion of a story, the model can continue the sentence using the context available within to predict the next most likely set of words. In most cases, the more information the model is given, the better it can complete its task. </br>
+Some well known text generation models include the GPT series (ChatGPT models), Llama, Qwen, and DeepSeek models.
 
 ## Image Generation Models 
+Image generation models are machine learning models that synthesize images. There are text-to-image and image-to-image models that, respectively, generate image from a written description and from reference image(s). Most image generation models use diffusion in which the model takes random noise (think something like TV static) and refines it over a series of steps to turn it into the final requested image. </br>
+Some well know image generation models include MidJourney, DALL-E, StableDiffusion, and Qwen Image models.
 
 # Quantization
-*TLDR: "Compress" the model to make it a bit faster and fit within your system resources at a cost to its intelligence/quality.* </br>
+*TLDR: Quantization is "compressing" a model to make it faster and smaller so it fits within your system resources at a cost to its intelligence/quality.* </br>
 Model quantization is a method of reducing the size of an existing AI model (LLM, diffusion, video gen, etc) while maintaining accuracy. It works by reducing the precision of the weights and activations with a loss in quality proportional to the quantization level and method. Quantizing a model allows for larger models to be used with less of a computing requirment. For example, Llama 3.3 70B FP16 is about 140GB in size and would require a similar amount of memory to run. Quantizing it to 4 bit precision would only require about 40GB of memory to run. The preicision size is directly proportional to the memory required to run a model.
 To measure the change in quality from a quantized model compared to its unquantized form, you can measure its perplexity (PPL). {{< linebreak >}}
 
@@ -65,7 +70,7 @@ Below is a table comparing the different Llama.cpp quantization levels of Llama 
 | Q8_0 | 69.83 | 2.8316 +/- 0.0138 | 0.03% |
 | F16 | 131.43 | 2.8308 +/- 0.0138 | 0.00% |
 
-In the table, the lower the precision is, the higher the perplexity. Perplexity values can be different depending on the model, its architecture, quantization method used, etc. I personally would not go lower than 4 bits per weight (about Q4 or Q4_K_M within Llama.cpp quantization).
+In the table, the lower the precision is, the higher the perplexity, and perplexity is basically the loss of intelligence/quality I meantioned above. Perplexity values can be different depending on the model, its architecture, quantization method used, etc. I personally would not go lower than 4 bits per weight (about Q4 or Q4_K_M within Llama.cpp GGUF quantization). However, the more parameters a model has, the more "resistance" the model will have to being quantized. I've personally used GLM 4.7 (358B parameters) at 2 BPW which still gave relatively good results. Conversely, an 8B parameter model at 2 BPW would be significantly worse off, and in my experience, quite unusable.
 I prefer using ExLlama quantization as it tends to be more performant and accurate than Llama.cpp. The trade-off is that llama.cpp allows you to use both your VRAM and RAM together whereas ExLlama is fixed to the VRAM. EXL3 is the latest version of the Exllama quantization method and has fairly good quality even at low precision.
 
 # Tools
@@ -76,54 +81,35 @@ Here are a few different AI tools I've found that are (relatively) simple to use
 
 [https://www.nomic.ai/gpt4all](https://www.nomic.ai/gpt4all)
 
-GPT4ALL is an easy to use application with minimal setup required to hop right into using LLMs personally. It also offers text embedding, to read documents you give it, and the ability to use an on-device AI model or connect to an API provider (ChatGPT/Claude/Vertex/etc).
-
+GPT4ALL is an easy to use application with minimal setup required to hop right into using LLMs personally. It also offers text embedding, to read documents you give it, and the ability to use an on-device AI model or connect to an API provider (ChatGPT/Claude/etc). </br>
 Supports Nvidia, AMD, and Intel GPUs as well as CPU.
 
 ## Ollama
 
 [https://ollama.com/](https://ollama.com/)
 
-Ollama is another easy way of serving LLMs. You can download the install package for Windows, Mac OS, or Linux, install it, and quickly download LLMs on your device with a single command. Ollama is based on [llama.cpp](https://github.com/ggml-org/llama.cpp) which allows you to offload the AI model onto your CPU/RAM to fit larger models, or if you dont have a GPU, run solely on a CPU/RAM.
-
-To do: COVER HOW TO ADD AND LOAD MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?) (OS Support?)
+Ollama is another easy way of serving LLMs. You can download the install package for Windows, Mac OS, or Linux, install it, and quickly download LLMs on your device with a single command. Ollama is based on [llama.cpp](https://github.com/ggml-org/llama.cpp) which allows you to offload the AI model onto your CPU/RAM to fit larger models, or if you dont have a GPU, run solely on a CPU/RAM. Runs on linux, windows, and mac.
 
 ## Text Generation Web UI
 
 [https://github.com/oobabooga/text-generation-webui/](https://github.com/oobabooga/text-generation-webui/)
 
-Text Generation Web UI, often referred to as *Oobabooga* or *Text Gen Web UI* is a relatively simple and straightforward way to run LLMs.
-
-Supports Nvidia, AMD, and Intel GPUs as well as CPUs.
-
-COVER HOW TO ADD AND LOAD MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?) (OS Support?)
-
-## Aphrodite Engine
-
-[https://aphrodite.pygmalion.chat/](https://aphrodite.pygmalion.chat/)
-
-Aphrodite Engine (AE) supports a bunch of different quantization methods and is great for advanced users with beefier hardware who want to serve LLMs efficiently for their own uses. While AE supports GGUF quantizations, it cannot offload models to CPU & RAM because of its paged attention system. It has relatively higher generation speeds than its counterparts, but the paged attention system isn't *as* memory efficient for the GPU-poor.
-
-Supports most popular quantization methods.
-
-To do: MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?)
+Text Generation Web UI, often referred to as *Oobabooga* or *Text Gen Web UI* is a relatively simple and straightforward way to run LLMs. </br>
+Supports Nvidia, AMD, and Intel GPUs as well as CPUs. Runs on linux, windows, and mac.
 
 ## vLLM
 
 [https://docs.vllm.ai/en/latest/](https://docs.vllm.ai/en/latest/)
 
-Very robust and memory-efficient inference engine.
-
+Very robust and memory-efficient inference engine. </br>
 Supports most popular quantization methods.
-
-To do: MODELS AND THE BASIC PREREQUISITES NEEDED FOR A FIRST TIME SETUP AND MAYBE A LITTLE BIT ABOUT EXTENSIONS AND API (Hardware support?) (OS Support?)
 
 ## Whisper Web UI
 
 [https://github.com/jhj0517/Whisper-WebUI](https://github.com/jhj0517/Whisper-WebUI)
 
-Super useful speech to text transcription tool. Let's you transcribe audio files, video files, and YouTube links of videos. Can transcribe into SRT, WebVTT, TXT, and LRC files.  
-Has a simple to use and (mostly) self-explanatory user interface. Also has features for [diarization](https://symbl.ai/developers/blog/what-is-speaker-diarization/) (detect different speakers), background music removal (to split music track from spoken voice), text to text translation, and can even directly transcribe from your microphone whatever you're saying. Supports a large variety of Speech to Text models. I personally use Large-V3-Turbo on INT8, with that, I can transcribe an hour of audio in less than 5 minutes on a 1080Ti, ~30-45 seconds on a V100, or ~10-15 seconds on a 4090, all with diarization enabled (not including model load times, just inference).
+Super useful speech to text transcription tool I use quite often. Lets you transcribe audio files, video files, and YouTube links of videos. Can transcribe into SRT, WebVTT, TXT, and LRC files.  
+Has a simple to use and (mostly) self-explanatory user interface. Also has features for [diarization](https://symbl.ai/developers/blog/what-is-speaker-diarization/) (detect and label individual speakers), background music removal (to split music track from spoken voice), text to text translation, and can even directly transcribe from your microphone whatever you're saying. Supports a large variety of Speech to Text models. I personally use Large-V3-Turbo on INT8, with that, I can transcribe an hour of audio in less than 5 minutes on a 1080Ti, ~30-45 seconds on a V100, or ~10-15 seconds on a 4090, all with diarization enabled (not including model load times, just inference).
 
 Whisper Web UI works well on Nvidia GPUs and, albeit slower, on CPU. I am pretty sure you could get it working on AMD GPUs with [ZLUDA](https://github.com/vosen/ZLUDA), but I haven't personally done that yet.
 
