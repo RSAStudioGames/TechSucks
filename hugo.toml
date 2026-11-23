@@ -107,5 +107,12 @@ pagination.pagerSize = 5
 [markup.goldmark.renderer]
   unsafe= true
 
+[markup.goldmark.extensions.typographer]
+  apostrophe = '&#39;'
+  leftDoubleQuote = '&quot;'
+  leftSingleQuote = '&#39;'
+  rightDoubleQuote = '&quot;'
+  rightSingleQuote = '&#39;'
+
 [caches.images]
   dir = ':cacheDir/images'
