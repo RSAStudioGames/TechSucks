@@ -34,7 +34,18 @@ Finally, CPUs are simple to run LLMs on with llama.cpp-based inference tools (Te
 
 If you want to run an AI model on your own hardware, decommissioned data center GPUs or CPUs are the way to go if you don't want to spend hella cash on some fancy new tech that is bound to be overpriced. That being said, GPUs and CPUs are already stupidly expensive. Crypto-mining, Nvidia and AMD being greedy (mainly Nvidia), the massive AI spike pushing demand toward datacenter GPUs over the tiny consumer market, and scalping due to low availability (again, thank Nvidia and AMD and their blatant marketing lies and low consumer card availability) have caused the GPU market to skyrocket in price for not only new, but used GPUs. Overall availability is at an all-time low while prices are insanely high.
 
-<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem;">
+<style>
+  .hardware-npu-layout p,
+  .hardware-npu-layout img {
+    margin-block: 0;
+  }
+
+  .hardware-npu-layout + p {
+    margin-block-start: 0.5rem;
+  }
+</style>
+
+<div class="hardware-npu-layout" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.5rem 1rem;">
 <div style="flex: 2 1 18rem; min-width: 0;">
 
 There still isn't much support for NPUs/TPUs/APUs in the consumer market as both the software and hardware ecosystem isn't that mature yet nor are they all too commonly found in consumer devices. I recently found an inference engine called [Lemonade Server](https://github.com/lemonade-sdk/lemonade) which supports some AMD NPUs. </br>
