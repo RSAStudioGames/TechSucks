@@ -23,8 +23,6 @@ Here are some places you can download AI models from:
   - Recommended users to download from:
     - [bartowski](https://huggingface.co/bartowski)
     - [mradermacher](https://huggingface.co/mradermacher)
-    - [Dracones](https://huggingface.co/Dracones)
-    - [TheBloke](https://huggingface.co/TheBloke)
 - [Kaggle](https://www.kaggle.com/)
 
 Handy tool to estimate the VRAM needed to run a model: [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator)
