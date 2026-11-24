@@ -36,17 +36,20 @@ Simple and easy way to sync files between 2+ devices. Not recommended for sharin
 [Copyparty](https://github.com/9001/copyparty)
 Great way to share files with lots of people with configured users. The best way, in my opinion, to share files with others without needing to set up a dedicated NAS OS.
 
-Self hosted photo storage options:
+Self hosted photo storage options: </br>
 [Immich](https://github.com/immich-app/immich/)
 Privacy-respecting photo manager for all of your photos. Has AI tools to detect duplicates. Super nice and simple to use. Also has an app for both IOS an Android to connect to your own Immich server. Nothing is shared with the internet.
 
 [PhotoPrism](https://github.com/photoprism/photoprism)
 Havent tried it out myself, but another alternative to Immich.
 
-Self hosted local streaming platforms... ditch netflix and amazon
+Self hosted local streaming platforms... ditch netflix and amazon </br>
 [JellyFin](https://jellyfin.org/) Personal streaming platform with plugins to support audio books too. Entirely free.
 
 [Plex](https://github.com/plexinc/) I do not recommend Plex but here it is. I'll do a write up on it soon enough as to why you shouldn't trust them or give them your hard-earned money.
+
+Self hosted DNS systems for ad blocking </br>
+[AdGuard](https://adguard.com/en/adguard-home/overview.html) (enhances your privacy by blocking trackers and more) (or [Pi-Hole](https://pi-hole.net/) as alternative)
 
 ## Accessing your stuff
 
@@ -86,12 +89,6 @@ Backup policies - 3-2-1 rule / ways to create backups / RAID / RAID isnt a backu
 
 Extras - basic automation (if I find anything useful or decide to get this far into it)
 </br>
-
-Recommended Tools:
-
--   [AdGuard](https://adguard.com/en/adguard-home/overview.html) (enhances your privacy by blocking trackers and more) (or [Pi-Hole](https://pi-hole.net/) as alternative)
-
-
 -   Basic parts/servers to buy on ebay. (more on servermaxxing page)
     -   Pros and cons based on little put-together “packages”
 -   NAS systems, building your own or buying
@@ -101,19 +98,14 @@ Recommended Tools:
     -   Document Managers
 -   Try to keep this solely about a personal sovereign cloud and not getting too far into homelabbing. (I'll cover homelabbing in more detail on its own page)
 
-## Hardware
+Hardware </br>
 5 - 10 basic builds with varying price and form factors
 Table with pricing, performance, form factor, etc for each build
 
-### Build Name
+Build Name </br>
 Description of build. Performance rating, pros and cons, and other basic info about it. Pricing. Best usage applications
-#### Components
+Components </br>
 Components needed, price range (along with recommended pricing), alternative components (within price range), any additional notes about component
 
-## Services
+Services </br>
 Going over my personal recommended choice of what to install and how to install. Will also go over a number of other recommended alternatives for each main service I recommend.
-
-### (Service Name)
-(Description of SERVICE)
-
-#### Installation Guide(s) for (Service)
