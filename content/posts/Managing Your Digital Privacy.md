@@ -33,15 +33,15 @@ How is This Data Used?
 
 Data Brokers, Hackers, and You
 
-The Convenience:Privacy Ratio
+The convenience to privacy ratio
 
 What Simple Things Can I Do To Protect My Data?
 
 -   De-googling your life
     -   Privacy-respecting services
-        -   Proton services - [https://proton.me/](https://proton.me/)
+        -   Proton services - [https://proton.me/](https://proton.me/) (proton is under some scrutiny right now, I'd avoid them for a bit.)
         -   Mail services
-        -   Privacy focused browsers (or at least not chrome, opera gx, and edge)
+        -   Privacy focused browsers (or at least don't use chrome, opera gx, or edge browsers)
         -   Privacy respecting cloud services
         -   Online office/docs service
         -   Non-google phone OS for android
