@@ -18,7 +18,17 @@ Want to be free of Google Drive/OneDrive/Mega/iCloud/Dropbox/etc? Hate the big c
 
 I will try to make this guide keep things as simple as possible with convenient and simple to use features. This guide will help you to save quite a bit of money in the long run while keeping your data safe. You will have to manage your own backups, or lack thereof.
 
-Docker is going to be your friend, and mine, because it simplifies the heck out of the install process on a bunch of stuff. There are some cases where it can be a minor headache to manage the settings inside the container, but that's future-you's problem. ;)
+Docker is going to be your friend, and mine, because it simplifies the heck out of the install process on a bunch of stuff so I don't have to explain as much. </br>
+`sudo apt update && sudo apt upgrade && sudo apt install -y docker-compose`
+
+Some self hosted storage options: </br>
+[Syncthing](https://github.com/syncthing/syncthing/) </br>
+Simple and easy way to sync files between 2 or more machines. Not recommended for sharing with large amounts of users as each device has to be individually synced.
+
+[Copyparty](https://github.com/9001/copyparty)
+Great way to share files with lots of people with configured users. Lots of cool and advanced features.
+
+---
 
 NAS / Cheap server / Mini PC / Raspberry PI with SSDs / etc
 
