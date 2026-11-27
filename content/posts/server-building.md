@@ -12,9 +12,7 @@ hideComments = false
 
 > Work in progress (just like the rest of the site) ¯\\\_(ツ)\_/¯
 
-> I pulled a lot of this out from the [SERVERMAXXING](https://techsucks.org/posts/servermaxxing) page as it wasn't that relevant to running AI models so this will have a heavier focus on AI uses for the time being.
-
-This will cover what kind of hardware you want to look for when building your own personal server and what you should focus on for specific use-cases.
+This will be an in-depth page on server hardware and what to pick when building a server for yourself.
 
 # Server Hardware
 
